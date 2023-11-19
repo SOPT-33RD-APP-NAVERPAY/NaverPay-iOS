@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		F4DDEB0A2B0A52E600B7BCCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB092B0A52E600B7BCCE /* AppDelegate.swift */; };
 		F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB0B2B0A52E600B7BCCE /* SceneDelegate.swift */; };
-		F4DDEB0E2B0A52E600B7BCCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB0D2B0A52E600B7BCCE /* ViewController.swift */; };
 		F4DDEB112B0A52E600B7BCCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DDEB0F2B0A52E600B7BCCE /* Main.storyboard */; };
 		F4DDEB132B0A52EB00B7BCCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4DDEB122B0A52EB00B7BCCE /* Assets.xcassets */; };
 		F4DDEB162B0A52EB00B7BCCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DDEB142B0A52EB00B7BCCE /* LaunchScreen.storyboard */; };
@@ -19,7 +18,6 @@
 		F4DDEB062B0A52E600B7BCCE /* NaverPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaverPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4DDEB092B0A52E600B7BCCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4DDEB0B2B0A52E600B7BCCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F4DDEB0D2B0A52E600B7BCCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F4DDEB102B0A52E600B7BCCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4DDEB122B0A52EB00B7BCCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4DDEB152B0A52EB00B7BCCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,15 +54,102 @@
 		F4DDEB082B0A52E600B7BCCE /* NaverPay */ = {
 			isa = PBXGroup;
 			children = (
-				F4DDEB092B0A52E600B7BCCE /* AppDelegate.swift */,
-				F4DDEB0B2B0A52E600B7BCCE /* SceneDelegate.swift */,
-				F4DDEB0D2B0A52E600B7BCCE /* ViewController.swift */,
+				F4DDEB202B0A584400B7BCCE /* Network */,
+				F4DDEB1F2B0A583C00B7BCCE /* Global */,
+				F4DDEB1E2B0A57AF00B7BCCE /* Application */,
+				F4DDEB1D2B0A571300B7BCCE /* Scenes */,
 				F4DDEB0F2B0A52E600B7BCCE /* Main.storyboard */,
 				F4DDEB122B0A52EB00B7BCCE /* Assets.xcassets */,
-				F4DDEB142B0A52EB00B7BCCE /* LaunchScreen.storyboard */,
 				F4DDEB172B0A52EB00B7BCCE /* Info.plist */,
 			);
 			path = NaverPay;
+			sourceTree = "<group>";
+		};
+		F4DDEB1D2B0A571300B7BCCE /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F4DDEB1E2B0A57AF00B7BCCE /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				F4DDEB0B2B0A52E600B7BCCE /* SceneDelegate.swift */,
+				F4DDEB092B0A52E600B7BCCE /* AppDelegate.swift */,
+				F4DDEB142B0A52EB00B7BCCE /* LaunchScreen.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		F4DDEB1F2B0A583C00B7BCCE /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				F4DDEB282B0A6D0100B7BCCE /* Resources */,
+				F4DDEB272B0A598700B7BCCE /* Literals */,
+				F4DDEB262B0A597A00B7BCCE /* Extensions */,
+				F4DDEB252B0A597100B7BCCE /* UIComponents */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		F4DDEB202B0A584400B7BCCE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F4DDEB242B0A58E900B7BCCE /* Base */,
+				F4DDEB232B0A58C600B7BCCE /* Services */,
+				F4DDEB212B0A58AB00B7BCCE /* DTO */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F4DDEB212B0A58AB00B7BCCE /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		F4DDEB232B0A58C600B7BCCE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F4DDEB242B0A58E900B7BCCE /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		F4DDEB252B0A597100B7BCCE /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		F4DDEB262B0A597A00B7BCCE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F4DDEB272B0A598700B7BCCE /* Literals */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Literals;
+			sourceTree = "<group>";
+		};
+		F4DDEB282B0A6D0100B7BCCE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +223,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4DDEB0E2B0A52E600B7BCCE /* ViewController.swift in Sources */,
 				F4DDEB0A2B0A52E600B7BCCE /* AppDelegate.swift in Sources */,
 				F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */,
 			);
