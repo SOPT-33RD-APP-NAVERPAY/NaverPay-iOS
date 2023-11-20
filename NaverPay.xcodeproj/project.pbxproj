@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		ED56A2EA2B0B7790005FE6AF /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A2E92B0B7790005FE6AF /* UIFont+.swift */; };
+		0B91C7A82B0B8A7A00ACDCE9 /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B91C7A72B0B8A7A00ACDCE9 /* ImageLiterals.swift */; };
+		0B91C7AA2B0B8B3000ACDCE9 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B91C7A92B0B8B3000ACDCE9 /* UIImage+.swift */; };
 		F4DDEB0A2B0A52E600B7BCCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB092B0A52E600B7BCCE /* AppDelegate.swift */; };
 		F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB0B2B0A52E600B7BCCE /* SceneDelegate.swift */; };
 		F4DDEB112B0A52E600B7BCCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DDEB0F2B0A52E600B7BCCE /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B91C7A72B0B8A7A00ACDCE9 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
+		0B91C7A92B0B8B3000ACDCE9 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		ED56A2E92B0B7790005FE6AF /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		F4DDEB062B0A52E600B7BCCE /* NaverPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaverPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4DDEB092B0A52E600B7BCCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				ED56A2E92B0B7790005FE6AF /* UIFont+.swift */,
+				0B91C7A92B0B8B3000ACDCE9 /* UIImage+.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 		F4DDEB272B0A598700B7BCCE /* Literals */ = {
 			isa = PBXGroup;
 			children = (
+				0B91C7A72B0B8A7A00ACDCE9 /* ImageLiterals.swift */,
 			);
 			name = Literals;
 			sourceTree = "<group>";
@@ -228,6 +234,8 @@
 			files = (
 				F4DDEB0A2B0A52E600B7BCCE /* AppDelegate.swift in Sources */,
 				ED56A2EA2B0B7790005FE6AF /* UIFont+.swift in Sources */,
+				0B91C7AA2B0B8B3000ACDCE9 /* UIImage+.swift in Sources */,
+				0B91C7A82B0B8A7A00ACDCE9 /* ImageLiterals.swift in Sources */,
 				F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
