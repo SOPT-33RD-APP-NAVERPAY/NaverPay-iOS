@@ -22,6 +22,9 @@
 		F4DDEB4F2B0B923C00B7BCCE /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = F4DDEB4E2B0B923C00B7BCCE /* ReactiveMoya */; };
 		F4DDEB512B0B923C00B7BCCE /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = F4DDEB502B0B923C00B7BCCE /* RxMoya */; };
 		F4DDEB542B0BA19100B7BCCE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F4DDEB532B0BA19100B7BCCE /* SnapKit */; };
+		F4DDEB582B0BC7B000B7BCCE /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB572B0BC7B000B7BCCE /* UIView+.swift */; };
+		F4DDEB5A2B0BCBEB00B7BCCE /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB592B0BCBEB00B7BCCE /* UITextField+.swift */; };
+		F4DDEB5C2B0BCCA900B7BCCE /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB5B2B0BCCA900B7BCCE /* UIStackView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		F4DDEB152B0A52EB00B7BCCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4DDEB172B0A52EB00B7BCCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4DDEB292B0B720600B7BCCE /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIColor+.swift"; path = "Global/Extensions/UIColor+.swift"; sourceTree = "<group>"; };
+		F4DDEB572B0BC7B000B7BCCE /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		F4DDEB592B0BCBEB00B7BCCE /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		F4DDEB5B2B0BCCA900B7BCCE /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +167,9 @@
 				F4DDEB292B0B720600B7BCCE /* UIColor+.swift */,
 				ED56A2E92B0B7790005FE6AF /* UIFont+.swift */,
 				0B91C7A92B0B8B3000ACDCE9 /* UIImage+.swift */,
+				F4DDEB572B0BC7B000B7BCCE /* UIView+.swift */,
+				F4DDEB592B0BCBEB00B7BCCE /* UITextField+.swift */,
+				F4DDEB5B2B0BCCA900B7BCCE /* UIStackView+.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -422,10 +431,13 @@
 			files = (
 				F4DDEB0A2B0A52E600B7BCCE /* AppDelegate.swift in Sources */,
 				ED56A2EA2B0B7790005FE6AF /* UIFont+.swift in Sources */,
+				F4DDEB582B0BC7B000B7BCCE /* UIView+.swift in Sources */,
 				0B91C7AA2B0B8B3000ACDCE9 /* UIImage+.swift in Sources */,
 				0B91C7A82B0B8A7A00ACDCE9 /* ImageLiterals.swift in Sources */,
 				F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */,
 				F4DDEB2A2B0B720600B7BCCE /* UIColor+.swift in Sources */,
+				F4DDEB5C2B0BCCA900B7BCCE /* UIStackView+.swift in Sources */,
+				F4DDEB5A2B0BCBEB00B7BCCE /* UITextField+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
