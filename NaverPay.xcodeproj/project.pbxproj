@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		ED56A2EA2B0B7790005FE6AF /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A2E92B0B7790005FE6AF /* UIFont+.swift */; };
-		ED56A2EC2B0B7CBA005FE6AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A2EB2B0B7CBA005FE6AF /* ViewController.swift */; };
 		F4DDEB0A2B0A52E600B7BCCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB092B0A52E600B7BCCE /* AppDelegate.swift */; };
 		F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB0B2B0A52E600B7BCCE /* SceneDelegate.swift */; };
 		F4DDEB112B0A52E600B7BCCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DDEB0F2B0A52E600B7BCCE /* Main.storyboard */; };
@@ -18,7 +17,6 @@
 
 /* Begin PBXFileReference section */
 		ED56A2E92B0B7790005FE6AF /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
-		ED56A2EB2B0B7CBA005FE6AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F4DDEB062B0A52E600B7BCCE /* NaverPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaverPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4DDEB092B0A52E600B7BCCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4DDEB0B2B0A52E600B7BCCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +63,6 @@
 				F4DDEB0F2B0A52E600B7BCCE /* Main.storyboard */,
 				F4DDEB122B0A52EB00B7BCCE /* Assets.xcassets */,
 				F4DDEB172B0A52EB00B7BCCE /* Info.plist */,
-				ED56A2EB2B0B7CBA005FE6AF /* ViewController.swift */,
 			);
 			path = NaverPay;
 			sourceTree = "<group>";
@@ -231,7 +228,6 @@
 			files = (
 				F4DDEB0A2B0A52E600B7BCCE /* AppDelegate.swift in Sources */,
 				ED56A2EA2B0B7790005FE6AF /* UIFont+.swift in Sources */,
-				ED56A2EC2B0B7CBA005FE6AF /* ViewController.swift in Sources */,
 				F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
