@@ -17,6 +17,10 @@
 		F4DDEB432B0B8EB400B7BCCE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F4DDEB422B0B8EB400B7BCCE /* SnapKit */; };
 		F4DDEB452B0B8EB400B7BCCE /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = F4DDEB442B0B8EB400B7BCCE /* SnapKit-Dynamic */; };
 		F4DDEB482B0B8F2700B7BCCE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F4DDEB472B0B8F2700B7BCCE /* Kingfisher */; };
+		F4DDEB4B2B0B923C00B7BCCE /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = F4DDEB4A2B0B923C00B7BCCE /* CombineMoya */; };
+		F4DDEB4D2B0B923C00B7BCCE /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = F4DDEB4C2B0B923C00B7BCCE /* Moya */; };
+		F4DDEB4F2B0B923C00B7BCCE /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = F4DDEB4E2B0B923C00B7BCCE /* ReactiveMoya */; };
+		F4DDEB512B0B923C00B7BCCE /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = F4DDEB502B0B923C00B7BCCE /* RxMoya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +42,11 @@
 			files = (
 				F4DDEB482B0B8F2700B7BCCE /* Kingfisher in Frameworks */,
 				F4DDEB432B0B8EB400B7BCCE /* SnapKit in Frameworks */,
+				F4DDEB4B2B0B923C00B7BCCE /* CombineMoya in Frameworks */,
+				F4DDEB4D2B0B923C00B7BCCE /* Moya in Frameworks */,
+				F4DDEB512B0B923C00B7BCCE /* RxMoya in Frameworks */,
 				F4DDEB452B0B8EB400B7BCCE /* SnapKit-Dynamic in Frameworks */,
+				F4DDEB4F2B0B923C00B7BCCE /* ReactiveMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +352,10 @@
 				F4DDEB422B0B8EB400B7BCCE /* SnapKit */,
 				F4DDEB442B0B8EB400B7BCCE /* SnapKit-Dynamic */,
 				F4DDEB472B0B8F2700B7BCCE /* Kingfisher */,
+				F4DDEB4A2B0B923C00B7BCCE /* CombineMoya */,
+				F4DDEB4C2B0B923C00B7BCCE /* Moya */,
+				F4DDEB4E2B0B923C00B7BCCE /* ReactiveMoya */,
+				F4DDEB502B0B923C00B7BCCE /* RxMoya */,
 			);
 			productName = NaverPay;
 			productReference = F4DDEB062B0A52E600B7BCCE /* NaverPay.app */;
@@ -376,6 +388,7 @@
 			packageReferences = (
 				F4DDEB412B0B8EB400B7BCCE /* XCRemoteSwiftPackageReference "SnapKit" */,
 				F4DDEB462B0B8F2700B7BCCE /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				F4DDEB492B0B923C00B7BCCE /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = F4DDEB072B0A52E600B7BCCE /* Products */;
 			projectDirPath = "";
@@ -648,6 +661,14 @@
 				minimumVersion = 7.10.0;
 			};
 		};
+		F4DDEB492B0B923C00B7BCCE /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -665,6 +686,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F4DDEB462B0B8F2700B7BCCE /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		F4DDEB4A2B0B923C00B7BCCE /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4DDEB492B0B923C00B7BCCE /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		F4DDEB4C2B0B923C00B7BCCE /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4DDEB492B0B923C00B7BCCE /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		F4DDEB4E2B0B923C00B7BCCE /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4DDEB492B0B923C00B7BCCE /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		F4DDEB502B0B923C00B7BCCE /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4DDEB492B0B923C00B7BCCE /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
