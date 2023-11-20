@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED56A2EA2B0B7790005FE6AF /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A2E92B0B7790005FE6AF /* UIFont+.swift */; };
+		ED56A2EC2B0B7CBA005FE6AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A2EB2B0B7CBA005FE6AF /* ViewController.swift */; };
 		F4DDEB0A2B0A52E600B7BCCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB092B0A52E600B7BCCE /* AppDelegate.swift */; };
 		F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB0B2B0A52E600B7BCCE /* SceneDelegate.swift */; };
 		F4DDEB112B0A52E600B7BCCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DDEB0F2B0A52E600B7BCCE /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED56A2E92B0B7790005FE6AF /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		ED56A2EB2B0B7CBA005FE6AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F4DDEB062B0A52E600B7BCCE /* NaverPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaverPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4DDEB092B0A52E600B7BCCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4DDEB0B2B0A52E600B7BCCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +65,7 @@
 				F4DDEB0F2B0A52E600B7BCCE /* Main.storyboard */,
 				F4DDEB122B0A52EB00B7BCCE /* Assets.xcassets */,
 				F4DDEB172B0A52EB00B7BCCE /* Info.plist */,
+				ED56A2EB2B0B7CBA005FE6AF /* ViewController.swift */,
 			);
 			path = NaverPay;
 			sourceTree = "<group>";
@@ -69,7 +74,7 @@
 			isa = PBXGroup;
 			children = (
 			);
-			path = Scenes;
+			name = Scenes;
 			sourceTree = "<group>";
 		};
 		F4DDEB1E2B0A57AF00B7BCCE /* Application */ = {
@@ -90,7 +95,7 @@
 				F4DDEB262B0A597A00B7BCCE /* Extensions */,
 				F4DDEB252B0A597100B7BCCE /* UIComponents */,
 			);
-			path = Global;
+			name = Global;
 			sourceTree = "<group>";
 		};
 		F4DDEB202B0A584400B7BCCE /* Network */ = {
@@ -100,56 +105,57 @@
 				F4DDEB232B0A58C600B7BCCE /* Services */,
 				F4DDEB212B0A58AB00B7BCCE /* DTO */,
 			);
-			path = Network;
+			name = Network;
 			sourceTree = "<group>";
 		};
 		F4DDEB212B0A58AB00B7BCCE /* DTO */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = DTO;
+			name = DTO;
 			sourceTree = "<group>";
 		};
 		F4DDEB232B0A58C600B7BCCE /* Services */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Services;
+			name = Services;
 			sourceTree = "<group>";
 		};
 		F4DDEB242B0A58E900B7BCCE /* Base */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Base;
+			name = Base;
 			sourceTree = "<group>";
 		};
 		F4DDEB252B0A597100B7BCCE /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = UIComponents;
+			name = UIComponents;
 			sourceTree = "<group>";
 		};
 		F4DDEB262B0A597A00B7BCCE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				ED56A2E92B0B7790005FE6AF /* UIFont+.swift */,
 			);
-			path = Extensions;
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		F4DDEB272B0A598700B7BCCE /* Literals */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Literals;
+			name = Literals;
 			sourceTree = "<group>";
 		};
 		F4DDEB282B0A6D0100B7BCCE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Resources;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +230,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4DDEB0A2B0A52E600B7BCCE /* AppDelegate.swift in Sources */,
+				ED56A2EA2B0B7790005FE6AF /* UIFont+.swift in Sources */,
+				ED56A2EC2B0B7CBA005FE6AF /* ViewController.swift in Sources */,
 				F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,6 +392,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -412,6 +421,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
