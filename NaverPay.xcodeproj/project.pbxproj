@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED56A2EA2B0B7790005FE6AF /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A2E92B0B7790005FE6AF /* UIFont+.swift */; };
 		0B91C7A82B0B8A7A00ACDCE9 /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B91C7A72B0B8A7A00ACDCE9 /* ImageLiterals.swift */; };
 		0B91C7AA2B0B8B3000ACDCE9 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B91C7A92B0B8B3000ACDCE9 /* UIImage+.swift */; };
 		F4DDEB0A2B0A52E600B7BCCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB092B0A52E600B7BCCE /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		0B91C7A72B0B8A7A00ACDCE9 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
 		0B91C7A92B0B8B3000ACDCE9 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		ED56A2E92B0B7790005FE6AF /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		F4DDEB062B0A52E600B7BCCE /* NaverPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaverPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4DDEB092B0A52E600B7BCCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4DDEB0B2B0A52E600B7BCCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		F4DDEB262B0A597A00B7BCCE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				ED56A2E92B0B7790005FE6AF /* UIFont+.swift */,
 				0B91C7A92B0B8B3000ACDCE9 /* UIImage+.swift */,
 			);
 			name = Extensions;
@@ -230,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4DDEB0A2B0A52E600B7BCCE /* AppDelegate.swift in Sources */,
+				ED56A2EA2B0B7790005FE6AF /* UIFont+.swift in Sources */,
 				0B91C7AA2B0B8B3000ACDCE9 /* UIImage+.swift in Sources */,
 				0B91C7A82B0B8A7A00ACDCE9 /* ImageLiterals.swift in Sources */,
 				F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */,
@@ -392,6 +396,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -420,6 +425,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
