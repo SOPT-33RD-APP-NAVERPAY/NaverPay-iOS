@@ -16,7 +16,6 @@
 		F4DDEB132B0A52EB00B7BCCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4DDEB122B0A52EB00B7BCCE /* Assets.xcassets */; };
 		F4DDEB162B0A52EB00B7BCCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DDEB142B0A52EB00B7BCCE /* LaunchScreen.storyboard */; };
 		F4DDEB2A2B0B720600B7BCCE /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB292B0B720600B7BCCE /* UIColor+.swift */; };
-		F4DDEB2C2B0B8BC600B7BCCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB2B2B0B8BC600B7BCCE /* ViewController.swift */; };
 		F4DDEB482B0B8F2700B7BCCE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F4DDEB472B0B8F2700B7BCCE /* Kingfisher */; };
 		F4DDEB4B2B0B923C00B7BCCE /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = F4DDEB4A2B0B923C00B7BCCE /* CombineMoya */; };
 		F4DDEB4D2B0B923C00B7BCCE /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = F4DDEB4C2B0B923C00B7BCCE /* Moya */; };
@@ -37,7 +36,6 @@
 		F4DDEB152B0A52EB00B7BCCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4DDEB172B0A52EB00B7BCCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4DDEB292B0B720600B7BCCE /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIColor+.swift"; path = "Global/Extensions/UIColor+.swift"; sourceTree = "<group>"; };
-		F4DDEB2B2B0B8BC600B7BCCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +81,6 @@
 				F4DDEB0F2B0A52E600B7BCCE /* Main.storyboard */,
 				F4DDEB122B0A52EB00B7BCCE /* Assets.xcassets */,
 				F4DDEB172B0A52EB00B7BCCE /* Info.plist */,
-				F4DDEB2B2B0B8BC600B7BCCE /* ViewController.swift */,
 			);
 			path = NaverPay;
 			sourceTree = "<group>";
@@ -428,7 +425,6 @@
 				0B91C7AA2B0B8B3000ACDCE9 /* UIImage+.swift in Sources */,
 				0B91C7A82B0B8A7A00ACDCE9 /* ImageLiterals.swift in Sources */,
 				F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */,
-				F4DDEB2C2B0B8BC600B7BCCE /* ViewController.swift in Sources */,
 				F4DDEB2A2B0B720600B7BCCE /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
