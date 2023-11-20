@@ -69,7 +69,7 @@
 			isa = PBXGroup;
 			children = (
 			);
-			path = Scenes;
+			name = Scenes;
 			sourceTree = "<group>";
 		};
 		F4DDEB1E2B0A57AF00B7BCCE /* Application */ = {
@@ -90,7 +90,7 @@
 				F4DDEB262B0A597A00B7BCCE /* Extensions */,
 				F4DDEB252B0A597100B7BCCE /* UIComponents */,
 			);
-			path = Global;
+			name = Global;
 			sourceTree = "<group>";
 		};
 		F4DDEB202B0A584400B7BCCE /* Network */ = {
@@ -100,28 +100,28 @@
 				F4DDEB232B0A58C600B7BCCE /* Services */,
 				F4DDEB212B0A58AB00B7BCCE /* DTO */,
 			);
-			path = Network;
+			name = Network;
 			sourceTree = "<group>";
 		};
 		F4DDEB212B0A58AB00B7BCCE /* DTO */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = DTO;
+			name = DTO;
 			sourceTree = "<group>";
 		};
 		F4DDEB232B0A58C600B7BCCE /* Services */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Services;
+			name = Services;
 			sourceTree = "<group>";
 		};
 		F4DDEB242B0A58E900B7BCCE /* Base */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Base;
+			name = Base;
 			sourceTree = "<group>";
 		};
 		F4DDEB252B0A597100B7BCCE /* UIComponents */ = {
