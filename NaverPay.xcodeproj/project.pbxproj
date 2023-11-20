@@ -233,112 +233,112 @@
 			isa = PBXGroup;
 			children = (
 			);
-			path = ViewControllers;
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		F4DDEB322B0B8C0D00B7BCCE /* Views */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Views;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		F4DDEB332B0B8C6C00B7BCCE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Cells;
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		F4DDEB342B0B8C8000B7BCCE /* Models */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Models;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		F4DDEB352B0B8C8700B7BCCE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = ViewControllers;
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		F4DDEB362B0B8C9200B7BCCE /* Views */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Views;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		F4DDEB372B0B8C9700B7BCCE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Cells;
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		F4DDEB382B0B8C9F00B7BCCE /* Models */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Models;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		F4DDEB392B0B8CA500B7BCCE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = ViewControllers;
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		F4DDEB3A2B0B8CAC00B7BCCE /* Views */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Views;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		F4DDEB3B2B0B8CB400B7BCCE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Cells;
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		F4DDEB3C2B0B8CB800B7BCCE /* Models */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Models;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		F4DDEB3D2B0B8CBF00B7BCCE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = ViewControllers;
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		F4DDEB3E2B0B8CC700B7BCCE /* Views */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Views;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		F4DDEB3F2B0B8CCC00B7BCCE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Cells;
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		F4DDEB402B0B8CD100B7BCCE /* Models */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Models;
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
