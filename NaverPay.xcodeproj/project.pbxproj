@@ -13,6 +13,7 @@
 		F4DDEB132B0A52EB00B7BCCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4DDEB122B0A52EB00B7BCCE /* Assets.xcassets */; };
 		F4DDEB162B0A52EB00B7BCCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DDEB142B0A52EB00B7BCCE /* LaunchScreen.storyboard */; };
 		F4DDEB2A2B0B720600B7BCCE /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB292B0B720600B7BCCE /* UIColor+.swift */; };
+		F4DDEB2C2B0B8BC600B7BCCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB2B2B0B8BC600B7BCCE /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F4DDEB152B0A52EB00B7BCCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4DDEB172B0A52EB00B7BCCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4DDEB292B0B720600B7BCCE /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		F4DDEB2B2B0B8BC600B7BCCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				F4DDEB0F2B0A52E600B7BCCE /* Main.storyboard */,
 				F4DDEB122B0A52EB00B7BCCE /* Assets.xcassets */,
 				F4DDEB172B0A52EB00B7BCCE /* Info.plist */,
+				F4DDEB2B2B0B8BC600B7BCCE /* ViewController.swift */,
 			);
 			path = NaverPay;
 			sourceTree = "<group>";
@@ -70,6 +73,10 @@
 		F4DDEB1D2B0A571300B7BCCE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F4DDEB302B0B8BFF00B7BCCE /* Point */,
+				F4DDEB2F2B0B8BF800B7BCCE /* Benefit */,
+				F4DDEB2E2B0B8BEB00B7BCCE /* Place */,
+				F4DDEB2D2B0B8BE400B7BCCE /* Home */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -155,6 +162,162 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		F4DDEB2D2B0B8BE400B7BCCE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F4DDEB342B0B8C8000B7BCCE /* Models */,
+				F4DDEB332B0B8C6C00B7BCCE /* Cells */,
+				F4DDEB322B0B8C0D00B7BCCE /* Views */,
+				F4DDEB312B0B8C0600B7BCCE /* ViewControllers */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F4DDEB2E2B0B8BEB00B7BCCE /* Place */ = {
+			isa = PBXGroup;
+			children = (
+				F4DDEB382B0B8C9F00B7BCCE /* Models */,
+				F4DDEB372B0B8C9700B7BCCE /* Cells */,
+				F4DDEB362B0B8C9200B7BCCE /* Views */,
+				F4DDEB352B0B8C8700B7BCCE /* ViewControllers */,
+			);
+			path = Place;
+			sourceTree = "<group>";
+		};
+		F4DDEB2F2B0B8BF800B7BCCE /* Benefit */ = {
+			isa = PBXGroup;
+			children = (
+				F4DDEB3C2B0B8CB800B7BCCE /* Models */,
+				F4DDEB3B2B0B8CB400B7BCCE /* Cells */,
+				F4DDEB3A2B0B8CAC00B7BCCE /* Views */,
+				F4DDEB392B0B8CA500B7BCCE /* ViewControllers */,
+			);
+			path = Benefit;
+			sourceTree = "<group>";
+		};
+		F4DDEB302B0B8BFF00B7BCCE /* Point */ = {
+			isa = PBXGroup;
+			children = (
+				F4DDEB402B0B8CD100B7BCCE /* Models */,
+				F4DDEB3F2B0B8CCC00B7BCCE /* Cells */,
+				F4DDEB3E2B0B8CC700B7BCCE /* Views */,
+				F4DDEB3D2B0B8CBF00B7BCCE /* ViewControllers */,
+			);
+			path = Point;
+			sourceTree = "<group>";
+		};
+		F4DDEB312B0B8C0600B7BCCE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F4DDEB322B0B8C0D00B7BCCE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F4DDEB332B0B8C6C00B7BCCE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F4DDEB342B0B8C8000B7BCCE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F4DDEB352B0B8C8700B7BCCE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F4DDEB362B0B8C9200B7BCCE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F4DDEB372B0B8C9700B7BCCE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F4DDEB382B0B8C9F00B7BCCE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F4DDEB392B0B8CA500B7BCCE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F4DDEB3A2B0B8CAC00B7BCCE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F4DDEB3B2B0B8CB400B7BCCE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F4DDEB3C2B0B8CB800B7BCCE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F4DDEB3D2B0B8CBF00B7BCCE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F4DDEB3E2B0B8CC700B7BCCE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F4DDEB3F2B0B8CCC00B7BCCE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F4DDEB402B0B8CD100B7BCCE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -228,6 +391,7 @@
 			files = (
 				F4DDEB0A2B0A52E600B7BCCE /* AppDelegate.swift in Sources */,
 				F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */,
+				F4DDEB2C2B0B8BC600B7BCCE /* ViewController.swift in Sources */,
 				F4DDEB2A2B0B720600B7BCCE /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
