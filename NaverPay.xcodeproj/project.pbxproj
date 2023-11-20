@@ -15,6 +15,15 @@
 		F4DDEB112B0A52E600B7BCCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DDEB0F2B0A52E600B7BCCE /* Main.storyboard */; };
 		F4DDEB132B0A52EB00B7BCCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4DDEB122B0A52EB00B7BCCE /* Assets.xcassets */; };
 		F4DDEB162B0A52EB00B7BCCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DDEB142B0A52EB00B7BCCE /* LaunchScreen.storyboard */; };
+		F4DDEB2A2B0B720600B7BCCE /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB292B0B720600B7BCCE /* UIColor+.swift */; };
+		F4DDEB2C2B0B8BC600B7BCCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB2B2B0B8BC600B7BCCE /* ViewController.swift */; };
+		F4DDEB432B0B8EB400B7BCCE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F4DDEB422B0B8EB400B7BCCE /* SnapKit */; };
+		F4DDEB452B0B8EB400B7BCCE /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = F4DDEB442B0B8EB400B7BCCE /* SnapKit-Dynamic */; };
+		F4DDEB482B0B8F2700B7BCCE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F4DDEB472B0B8F2700B7BCCE /* Kingfisher */; };
+		F4DDEB4B2B0B923C00B7BCCE /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = F4DDEB4A2B0B923C00B7BCCE /* CombineMoya */; };
+		F4DDEB4D2B0B923C00B7BCCE /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = F4DDEB4C2B0B923C00B7BCCE /* Moya */; };
+		F4DDEB4F2B0B923C00B7BCCE /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = F4DDEB4E2B0B923C00B7BCCE /* ReactiveMoya */; };
+		F4DDEB512B0B923C00B7BCCE /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = F4DDEB502B0B923C00B7BCCE /* RxMoya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +37,8 @@
 		F4DDEB122B0A52EB00B7BCCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4DDEB152B0A52EB00B7BCCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4DDEB172B0A52EB00B7BCCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4DDEB292B0B720600B7BCCE /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		F4DDEB2B2B0B8BC600B7BCCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +46,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4DDEB482B0B8F2700B7BCCE /* Kingfisher in Frameworks */,
+				F4DDEB432B0B8EB400B7BCCE /* SnapKit in Frameworks */,
+				F4DDEB4B2B0B923C00B7BCCE /* CombineMoya in Frameworks */,
+				F4DDEB4D2B0B923C00B7BCCE /* Moya in Frameworks */,
+				F4DDEB512B0B923C00B7BCCE /* RxMoya in Frameworks */,
+				F4DDEB452B0B8EB400B7BCCE /* SnapKit-Dynamic in Frameworks */,
+				F4DDEB4F2B0B923C00B7BCCE /* ReactiveMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +85,7 @@
 				F4DDEB0F2B0A52E600B7BCCE /* Main.storyboard */,
 				F4DDEB122B0A52EB00B7BCCE /* Assets.xcassets */,
 				F4DDEB172B0A52EB00B7BCCE /* Info.plist */,
+				F4DDEB2B2B0B8BC600B7BCCE /* ViewController.swift */,
 			);
 			path = NaverPay;
 			sourceTree = "<group>";
@@ -74,6 +93,10 @@
 		F4DDEB1D2B0A571300B7BCCE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F4DDEB302B0B8BFF00B7BCCE /* Point */,
+				F4DDEB2F2B0B8BF800B7BCCE /* Benefit */,
+				F4DDEB2E2B0B8BEB00B7BCCE /* Place */,
+				F4DDEB2D2B0B8BE400B7BCCE /* Home */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -140,6 +163,7 @@
 		F4DDEB262B0A597A00B7BCCE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F4DDEB292B0B720600B7BCCE /* UIColor+.swift */,
 				ED56A2E92B0B7790005FE6AF /* UIFont+.swift */,
 				0B91C7A92B0B8B3000ACDCE9 /* UIImage+.swift */,
 			);
@@ -161,6 +185,162 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		F4DDEB2D2B0B8BE400B7BCCE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F4DDEB342B0B8C8000B7BCCE /* Models */,
+				F4DDEB332B0B8C6C00B7BCCE /* Cells */,
+				F4DDEB322B0B8C0D00B7BCCE /* Views */,
+				F4DDEB312B0B8C0600B7BCCE /* ViewControllers */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F4DDEB2E2B0B8BEB00B7BCCE /* Place */ = {
+			isa = PBXGroup;
+			children = (
+				F4DDEB382B0B8C9F00B7BCCE /* Models */,
+				F4DDEB372B0B8C9700B7BCCE /* Cells */,
+				F4DDEB362B0B8C9200B7BCCE /* Views */,
+				F4DDEB352B0B8C8700B7BCCE /* ViewControllers */,
+			);
+			path = Place;
+			sourceTree = "<group>";
+		};
+		F4DDEB2F2B0B8BF800B7BCCE /* Benefit */ = {
+			isa = PBXGroup;
+			children = (
+				F4DDEB3C2B0B8CB800B7BCCE /* Models */,
+				F4DDEB3B2B0B8CB400B7BCCE /* Cells */,
+				F4DDEB3A2B0B8CAC00B7BCCE /* Views */,
+				F4DDEB392B0B8CA500B7BCCE /* ViewControllers */,
+			);
+			path = Benefit;
+			sourceTree = "<group>";
+		};
+		F4DDEB302B0B8BFF00B7BCCE /* Point */ = {
+			isa = PBXGroup;
+			children = (
+				F4DDEB402B0B8CD100B7BCCE /* Models */,
+				F4DDEB3F2B0B8CCC00B7BCCE /* Cells */,
+				F4DDEB3E2B0B8CC700B7BCCE /* Views */,
+				F4DDEB3D2B0B8CBF00B7BCCE /* ViewControllers */,
+			);
+			path = Point;
+			sourceTree = "<group>";
+		};
+		F4DDEB312B0B8C0600B7BCCE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F4DDEB322B0B8C0D00B7BCCE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F4DDEB332B0B8C6C00B7BCCE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F4DDEB342B0B8C8000B7BCCE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F4DDEB352B0B8C8700B7BCCE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F4DDEB362B0B8C9200B7BCCE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F4DDEB372B0B8C9700B7BCCE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F4DDEB382B0B8C9F00B7BCCE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F4DDEB392B0B8CA500B7BCCE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F4DDEB3A2B0B8CAC00B7BCCE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F4DDEB3B2B0B8CB400B7BCCE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F4DDEB3C2B0B8CB800B7BCCE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F4DDEB3D2B0B8CBF00B7BCCE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F4DDEB3E2B0B8CC700B7BCCE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F4DDEB3F2B0B8CCC00B7BCCE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F4DDEB402B0B8CD100B7BCCE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,6 +357,15 @@
 			dependencies = (
 			);
 			name = NaverPay;
+			packageProductDependencies = (
+				F4DDEB422B0B8EB400B7BCCE /* SnapKit */,
+				F4DDEB442B0B8EB400B7BCCE /* SnapKit-Dynamic */,
+				F4DDEB472B0B8F2700B7BCCE /* Kingfisher */,
+				F4DDEB4A2B0B923C00B7BCCE /* CombineMoya */,
+				F4DDEB4C2B0B923C00B7BCCE /* Moya */,
+				F4DDEB4E2B0B923C00B7BCCE /* ReactiveMoya */,
+				F4DDEB502B0B923C00B7BCCE /* RxMoya */,
+			);
 			productName = NaverPay;
 			productReference = F4DDEB062B0A52E600B7BCCE /* NaverPay.app */;
 			productType = "com.apple.product-type.application";
@@ -205,6 +394,11 @@
 				Base,
 			);
 			mainGroup = F4DDEAFD2B0A52E600B7BCCE;
+			packageReferences = (
+				F4DDEB412B0B8EB400B7BCCE /* XCRemoteSwiftPackageReference "SnapKit" */,
+				F4DDEB462B0B8F2700B7BCCE /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				F4DDEB492B0B923C00B7BCCE /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = F4DDEB072B0A52E600B7BCCE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -237,6 +431,8 @@
 				0B91C7AA2B0B8B3000ACDCE9 /* UIImage+.swift in Sources */,
 				0B91C7A82B0B8A7A00ACDCE9 /* ImageLiterals.swift in Sources */,
 				F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */,
+				F4DDEB2C2B0B8BC600B7BCCE /* ViewController.swift in Sources */,
+				F4DDEB2A2B0B720600B7BCCE /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +657,71 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F4DDEB412B0B8EB400B7BCCE /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+		F4DDEB462B0B8F2700B7BCCE /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.0;
+			};
+		};
+		F4DDEB492B0B923C00B7BCCE /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F4DDEB422B0B8EB400B7BCCE /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4DDEB412B0B8EB400B7BCCE /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		F4DDEB442B0B8EB400B7BCCE /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4DDEB412B0B8EB400B7BCCE /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+		F4DDEB472B0B8F2700B7BCCE /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4DDEB462B0B8F2700B7BCCE /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		F4DDEB4A2B0B923C00B7BCCE /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4DDEB492B0B923C00B7BCCE /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		F4DDEB4C2B0B923C00B7BCCE /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4DDEB492B0B923C00B7BCCE /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		F4DDEB4E2B0B923C00B7BCCE /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4DDEB492B0B923C00B7BCCE /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		F4DDEB502B0B923C00B7BCCE /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4DDEB492B0B923C00B7BCCE /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F4DDEAFE2B0A52E600B7BCCE /* Project object */;
 }
