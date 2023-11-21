@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
     
     private let HomeCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: setCollectionViewLayout())
@@ -79,7 +79,7 @@ class HomeViewController: UIViewController {
                     elementKind: UICollectionView.elementKindSectionHeader,
                     alignment: .top
                 )
-            
+                
                 header.pinToVisibleBounds = false
                 section.boundarySupplementaryItems = [header]
                 
@@ -217,7 +217,7 @@ extension HomeViewController: UICollectionViewDataSource {
             return UICollectionReusableView()
         }
     }
-
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -247,6 +247,4 @@ extension HomeViewController: UICollectionViewDataSource {
         }
         
     }
-    
-    
 }
