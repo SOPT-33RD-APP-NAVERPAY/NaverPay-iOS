@@ -78,7 +78,6 @@ final class BenefitViewController: UIViewController {
                     elementKind: UICollectionView.elementKindSectionHeader,
                     alignment: .top
                 )
-                header.pinToVisibleBounds = true
                 section.boundarySupplementaryItems = [header]
                 
                 //백그라운드뷰 지정
