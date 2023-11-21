@@ -18,8 +18,13 @@ enum ImageLiterals {
         static var percentageCircle: UIImage { .load(named: "percentage-circle") }
         static var typeAd1: UIImage { .load(named: "type=ad1") }
         static var typeAd2: UIImage { .load(named: "type=ad2") }
-        static var typeAd3: UIImage { .load(named: "type=ad2")
-        }
+        static var typeAd3: UIImage { .load(named: "type=ad2") }
+        static var bnfFirst: UIImage { .load(named: "bnf_first") }
+        static var bnfSecond: UIImage { .load(named: "bnf_second") }
+        static var bnfThird: UIImage { .load(named: "bnf_third") }
+        static var bnfFourth: UIImage { .load(named: "bnf_fourth") }
+        static var pointArrowFirst: UIImage { .load(named: "bnf_pointarrow1")}
+        
     }
     enum Global {
         static var mapIcon: UIImage { .load(named: "bxs_map") }
