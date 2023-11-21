@@ -24,6 +24,7 @@
 		F4DDEB5E2B0CB0A000B7BCCE /* BenefitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB5D2B0CB0A000B7BCCE /* BenefitViewController.swift */; };
 		F4DDEB632B0CDC1600B7BCCE /* BenefitCollectionViewPointCheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB622B0CDC1600B7BCCE /* BenefitCollectionViewPointCheckCell.swift */; };
 		F4DDEB672B0CE09800B7BCCE /* BenefitCollectionPointCheckBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB662B0CE09800B7BCCE /* BenefitCollectionPointCheckBackgroundView.swift */; };
+		F4DDEB692B0CEB7B00B7BCCE /* BenefitCollectionPointCheckHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB682B0CEB7B00B7BCCE /* BenefitCollectionPointCheckHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		F4DDEB5D2B0CB0A000B7BCCE /* BenefitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitViewController.swift; path = Scenes/Benefit/ViewControllers/BenefitViewController.swift; sourceTree = "<group>"; };
 		F4DDEB622B0CDC1600B7BCCE /* BenefitCollectionViewPointCheckCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionViewPointCheckCell.swift; path = Scenes/Benefit/Cells/BenefitCollectionViewPointCheckCell.swift; sourceTree = "<group>"; };
 		F4DDEB662B0CE09800B7BCCE /* BenefitCollectionPointCheckBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionPointCheckBackgroundView.swift; path = Scenes/Benefit/Views/BenefitCollectionPointCheckBackgroundView.swift; sourceTree = "<group>"; };
+		F4DDEB682B0CEB7B00B7BCCE /* BenefitCollectionPointCheckHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionPointCheckHeaderView.swift; path = Scenes/Benefit/Views/BenefitCollectionPointCheckHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				F4DDEB662B0CE09800B7BCCE /* BenefitCollectionPointCheckBackgroundView.swift */,
+				F4DDEB682B0CEB7B00B7BCCE /* BenefitCollectionPointCheckHeaderView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				F4DDEB5E2B0CB0A000B7BCCE /* BenefitViewController.swift in Sources */,
 				F4DDEB672B0CE09800B7BCCE /* BenefitCollectionPointCheckBackgroundView.swift in Sources */,
 				0B91C7A82B0B8A7A00ACDCE9 /* ImageLiterals.swift in Sources */,
+				F4DDEB692B0CEB7B00B7BCCE /* BenefitCollectionPointCheckHeaderView.swift in Sources */,
 				F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */,
 				F4DDEB2A2B0B720600B7BCCE /* UIColor+.swift in Sources */,
 				F4DDEB5C2B0BCCA900B7BCCE /* UIStackView+.swift in Sources */,

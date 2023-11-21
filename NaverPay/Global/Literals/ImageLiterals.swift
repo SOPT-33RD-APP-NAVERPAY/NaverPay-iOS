@@ -23,7 +23,7 @@ enum ImageLiterals {
         static var bnfSecond: UIImage { .load(named: "bnf_second") }
         static var bnfThird: UIImage { .load(named: "bnf_third") }
         static var bnfFourth: UIImage { .load(named: "bnf_fourth") }
-        
+        static var pointArrowFirst: UIImage { .load(named: "bnf_pointarrow1")}
         
     }
     enum Global {

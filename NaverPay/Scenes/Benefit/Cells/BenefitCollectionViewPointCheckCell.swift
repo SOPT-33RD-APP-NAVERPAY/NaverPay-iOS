@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 final class BenefitCollectionViewPointCheckCell: UICollectionViewCell {
     
@@ -19,10 +20,12 @@ final class BenefitCollectionViewPointCheckCell: UICollectionViewCell {
         super.init(frame: frame)
         
         setBackgroundView()
+        
     }
     
     private func setBackgroundView() {
         self.backgroundView = backgroundImageView
+      
 
     }
     

@@ -28,23 +28,33 @@ final class BenefitViewController: UIViewController {
         
         setLayout()
         setCollectionView()
+        setStyle()
+        
     }
 
     private func setLayout() {
-        view.addSubviews(benefitCollectionView)
+        self.view.addSubviews(benefitCollectionView)
         
         benefitCollectionView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
-            $0.trailing.leading.bottom.equalToSuperview()
+            $0.leading.equalToSuperview().inset(16)
+            $0.trailing.equalToSuperview().inset(16)
+            $0.bottom.equalToSuperview()
         }
         
     }
+    
+    private func setStyle() {
+        self.view.backgroundColor = .bg_gray
+    }
+
     
     private func setCollectionView() {
         benefitCollectionView.dataSource = self
         benefitCollectionView.delegate = self
         
         benefitCollectionView.register(BenefitCollectionViewPointCheckCell.self, forCellWithReuseIdentifier: BenefitCollectionViewPointCheckCell.identifier)
+        benefitCollectionView.register(BenefitCollectionPointCheckHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: BenefitCollectionPointCheckHeaderView.identifier)
         
     }
     
@@ -55,14 +65,24 @@ final class BenefitViewController: UIViewController {
             switch sectionNumber {
             case 0:
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(105), heightDimension: .estimated(108)))
-                item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10)
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1.5), heightDimension: .estimated(2)), subitems: [item])
+                item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: -10)
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1.5), heightDimension: .absolute(123)), subitems: [item])
                 let section = NSCollectionLayoutSection(group: group)
+
                 section.orthogonalScrollingBehavior = .continuous
+                
+                //섹션헤더 설정
+                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(53))
+                let header = NSCollectionLayoutBoundarySupplementaryItem(
+                    layoutSize: headerSize,
+                    elementKind: UICollectionView.elementKindSectionHeader,
+                    alignment: .top
+                )
+                header.pinToVisibleBounds = true
+                section.boundarySupplementaryItems = [header]
                 
                 //백그라운드뷰 지정
                 let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(elementKind: BenefitCollectionPointCheckBackgroundView.identifier)
-                sectionBackgroundDecoration.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0)
                 section.decorationItems = [sectionBackgroundDecoration]
                 
                 return section
@@ -104,5 +124,21 @@ extension BenefitViewController: UICollectionViewDataSource {
         return 1
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            switch indexPath.section {
+            case 0:
+                guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: BenefitCollectionPointCheckHeaderView.identifier, for: indexPath) as? BenefitCollectionPointCheckHeaderView else { return UICollectionReusableView()}
+                header.layer.cornerRadius = 14
+                header.backgroundColor = .bg_white
+                return header
+            
+            default:
+                return UICollectionReusableView()
+            }
+        default:
+            return UICollectionReusableView()
+        }
+    }
 }
