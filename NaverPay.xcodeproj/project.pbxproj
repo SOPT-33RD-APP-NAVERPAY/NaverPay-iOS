@@ -57,8 +57,8 @@
 		0B6677B82B0CD61C00821105 /* HomePointSectionInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePointSectionInfoView.swift; sourceTree = "<group>"; };
 		0B6677BA2B0CD63200821105 /* HomePointSectionPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePointSectionPaymentView.swift; sourceTree = "<group>"; };
 		0B91C7A72B0B8A7A00ACDCE9 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
-		0B91C7A92B0B8B3000ACDCE9 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
-		ED56A2E92B0B7790005FE6AF /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		0B91C7A92B0B8B3000ACDCE9 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIImage+.swift"; path = "Global/Extensions/UIImage+.swift"; sourceTree = "<group>"; };
+		ED56A2E92B0B7790005FE6AF /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIFont+.swift"; path = "Global/Extensions/UIFont+.swift"; sourceTree = "<group>"; };
 		F4DDEB062B0A52E600B7BCCE /* NaverPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaverPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4DDEB092B0A52E600B7BCCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4DDEB0B2B0A52E600B7BCCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,9 +67,9 @@
 		F4DDEB152B0A52EB00B7BCCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4DDEB172B0A52EB00B7BCCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4DDEB292B0B720600B7BCCE /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIColor+.swift"; path = "Global/Extensions/UIColor+.swift"; sourceTree = "<group>"; };
-		F4DDEB572B0BC7B000B7BCCE /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
-		F4DDEB592B0BCBEB00B7BCCE /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
-		F4DDEB5B2B0BCCA900B7BCCE /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		F4DDEB572B0BC7B000B7BCCE /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+.swift"; path = "Global/Extensions/UIView+.swift"; sourceTree = "<group>"; };
+		F4DDEB592B0BCBEB00B7BCCE /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITextField+.swift"; path = "Global/Extensions/UITextField+.swift"; sourceTree = "<group>"; };
+		F4DDEB5B2B0BCCA900B7BCCE /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIStackView+.swift"; path = "Global/Extensions/UIStackView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

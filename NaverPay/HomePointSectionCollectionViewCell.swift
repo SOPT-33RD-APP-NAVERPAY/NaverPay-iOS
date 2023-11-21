@@ -8,5 +8,21 @@
 import UIKit
 
 class HomePointSectionCollectionViewCell: UICollectionViewCell {
+    static let identifier: String = "HomePointSectionCollectionViewCell"
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        // 랜덤으로 배경색 지정
+        self.backgroundColor = UIColor(
+            red: drand48(),
+            green: drand48(),
+            blue: drand48(),
+            alpha: drand48()
+        )
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
 }
