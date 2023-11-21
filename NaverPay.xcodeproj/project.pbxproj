@@ -21,6 +21,7 @@
 		F4DDEB582B0BC7B000B7BCCE /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB572B0BC7B000B7BCCE /* UIView+.swift */; };
 		F4DDEB5A2B0BCBEB00B7BCCE /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB592B0BCBEB00B7BCCE /* UITextField+.swift */; };
 		F4DDEB5C2B0BCCA900B7BCCE /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB5B2B0BCCA900B7BCCE /* UIStackView+.swift */; };
+		F4DDEB5E2B0CB0A000B7BCCE /* BenefitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB5D2B0CB0A000B7BCCE /* BenefitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		F4DDEB572B0BC7B000B7BCCE /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		F4DDEB592B0BCBEB00B7BCCE /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		F4DDEB5B2B0BCCA900B7BCCE /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		F4DDEB5D2B0CB0A000B7BCCE /* BenefitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +286,7 @@
 		F4DDEB392B0B8CA500B7BCCE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F4DDEB5D2B0CB0A000B7BCCE /* BenefitViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				ED56A2EA2B0B7790005FE6AF /* UIFont+.swift in Sources */,
 				F4DDEB582B0BC7B000B7BCCE /* UIView+.swift in Sources */,
 				0B91C7AA2B0B8B3000ACDCE9 /* UIImage+.swift in Sources */,
+				F4DDEB5E2B0CB0A000B7BCCE /* BenefitViewController.swift in Sources */,
 				0B91C7A82B0B8A7A00ACDCE9 /* ImageLiterals.swift in Sources */,
 				F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */,
 				F4DDEB2A2B0B720600B7BCCE /* UIColor+.swift in Sources */,
