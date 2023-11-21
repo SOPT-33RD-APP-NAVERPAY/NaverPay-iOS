@@ -17,10 +17,6 @@
 		F4DDEB162B0A52EB00B7BCCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DDEB142B0A52EB00B7BCCE /* LaunchScreen.storyboard */; };
 		F4DDEB2A2B0B720600B7BCCE /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB292B0B720600B7BCCE /* UIColor+.swift */; };
 		F4DDEB482B0B8F2700B7BCCE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F4DDEB472B0B8F2700B7BCCE /* Kingfisher */; };
-		F4DDEB4B2B0B923C00B7BCCE /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = F4DDEB4A2B0B923C00B7BCCE /* CombineMoya */; };
-		F4DDEB4D2B0B923C00B7BCCE /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = F4DDEB4C2B0B923C00B7BCCE /* Moya */; };
-		F4DDEB4F2B0B923C00B7BCCE /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = F4DDEB4E2B0B923C00B7BCCE /* ReactiveMoya */; };
-		F4DDEB512B0B923C00B7BCCE /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = F4DDEB502B0B923C00B7BCCE /* RxMoya */; };
 		F4DDEB542B0BA19100B7BCCE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F4DDEB532B0BA19100B7BCCE /* SnapKit */; };
 		F4DDEB582B0BC7B000B7BCCE /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB572B0BC7B000B7BCCE /* UIView+.swift */; };
 		F4DDEB5A2B0BCBEB00B7BCCE /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB592B0BCBEB00B7BCCE /* UITextField+.swift */; };
@@ -50,11 +46,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4DDEB482B0B8F2700B7BCCE /* Kingfisher in Frameworks */,
-				F4DDEB4B2B0B923C00B7BCCE /* CombineMoya in Frameworks */,
-				F4DDEB4D2B0B923C00B7BCCE /* Moya in Frameworks */,
 				F4DDEB542B0BA19100B7BCCE /* SnapKit in Frameworks */,
-				F4DDEB512B0B923C00B7BCCE /* RxMoya in Frameworks */,
-				F4DDEB4F2B0B923C00B7BCCE /* ReactiveMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,10 +355,6 @@
 			name = NaverPay;
 			packageProductDependencies = (
 				F4DDEB472B0B8F2700B7BCCE /* Kingfisher */,
-				F4DDEB4A2B0B923C00B7BCCE /* CombineMoya */,
-				F4DDEB4C2B0B923C00B7BCCE /* Moya */,
-				F4DDEB4E2B0B923C00B7BCCE /* ReactiveMoya */,
-				F4DDEB502B0B923C00B7BCCE /* RxMoya */,
 				F4DDEB532B0BA19100B7BCCE /* SnapKit */,
 			);
 			productName = NaverPay;
@@ -399,7 +387,6 @@
 			mainGroup = F4DDEAFD2B0A52E600B7BCCE;
 			packageReferences = (
 				F4DDEB462B0B8F2700B7BCCE /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				F4DDEB492B0B923C00B7BCCE /* XCRemoteSwiftPackageReference "Moya" */,
 				F4DDEB522B0BA19100B7BCCE /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = F4DDEB072B0A52E600B7BCCE /* Products */;
@@ -672,14 +659,6 @@
 				minimumVersion = 7.10.0;
 			};
 		};
-		F4DDEB492B0B923C00B7BCCE /* XCRemoteSwiftPackageReference "Moya" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 15.0.3;
-			};
-		};
 		F4DDEB522B0BA19100B7BCCE /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -695,26 +674,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F4DDEB462B0B8F2700B7BCCE /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
-		};
-		F4DDEB4A2B0B923C00B7BCCE /* CombineMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F4DDEB492B0B923C00B7BCCE /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = CombineMoya;
-		};
-		F4DDEB4C2B0B923C00B7BCCE /* Moya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F4DDEB492B0B923C00B7BCCE /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
-		};
-		F4DDEB4E2B0B923C00B7BCCE /* ReactiveMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F4DDEB492B0B923C00B7BCCE /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = ReactiveMoya;
-		};
-		F4DDEB502B0B923C00B7BCCE /* RxMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F4DDEB492B0B923C00B7BCCE /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = RxMoya;
 		};
 		F4DDEB532B0BA19100B7BCCE /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
