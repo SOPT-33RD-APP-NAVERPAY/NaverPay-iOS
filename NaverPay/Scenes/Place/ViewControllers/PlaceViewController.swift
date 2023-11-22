@@ -135,7 +135,6 @@ extension PlaceViewController: UICollectionViewDataSource {
         case 0:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NearPlaceCollectionViewCell.identifier, for: indexPath) as? NearPlaceCollectionViewCell
             else { return UICollectionViewCell()}
-            cell.backgroundColor = .main_green
             return cell
             
         case 1:
@@ -143,7 +142,6 @@ extension PlaceViewController: UICollectionViewDataSource {
             else {
                 return UICollectionViewCell()
             }
-            cell.backgroundColor = .brown
             return cell
             
         case 2:
@@ -151,7 +149,6 @@ extension PlaceViewController: UICollectionViewDataSource {
             else{
                 return UICollectionViewCell()
             }
-            cell.backgroundColor = .adcard_blue
             return cell
             
         default:

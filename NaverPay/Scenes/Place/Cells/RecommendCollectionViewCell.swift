@@ -10,6 +10,13 @@ import UIKit
 class RecommendCollectionViewCell: UICollectionViewCell {
     static let identifier:String = "RecommendCollectionViewCell"
     
+    private let recommendCardImageView:UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = ImageLiterals.PlaceView.placeCardMusinsa
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setLayout()
@@ -20,20 +27,19 @@ class RecommendCollectionViewCell: UICollectionViewCell {
     }
     
     private func setLayout() {
-        [label].forEach{
+        
+        self.layer.cornerRadius = self.contentView.frame.width/2
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.gray.cgColor
+        self.contentView.backgroundColor = .bg_white
+        
+        
+        [recommendCardImageView].forEach{
             self.contentView.addSubview($0)
         }
         
-        label.snp.makeConstraints{
-            $0.top.leading.equalToSuperview().inset(4)
+        recommendCardImageView.snp.makeConstraints{
+            $0.top.leading.equalToSuperview().inset(14)
         }
     }
-    
-    private let label:UILabel = {
-       let label = UILabel()
-        label.text = "Recommend"
-        label.font = UIFont.font(.body_bold_15)
-        label.textColor = .adcard_orange
-        return label
-    }()
 }
