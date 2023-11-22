@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomePointSectionBackgroundView: UICollectionReusableView {
+final class HomePointSectionBackgroundView: UICollectionReusableView {
     static let identifier: String = "HomePointSectionBackgroundView"
     
     override init(frame: CGRect) {

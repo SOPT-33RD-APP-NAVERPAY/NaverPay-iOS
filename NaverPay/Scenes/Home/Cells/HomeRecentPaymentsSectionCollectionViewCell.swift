@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeRecentPaymentsSectionCollectionViewCell: UICollectionViewCell {
+final class HomeRecentPaymentsSectionCollectionViewCell: UICollectionViewCell {
     static let identifier: String = "HomeRecentPaymentsSectionCollectionViewCell"
     
     override init(frame: CGRect) {

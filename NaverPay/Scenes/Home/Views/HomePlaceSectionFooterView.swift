@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomePlaceSectionFooterView: UICollectionReusableView {
+final class HomePlaceSectionFooterView: UICollectionReusableView {
     static let identifier: String = "HomePlaceSectionFooterView"
     
     override init(frame: CGRect) {

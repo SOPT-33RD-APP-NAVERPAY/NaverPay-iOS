@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeEventSectionCollectionViewCell: UICollectionViewCell {
+final class HomeEventSectionCollectionViewCell: UICollectionViewCell {
     static let identifier: String = "HomeEventSectionCollectionViewCell"
     
     override init(frame: CGRect) {

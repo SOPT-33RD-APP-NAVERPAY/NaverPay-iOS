@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeHeaderView: UIView {
+final class HomeHeaderView: UIView {
 
     static let identifier: String = "HomeHeaderView"
     

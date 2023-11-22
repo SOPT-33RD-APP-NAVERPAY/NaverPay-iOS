@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeRecentPaymentsSectionHeaderView: UICollectionReusableView {
+final class HomeRecentPaymentsSectionHeaderView: UICollectionReusableView {
     static let identifier: String = "HomeRecentPaymentsSectionHeaderView"
     
     override init(frame: CGRect) {

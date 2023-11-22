@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomePointSectionCollectionViewCell: UICollectionViewCell {
+final class HomePointSectionCollectionViewCell: UICollectionViewCell {
     static let identifier: String = "HomePointSectionCollectionViewCell"
     
     override init(frame: CGRect) {

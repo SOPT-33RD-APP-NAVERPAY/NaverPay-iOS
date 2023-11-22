@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomePointSectionHeaderView: UICollectionReusableView {
+final class HomePointSectionHeaderView: UICollectionReusableView {
     
     static let identifier: String = "HomePointSectionHeaderView"
     
