@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class BenefitCollectionViewSectionBackgroundView: UICollectionReusableView {
+final class BenefitCollectionViewPointCheckSectionBackgroundView: UICollectionReusableView {
         
     static let identifier = "BenefitCollectionPointCheckBackgroundView"
     

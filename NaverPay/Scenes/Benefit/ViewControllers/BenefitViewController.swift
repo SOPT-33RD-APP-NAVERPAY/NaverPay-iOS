@@ -55,9 +55,13 @@ final class BenefitViewController: UIViewController {
         benefitCollectionView.dataSource = self
         benefitCollectionView.delegate = self
         
+        
         benefitCollectionView.register(BenefitCollectionViewPointCheckCell.self, forCellWithReuseIdentifier: BenefitCollectionViewPointCheckCell.identifier)
         benefitCollectionView.register(BenefitCollectionPointCheckHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: BenefitCollectionPointCheckHeaderView.identifier)
+        
         benefitCollectionView.register(BenefitCollectionViewFamousBenefitCell.self, forCellWithReuseIdentifier: BenefitCollectionViewFamousBenefitCell.identifier)
+        benefitCollectionView.register(BenefitCollectionFamousBenefitSectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: BenefitCollectionFamousBenefitSectionHeaderView.identifier)
+        
         
     }
     
@@ -84,21 +88,22 @@ final class BenefitViewController: UIViewController {
                 section.boundarySupplementaryItems = [header]
                 
                 //백그라운드뷰 지정
-                let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(elementKind: BenefitCollectionViewSectionBackgroundView.identifier)
+                let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(elementKind: BenefitCollectionViewPointCheckSectionBackgroundView.identifier)
                 section.decorationItems = [sectionBackgroundDecoration]
                 
                 return section
                 
             case 1:
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(343), heightDimension: .estimated(56)))
+                
+                //아이템 간격인데 아이템끼리가 아니라 맨위 아이템의 상단에도 간격이 필요하기 때문에 edgeSpacing 사용
+                item.edgeSpacing = NSCollectionLayoutEdgeSpacing(leading: .fixed(0), top: .fixed(23), trailing: .fixed(0), bottom: .fixed(0))
+                
                 let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .absolute(343), heightDimension: .absolute(338)), subitems: [item])
-                group.interItemSpacing = NSCollectionLayoutSpacing.fixed(20)
                 let section = NSCollectionLayoutSection(group: group)
-
-                section.orthogonalScrollingBehavior = .continuous
                 
                 //섹션헤더 설정
-                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(53))
+                let headerSize = NSCollectionLayoutSize(widthDimension: .absolute(UIScreen.main.bounds.width), heightDimension: .absolute(102))
                 let header = NSCollectionLayoutBoundarySupplementaryItem(
                     layoutSize: headerSize,
                     elementKind: UICollectionView.elementKindSectionHeader,
@@ -107,7 +112,7 @@ final class BenefitViewController: UIViewController {
                 section.boundarySupplementaryItems = [header]
                 
                 //백그라운드뷰 지정
-                let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(elementKind: BenefitCollectionViewSectionBackgroundView.identifier)
+                let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(elementKind: BenefitCollectionViewFamousBenefitSectionBackgroundView.identifier)
                 section.decorationItems = [sectionBackgroundDecoration]
                 
                 return section
@@ -117,7 +122,9 @@ final class BenefitViewController: UIViewController {
             }
         }
         
-        layout.register(BenefitCollectionViewSectionBackgroundView.self, forDecorationViewOfKind: BenefitCollectionViewSectionBackgroundView.identifier)
+        layout.register(BenefitCollectionViewPointCheckSectionBackgroundView.self, forDecorationViewOfKind: BenefitCollectionViewPointCheckSectionBackgroundView.identifier)
+        
+        layout.register(BenefitCollectionViewFamousBenefitSectionBackgroundView.self, forDecorationViewOfKind: BenefitCollectionViewFamousBenefitSectionBackgroundView.identifier)
         
         return layout
     }
@@ -168,6 +175,12 @@ extension BenefitViewController: UICollectionViewDataSource {
                 guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: BenefitCollectionPointCheckHeaderView.identifier, for: indexPath) as? BenefitCollectionPointCheckHeaderView else { return UICollectionReusableView()}
                 header.layer.cornerRadius = 14
                 header.backgroundColor = .bg_white
+                return header
+                
+            case 1:
+                guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: BenefitCollectionFamousBenefitSectionHeaderView.identifier, for: indexPath) as? BenefitCollectionFamousBenefitSectionHeaderView else { return UICollectionReusableView()}
+                header.layer.cornerRadius = 14
+                header.backgroundColor = .bg_gray
                 return header
             
             default:
