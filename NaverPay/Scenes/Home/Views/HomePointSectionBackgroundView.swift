@@ -1,5 +1,5 @@
 //
-//  MainPointSectionCollectionViewCell.swift
+//  HomePointSectionBackgroundView.swift
 //  NaverPay
 //
 //  Created by Seonwoo Kim on 2023/11/21.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-class HomePointSectionCollectionViewCell: UICollectionViewCell {
-    static let identifier: String = "HomePointSectionCollectionViewCell"
+final class HomePointSectionBackgroundView: UICollectionReusableView {
+    static let identifier: String = "HomePointSectionBackgroundView"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,5 +24,4 @@ class HomePointSectionCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 }

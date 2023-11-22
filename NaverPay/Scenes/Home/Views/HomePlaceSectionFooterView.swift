@@ -1,5 +1,5 @@
 //
-//  HomeRecentPaymentsSectionHeaderView.swift
+//  HomePlaceSectionFooterView.swift
 //  NaverPay
 //
 //  Created by Seonwoo Kim on 2023/11/21.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-class HomeRecentPaymentsSectionHeaderView: UICollectionReusableView {
-    static let identifier: String = "HomeRecentPaymentsSectionHeaderView"
+final class HomePlaceSectionFooterView: UICollectionReusableView {
+    static let identifier: String = "HomePlaceSectionFooterView"
     
     override init(frame: CGRect) {
         super.init(frame: frame)

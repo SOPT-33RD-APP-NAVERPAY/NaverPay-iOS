@@ -1,5 +1,5 @@
 //
-//  HomePlaceSectionFooterView.swift
+//  MainRecomendedPlaceSectionCollectionViewCell.swift
 //  NaverPay
 //
 //  Created by Seonwoo Kim on 2023/11/21.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-class HomePlaceSectionFooterView: UICollectionReusableView {
-    static let identifier: String = "HomePlaceSectionFooterView"
+final class HomePlaceSectionCollectionViewCell: UICollectionViewCell {
+    static let identifier: String = "HomePlaceSectionCollectionViewCell"
     
     override init(frame: CGRect) {
         super.init(frame: frame)

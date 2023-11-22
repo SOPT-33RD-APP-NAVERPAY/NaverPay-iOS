@@ -1,5 +1,5 @@
 //
-//  MainEventSectionCollectionViewCell.swift
+//  HomeRecentPaymentsSectionHeaderView.swift
 //  NaverPay
 //
 //  Created by Seonwoo Kim on 2023/11/21.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-class HomeEventSectionCollectionViewCell: UICollectionViewCell {
-    static let identifier: String = "HomeEventSectionCollectionViewCell"
+final class HomeRecentPaymentsSectionHeaderView: UICollectionReusableView {
+    static let identifier: String = "HomeRecentPaymentsSectionHeaderView"
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomePointSectionInfoView: UIView {
+final class HomePointSectionInfoView: UIView {
 
 
 
