@@ -8,8 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0B91C7A82B0B8A7A00ACDCE9 /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B91C7A72B0B8A7A00ACDCE9 /* ImageLiterals.swift */; };
-		0B91C7AA2B0B8B3000ACDCE9 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B91C7A92B0B8B3000ACDCE9 /* UIFont+.swift */; };
-		ED56A2EA2B0B7790005FE6AF /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A2E92B0B7790005FE6AF /* UIImage+.swift */; };
+		0B91C7AA2B0B8B3000ACDCE9 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B91C7A92B0B8B3000ACDCE9 /* UIImage+.swift */; };
+		ED56A2EA2B0B7790005FE6AF /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A2E92B0B7790005FE6AF /* UIFont+.swift */; };
+		ED56A2F82B0D18B5005FE6AF /* NearPlaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A2F72B0D18B5005FE6AF /* NearPlaceCollectionViewCell.swift */; };
+		ED56A2FA2B0D18F1005FE6AF /* RecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A2F92B0D18F1005FE6AF /* RecommendCollectionViewCell.swift */; };
+		ED56A2FC2B0D1907005FE6AF /* BrandCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A2FB2B0D1907005FE6AF /* BrandCollectionViewCell.swift */; };
+		ED56A2FE2B0D1931005FE6AF /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A2FD2B0D1931005FE6AF /* PlaceViewController.swift */; };
+		ED56A3002B0D1952005FE6AF /* TitleCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A2FF2B0D1952005FE6AF /* TitleCollectionReusableView.swift */; };
 		F4DDEB0A2B0A52E600B7BCCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB092B0A52E600B7BCCE /* AppDelegate.swift */; };
 		F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB0B2B0A52E600B7BCCE /* SceneDelegate.swift */; };
 		F4DDEB112B0A52E600B7BCCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DDEB0F2B0A52E600B7BCCE /* Main.storyboard */; };
@@ -31,6 +36,11 @@
 		0B91C7A72B0B8A7A00ACDCE9 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageLiterals.swift; path = Global/Literals/ImageLiterals.swift; sourceTree = "<group>"; };
 		0B91C7A92B0B8B3000ACDCE9 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIImage+.swift"; path = "Global/Extensions/UIImage+.swift"; sourceTree = "<group>"; };
 		ED56A2E92B0B7790005FE6AF /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIFont+.swift"; path = "Global/Extensions/UIFont+.swift"; sourceTree = "<group>"; };
+		ED56A2F72B0D18B5005FE6AF /* NearPlaceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NearPlaceCollectionViewCell.swift; path = Scenes/Place/Cells/NearPlaceCollectionViewCell.swift; sourceTree = "<group>"; };
+		ED56A2F92B0D18F1005FE6AF /* RecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecommendCollectionViewCell.swift; path = Scenes/Place/Cells/RecommendCollectionViewCell.swift; sourceTree = "<group>"; };
+		ED56A2FB2B0D1907005FE6AF /* BrandCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BrandCollectionViewCell.swift; path = Scenes/Place/Cells/BrandCollectionViewCell.swift; sourceTree = "<group>"; };
+		ED56A2FD2B0D1931005FE6AF /* PlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlaceViewController.swift; path = Scenes/Place/ViewControllers/PlaceViewController.swift; sourceTree = "<group>"; };
+		ED56A2FF2B0D1952005FE6AF /* TitleCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TitleCollectionReusableView.swift; path = Scenes/Place/Views/TitleCollectionReusableView.swift; sourceTree = "<group>"; };
 		F4DDEB062B0A52E600B7BCCE /* NaverPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaverPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4DDEB092B0A52E600B7BCCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4DDEB0B2B0A52E600B7BCCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -264,6 +274,7 @@
 		F4DDEB352B0B8C8700B7BCCE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				ED56A2FD2B0D1931005FE6AF /* PlaceViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -271,6 +282,7 @@
 		F4DDEB362B0B8C9200B7BCCE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ED56A2FF2B0D1952005FE6AF /* TitleCollectionReusableView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -278,6 +290,9 @@
 		F4DDEB372B0B8C9700B7BCCE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				ED56A2F72B0D18B5005FE6AF /* NearPlaceCollectionViewCell.swift */,
+				ED56A2F92B0D18F1005FE6AF /* RecommendCollectionViewCell.swift */,
+				ED56A2FB2B0D1907005FE6AF /* BrandCollectionViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -430,14 +445,19 @@
 			files = (
 				F4DDEB0A2B0A52E600B7BCCE /* AppDelegate.swift in Sources */,
 				F4DDEB632B0CDC1600B7BCCE /* BenefitCollectionViewPointCheckCell.swift in Sources */,
+				ED56A2FE2B0D1931005FE6AF /* PlaceViewController.swift in Sources */,
 				ED56A2EA2B0B7790005FE6AF /* UIFont+.swift in Sources */,
 				F4DDEB582B0BC7B000B7BCCE /* UIView+.swift in Sources */,
 				0B91C7AA2B0B8B3000ACDCE9 /* UIImage+.swift in Sources */,
 				F4DDEB5E2B0CB0A000B7BCCE /* BenefitViewController.swift in Sources */,
+				ED56A2FC2B0D1907005FE6AF /* BrandCollectionViewCell.swift in Sources */,
+				ED56A3002B0D1952005FE6AF /* TitleCollectionReusableView.swift in Sources */,
 				F4DDEB672B0CE09800B7BCCE /* BenefitCollectionPointCheckBackgroundView.swift in Sources */,
 				0B91C7A82B0B8A7A00ACDCE9 /* ImageLiterals.swift in Sources */,
 				F4DDEB692B0CEB7B00B7BCCE /* BenefitCollectionPointCheckHeaderView.swift in Sources */,
 				F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */,
+				ED56A2F82B0D18B5005FE6AF /* NearPlaceCollectionViewCell.swift in Sources */,
+				ED56A2FA2B0D18F1005FE6AF /* RecommendCollectionViewCell.swift in Sources */,
 				F4DDEB2A2B0B720600B7BCCE /* UIColor+.swift in Sources */,
 				F4DDEB5C2B0BCCA900B7BCCE /* UIStackView+.swift in Sources */,
 				F4DDEB5A2B0BCBEB00B7BCCE /* UITextField+.swift in Sources */,
