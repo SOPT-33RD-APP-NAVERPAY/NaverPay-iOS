@@ -7,8 +7,7 @@
 
 import UIKit
 
-final class HomePointSectionInfoView: UIView {
-
+final class HomeSwitchSectionView: UIView {
 
 
 }
