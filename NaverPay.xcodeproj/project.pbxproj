@@ -38,6 +38,7 @@
 		F4DDEB692B0CEB7B00B7BCCE /* BenefitCollectionPointCheckHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB682B0CEB7B00B7BCCE /* BenefitCollectionPointCheckHeaderView.swift */; };
 		F4DDEB6D2B0D1AE700B7BCCE /* BenefitCollectionViewFamousBenefitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB6C2B0D1AE700B7BCCE /* BenefitCollectionViewFamousBenefitCell.swift */; };
 		F4DDEB6F2B0D1FF500B7BCCE /* NPLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB6E2B0D1FF500B7BCCE /* NPLabel.swift */; };
+		F4DDEB752B0E670300B7BCCE /* UserBenefitAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB742B0E670300B7BCCE /* UserBenefitAppData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		F4DDEB682B0CEB7B00B7BCCE /* BenefitCollectionPointCheckHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionPointCheckHeaderView.swift; path = Scenes/Benefit/Views/BenefitCollectionPointCheckHeaderView.swift; sourceTree = "<group>"; };
 		F4DDEB6C2B0D1AE700B7BCCE /* BenefitCollectionViewFamousBenefitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionViewFamousBenefitCell.swift; path = Scenes/Benefit/Cells/BenefitCollectionViewFamousBenefitCell.swift; sourceTree = "<group>"; };
 		F4DDEB6E2B0D1FF500B7BCCE /* NPLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPLabel.swift; sourceTree = "<group>"; };
+		F4DDEB742B0E670300B7BCCE /* UserBenefitAppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserBenefitAppData.swift; path = Scenes/Benefit/Models/UserBenefitAppData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +352,7 @@
 		F4DDEB3C2B0B8CB800B7BCCE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F4DDEB742B0E670300B7BCCE /* UserBenefitAppData.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				0B6677A22B0CCEF400821105 /* (null) in Sources */,
 				0B6677AB2B0CD1C900821105 /* (null) in Sources */,
 				F4DDEB6F2B0D1FF500B7BCCE /* NPLabel.swift in Sources */,
+				F4DDEB752B0E670300B7BCCE /* UserBenefitAppData.swift in Sources */,
 				F4DDEB5A2B0BCBEB00B7BCCE /* UITextField+.swift in Sources */,
 				0B6677A02B0CBF7500821105 /* (null) in Sources */,
 				0B6677A82B0CCF7F00821105 /* (null) in Sources */,

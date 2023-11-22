@@ -10,6 +10,8 @@ import SnapKit
 
 final class BenefitViewController: UIViewController {
     
+    private let userBenefitData = UserBenefitDataAppData.dummy()
+    
     private let pointCellBackgroundViewList: [UIImage] = [ImageLiterals.BenefitView.bnfFirst, ImageLiterals.BenefitView.bnfSecond, ImageLiterals.BenefitView.bnfThird, ImageLiterals.BenefitView.bnfFourth]
     
     
@@ -89,8 +91,7 @@ final class BenefitViewController: UIViewController {
                 
             case 1:
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(343), heightDimension: .estimated(56)))
-                item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 24, trailing: 0)
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .absolute(343), heightDimension: .absolute(216)), subitems: [item])
+                let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .absolute(343), heightDimension: .absolute(216)), subitems: [item])
                 let section = NSCollectionLayoutSection(group: group)
 
                 section.orthogonalScrollingBehavior = .continuous
@@ -145,6 +146,7 @@ extension BenefitViewController: UICollectionViewDataSource {
             
         case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BenefitCollectionViewFamousBenefitCell.identifier, for: indexPath) as? BenefitCollectionViewFamousBenefitCell else { return UICollectionViewCell() }
+            cell.userBenefitData = self.userBenefitData.brandList[indexPath.item]
             return cell
             
         default:

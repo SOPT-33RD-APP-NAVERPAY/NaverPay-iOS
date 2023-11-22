@@ -12,11 +12,22 @@ final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
     
     static let identifier = "BenefitCollectionViewFamousBenefitCell"
     
+    var userBenefitData: BrandListAppData? {
+        didSet {
+            guard let data = userBenefitData else { return }
+            brandIDLabel.text = "\(data.id)"
+            brandImageView.image = data.logoImgURL
+            brandNameLabel.text = data.name
+            benefitDescriptionLabel.text = data.discountContent
+            benefitRate.text = data.discountType
+        }
+    }
+    
     private let brandIDLabel = NPLabel(font: .font(.subtitle_bold_17), color: .main_green)
  
     private let brandImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
+//        imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .red
         return imageView
     }()
@@ -24,7 +35,7 @@ final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
     private let brandAndBenefitInfoStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.distribution = .fillEqually
+//        stackView.distribution = .fillEqually
         stackView.spacing = 4
         return stackView
     }()
@@ -45,12 +56,6 @@ final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setLayout()
-        
-        brandIDLabel.text = "1"
-        brandNameLabel.text = "CU"
-        benefitDescriptionLabel.text = "네플멤 회원은 CU 최대"
-        benefitRate.text = "더블혜택"
-        
     }
     
     private func setLayout() {
@@ -71,6 +76,8 @@ final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
         
         brandAndBenefitInfoStackView.snp.makeConstraints {
             $0.centerY.equalToSuperview()
+            $0.top.equalToSuperview()
+            $0.bottom.equalToSuperview()
             $0.leading.equalTo(brandImageView.snp.trailing).offset(20)
         }
         
