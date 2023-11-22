@@ -13,7 +13,7 @@ final class HomeHeaderView: UIView {
     
     private let logoImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = ImageLiterals.MainView.nLogo
+        imageView.image = ImageLiterals.MainView.imgNaverpayLogo
         return imageView
     }()
     

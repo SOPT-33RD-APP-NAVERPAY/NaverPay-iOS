@@ -40,7 +40,8 @@ enum ImageLiterals {
         static var imgCard3: UIImage { .load(named: "img_card3") }
         static var imgNaverpayLogo: UIImage { .load(named: "img_naverpay_logo") }
         static var imgCardSeleced: UIImage { .load(named: "img_card_seleced") }
-        static var nLogo: UIImage { .load(named: "img_naverpay_logo") }
+        static var nLogo: UIImage { .load(named: "N_logo") }
+        static var icP: UIImage { .load(named: "home_ic_p") }
     }
     
     enum PlaceView {
