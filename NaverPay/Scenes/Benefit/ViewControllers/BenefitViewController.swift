@@ -84,29 +84,30 @@ final class BenefitViewController: UIViewController {
                 section.boundarySupplementaryItems = [header]
                 
                 //백그라운드뷰 지정
-                let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(elementKind: BenefitCollectionPointCheckBackgroundView.identifier)
+                let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(elementKind: BenefitCollectionViewSectionBackgroundView.identifier)
                 section.decorationItems = [sectionBackgroundDecoration]
                 
                 return section
                 
             case 1:
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(343), heightDimension: .estimated(56)))
-                let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .absolute(343), heightDimension: .absolute(216)), subitems: [item])
+                let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .absolute(343), heightDimension: .absolute(338)), subitems: [item])
+                group.interItemSpacing = NSCollectionLayoutSpacing.fixed(20)
                 let section = NSCollectionLayoutSection(group: group)
 
                 section.orthogonalScrollingBehavior = .continuous
                 
-//                //섹션헤더 설정
-//                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(53))
-//                let header = NSCollectionLayoutBoundarySupplementaryItem(
-//                    layoutSize: headerSize,
-//                    elementKind: UICollectionView.elementKindSectionHeader,
-//                    alignment: .top
-//                )
-//                section.boundarySupplementaryItems = [header]
+                //섹션헤더 설정
+                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(53))
+                let header = NSCollectionLayoutBoundarySupplementaryItem(
+                    layoutSize: headerSize,
+                    elementKind: UICollectionView.elementKindSectionHeader,
+                    alignment: .top
+                )
+                section.boundarySupplementaryItems = [header]
                 
                 //백그라운드뷰 지정
-                let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(elementKind: BenefitCollectionPointCheckBackgroundView.identifier)
+                let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(elementKind: BenefitCollectionViewSectionBackgroundView.identifier)
                 section.decorationItems = [sectionBackgroundDecoration]
                 
                 return section
@@ -116,7 +117,7 @@ final class BenefitViewController: UIViewController {
             }
         }
         
-        layout.register(BenefitCollectionPointCheckBackgroundView.self, forDecorationViewOfKind: BenefitCollectionPointCheckBackgroundView.identifier)
+        layout.register(BenefitCollectionViewSectionBackgroundView.self, forDecorationViewOfKind: BenefitCollectionViewSectionBackgroundView.identifier)
         
         return layout
     }

@@ -35,8 +35,9 @@ final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
     private let brandAndBenefitInfoStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-//        stackView.distribution = .fillEqually
+        stackView.distribution = .fillEqually
         stackView.spacing = 4
+        stackView.alignment = .leading
         return stackView
     }()
     
