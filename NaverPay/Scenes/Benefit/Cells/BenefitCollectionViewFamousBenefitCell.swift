@@ -47,8 +47,9 @@ final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
     
     private lazy var heartButton: UIButton = {
         let button = UIButton()
-        button.isHidden = false
-        button.setImage(ImageLiterals.BenefitView.iosBnfBtnLikeRed, for: .normal)
+        button.setImage(ImageLiterals.BenefitView.iosBnfBtnLikeBlack, for: .normal)
+        button.setImage(ImageLiterals.BenefitView.iosBnfBtnLikeRed, for: .selected)
+        button.addTarget(self, action: #selector(heartButtonTapped), for: .touchUpInside)
         return button
     }()
 
@@ -83,13 +84,19 @@ final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
         }
         
         heartButton.snp.makeConstraints {
-            $0.leading.equalTo(brandAndBenefitInfoStackView.snp.trailing).offset(36)
+            
+            //글씨 짤려서 lessThanOrEqualTo 사용함
+            $0.leading.lessThanOrEqualTo(brandAndBenefitInfoStackView.snp.trailing).offset(36)
             $0.centerY.equalToSuperview()
+            $0.trailing.equalToSuperview().inset(20)
         }
         
     }
     
-    
+    @objc 
+    private func heartButtonTapped() {
+        heartButton.isSelected = !heartButton.isSelected
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

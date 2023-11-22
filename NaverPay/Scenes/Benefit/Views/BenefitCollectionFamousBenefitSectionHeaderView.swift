@@ -35,18 +35,18 @@ final class BenefitCollectionFamousBenefitSectionHeaderView: UICollectionReusabl
         
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(39)
-            $0.leading.equalToSuperview().inset(20)
+            $0.leading.equalToSuperview()
         }
         
         recommendLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(6)
-            $0.leading.equalToSuperview().inset(21)
+            $0.leading.equalToSuperview().inset(1)
         }
         
         arrowImage.snp.makeConstraints {
             $0.top.equalToSuperview().inset(45)
             $0.leading.equalTo(titleLabel.snp.trailing).offset(103)
-            $0.trailing.equalToSuperview().inset(20)
+            $0.trailing.equalToSuperview()
         }
     }
     
