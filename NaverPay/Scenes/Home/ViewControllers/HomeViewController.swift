@@ -29,7 +29,6 @@ final class HomeViewController: UIViewController {
     }
     
     
-    
     private func setLayout() {
         view.addSubviews(HomeCollectionView, homeHeaderView)
         
@@ -78,11 +77,14 @@ final class HomeViewController: UIViewController {
                 return section
                 
             case 1:
-                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(30), heightDimension: .absolute(91)))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .estimated(1), heightDimension: .absolute(91)), subitems: [item])
+                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(76), heightDimension: .absolute(56)))
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1.5), heightDimension: .absolute(91)), subitems: [item])
+                group.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 16, bottom: 24, trailing: 0)
+                group.interItemSpacing = .fixed(14)
+                
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .continuous
-
+                
                 let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(178))
                 let header = NSCollectionLayoutBoundarySupplementaryItem(
                     layoutSize: headerSize,
@@ -90,9 +92,8 @@ final class HomeViewController: UIViewController {
                     alignment: .top
                 )
                 let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(elementKind: HomePointSectionBackgroundView.identifier)
-                sectionBackgroundDecoration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0)
                 section.decorationItems = [sectionBackgroundDecoration]
-
+                
                 let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(52))
                 let footer = NSCollectionLayoutBoundarySupplementaryItem(
                     layoutSize: footerSize,
@@ -101,9 +102,9 @@ final class HomeViewController: UIViewController {
                 )
                 footer.pinToVisibleBounds = true
                 section.boundarySupplementaryItems = [footer, header]
-
+                
                 return section
-
+                
                 
             case 2:
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(55), heightDimension: .absolute(100)))
@@ -137,7 +138,7 @@ final class HomeViewController: UIViewController {
                 )
                 header.pinToVisibleBounds = true
                 section.boundarySupplementaryItems = [header]
-
+                
                 let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(66))
                 let footer = NSCollectionLayoutBoundarySupplementaryItem(
                     layoutSize: footerSize,
@@ -146,10 +147,10 @@ final class HomeViewController: UIViewController {
                 )
                 footer.pinToVisibleBounds = true
                 section.boundarySupplementaryItems = [footer]
-
+                
                 return section
-
-
+                
+                
                 
             case 4:
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(55), heightDimension: .absolute(100)))
@@ -224,7 +225,7 @@ extension HomeViewController: UICollectionViewDataSource {
                 return UICollectionReusableView()
             }
             
-        case UICollectionView.elementKindSectionFooter: // Corrected element kind for footer
+        case UICollectionView.elementKindSectionFooter:
             switch indexPath.section {
             case 1:
                 guard let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomePointSectionFooterView.identifier, for: indexPath) as? HomePointSectionFooterView else { return UICollectionReusableView() }

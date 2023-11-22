@@ -21,8 +21,9 @@ final class HomePointSectionFooterView: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
  
-        self.backgroundColor = .clear
+        self.backgroundColor = .sub_gd
         setLayout()
+        addBorder()
     }
     
     required init?(coder: NSCoder) {
@@ -33,9 +34,19 @@ final class HomePointSectionFooterView: UICollectionReusableView {
         self.addSubview(paymentLabel)
         
         paymentLabel.snp.makeConstraints {
-            $0.trailing.leading.equalToSuperview().inset(139)
-            $0.top.bottom.equalToSuperview().offset(-14)
+            $0.trailing.equalToSuperview().inset(139)
+            $0.leading.equalToSuperview().inset(139)
+            $0.top.equalToSuperview().offset(14)
         }
+    }
+    
+    private func addBorder() {
+        layer.borderWidth = 1.0 / UIScreen.main.scale
+        layer.borderColor = UIColor.main_home_cardline.cgColor
+        layer.cornerRadius = 10
+        layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        layer.cornerRadius = 10
+        self.clipsToBounds = true
     }
         
 }
