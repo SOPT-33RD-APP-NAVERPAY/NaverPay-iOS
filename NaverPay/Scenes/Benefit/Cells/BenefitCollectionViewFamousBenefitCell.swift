@@ -66,19 +66,18 @@ final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
         
         brandIDLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(23)
-            $0.centerY.equalToSuperview()
+            $0.top.equalToSuperview().inset(40)
         }
         
         brandImageView.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
+            $0.top.equalToSuperview().inset(30)
             $0.leading.equalTo(brandIDLabel.snp.trailing).offset(17)
             $0.width.equalTo(54)
             $0.height.equalTo(40)
         }
         
         brandAndBenefitInfoStackView.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
-            $0.top.equalToSuperview()
+            $0.top.equalToSuperview().inset(22)
             $0.bottom.equalToSuperview()
             $0.leading.equalTo(brandImageView.snp.trailing).offset(20)
         }
@@ -87,7 +86,7 @@ final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
             
             //글씨 짤려서 lessThanOrEqualTo 사용함
             $0.leading.lessThanOrEqualTo(brandAndBenefitInfoStackView.snp.trailing).offset(36)
-            $0.centerY.equalToSuperview()
+            $0.centerY.equalTo(brandAndBenefitInfoStackView)
             $0.trailing.equalToSuperview().inset(20)
         }
         

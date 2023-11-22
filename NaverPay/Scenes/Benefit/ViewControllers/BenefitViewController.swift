@@ -95,12 +95,11 @@ final class BenefitViewController: UIViewController {
                 return section
                 
             case 1:
-                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(343), heightDimension: .absolute(56)))
+                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(343), heightDimension: .absolute(80)))
                 
-                //아이템 간격인데 아이템끼리가 아니라 맨위 아이템의 상단에도 간격이 필요하기 때문에 edgeSpacing 사용
-                item.edgeSpacing = NSCollectionLayoutEdgeSpacing(leading: .fixed(0), top: .fixed(23), trailing: .fixed(0), bottom: .fixed(0))
+                let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .absolute(343), heightDimension: .absolute(269)), subitems: [item])
                 
-                let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .absolute(343), heightDimension: .fractionalHeight(1)), subitems: [item])
+//                group.edgeSpacing = NSCollectionLayoutEdgeSpacing(leading: .fixed(0), top: .fixed(23), trailing: .fixed(0), bottom: .fixed(0))
                 let section = NSCollectionLayoutSection(group: group)
                 
                 //섹션헤더 설정
@@ -118,8 +117,8 @@ final class BenefitViewController: UIViewController {
                     elementKind: UICollectionView.elementKindSectionFooter,
                     alignment: .bottom
                 )
-                footer.contentInsets = NSDirectionalEdgeInsets(top: -12, leading: 0, bottom: 0, trailing: 0)
-                
+//                footer.contentInsets = NSDirectionalEdgeInsets(top: -5, leading: 0, bottom: 0, trailing: 0)
+//                
                 section.boundarySupplementaryItems = [footer, header]
                 
                 
@@ -185,6 +184,7 @@ extension BenefitViewController: UICollectionViewDataSource {
             switch indexPath.section {
             case 0:
                 guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: BenefitCollectionPointCheckHeaderView.identifier, for: indexPath) as? BenefitCollectionPointCheckHeaderView else { return UICollectionReusableView()}
+                header.userData = userBenefitData
                 header.layer.cornerRadius = 14
                 header.backgroundColor = .bg_white
                 return header
