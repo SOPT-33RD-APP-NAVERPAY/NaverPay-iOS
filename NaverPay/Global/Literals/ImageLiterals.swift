@@ -18,7 +18,7 @@ enum ImageLiterals {
         static var percentageCircle: UIImage { .load(named: "percentage-circle") }
         static var typeAd1: UIImage { .load(named: "type=ad1") }
         static var typeAd2: UIImage { .load(named: "type=ad2") }
-        static var typeAd3: UIImage { .load(named: "type=ad2") }
+        static var typeAd3: UIImage { .load(named: "type=ad3") }
         static var bnfFirst: UIImage { .load(named: "bnf_first") }
         static var bnfSecond: UIImage { .load(named: "bnf_second") }
         static var bnfThird: UIImage { .load(named: "bnf_third") }
