@@ -8,9 +8,19 @@
 import UIKit
 import SnapKit
 
-class PlaceViewController: UIViewController {
+final class PlaceViewController: UIViewController {
     static let identifier: String = "PlaceViewController"
     private var userName: String = "남희주"
+    
+    private let collectionView: UICollectionView = {
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        let collectionView = UICollectionView(frame: .zero
+                                              , collectionViewLayout: UICollectionViewFlowLayout())
+    
+        return collectionView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,23 +31,6 @@ class PlaceViewController: UIViewController {
         setCollectionViewLayout()
         
     }
-    
-    private let collectionView: UICollectionView = {
-        
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        let collectionView = UICollectionView(frame: .zero
-                                              , collectionViewLayout: UICollectionViewFlowLayout())
-        collectionView.register(NearPlaceCollectionViewCell.self, forCellWithReuseIdentifier: NearPlaceCollectionViewCell.identifier)
-        collectionView.register(RecommendCollectionViewCell.self, forCellWithReuseIdentifier: RecommendCollectionViewCell.identifier)
-        collectionView.register(BrandCollectionViewCell.self, forCellWithReuseIdentifier: BrandCollectionViewCell.identifier)
-        collectionView.register(TitleCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TitleCollectionReusableView.identifier)
-        
-        return collectionView
-        
-    }()
-    
-    
     
     private func setLayout(){
         self.view.addSubview(collectionView)
@@ -64,7 +57,6 @@ class PlaceViewController: UIViewController {
         self.collectionView.dataSource = self
     }
 }
-
 
 extension PlaceViewController: UICollectionViewDelegate {
     
@@ -177,7 +169,5 @@ extension PlaceViewController: UICollectionViewDelegateFlowLayout{
             return CGSize(width: (UIScreen.main.bounds.width - 64) / 3, height: 132)
         }
     }
-    
-    
 }
 
