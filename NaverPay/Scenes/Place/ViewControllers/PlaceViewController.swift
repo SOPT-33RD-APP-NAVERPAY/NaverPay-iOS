@@ -90,7 +90,10 @@ extension PlaceViewController: UICollectionViewDataSource {
                 else {
                     return TitleCollectionReusableView()
                 }
-                header.label.text = "\(userName)님과 가까운 장소"
+                header.headerLabel.text = "\(userName)님과 가까운 장소"
+                header.headerButton.setImage(ImageLiterals.PlaceView.placeButtonmapIcon, for: .normal)
+                header.headerButton.backgroundColor = .main_green
+                header.headerButton.setTitle("지도로 보기", for: .normal)
                 return header
                 
             case 1:
@@ -98,7 +101,9 @@ extension PlaceViewController: UICollectionViewDataSource {
                 else {
                     return UICollectionReusableView()
                 }
-                header.label.text = "패션에 관심있는\n\(userName)님을 위한 추천"
+                header.headerLabel.text = "패션에 관심있는\n\(userName)님을 위한 추천"
+                header.headerButton.backgroundColor = .bg_black
+                header.headerButton.setTitle("추천 더보기 >", for: .normal)
                 return header
                 
             case 2:
@@ -106,7 +111,9 @@ extension PlaceViewController: UICollectionViewDataSource {
                 else {
                     return UICollectionReusableView()
                 }
-                header.label.text = "전국 12만개 가맹점에서\n현장결제 하세요"
+                header.headerLabel.text = "전국 12만개 가맹점에서\n현장결제 하세요"
+                header.headerButton.backgroundColor = .main_green
+                header.headerButton.setTitle("전체 보기 >", for: .normal)
                 return header
                 
             default:
