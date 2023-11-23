@@ -61,6 +61,8 @@
 		F4DDEB772B0E783D00B7BCCE /* BenefitCollectionFamousBenefitSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB762B0E783D00B7BCCE /* BenefitCollectionFamousBenefitSectionHeaderView.swift */; };
 		F4DDEB792B0E838200B7BCCE /* BenefitCollectionViewFamousBenefitSectionBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB782B0E838200B7BCCE /* BenefitCollectionViewFamousBenefitSectionBackgroundView.swift */; };
 		F4DDEB7B2B0E8E6700B7BCCE /* BenefitCollectionFamousBenefitSectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB7A2B0E8E6700B7BCCE /* BenefitCollectionFamousBenefitSectionFooterView.swift */; };
+		F4DDEB7D2B0F264700B7BCCE /* BenefitCollectionViewPointCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB7C2B0F264600B7BCCE /* BenefitCollectionViewPointCategoryCell.swift */; };
+		F4DDEB7F2B0F27CE00B7BCCE /* CategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB7E2B0F27CE00B7BCCE /* CategoryData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +109,8 @@
 		F4DDEB762B0E783D00B7BCCE /* BenefitCollectionFamousBenefitSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionFamousBenefitSectionHeaderView.swift; path = Scenes/Benefit/Views/BenefitCollectionFamousBenefitSectionHeaderView.swift; sourceTree = "<group>"; };
 		F4DDEB782B0E838200B7BCCE /* BenefitCollectionViewFamousBenefitSectionBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionViewFamousBenefitSectionBackgroundView.swift; path = Scenes/Benefit/Views/BenefitCollectionViewFamousBenefitSectionBackgroundView.swift; sourceTree = "<group>"; };
 		F4DDEB7A2B0E8E6700B7BCCE /* BenefitCollectionFamousBenefitSectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionFamousBenefitSectionFooterView.swift; path = Scenes/Benefit/Views/BenefitCollectionFamousBenefitSectionFooterView.swift; sourceTree = "<group>"; };
+		F4DDEB7C2B0F264600B7BCCE /* BenefitCollectionViewPointCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionViewPointCategoryCell.swift; path = Scenes/Benefit/Cells/BenefitCollectionViewPointCategoryCell.swift; sourceTree = "<group>"; };
+		F4DDEB7E2B0F27CE00B7BCCE /* CategoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryData.swift; path = Scenes/Benefit/Models/CategoryData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +328,7 @@
 			children = (
 			);
 			name = ViewControllers;
+			path = Scenes/Home/ViewControllers;
 			sourceTree = "<group>";
 		};
 		F4DDEB322B0B8C0D00B7BCCE /* Views */ = {
@@ -411,6 +416,7 @@
 			children = (
 				F4DDEB622B0CDC1600B7BCCE /* BenefitCollectionViewPointCheckCell.swift */,
 				F4DDEB6C2B0D1AE700B7BCCE /* BenefitCollectionViewFamousBenefitCell.swift */,
+				F4DDEB7C2B0F264600B7BCCE /* BenefitCollectionViewPointCategoryCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -419,6 +425,7 @@
 			isa = PBXGroup;
 			children = (
 				F4DDEB742B0E670300B7BCCE /* UserBenefitAppData.swift */,
+				F4DDEB7E2B0F27CE00B7BCCE /* CategoryData.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -531,6 +538,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B2278852B0DB0D500732977 /* HomeSwitchSectionCollectionViewCell.swift in Sources */,
+				F4DDEB7F2B0F27CE00B7BCCE /* CategoryData.swift in Sources */,
 				0B0DFB152B0D20F3005F8618 /* HomePointSectionCollectionViewCell.swift in Sources */,
 				0B0DFB212B0D2102005F8618 /* HomeEventSectionHeaderView.swift in Sources */,
 				0B6677B52B0CD4CF00821105 /* (null) in Sources */,
@@ -578,6 +586,7 @@
 				0B6677AD2B0CD24300821105 /* (null) in Sources */,
 				0B2278832B0DB07700732977 /* HomePointSectionFooterView.swift in Sources */,
 				0B6677B12B0CD3DB00821105 /* (null) in Sources */,
+				F4DDEB7D2B0F264700B7BCCE /* BenefitCollectionViewPointCategoryCell.swift in Sources */,
 				0B6677B72B0CD50B00821105 /* (null) in Sources */,
 				0B6677A42B0CCF1300821105 /* (null) in Sources */,
 			);

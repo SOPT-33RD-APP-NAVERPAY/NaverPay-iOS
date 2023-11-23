@@ -98,8 +98,6 @@ final class BenefitViewController: UIViewController {
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(343), heightDimension: .absolute(80)))
                 
                 let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .absolute(343), heightDimension: .absolute(269)), subitems: [item])
-                
-//                group.edgeSpacing = NSCollectionLayoutEdgeSpacing(leading: .fixed(0), top: .fixed(23), trailing: .fixed(0), bottom: .fixed(0))
                 let section = NSCollectionLayoutSection(group: group)
                 
                 //섹션헤더 설정
@@ -117,8 +115,6 @@ final class BenefitViewController: UIViewController {
                     elementKind: UICollectionView.elementKindSectionFooter,
                     alignment: .bottom
                 )
-//                footer.contentInsets = NSDirectionalEdgeInsets(top: -5, leading: 0, bottom: 0, trailing: 0)
-//                
                 section.boundarySupplementaryItems = [footer, header]
                 
                 
@@ -127,6 +123,25 @@ final class BenefitViewController: UIViewController {
                 section.decorationItems = [sectionBackgroundDecoration]
                 
                 return section
+                
+            case 2:
+                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(64), heightDimension: .absolute(77)))
+
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .absolute(UIScreen.main.bounds.width - 32), heightDimension: .absolute(77)), subitems: [item])
+                group.interItemSpacing = NSCollectionLayoutSpacing.fixed(13)
+                let section = NSCollectionLayoutSection(group: group)
+                
+//                //섹션헤더 설정
+//                let headerSize = NSCollectionLayoutSize(widthDimension: .absolute(UIScreen.main.bounds.width - 40), heightDimension: .absolute(102))
+//                let header = NSCollectionLayoutBoundarySupplementaryItem(
+//                    layoutSize: headerSize,
+//                    elementKind: UICollectionView.elementKindSectionHeader,
+//                    alignment: .top
+//                )
+//                section.boundarySupplementaryItems = [header]
+
+                return section
+                
                 
             default:
                 return nil
