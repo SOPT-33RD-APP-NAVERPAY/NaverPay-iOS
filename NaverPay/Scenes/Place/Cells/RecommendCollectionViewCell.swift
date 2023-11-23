@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import SnapKit
 
-class RecommendCollectionViewCell: UICollectionViewCell {
-    static let identifier:String = "RecommendCollectionViewCell"
+final class RecommendCollectionViewCell: UICollectionViewCell {
+    static let identifier: String = "RecommendCollectionViewCell"
     
-    private let recommendCardImageView:UIImageView = {
+    private let recommendCardImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = ImageLiterals.PlaceView.placeCardRecommendDummy
         imageView.contentMode = .scaleAspectFit
@@ -26,15 +27,13 @@ class RecommendCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setLayout() {
-        
+    private func setStyle() {
         self.layer.cornerRadius = self.contentView.frame.width/2
         self.contentView.backgroundColor = .bg_white
-        
-        
-        [recommendCardImageView].forEach{
-            self.contentView.addSubview($0)
-        }
+    }
+    
+    private func setLayout() {
+        contentView.addSubviews(recommendCardImageView)
         
         recommendCardImageView.snp.makeConstraints{
             $0.edges.equalToSuperview()

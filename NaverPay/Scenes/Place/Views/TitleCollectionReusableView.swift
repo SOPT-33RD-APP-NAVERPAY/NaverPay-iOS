@@ -8,7 +8,7 @@
 import UIKit
 
 final class TitleCollectionReusableView: UICollectionReusableView {
-    static let identifier:String = "TitleCollectionReusableView"
+    static let identifier: String = "TitleCollectionReusableView"
     
     let headerLabel: UILabel = {
        let label = UILabel()
@@ -24,6 +24,8 @@ final class TitleCollectionReusableView: UICollectionReusableView {
         button.titleLabel?.font = UIFont.font(.detail_semibold_14)
         button.setTitleColor(.bg_white, for: .normal)
         button.contentEdgeInsets = .init(top: 8, left: 10, bottom: 8, right: 10)
+        //var config = UIButton.Configuration.
+        //button.configuration?.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 10, bottom: 8, trailing: 10)
         button.layer.cornerRadius = 16
     
         return button
@@ -41,9 +43,7 @@ final class TitleCollectionReusableView: UICollectionReusableView {
         
     private func setLayout() {
         
-        [headerLabel, headerButton].forEach{
-            addSubviews($0)
-        }
+        self.addSubviews(headerLabel, headerButton)
         
         headerLabel.snp.makeConstraints{
             $0.centerY.equalToSuperview()

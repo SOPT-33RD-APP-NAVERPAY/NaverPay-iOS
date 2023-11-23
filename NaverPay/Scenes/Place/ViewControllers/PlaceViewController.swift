@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class PlaceViewController: UIViewController {
+final class PlaceViewController: UIViewController {
     static let identifier: String = "PlaceViewController"
     private var userName: String = "남희주"
     
