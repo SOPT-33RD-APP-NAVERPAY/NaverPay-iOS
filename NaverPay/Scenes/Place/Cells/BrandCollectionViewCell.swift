@@ -7,8 +7,23 @@
 
 import UIKit
 
-class BrandCollectionViewCell: UICollectionViewCell {
-    static let identifier:String = "BrandCollectionViewCell"
+final class BrandCollectionViewCell: UICollectionViewCell {
+    static let identifier: String = "BrandCollectionViewCell"
+    
+    private let brandCardImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = ImageLiterals.PlaceView.placeCardDomino
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    private let brandNameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "브랜드 이름"
+        label.font = UIFont.font(.detail_semibold_14)
+        label.textColor = .bg_black
+        return label
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,20 +36,25 @@ class BrandCollectionViewCell: UICollectionViewCell {
     }
     
     private func setLayout() {
-        [label].forEach{
-            self.contentView.addSubview($0)
+        
+        self.layer.cornerRadius = 10
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.gray.cgColor
+        
+
+        contentView.addSubviews(brandCardImageView, brandNameLabel)
+        
+        brandCardImageView.snp.makeConstraints{
+            $0.top.equalToSuperview().inset(9)
+            $0.centerX.equalToSuperview()
         }
         
-        label.snp.makeConstraints{
-            $0.top.leading.equalToSuperview().inset(4)
+        brandNameLabel.snp.makeConstraints{
+            $0.top.equalTo(brandCardImageView.snp.bottom).offset(14)
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalToSuperview().inset(10)
         }
     }
     
-    private let label:UILabel = {
-       let label = UILabel()
-        label.text = "Brand"
-        label.font = UIFont.font(.body_bold_15)
-        label.textColor = .main_darkgreen3
-        return label
-    }()
+
 }
