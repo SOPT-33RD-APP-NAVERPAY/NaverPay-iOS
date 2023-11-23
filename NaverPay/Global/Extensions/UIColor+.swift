@@ -111,6 +111,15 @@ extension UIColor {
     static var grayscale_gray7: UIColor {
         return UIColor(hex: "#5D5D5D")
     }
+    static var tous_les_bg: UIColor {
+        return UIColor(hex: "#00472E")
+    }
+    static var cu_bg: UIColor {
+        return UIColor(hex: "#6D2993")
+    }
+    static var pb_bg: UIColor {
+        return UIColor(hex: "#003985")
+    }
 }
 
 extension UIColor {

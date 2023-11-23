@@ -12,6 +12,16 @@ final class PlaceViewController: UIViewController {
     static let identifier: String = "PlaceViewController"
     private var userName: String = "남희주"
     
+    private let collectionView: UICollectionView = {
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        let collectionView = UICollectionView(frame: .zero
+                                              , collectionViewLayout: UICollectionViewFlowLayout())
+    
+        return collectionView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,7 +69,6 @@ final class PlaceViewController: UIViewController {
         self.placeCollectionView.dataSource = self
     }
 }
-
 
 extension PlaceViewController: UICollectionViewDelegate {
     
