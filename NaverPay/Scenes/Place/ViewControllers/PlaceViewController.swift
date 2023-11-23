@@ -12,15 +12,7 @@ final class PlaceViewController: UIViewController {
     static let identifier: String = "PlaceViewController"
     private var userName: String = "남희주"
     
-    private let collectionView: UICollectionView = {
-        
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        let collectionView = UICollectionView(frame: .zero
-                                              , collectionViewLayout: UICollectionViewFlowLayout())
-    
-        return collectionView
-    }()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -188,7 +180,7 @@ extension PlaceViewController: UICollectionViewDataSource {
 
 extension PlaceViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        switch indexPath.section{
+        switch indexPath.section {
         case 0:
             return CGSize(width: UIScreen.main.bounds.width, height: 32)
         case 1:
