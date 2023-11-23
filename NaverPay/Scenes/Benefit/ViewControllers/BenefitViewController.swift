@@ -147,11 +147,11 @@ extension BenefitViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            4
+            return 4
         case 1:
-            3
+            return 3
         default:
-            0
+            return 0
         }
     }
     
