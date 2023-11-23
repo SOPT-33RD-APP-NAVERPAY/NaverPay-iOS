@@ -53,6 +53,7 @@ enum ImageLiterals {
         static var placeCardCU: UIImage { .load(named: "place_img_cu")}
         static var placeCardDomino: UIImage { .load(named: "place_img_domino2")}
         static var placeCardMusinsa: UIImage { .load(named: "place_img_musinsa")}
+        static var placeButtonmapIcon: UIImage { .load(named: "place_bxs_map") }
     }
     
     enum PointView {
