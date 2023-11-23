@@ -9,6 +9,14 @@ import UIKit
 
 class GraphCollectionViewCell: UICollectionViewCell {
     static let identifier:String = "GraphCollectionViewCell"
+    
+    private let alertBanner: UIImageView = {
+       let imageView = UIImageView()
+        imageView.image = ImageLiterals.PointView.alertBanner
+        imageView.contentMode = .scaleToFill
+        
+        return imageView
+    }()
 
     
     override init(frame: CGRect) {
@@ -22,6 +30,14 @@ class GraphCollectionViewCell: UICollectionViewCell {
     }
     
     private func setLayout() {
+        
+        [alertBanner].forEach{
+            self.contentView.addSubview($0)
+        }
+        
+        alertBanner.snp.makeConstraints{
+            $0.bottom.leading.trailing.equalToSuperview()
+        }
         
     }
     
