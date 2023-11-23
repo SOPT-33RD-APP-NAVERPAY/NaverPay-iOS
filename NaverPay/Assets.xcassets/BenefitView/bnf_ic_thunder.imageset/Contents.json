@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "percentage-circle.png",
+      "filename" : "bnf_ic_thunder.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "percentage-circle@2x.png",
+      "filename" : "bnf_ic_thunder 1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "percentage-circle@3x.png",
+      "filename" : "bnf_ic_thunder 2.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }

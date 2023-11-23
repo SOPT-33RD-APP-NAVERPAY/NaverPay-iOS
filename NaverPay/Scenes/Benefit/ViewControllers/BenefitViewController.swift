@@ -12,6 +12,8 @@ final class BenefitViewController: UIViewController {
     
     private let userBenefitData = UserBenefitDataAppData.dummy()
     
+    private let categoryData = CategoryData.dummy()
+
     private let pointCellBackgroundViewList: [UIImage] = [ImageLiterals.BenefitView.bnfFirst, ImageLiterals.BenefitView.bnfSecond, ImageLiterals.BenefitView.bnfThird, ImageLiterals.BenefitView.bnfFourth]
     
     
@@ -62,6 +64,9 @@ final class BenefitViewController: UIViewController {
         benefitCollectionView.register(BenefitCollectionViewFamousBenefitCell.self, forCellWithReuseIdentifier: BenefitCollectionViewFamousBenefitCell.identifier)
         benefitCollectionView.register(BenefitCollectionFamousBenefitSectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: BenefitCollectionFamousBenefitSectionHeaderView.identifier)
         benefitCollectionView.register(BenefitCollectionFamousBenefitSectionFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: BenefitCollectionFamousBenefitSectionFooterView.identifier)
+        
+        benefitCollectionView.register(BenefitCollectionViewPointCategoryCell.self, forCellWithReuseIdentifier: BenefitCollectionViewPointCategoryCell.identifier)
+        benefitCollectionView.register(BenefitCollectionCategorySectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: BenefitCollectionCategorySectionHeaderView.identifier)
          
         
     }
@@ -127,18 +132,18 @@ final class BenefitViewController: UIViewController {
             case 2:
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(64), heightDimension: .absolute(77)))
 
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .absolute(UIScreen.main.bounds.width - 32), heightDimension: .absolute(77)), subitems: [item])
-                group.interItemSpacing = NSCollectionLayoutSpacing.fixed(13)
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(77)), subitems: [item])
+                group.interItemSpacing = NSCollectionLayoutSpacing.fixed(5)
                 let section = NSCollectionLayoutSection(group: group)
                 
-//                //섹션헤더 설정
-//                let headerSize = NSCollectionLayoutSize(widthDimension: .absolute(UIScreen.main.bounds.width - 40), heightDimension: .absolute(102))
-//                let header = NSCollectionLayoutBoundarySupplementaryItem(
-//                    layoutSize: headerSize,
-//                    elementKind: UICollectionView.elementKindSectionHeader,
-//                    alignment: .top
-//                )
-//                section.boundarySupplementaryItems = [header]
+                //섹션헤더 설정
+                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(73))
+                let header = NSCollectionLayoutBoundarySupplementaryItem(
+                    layoutSize: headerSize,
+                    elementKind: UICollectionView.elementKindSectionHeader,
+                    alignment: .top
+                )
+                section.boundarySupplementaryItems = [header]
 
                 return section
                 
@@ -162,11 +167,13 @@ extension BenefitViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            4
+            return 4
         case 1:
-            3
+            return 3
+        case 2:
+            return 5
         default:
-            0
+            return 0
         }
     }
     
@@ -183,6 +190,25 @@ extension BenefitViewController: UICollectionViewDataSource {
             cell.userBenefitData = self.userBenefitData.brandList[indexPath.item]
             return cell
             
+        case 2:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BenefitCollectionViewPointCategoryCell.identifier, for: indexPath) as? BenefitCollectionViewPointCategoryCell else { return UICollectionViewCell() }
+            cell.categoryData = categoryData[indexPath.item]
+            
+            if indexPath.item == 0 {
+                cell.backgroundColor = .bg_white
+                cell.layer.cornerRadius = 14
+                cell.layer.borderWidth = 1
+                cell.layer.borderColor = UIColor.main_green.cgColor
+                cell.categoryImageView.image?.withTintColor(.main_green, renderingMode: .alwaysTemplate)
+                return cell
+            }
+            cell.backgroundColor = .bg_white
+            cell.layer.borderWidth = 1
+            cell.layer.borderColor = UIColor.grayscale_gray3.cgColor
+
+            cell.layer.cornerRadius = 14
+            return cell
+            
         default:
             return UICollectionViewCell()
             
@@ -190,7 +216,7 @@ extension BenefitViewController: UICollectionViewDataSource {
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -206,6 +232,11 @@ extension BenefitViewController: UICollectionViewDataSource {
                 
             case 1:
                 guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: BenefitCollectionFamousBenefitSectionHeaderView.identifier, for: indexPath) as? BenefitCollectionFamousBenefitSectionHeaderView else { return UICollectionReusableView()}
+                header.backgroundColor = .bg_gray
+                return header
+                
+            case 2:
+                guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: BenefitCollectionCategorySectionHeaderView.identifier, for: indexPath) as? BenefitCollectionCategorySectionHeaderView else { return UICollectionReusableView()}
                 header.backgroundColor = .bg_gray
                 return header
                 

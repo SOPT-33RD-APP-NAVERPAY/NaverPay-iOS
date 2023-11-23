@@ -53,7 +53,6 @@
 		F4DDEB5C2B0BCCA900B7BCCE /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB5B2B0BCCA900B7BCCE /* UIStackView+.swift */; };
 		F4DDEB5E2B0CB0A000B7BCCE /* BenefitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB5D2B0CB0A000B7BCCE /* BenefitViewController.swift */; };
 		F4DDEB632B0CDC1600B7BCCE /* BenefitCollectionViewPointCheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB622B0CDC1600B7BCCE /* BenefitCollectionViewPointCheckCell.swift */; };
-		F4DDEB672B0CE09800B7BCCE /* BenefitCollectionViewPointCheckSectionBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB662B0CE09800B7BCCE /* BenefitCollectionViewPointCheckSectionBackgroundView.swift */; };
 		F4DDEB692B0CEB7B00B7BCCE /* BenefitCollectionPointCheckHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB682B0CEB7B00B7BCCE /* BenefitCollectionPointCheckHeaderView.swift */; };
 		F4DDEB6D2B0D1AE700B7BCCE /* BenefitCollectionViewFamousBenefitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB6C2B0D1AE700B7BCCE /* BenefitCollectionViewFamousBenefitCell.swift */; };
 		F4DDEB6F2B0D1FF500B7BCCE /* NPLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB6E2B0D1FF500B7BCCE /* NPLabel.swift */; };
@@ -63,6 +62,8 @@
 		F4DDEB7B2B0E8E6700B7BCCE /* BenefitCollectionFamousBenefitSectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB7A2B0E8E6700B7BCCE /* BenefitCollectionFamousBenefitSectionFooterView.swift */; };
 		F4DDEB7D2B0F264700B7BCCE /* BenefitCollectionViewPointCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB7C2B0F264600B7BCCE /* BenefitCollectionViewPointCategoryCell.swift */; };
 		F4DDEB7F2B0F27CE00B7BCCE /* CategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB7E2B0F27CE00B7BCCE /* CategoryData.swift */; };
+		F4DDEB802B0F607700B7BCCE /* BenefitCollectionViewPointCheckSectionBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB662B0CE09800B7BCCE /* BenefitCollectionViewPointCheckSectionBackgroundView.swift */; };
+		F4DDEB822B0F654500B7BCCE /* BenefitCollectionCategorySectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB812B0F654500B7BCCE /* BenefitCollectionCategorySectionHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +112,7 @@
 		F4DDEB7A2B0E8E6700B7BCCE /* BenefitCollectionFamousBenefitSectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionFamousBenefitSectionFooterView.swift; path = Scenes/Benefit/Views/BenefitCollectionFamousBenefitSectionFooterView.swift; sourceTree = "<group>"; };
 		F4DDEB7C2B0F264600B7BCCE /* BenefitCollectionViewPointCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionViewPointCategoryCell.swift; path = Scenes/Benefit/Cells/BenefitCollectionViewPointCategoryCell.swift; sourceTree = "<group>"; };
 		F4DDEB7E2B0F27CE00B7BCCE /* CategoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryData.swift; path = Scenes/Benefit/Models/CategoryData.swift; sourceTree = "<group>"; };
+		F4DDEB812B0F654500B7BCCE /* BenefitCollectionCategorySectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionCategorySectionHeaderView.swift; path = Scenes/Benefit/Views/BenefitCollectionCategorySectionHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -407,6 +409,7 @@
 				F4DDEB762B0E783D00B7BCCE /* BenefitCollectionFamousBenefitSectionHeaderView.swift */,
 				F4DDEB782B0E838200B7BCCE /* BenefitCollectionViewFamousBenefitSectionBackgroundView.swift */,
 				F4DDEB7A2B0E8E6700B7BCCE /* BenefitCollectionFamousBenefitSectionFooterView.swift */,
+				F4DDEB812B0F654500B7BCCE /* BenefitCollectionCategorySectionHeaderView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4DDEB802B0F607700B7BCCE /* BenefitCollectionViewPointCheckSectionBackgroundView.swift in Sources */,
 				0B2278852B0DB0D500732977 /* HomeSwitchSectionCollectionViewCell.swift in Sources */,
 				F4DDEB7F2B0F27CE00B7BCCE /* CategoryData.swift in Sources */,
 				0B0DFB152B0D20F3005F8618 /* HomePointSectionCollectionViewCell.swift in Sources */,
@@ -553,8 +557,6 @@
 				F4DDEB5E2B0CB0A000B7BCCE /* BenefitViewController.swift in Sources */,
 				ED56A2FC2B0D1907005FE6AF /* BrandCollectionViewCell.swift in Sources */,
 				ED56A3002B0D1952005FE6AF /* TitleCollectionReusableView.swift in Sources */,
-				F4DDEB672B0CE09800B7BCCE /* BenefitCollectionViewPointCheckSectionBackgroundView.swift in Sources */,
-				F4DDEB672B0CE09800B7BCCE /* BenefitCollectionViewPointCheckSectionBackgroundView.swift in Sources */,
 				0B91C7A82B0B8A7A00ACDCE9 /* ImageLiterals.swift in Sources */,
 				0B0DFB142B0D20F3005F8618 /* HomeEventSectionCollectionViewCell.swift in Sources */,
 				F4DDEB692B0CEB7B00B7BCCE /* BenefitCollectionPointCheckHeaderView.swift in Sources */,
@@ -581,6 +583,7 @@
 				0B0DFB252B0D2102005F8618 /* HomeHeaderView.swift in Sources */,
 				0B0DFB162B0D20F3005F8618 /* HomePlaceSectionCollectionViewCell.swift in Sources */,
 				0B6677A02B0CBF7500821105 /* (null) in Sources */,
+				F4DDEB822B0F654500B7BCCE /* BenefitCollectionCategorySectionHeaderView.swift in Sources */,
 				0B0DFB232B0D2102005F8618 /* HomePointSectionHeaderView.swift in Sources */,
 				0B6677A82B0CCF7F00821105 /* (null) in Sources */,
 				0B6677AD2B0CD24300821105 /* (null) in Sources */,
