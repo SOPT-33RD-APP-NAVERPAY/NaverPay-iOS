@@ -22,10 +22,14 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .bg_black
         
         setLayout()
         setCollectionView()
+        setStyle()
+    }
+    
+    private func setStyle() {
+        view.backgroundColor = .bg_black
     }
     
     

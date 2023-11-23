@@ -13,7 +13,9 @@ final class HomePlaceSectionHeaderView: UICollectionReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        // 랜덤으로 배경색 지정
+    }
+    
+    private func setStyle() {
         self.backgroundColor = .blue
     }
     
