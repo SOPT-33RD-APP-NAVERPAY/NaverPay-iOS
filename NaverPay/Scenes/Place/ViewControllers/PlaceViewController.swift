@@ -28,10 +28,6 @@ class PlaceViewController: UIViewController {
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero
                                               , collectionViewLayout: UICollectionViewFlowLayout())
-        collectionView.register(NearPlaceCollectionViewCell.self, forCellWithReuseIdentifier: NearPlaceCollectionViewCell.identifier)
-        collectionView.register(RecommendCollectionViewCell.self, forCellWithReuseIdentifier: RecommendCollectionViewCell.identifier)
-        collectionView.register(BrandCollectionViewCell.self, forCellWithReuseIdentifier: BrandCollectionViewCell.identifier)
-        collectionView.register(TitleCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TitleCollectionReusableView.identifier)
         
         return collectionView
         
@@ -60,6 +56,7 @@ class PlaceViewController: UIViewController {
         self.collectionView.register(RecommendCollectionViewCell.self, forCellWithReuseIdentifier: RecommendCollectionViewCell.identifier)
         self.collectionView.register(BrandCollectionViewCell.self, forCellWithReuseIdentifier: BrandCollectionViewCell.identifier)
         self.collectionView.register(TitleCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TitleCollectionReusableView.identifier)
+        self.collectionView.register(TapPlaceCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TapPlaceCollectionReusableView.identifier)
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
     }
@@ -73,7 +70,7 @@ extension PlaceViewController: UICollectionViewDelegate {
 extension PlaceViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3 // 섹션 개수
+        return 4 // 섹션 개수
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -86,6 +83,12 @@ extension PlaceViewController: UICollectionViewDataSource {
         case UICollectionView.elementKindSectionHeader:
             switch indexPath.section {
             case 0:
+                guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TapPlaceCollectionReusableView.identifier, for: indexPath) as? TapPlaceCollectionReusableView
+                else {
+                    return TapPlaceCollectionReusableView()
+                }
+                return header
+            case 1:
                 guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TitleCollectionReusableView.identifier, for: indexPath) as? TitleCollectionReusableView
                 else {
                     return TitleCollectionReusableView()
@@ -96,7 +99,7 @@ extension PlaceViewController: UICollectionViewDataSource {
                 header.headerButton.setTitle("지도로 보기", for: .normal)
                 return header
                 
-            case 1:
+            case 2:
                 guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TitleCollectionReusableView.identifier, for: indexPath) as? TitleCollectionReusableView
                 else {
                     return UICollectionReusableView()
@@ -106,7 +109,7 @@ extension PlaceViewController: UICollectionViewDataSource {
                 header.headerButton.setTitle("추천 더보기 >", for: .normal)
                 return header
                 
-            case 2:
+            case 3:
                 guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TitleCollectionReusableView.identifier, for: indexPath) as? TitleCollectionReusableView
                 else {
                     return UICollectionReusableView()
@@ -127,10 +130,12 @@ extension PlaceViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
             switch section {
             case 0:
-                return CGSize(width: collectionView.bounds.width - 40, height: 33)
+                return CGSize(width: collectionView.bounds.width - 40, height: 30)
             case 1:
-                return CGSize(width: collectionView.bounds.width - 40, height: 52)
+                return CGSize(width: collectionView.bounds.width - 40, height: 33)
             case 2:
+                return CGSize(width: collectionView.bounds.width - 40, height: 52)
+            case 3:
                 return CGSize(width: collectionView.bounds.width - 40, height: 52)
             default:
                 return CGSize(width: collectionView.bounds.width - 40, height: 52)
@@ -140,18 +145,24 @@ extension PlaceViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
         case 0:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendCollectionViewCell.identifier, for: indexPath) as? RecommendCollectionViewCell
+            else {
+                return UICollectionViewCell()
+            }
+            return cell
+        case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NearPlaceCollectionViewCell.identifier, for: indexPath) as? NearPlaceCollectionViewCell
             else { return UICollectionViewCell()}
             return cell
             
-        case 1:
+        case 2:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendCollectionViewCell.identifier, for: indexPath) as? RecommendCollectionViewCell
             else {
                 return UICollectionViewCell()
             }
             return cell
             
-        case 2:
+        case 3:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BrandCollectionViewCell.identifier, for: indexPath) as? BrandCollectionViewCell
             else{
                 return UICollectionViewCell()
@@ -169,19 +180,19 @@ extension PlaceViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch indexPath.section{
         case 0:
+            return CGSize(width: 0, height: 0)
+        case 1:
             return CGSize(width: (UIScreen.main.bounds.width - 64) / 3, height: 132)
             
-        case 1:
+        case 2:
             return CGSize(width: (UIScreen.main.bounds.width - 64) / 3, height: (UIScreen.main.bounds.width - 64) / 3)
             
-        case 2:
+        case 3:
             return CGSize(width: (UIScreen.main.bounds.width - 64) / 3, height: 104)
             
         default:
             return CGSize(width: (UIScreen.main.bounds.width - 64) / 3, height: 132)
         }
     }
-    
-    
 }
 

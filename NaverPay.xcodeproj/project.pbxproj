@@ -15,6 +15,7 @@
 		ED56A2FC2B0D1907005FE6AF /* BrandCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A2FB2B0D1907005FE6AF /* BrandCollectionViewCell.swift */; };
 		ED56A2FE2B0D1931005FE6AF /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A2FD2B0D1931005FE6AF /* PlaceViewController.swift */; };
 		ED56A3002B0D1952005FE6AF /* TitleCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A2FF2B0D1952005FE6AF /* TitleCollectionReusableView.swift */; };
+		ED56A3022B0F6BD4005FE6AF /* TapPlaceCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A3012B0F6BD4005FE6AF /* TapPlaceCollectionReusableView.swift */; };
 		F4DDEB0A2B0A52E600B7BCCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB092B0A52E600B7BCCE /* AppDelegate.swift */; };
 		F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB0B2B0A52E600B7BCCE /* SceneDelegate.swift */; };
 		F4DDEB112B0A52E600B7BCCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DDEB0F2B0A52E600B7BCCE /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		ED56A2FB2B0D1907005FE6AF /* BrandCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BrandCollectionViewCell.swift; path = Scenes/Place/Cells/BrandCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED56A2FD2B0D1931005FE6AF /* PlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlaceViewController.swift; path = Scenes/Place/ViewControllers/PlaceViewController.swift; sourceTree = "<group>"; };
 		ED56A2FF2B0D1952005FE6AF /* TitleCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TitleCollectionReusableView.swift; path = Scenes/Place/Views/TitleCollectionReusableView.swift; sourceTree = "<group>"; };
+		ED56A3012B0F6BD4005FE6AF /* TapPlaceCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TapPlaceCollectionReusableView.swift; path = Scenes/Place/Views/TapPlaceCollectionReusableView.swift; sourceTree = "<group>"; };
 		F4DDEB062B0A52E600B7BCCE /* NaverPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaverPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4DDEB092B0A52E600B7BCCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4DDEB0B2B0A52E600B7BCCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				ED56A2FF2B0D1952005FE6AF /* TitleCollectionReusableView.swift */,
+				ED56A3012B0F6BD4005FE6AF /* TapPlaceCollectionReusableView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				F4DDEB2A2B0B720600B7BCCE /* UIColor+.swift in Sources */,
 				F4DDEB5C2B0BCCA900B7BCCE /* UIStackView+.swift in Sources */,
 				F4DDEB5A2B0BCBEB00B7BCCE /* UITextField+.swift in Sources */,
+				ED56A3022B0F6BD4005FE6AF /* TapPlaceCollectionReusableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
