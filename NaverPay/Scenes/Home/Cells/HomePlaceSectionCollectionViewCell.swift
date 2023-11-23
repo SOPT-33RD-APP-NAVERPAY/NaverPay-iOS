@@ -10,19 +10,15 @@ import UIKit
 final class HomePlaceSectionCollectionViewCell: UICollectionViewCell {
     static let identifier: String = "HomePlaceSectionCollectionViewCell"
     
-    private lazy var storeNameLabel: UILabel = {
-        let label = UILabel()
+    private let storeNameLabel: NPLabel = {
+        let label = NPLabel(font: .font(.detail_regular_14), color: .grayscale_gray5)
         label.text = "CU 건대점"
-        label.font = .font(.detail_regular_14)
-        label.textColor = .grayscale_gray5
         return label
     }()
     
-    private lazy var descriptionLabel: UILabel = {
-        let label = UILabel()
+    private let descriptionLabel: NPLabel = {
+        let label = NPLabel(font: .font(.body_smbold_16), color: .bg_white)
         label.text = "네플멤 회원은 최대 10%"
-        label.font = .font(.body_smbold_16)
-        label.textColor = .bg_white
         return label
     }()
     
@@ -31,7 +27,7 @@ final class HomePlaceSectionCollectionViewCell: UICollectionViewCell {
         imageView.image = ImageLiterals.MainView.icArrowGray
         return imageView
     }()
-
+    
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = ImageLiterals.MainView.logoCuDummy
@@ -47,7 +43,7 @@ final class HomePlaceSectionCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-
+        
         setStyle()
         setLayout()
     }

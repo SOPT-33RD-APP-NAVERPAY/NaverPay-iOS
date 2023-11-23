@@ -271,6 +271,5 @@ extension HomeViewController: UICollectionViewDataSource {
         default:
             return UICollectionViewCell()
         }
-        
     }
 }

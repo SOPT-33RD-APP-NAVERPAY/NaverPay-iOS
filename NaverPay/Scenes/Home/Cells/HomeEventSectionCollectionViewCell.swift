@@ -10,22 +10,18 @@ import UIKit
 final class HomeEventSectionCollectionViewCell: UICollectionViewCell {
     static let identifier: String = "HomeEventSectionCollectionViewCell"
     
-    private lazy var benefitLabel: UILabel = {
-        let label = UILabel()
+    private let benefitLabel: NPLabel = {
+        let label = NPLabel(font: .font(.detail_regular_14), color: .bg_white.withAlphaComponent(0.8))
         label.text = "매일매일 더블혜택"
-        label.font = .font(.detail_regular_14)
-        label.textColor = .bg_white.withAlphaComponent(0.8)
         return label
     }()
     
-    private lazy var benefitDetailLabel: UILabel = {
-        let label = UILabel()
+    private let benefitDetailLabel: NPLabel = {
+        let label = NPLabel(font: .font(.subtitle_bold_17), color: .bg_white)
         label.text = "최대 10%"
-        label.font = .font(.subtitle_bold_17)
-        label.textColor = .bg_white
         return label
     }()
-
+    
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = ImageLiterals.MainView.event_img_logo_touslesjours
@@ -34,7 +30,7 @@ final class HomeEventSectionCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-
+        
         setStyle()
         setLayout()
     }

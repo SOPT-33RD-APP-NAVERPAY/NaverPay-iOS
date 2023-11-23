@@ -10,22 +10,18 @@ import UIKit
 final class HomeRecentPaymentsSectionCollectionViewCell: UICollectionViewCell {
     static let identifier: String = "HomeRecentPaymentsSectionCollectionViewCell"
     
-    private lazy var paidAmountLabel: UILabel = {
-        let label = UILabel()
+    private let paidAmountLabel: NPLabel = {
+        let label = NPLabel(font: .font(.head_bold_20), color: .bg_black)
         label.text = "-25,000원"
-        label.font = .font(.head_bold_20)
-        label.textColor = .bg_black
         return label
     }()
     
-    private lazy var storeNameLabel: UILabel = {
-        let label = UILabel()
+    private let storeNameLabel: NPLabel = {
+        let label = NPLabel(font: .font(.body_smbold_16), color: .bg_black)
         label.text = "GS25 건대점"
-        label.font = .font(.body_smbold_16)
-        label.textColor = .bg_black
         return label
     }()
-
+    
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = ImageLiterals.MainView.logoGs25
@@ -34,7 +30,7 @@ final class HomeRecentPaymentsSectionCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-
+        
         setStyle()
         setLayout()
     }

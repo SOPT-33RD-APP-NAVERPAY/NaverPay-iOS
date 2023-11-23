@@ -17,6 +17,7 @@ final class HomePlaceSectionHeaderView: UICollectionReusableView {
         return imageView
     }()
     
+    //  특정 부분에만 색상이 다르고, 줄바꿈이 되도록 구현
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .bg_white
@@ -33,19 +34,13 @@ final class HomePlaceSectionHeaderView: UICollectionReusableView {
         label.attributedText = attributedText
         
         label.numberOfLines = 0
-       
+        
         return label
     }()
-
-
-
     
-    
-    private lazy var viewAllLabel: UILabel = {
-        let label = UILabel()
+    private let viewAllLabel: NPLabel = {
+        let label = NPLabel(font: .font(.body_regular_15), color: .grayscale_gray6)
         label.text = "전체보기"
-        label.font = .font(.body_regular_15)
-        label.textColor = .grayscale_gray6
         return label
     }()
     

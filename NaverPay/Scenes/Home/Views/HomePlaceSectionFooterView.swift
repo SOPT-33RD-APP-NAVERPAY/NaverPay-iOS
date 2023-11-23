@@ -18,11 +18,9 @@ final class HomePlaceSectionFooterView: UICollectionReusableView {
         return btn
     }()
     
-    private lazy var mapLabel: UILabel = {
-        let label = UILabel()
+    private let mapLabel: NPLabel = {
+        let label = NPLabel(font: .font(.body_smbold_16), color: .sub_gd)
         label.text = "지도로 보기"
-        label.font = .font(.body_smbold_16)
-        label.textColor = .sub_gd
         return label
     }()
     
@@ -34,7 +32,7 @@ final class HomePlaceSectionFooterView: UICollectionReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
- 
+        
         setLayout()
     }
     

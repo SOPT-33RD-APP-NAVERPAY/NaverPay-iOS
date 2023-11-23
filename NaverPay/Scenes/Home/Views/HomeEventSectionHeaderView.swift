@@ -21,15 +21,12 @@ final class HomeEventSectionHeaderView: UICollectionReusableView {
         label.textColor = .bg_white
         label.text = "이달의 이벤트"
         label.font = .font(.head_bold_20)
-        
         return label
     }()
-
-    private lazy var viewAllLabel: UILabel = {
-        let label = UILabel()
+    
+    private let viewAllLabel: NPLabel = {
+        let label = NPLabel(font: .font(.body_regular_15), color: .grayscale_gray6)
         label.text = "전체보기"
-        label.font = .font(.body_regular_15)
-        label.textColor = .grayscale_gray6
         return label
     }()
     

@@ -8,7 +8,7 @@
 import UIKit
 
 final class HomeHeaderView: UIView {
-
+    
     static let identifier: String = "HomeHeaderView"
     
     private let logoImage: UIImageView = {
@@ -68,5 +68,5 @@ final class HomeHeaderView: UIView {
         }
         
     }
-
+    
 }

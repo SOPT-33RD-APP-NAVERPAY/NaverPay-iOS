@@ -16,29 +16,24 @@ final class HomeRecentPaymentsSectionHeaderView: UICollectionReusableView {
         return imageView
     }()
     
-    private lazy var recentPaymentLabel: UILabel = {
-        let label = UILabel()
+    private let recentPaymentLabel: NPLabel = {
+        let label = NPLabel(font: .font(.head_bold_20), color: .bg_white)
         label.text = "최근 현장결제"
-        label.font = .font(.head_bold_20)
-        label.textColor = .bg_white
         return label
     }()
     
-    private lazy var dateLabel: UILabel = {
-        let label = UILabel()
+    private let dateLabel: NPLabel = {
+        let label = NPLabel(font: .font(.body_smbold_16), color: .main_lightgreen)
         label.text = "11.16"
-        label.font = .font(.body_smbold_16)
-        label.textColor = .main_lightgreen
         return label
     }()
     
-    private lazy var viewAllLabel: UILabel = {
-        let label = UILabel()
+    private let viewAllLabel: NPLabel = {
+        let label = NPLabel(font: .font(.body_regular_15), color: .grayscale_gray6)
         label.text = "전체보기"
-        label.font = .font(.body_regular_15)
-        label.textColor = .grayscale_gray6
         return label
     }()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -81,7 +76,7 @@ final class HomeRecentPaymentsSectionHeaderView: UICollectionReusableView {
             $0.width.equalTo(4)
             $0.height.equalTo(8)
         }
-
+        
     }
     
     required init?(coder: NSCoder) {
