@@ -10,6 +10,8 @@ import SnapKit
 
 final class BenefitViewController: UIViewController {
     
+    private let userBenefitData = UserBenefitDataAppData.dummy()
+    
     private let pointCellBackgroundViewList: [UIImage] = [ImageLiterals.BenefitView.bnfFirst, ImageLiterals.BenefitView.bnfSecond, ImageLiterals.BenefitView.bnfThird, ImageLiterals.BenefitView.bnfFourth]
     
     
@@ -31,7 +33,7 @@ final class BenefitViewController: UIViewController {
         setStyle()
         
     }
-
+    
     private func setLayout() {
         self.view.addSubviews(benefitCollectionView)
         
@@ -47,14 +49,20 @@ final class BenefitViewController: UIViewController {
     private func setStyle() {
         self.view.backgroundColor = .bg_gray
     }
-
+    
     
     private func setCollectionView() {
         benefitCollectionView.dataSource = self
         benefitCollectionView.delegate = self
         
+        
         benefitCollectionView.register(BenefitCollectionViewPointCheckCell.self, forCellWithReuseIdentifier: BenefitCollectionViewPointCheckCell.identifier)
         benefitCollectionView.register(BenefitCollectionPointCheckHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: BenefitCollectionPointCheckHeaderView.identifier)
+        
+        benefitCollectionView.register(BenefitCollectionViewFamousBenefitCell.self, forCellWithReuseIdentifier: BenefitCollectionViewFamousBenefitCell.identifier)
+        benefitCollectionView.register(BenefitCollectionFamousBenefitSectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: BenefitCollectionFamousBenefitSectionHeaderView.identifier)
+        benefitCollectionView.register(BenefitCollectionFamousBenefitSectionFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: BenefitCollectionFamousBenefitSectionFooterView.identifier)
+         
         
     }
     
@@ -68,7 +76,7 @@ final class BenefitViewController: UIViewController {
                 item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: -10)
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1.5), heightDimension: .absolute(123)), subitems: [item])
                 let section = NSCollectionLayoutSection(group: group)
-
+                
                 section.orthogonalScrollingBehavior = .continuous
                 
                 //섹션헤더 설정
@@ -81,7 +89,41 @@ final class BenefitViewController: UIViewController {
                 section.boundarySupplementaryItems = [header]
                 
                 //백그라운드뷰 지정
-                let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(elementKind: BenefitCollectionPointCheckBackgroundView.identifier)
+                let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(elementKind: BenefitCollectionViewPointCheckSectionBackgroundView.identifier)
+                section.decorationItems = [sectionBackgroundDecoration]
+                
+                return section
+                
+            case 1:
+                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(343), heightDimension: .absolute(80)))
+                
+                let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .absolute(343), heightDimension: .absolute(269)), subitems: [item])
+                
+//                group.edgeSpacing = NSCollectionLayoutEdgeSpacing(leading: .fixed(0), top: .fixed(23), trailing: .fixed(0), bottom: .fixed(0))
+                let section = NSCollectionLayoutSection(group: group)
+                
+                //섹션헤더 설정
+                let headerSize = NSCollectionLayoutSize(widthDimension: .absolute(UIScreen.main.bounds.width - 40), heightDimension: .absolute(102))
+                let header = NSCollectionLayoutBoundarySupplementaryItem(
+                    layoutSize: headerSize,
+                    elementKind: UICollectionView.elementKindSectionHeader,
+                    alignment: .top
+                )
+
+                //섹션푸터 설정
+                let footerSize = NSCollectionLayoutSize(widthDimension: .absolute(UIScreen.main.bounds.width - 32), heightDimension: .absolute(69))
+                let footer = NSCollectionLayoutBoundarySupplementaryItem(
+                    layoutSize: footerSize,
+                    elementKind: UICollectionView.elementKindSectionFooter,
+                    alignment: .bottom
+                )
+//                footer.contentInsets = NSDirectionalEdgeInsets(top: -5, leading: 0, bottom: 0, trailing: 0)
+//                
+                section.boundarySupplementaryItems = [footer, header]
+                
+                
+                //백그라운드뷰 지정
+                let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(elementKind: BenefitCollectionViewFamousBenefitSectionBackgroundView.identifier)
                 section.decorationItems = [sectionBackgroundDecoration]
                 
                 return section
@@ -91,7 +133,9 @@ final class BenefitViewController: UIViewController {
             }
         }
         
-        layout.register(BenefitCollectionPointCheckBackgroundView.self, forDecorationViewOfKind: BenefitCollectionPointCheckBackgroundView.identifier)
+        layout.register(BenefitCollectionViewPointCheckSectionBackgroundView.self, forDecorationViewOfKind: BenefitCollectionViewPointCheckSectionBackgroundView.identifier)
+        
+        layout.register(BenefitCollectionViewFamousBenefitSectionBackgroundView.self, forDecorationViewOfKind: BenefitCollectionViewFamousBenefitSectionBackgroundView.identifier)
         
         return layout
     }
@@ -101,7 +145,14 @@ extension BenefitViewController: UICollectionViewDelegate { }
 extension BenefitViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        switch section {
+        case 0:
+            4
+        case 1:
+            3
+        default:
+            0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -109,8 +160,12 @@ extension BenefitViewController: UICollectionViewDataSource {
         switch indexPath.section {
         case 0:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BenefitCollectionViewPointCheckCell.identifier, for: indexPath) as? BenefitCollectionViewPointCheckCell else { return UICollectionViewCell()}
-            cell.backgroundColor = .white
             cell.backgroundImageView.image = pointCellBackgroundViewList[indexPath.item]
+            return cell
+            
+        case 1:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BenefitCollectionViewFamousBenefitCell.identifier, for: indexPath) as? BenefitCollectionViewFamousBenefitCell else { return UICollectionViewCell() }
+            cell.userBenefitData = self.userBenefitData.brandList[indexPath.item]
             return cell
             
         default:
@@ -120,7 +175,7 @@ extension BenefitViewController: UICollectionViewDataSource {
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -129,15 +184,33 @@ extension BenefitViewController: UICollectionViewDataSource {
             switch indexPath.section {
             case 0:
                 guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: BenefitCollectionPointCheckHeaderView.identifier, for: indexPath) as? BenefitCollectionPointCheckHeaderView else { return UICollectionReusableView()}
+                header.userData = userBenefitData
                 header.layer.cornerRadius = 14
                 header.backgroundColor = .bg_white
                 return header
-            
+                
+            case 1:
+                guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: BenefitCollectionFamousBenefitSectionHeaderView.identifier, for: indexPath) as? BenefitCollectionFamousBenefitSectionHeaderView else { return UICollectionReusableView()}
+                header.backgroundColor = .bg_gray
+                return header
+                
+            default:
+                return UICollectionReusableView()
+            }
+        case UICollectionView.elementKindSectionFooter:
+            switch indexPath.section {
+            case 1:
+                guard let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: BenefitCollectionFamousBenefitSectionFooterView.identifier, for: indexPath) as? BenefitCollectionFamousBenefitSectionFooterView else { return UICollectionReusableView() }
+                footer.layer.cornerRadius = 14
+                footer.backgroundColor = .bg_white
+                
+                return footer
             default:
                 return UICollectionReusableView()
             }
         default:
             return UICollectionReusableView()
         }
+        
     }
 }

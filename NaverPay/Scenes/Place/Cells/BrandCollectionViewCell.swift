@@ -7,17 +7,17 @@
 
 import UIKit
 
-class BrandCollectionViewCell: UICollectionViewCell {
-    static let identifier:String = "BrandCollectionViewCell"
+final class BrandCollectionViewCell: UICollectionViewCell {
+    static let identifier: String = "BrandCollectionViewCell"
     
-    private let brandCardImageView:UIImageView = {
+    private let brandCardImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = ImageLiterals.PlaceView.placeCardDomino
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
-    private let brandNameLabel:UILabel = {
+    private let brandNameLabel: UILabel = {
         let label = UILabel()
         label.text = "브랜드 이름"
         label.font = UIFont.font(.detail_semibold_14)
@@ -41,9 +41,8 @@ class BrandCollectionViewCell: UICollectionViewCell {
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.gray.cgColor
         
-        [brandCardImageView, brandNameLabel].forEach{
-            self.contentView.addSubview($0)
-        }
+
+        contentView.addSubviews(brandCardImageView, brandNameLabel)
         
         brandCardImageView.snp.makeConstraints{
             $0.top.equalToSuperview().inset(9)

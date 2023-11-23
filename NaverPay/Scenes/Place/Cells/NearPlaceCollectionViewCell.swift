@@ -6,18 +6,19 @@
 //
 
 import UIKit
+import SnapKit
 
 final class NearPlaceCollectionViewCell: UICollectionViewCell {
-    static let identifier:String = "NearPlaceCollectionViewCell"
+    static let identifier: String = "NearPlaceCollectionViewCell"
     
-    private let nearPlaceCardImageView:UIImageView = {
+    private let nearPlaceCardImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = ImageLiterals.PlaceView.placeCardCU
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
-    private let nearPlaceNameLabel:UILabel = {
+    private let nearPlaceNameLabel: UILabel = {
         let label = UILabel()
         label.text = "매장 이름"
         label.font = UIFont.font(.detail_semibold_14)
@@ -25,7 +26,7 @@ final class NearPlaceCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private let nearPlaceMeterLabel:UILabel = {
+    private let nearPlaceMeterLabel: UILabel = {
         let label = UILabel()
         label.text = "00m"
         label.font = UIFont.font(.detail_smbold_12)
@@ -62,9 +63,7 @@ final class NearPlaceCollectionViewCell: UICollectionViewCell {
         self.layer.shadowRadius = 5
         self.layer.shadowOffset = CGSize(width: 0, height: 1)
         
-        [nearPlaceCardImageView, nearPlaceNameLabel, nearPlaceMeterLabel].forEach{
-            self.contentView.addSubview($0)
-        }
+        contentView.addSubviews(nearPlaceCardImageView, nearPlaceNameLabel, nearPlaceMeterLabel)
         
         nearPlaceCardImageView.snp.makeConstraints{
             $0.top.equalToSuperview().inset(12)

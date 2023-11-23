@@ -18,13 +18,14 @@ enum ImageLiterals {
         static var percentageCircle: UIImage { .load(named: "percentage-circle") }
         static var typeAd1: UIImage { .load(named: "type=ad1") }
         static var typeAd2: UIImage { .load(named: "type=ad2") }
-        static var typeAd3: UIImage { .load(named: "type=ad2") }
+        static var typeAd3: UIImage { .load(named: "type=ad3") }
         static var bnfFirst: UIImage { .load(named: "bnf_first") }
         static var bnfSecond: UIImage { .load(named: "bnf_second") }
         static var bnfThird: UIImage { .load(named: "bnf_third") }
         static var bnfFourth: UIImage { .load(named: "bnf_fourth") }
         static var pointArrowFirst: UIImage { .load(named: "bnf_pointarrow1")}
-        
+        static var pointArrowSecond: UIImage { .load(named: "bnf_arrowSecond")}
+        static var locationImage: UIImage { .load(named: "bnf_ic_location")}
     }
     enum Global {
         static var mapIcon: UIImage { .load(named: "bxs_map") }
@@ -36,11 +37,18 @@ enum ImageLiterals {
         static var btnCardPlus: UIImage { .load(named: "btn_card_plus") }
         static var icArrow: UIImage { .load(named: "ic_arrow") }
         static var imgCard_unseleced: UIImage { .load(named: "img_card_unseleced") }
-        static var imgCard2: UIImage { .load(named: "img_card2 ") }
+        static var imgCard2: UIImage { .load(named: "img_card2") }
         static var imgCard3: UIImage { .load(named: "img_card3") }
         static var imgNaverpayLogo: UIImage { .load(named: "img_naverpay_logo") }
         static var imgCardSeleced: UIImage { .load(named: "img_card_seleced") }
-        static var nLogo: UIImage { .load(named: "img_naverpay_logo") }
+        static var nLogo: UIImage { .load(named: "N_logo") }
+        static var icP: UIImage { .load(named: "home_ic_p") }
+        static var icArrowGray: UIImage { .load(named: "ic_arrow_gray") }
+        static var logoGs25: UIImage { .load(named: "logo_gs25") }
+        static var logoCuDummy: UIImage { .load(named: "logo_cu_dummy") }
+        static var event_img_logo_cu: UIImage { .load(named: "event_img_logo_cu") }
+        static var event_img_logo_pb: UIImage { .load(named: "event_img_logo_pb") }
+        static var event_img_logo_touslesjours: UIImage { .load(named: "event_img_logo_touslesjours") }
     }
     
     enum PlaceView {

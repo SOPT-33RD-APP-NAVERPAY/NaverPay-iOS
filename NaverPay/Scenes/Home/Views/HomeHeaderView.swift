@@ -8,12 +8,12 @@
 import UIKit
 
 final class HomeHeaderView: UIView {
-
+    
     static let identifier: String = "HomeHeaderView"
     
     private let logoImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = ImageLiterals.MainView.nLogo
+        imageView.image = ImageLiterals.MainView.imgNaverpayLogo
         return imageView
     }()
     
@@ -40,7 +40,7 @@ final class HomeHeaderView: UIView {
     }
     
     private func setStyle() {
-        self.backgroundColor = .bg_black
+        self.backgroundColor = .clear
     }
     
     private func setLayout() {
@@ -68,5 +68,5 @@ final class HomeHeaderView: UIView {
         }
         
     }
-
+    
 }
