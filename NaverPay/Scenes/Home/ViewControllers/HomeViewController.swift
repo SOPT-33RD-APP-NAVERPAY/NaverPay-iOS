@@ -43,7 +43,9 @@ final class HomeViewController: UIViewController {
         
         HomeCollectionView.snp.makeConstraints {
             $0.top.equalTo(homeHeaderView.snp.bottom)
-            $0.trailing.leading.bottom.equalToSuperview().inset(21)
+            $0.bottom.equalToSuperview()
+            $0.leading.equalToSuperview().inset(20)
+            $0.trailing.equalToSuperview().inset(21)
         }
         
     }
@@ -104,71 +106,62 @@ final class HomeViewController: UIViewController {
                     elementKind: UICollectionView.elementKindSectionFooter,
                     alignment: .bottom
                 )
-                footer.pinToVisibleBounds = true
                 section.boundarySupplementaryItems = [footer, header]
                 
                 return section
                 
                 
             case 2:
-                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(55), heightDimension: .absolute(100)))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .estimated(1), heightDimension: .estimated(1)), subitems: [item])
+                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(88)))
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(88)), subitems: [item])
                 let section = NSCollectionLayoutSection(group: group)
-                section.orthogonalScrollingBehavior = .continuous
-                section.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 0, bottom: 20, trailing: 0)
-                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(66))
+                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(97))
                 let header = NSCollectionLayoutBoundarySupplementaryItem(
                     layoutSize: headerSize,
                     elementKind: UICollectionView.elementKindSectionHeader,
                     alignment: .top
                 )
-                header.pinToVisibleBounds = true
                 section.boundarySupplementaryItems = [header]
                 
                 return section
                 
             case 3:
-                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(55), heightDimension: .estimated(50)))
-                let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .estimated(1), heightDimension: .absolute(400)), subitems: [item])
+                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(52)))
+                let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(260)), subitems: [item])
+                group.interItemSpacing = .fixed(16)
                 let section = NSCollectionLayoutSection(group: group)
-                section.orthogonalScrollingBehavior = .continuous
-                section.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 0, bottom: 20, trailing: 0)
                 
-                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(66))
+                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(133))
                 let header = NSCollectionLayoutBoundarySupplementaryItem(
                     layoutSize: headerSize,
                     elementKind: UICollectionView.elementKindSectionHeader,
                     alignment: .top
                 )
-                header.pinToVisibleBounds = true
-                section.boundarySupplementaryItems = [header]
                 
-                let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(66))
+                let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(78))
                 let footer = NSCollectionLayoutBoundarySupplementaryItem(
                     layoutSize: footerSize,
                     elementKind: UICollectionView.elementKindSectionFooter,
-                    alignment: .top
+                    alignment: .bottom
                 )
-                footer.pinToVisibleBounds = true
-                section.boundarySupplementaryItems = [footer]
+                section.boundarySupplementaryItems = [header,footer]
                 
                 return section
                 
                 
                 
             case 4:
-                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(55), heightDimension: .absolute(100)))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .estimated(1), heightDimension: .estimated(1)), subitems: [item])
+                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(248), heightDimension: .absolute(84)))
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .absolute(256*3), heightDimension: .absolute(84)), subitems: [item])
+                group.interItemSpacing = .fixed(8)
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .continuous
-                section.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 0, bottom: 20, trailing: 0)
-                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(66))
+                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(106))
                 let header = NSCollectionLayoutBoundarySupplementaryItem(
                     layoutSize: headerSize,
                     elementKind: UICollectionView.elementKindSectionHeader,
                     alignment: .top
                 )
-                header.pinToVisibleBounds = true
                 section.boundarySupplementaryItems = [header]
                 
                 return section
@@ -278,6 +271,5 @@ extension HomeViewController: UICollectionViewDataSource {
         default:
             return UICollectionViewCell()
         }
-        
     }
 }

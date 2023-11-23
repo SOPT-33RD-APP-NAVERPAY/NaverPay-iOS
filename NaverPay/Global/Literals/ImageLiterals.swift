@@ -43,6 +43,12 @@ enum ImageLiterals {
         static var imgCardSeleced: UIImage { .load(named: "img_card_seleced") }
         static var nLogo: UIImage { .load(named: "N_logo") }
         static var icP: UIImage { .load(named: "home_ic_p") }
+        static var icArrowGray: UIImage { .load(named: "ic_arrow_gray") }
+        static var logoGs25: UIImage { .load(named: "logo_gs25") }
+        static var logoCuDummy: UIImage { .load(named: "logo_cu_dummy") }
+        static var event_img_logo_cu: UIImage { .load(named: "event_img_logo_cu") }
+        static var event_img_logo_pb: UIImage { .load(named: "event_img_logo_pb") }
+        static var event_img_logo_touslesjours: UIImage { .load(named: "event_img_logo_touslesjours") }
     }
     
     enum PlaceView {

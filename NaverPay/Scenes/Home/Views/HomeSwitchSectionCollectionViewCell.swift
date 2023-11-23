@@ -11,20 +11,18 @@ import SnapKit
 final class HomeSwitchSectionCollectionViewCell: UICollectionViewCell {
     static let identifier: String = "HomeSwitchSectionCollectionViewCell"
     
-    private lazy var paymentLabel: UILabel = {
-        let label = UILabel()
+    private let paymentLabel: NPLabel = {
+        let label = NPLabel(font: .font(.subtitle_smbold_18), color: .bg_white)
         label.text = "현장결제"
-        label.font = .font(.subtitle_smbold_18)
-        label.textColor = .bg_white
         return label
     }()
-    private lazy var membershipLabel: UILabel = {
-        let label = UILabel()
+    
+    private let membershipLabel: NPLabel = {
+        let label = NPLabel(font: .font(.subtitle_smbold_18), color: .grayscale_gray7)
         label.text = "멤버쉽"
-        label.font = .font(.subtitle_smbold_18)
-        label.textColor = .grayscale_gray7
         return label
     }()
+    
     private let bottomBar: UIView = {
         let view = UIView()
         view.backgroundColor = .main_lightgreen
@@ -60,5 +58,4 @@ final class HomeSwitchSectionCollectionViewCell: UICollectionViewCell {
             $0.trailing.equalTo(paymentLabel.snp.trailing).inset(-1)
         }
     }
-    
 }

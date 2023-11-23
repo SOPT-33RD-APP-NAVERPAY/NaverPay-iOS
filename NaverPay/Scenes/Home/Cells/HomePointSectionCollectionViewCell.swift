@@ -40,11 +40,9 @@ final class HomePointSectionCollectionViewCell: UICollectionViewCell {
             $0.bottom.trailing.leading.equalToSuperview()
             $0.top.equalToSuperview().offset(11)
         }
-
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 }

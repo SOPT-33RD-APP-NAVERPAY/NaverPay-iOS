@@ -10,18 +10,60 @@ import UIKit
 final class HomeRecentPaymentsSectionCollectionViewCell: UICollectionViewCell {
     static let identifier: String = "HomeRecentPaymentsSectionCollectionViewCell"
     
+    private let paidAmountLabel: NPLabel = {
+        let label = NPLabel(font: .font(.head_bold_20), color: .bg_black)
+        label.text = "-25,000원"
+        return label
+    }()
+    
+    private let storeNameLabel: NPLabel = {
+        let label = NPLabel(font: .font(.body_smbold_16), color: .bg_black)
+        label.text = "GS25 건대점"
+        return label
+    }()
+    
+    private let logoImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = ImageLiterals.MainView.logoGs25
+        return imageView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        // 랜덤으로 배경색 지정
-        self.backgroundColor = UIColor(
-            red: drand48(),
-            green: drand48(),
-            blue: drand48(),
-            alpha: drand48()
-        )
+        
+        setStyle()
+        setLayout()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setLayout() {
+        contentView.addSubviews(paidAmountLabel,storeNameLabel,logoImageView)
+        
+        logoImageView.snp.makeConstraints {
+            $0.bottom.equalToSuperview().offset(-35)
+            $0.top.equalToSuperview().offset(34)
+            $0.leading.equalToSuperview().offset(21)
+            $0.width.equalTo(60)
+        }
+        storeNameLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(32)
+            $0.bottom.equalToSuperview().offset(-32)
+            $0.leading.equalTo(logoImageView.snp.trailing).inset(-16)
+            $0.width.equalTo(112)
+        }
+        paidAmountLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(31)
+            $0.bottom.equalToSuperview().offset(-31)
+            $0.leading.equalTo(storeNameLabel.snp.trailing).inset(-19)
+            $0.trailing.equalToSuperview().inset(18)
+        }
+    }
+    
+    private func setStyle() {
+        self.layer.cornerRadius = 6
+        self.backgroundColor = .bg_white
     }
 }
