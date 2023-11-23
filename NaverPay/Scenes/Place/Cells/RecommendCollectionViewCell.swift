@@ -12,7 +12,7 @@ class RecommendCollectionViewCell: UICollectionViewCell {
     
     private let recommendCardImageView:UIImageView = {
         let imageView = UIImageView()
-        imageView.image = ImageLiterals.PlaceView.placeCardMusinsa
+        imageView.image = ImageLiterals.PlaceView.placeCardRecommendDummy
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -29,8 +29,6 @@ class RecommendCollectionViewCell: UICollectionViewCell {
     private func setLayout() {
         
         self.layer.cornerRadius = self.contentView.frame.width/2
-        self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.gray.cgColor
         self.contentView.backgroundColor = .bg_white
         
         
@@ -39,7 +37,7 @@ class RecommendCollectionViewCell: UICollectionViewCell {
         }
         
         recommendCardImageView.snp.makeConstraints{
-            $0.top.leading.equalToSuperview().inset(14)
+            $0.edges.equalToSuperview()
         }
     }
 }
