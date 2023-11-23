@@ -44,6 +44,7 @@ enum ImageLiterals {
         static var icP: UIImage { .load(named: "home_ic_p") }
         static var icArrowGray: UIImage { .load(named: "ic_arrow_gray") }
         static var logoGs25: UIImage { .load(named: "logo_gs25") }
+        static var logoCuDummy: UIImage { .load(named: "logo_cu_dummy") }
     }
     
     enum PlaceView {
