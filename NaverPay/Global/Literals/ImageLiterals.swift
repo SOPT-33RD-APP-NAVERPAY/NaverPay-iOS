@@ -65,6 +65,8 @@ enum ImageLiterals {
         static var logoIc: UIImage { .load(named: "logo_ic") }
         static var pointIcBnf: UIImage { .load(named: "point_ic_bnf") }
         static var xIco: UIImage { .load(named: "x_ico") }
+        static var pointCardBackgroud: UIImage { .load(named: "ios_bnf_img_pointcard_bg")}
+        static var banner: UIImage { .load(named: "ios_point_img_banner")}
     }
     
 }
