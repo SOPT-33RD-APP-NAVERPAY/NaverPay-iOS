@@ -32,7 +32,6 @@
 		0B6677B72B0CD50B00821105 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		0B6677B92B0CD61C00821105 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		0B6677BB2B0CD63200821105 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		0B76F39E2B0D024800FA2442 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B76F39D2B0D024800FA2442 /* HomeViewController.swift */; };
 		0B91C7A82B0B8A7A00ACDCE9 /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B91C7A72B0B8A7A00ACDCE9 /* ImageLiterals.swift */; };
 		0B91C7AA2B0B8B3000ACDCE9 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B91C7A92B0B8B3000ACDCE9 /* UIImage+.swift */; };
 		ED56A2EA2B0B7790005FE6AF /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A2E92B0B7790005FE6AF /* UIFont+.swift */; };
@@ -54,8 +53,14 @@
 		F4DDEB5C2B0BCCA900B7BCCE /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB5B2B0BCCA900B7BCCE /* UIStackView+.swift */; };
 		F4DDEB5E2B0CB0A000B7BCCE /* BenefitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB5D2B0CB0A000B7BCCE /* BenefitViewController.swift */; };
 		F4DDEB632B0CDC1600B7BCCE /* BenefitCollectionViewPointCheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB622B0CDC1600B7BCCE /* BenefitCollectionViewPointCheckCell.swift */; };
-		F4DDEB672B0CE09800B7BCCE /* BenefitCollectionPointCheckBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB662B0CE09800B7BCCE /* BenefitCollectionPointCheckBackgroundView.swift */; };
+		F4DDEB672B0CE09800B7BCCE /* BenefitCollectionViewPointCheckSectionBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB662B0CE09800B7BCCE /* BenefitCollectionViewPointCheckSectionBackgroundView.swift */; };
 		F4DDEB692B0CEB7B00B7BCCE /* BenefitCollectionPointCheckHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB682B0CEB7B00B7BCCE /* BenefitCollectionPointCheckHeaderView.swift */; };
+		F4DDEB6D2B0D1AE700B7BCCE /* BenefitCollectionViewFamousBenefitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB6C2B0D1AE700B7BCCE /* BenefitCollectionViewFamousBenefitCell.swift */; };
+		F4DDEB6F2B0D1FF500B7BCCE /* NPLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB6E2B0D1FF500B7BCCE /* NPLabel.swift */; };
+		F4DDEB752B0E670300B7BCCE /* UserBenefitAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB742B0E670300B7BCCE /* UserBenefitAppData.swift */; };
+		F4DDEB772B0E783D00B7BCCE /* BenefitCollectionFamousBenefitSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB762B0E783D00B7BCCE /* BenefitCollectionFamousBenefitSectionHeaderView.swift */; };
+		F4DDEB792B0E838200B7BCCE /* BenefitCollectionViewFamousBenefitSectionBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB782B0E838200B7BCCE /* BenefitCollectionViewFamousBenefitSectionBackgroundView.swift */; };
+		F4DDEB7B2B0E8E6700B7BCCE /* BenefitCollectionFamousBenefitSectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB7A2B0E8E6700B7BCCE /* BenefitCollectionFamousBenefitSectionFooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,7 +78,6 @@
 		0B0DFB1F2B0D2102005F8618 /* HomePointSectionInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePointSectionInfoView.swift; path = Scenes/Home/Views/HomePointSectionInfoView.swift; sourceTree = "<group>"; };
 		0B2278822B0DB07700732977 /* HomePointSectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomePointSectionFooterView.swift; path = Scenes/Home/Views/HomePointSectionFooterView.swift; sourceTree = "<group>"; };
 		0B2278842B0DB0D500732977 /* HomeSwitchSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeSwitchSectionCollectionViewCell.swift; path = Scenes/Home/Views/HomeSwitchSectionCollectionViewCell.swift; sourceTree = "<group>"; };
-		0B76F39D2B0D024800FA2442 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Scenes/Home/ViewControllers/HomeViewController.swift; sourceTree = "<group>"; };
 		0B91C7A72B0B8A7A00ACDCE9 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageLiterals.swift; path = Global/Literals/ImageLiterals.swift; sourceTree = "<group>"; };
 		0B91C7A92B0B8B3000ACDCE9 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIImage+.swift"; path = "Global/Extensions/UIImage+.swift"; sourceTree = "<group>"; };
 		ED56A2E92B0B7790005FE6AF /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIFont+.swift"; path = "Global/Extensions/UIFont+.swift"; sourceTree = "<group>"; };
@@ -95,8 +99,14 @@
 		F4DDEB5B2B0BCCA900B7BCCE /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIStackView+.swift"; path = "Global/Extensions/UIStackView+.swift"; sourceTree = "<group>"; };
 		F4DDEB5D2B0CB0A000B7BCCE /* BenefitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitViewController.swift; path = Scenes/Benefit/ViewControllers/BenefitViewController.swift; sourceTree = "<group>"; };
 		F4DDEB622B0CDC1600B7BCCE /* BenefitCollectionViewPointCheckCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionViewPointCheckCell.swift; path = Scenes/Benefit/Cells/BenefitCollectionViewPointCheckCell.swift; sourceTree = "<group>"; };
-		F4DDEB662B0CE09800B7BCCE /* BenefitCollectionPointCheckBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionPointCheckBackgroundView.swift; path = Scenes/Benefit/Views/BenefitCollectionPointCheckBackgroundView.swift; sourceTree = "<group>"; };
+		F4DDEB662B0CE09800B7BCCE /* BenefitCollectionViewPointCheckSectionBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionViewPointCheckSectionBackgroundView.swift; path = Scenes/Benefit/Views/BenefitCollectionViewPointCheckSectionBackgroundView.swift; sourceTree = "<group>"; };
 		F4DDEB682B0CEB7B00B7BCCE /* BenefitCollectionPointCheckHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionPointCheckHeaderView.swift; path = Scenes/Benefit/Views/BenefitCollectionPointCheckHeaderView.swift; sourceTree = "<group>"; };
+		F4DDEB6C2B0D1AE700B7BCCE /* BenefitCollectionViewFamousBenefitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionViewFamousBenefitCell.swift; path = Scenes/Benefit/Cells/BenefitCollectionViewFamousBenefitCell.swift; sourceTree = "<group>"; };
+		F4DDEB6E2B0D1FF500B7BCCE /* NPLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NPLabel.swift; path = Global/UIComponents/NPLabel.swift; sourceTree = "<group>"; };
+		F4DDEB742B0E670300B7BCCE /* UserBenefitAppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserBenefitAppData.swift; path = Scenes/Benefit/Models/UserBenefitAppData.swift; sourceTree = "<group>"; };
+		F4DDEB762B0E783D00B7BCCE /* BenefitCollectionFamousBenefitSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionFamousBenefitSectionHeaderView.swift; path = Scenes/Benefit/Views/BenefitCollectionFamousBenefitSectionHeaderView.swift; sourceTree = "<group>"; };
+		F4DDEB782B0E838200B7BCCE /* BenefitCollectionViewFamousBenefitSectionBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionViewFamousBenefitSectionBackgroundView.swift; path = Scenes/Benefit/Views/BenefitCollectionViewFamousBenefitSectionBackgroundView.swift; sourceTree = "<group>"; };
+		F4DDEB7A2B0E8E6700B7BCCE /* BenefitCollectionFamousBenefitSectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionFamousBenefitSectionFooterView.swift; path = Scenes/Benefit/Views/BenefitCollectionFamousBenefitSectionFooterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +242,7 @@
 		F4DDEB252B0A597100B7BCCE /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				F4DDEB6E2B0D1FF500B7BCCE /* NPLabel.swift */,
 			);
 			name = UIComponents;
 			sourceTree = "<group>";
@@ -311,7 +322,6 @@
 		F4DDEB312B0B8C0600B7BCCE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				0B76F39D2B0D024800FA2442 /* HomeViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -387,8 +397,11 @@
 		F4DDEB3A2B0B8CAC00B7BCCE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F4DDEB662B0CE09800B7BCCE /* BenefitCollectionPointCheckBackgroundView.swift */,
+				F4DDEB662B0CE09800B7BCCE /* BenefitCollectionViewPointCheckSectionBackgroundView.swift */,
 				F4DDEB682B0CEB7B00B7BCCE /* BenefitCollectionPointCheckHeaderView.swift */,
+				F4DDEB762B0E783D00B7BCCE /* BenefitCollectionFamousBenefitSectionHeaderView.swift */,
+				F4DDEB782B0E838200B7BCCE /* BenefitCollectionViewFamousBenefitSectionBackgroundView.swift */,
+				F4DDEB7A2B0E8E6700B7BCCE /* BenefitCollectionFamousBenefitSectionFooterView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -397,6 +410,7 @@
 			isa = PBXGroup;
 			children = (
 				F4DDEB622B0CDC1600B7BCCE /* BenefitCollectionViewPointCheckCell.swift */,
+				F4DDEB6C2B0D1AE700B7BCCE /* BenefitCollectionViewFamousBenefitCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -404,6 +418,7 @@
 		F4DDEB3C2B0B8CB800B7BCCE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F4DDEB742B0E670300B7BCCE /* UserBenefitAppData.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -516,7 +531,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B2278852B0DB0D500732977 /* HomeSwitchSectionCollectionViewCell.swift in Sources */,
-				0B76F39E2B0D024800FA2442 /* HomeViewController.swift in Sources */,
 				0B0DFB152B0D20F3005F8618 /* HomePointSectionCollectionViewCell.swift in Sources */,
 				0B0DFB212B0D2102005F8618 /* HomeEventSectionHeaderView.swift in Sources */,
 				0B6677B52B0CD4CF00821105 /* (null) in Sources */,
@@ -531,10 +545,12 @@
 				F4DDEB5E2B0CB0A000B7BCCE /* BenefitViewController.swift in Sources */,
 				ED56A2FC2B0D1907005FE6AF /* BrandCollectionViewCell.swift in Sources */,
 				ED56A3002B0D1952005FE6AF /* TitleCollectionReusableView.swift in Sources */,
-				F4DDEB672B0CE09800B7BCCE /* BenefitCollectionPointCheckBackgroundView.swift in Sources */,
+				F4DDEB672B0CE09800B7BCCE /* BenefitCollectionViewPointCheckSectionBackgroundView.swift in Sources */,
+				F4DDEB672B0CE09800B7BCCE /* BenefitCollectionViewPointCheckSectionBackgroundView.swift in Sources */,
 				0B91C7A82B0B8A7A00ACDCE9 /* ImageLiterals.swift in Sources */,
 				0B0DFB142B0D20F3005F8618 /* HomeEventSectionCollectionViewCell.swift in Sources */,
 				F4DDEB692B0CEB7B00B7BCCE /* BenefitCollectionPointCheckHeaderView.swift in Sources */,
+				F4DDEB6D2B0D1AE700B7BCCE /* BenefitCollectionViewFamousBenefitCell.swift in Sources */,
 				F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */,
 				0B0DFB202B0D2102005F8618 /* HomeRecentPaymentsSectionHeaderView.swift in Sources */,
 				0B6677B92B0CD61C00821105 /* (null) in Sources */,
@@ -545,9 +561,14 @@
 				ED56A2FA2B0D18F1005FE6AF /* RecommendCollectionViewCell.swift in Sources */,
 				F4DDEB2A2B0B720600B7BCCE /* UIColor+.swift in Sources */,
 				F4DDEB5C2B0BCCA900B7BCCE /* UIStackView+.swift in Sources */,
+				F4DDEB7B2B0E8E6700B7BCCE /* BenefitCollectionFamousBenefitSectionFooterView.swift in Sources */,
 				0B6677A22B0CCEF400821105 /* (null) in Sources */,
 				0B0DFB262B0D2102005F8618 /* HomePlaceSectionFooterView.swift in Sources */,
 				0B6677AB2B0CD1C900821105 /* (null) in Sources */,
+				F4DDEB792B0E838200B7BCCE /* BenefitCollectionViewFamousBenefitSectionBackgroundView.swift in Sources */,
+				F4DDEB772B0E783D00B7BCCE /* BenefitCollectionFamousBenefitSectionHeaderView.swift in Sources */,
+				F4DDEB6F2B0D1FF500B7BCCE /* NPLabel.swift in Sources */,
+				F4DDEB752B0E670300B7BCCE /* UserBenefitAppData.swift in Sources */,
 				F4DDEB5A2B0BCBEB00B7BCCE /* UITextField+.swift in Sources */,
 				0B0DFB252B0D2102005F8618 /* HomeHeaderView.swift in Sources */,
 				0B0DFB162B0D20F3005F8618 /* HomePlaceSectionCollectionViewCell.swift in Sources */,

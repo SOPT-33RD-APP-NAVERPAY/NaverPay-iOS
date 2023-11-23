@@ -12,19 +12,17 @@ final class BenefitCollectionPointCheckHeaderView: UICollectionReusableView {
         
     static let identifier = "BenefitCollectionPointCheckHeaderView"
     
-     private let userNameLabel: UILabel = {
-        let label = UILabel()
-         label.font = .font(.subtitle_bold_17)
-         label.text = "남희주님의 포인트"
-        return label
-    }()
+    var userData: UserBenefitDataAppData? {
+        didSet {
+            guard let data = userData else { return }
+            userNameLabel.text = data.userName
+            userPointLabel.text = "\(data.userPoint)원"
+        }
+    }
     
-    private let userPointLabel: UILabel = {
-       let label = UILabel()
-        label.font = .font(.head_bold_20)
-        label.text = "11500원"
-       return label
-   }()
+    private let userNameLabel = NPLabel(font: .font(.subtitle_bold_17), color: .sub_black)
+    
+    private let userPointLabel = NPLabel(font: .font(.head_bold_20), color: .sub_black)
     
     private let pointArrowImageView: UIImageView = {
         let imageView = UIImageView()
