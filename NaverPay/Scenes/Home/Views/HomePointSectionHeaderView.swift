@@ -11,6 +11,13 @@ final class HomePointSectionHeaderView: UICollectionReusableView {
     
     static let identifier: String = "HomePointSectionHeaderView"
     
+    var homeDataAppData: HomeDataAppData? {
+        didSet {
+            guard let data = homeDataAppData else { return }
+            depositDetailLabel.text = "\(data.userPoint)"
+        }
+    }
+    
     private let logoImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = ImageLiterals.MainView.nLogo

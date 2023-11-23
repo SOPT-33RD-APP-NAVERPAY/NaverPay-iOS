@@ -10,6 +10,8 @@ import SnapKit
 
 final class HomeViewController: UIViewController {
     
+    private let homeDataAppData = HomeDataAppData.dummy()
+    
     private let HomeCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: setCollectionViewLayout())
         collectionView.showsVerticalScrollIndicator = false
@@ -204,6 +206,8 @@ extension HomeViewController: UICollectionViewDataSource {
             switch indexPath.section {
             case 1:
                 guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomePointSectionHeaderView.identifier, for: indexPath) as? HomePointSectionHeaderView else { return UICollectionReusableView() }
+                
+                header.homeDataAppData = self.homeDataAppData
                 return header
                 
             case 2:
@@ -255,11 +259,13 @@ extension HomeViewController: UICollectionViewDataSource {
             
         case 2:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeRecentPaymentsSectionCollectionViewCell.identifier, for: indexPath) as? HomeRecentPaymentsSectionCollectionViewCell else { return UICollectionViewCell() }
+            cell.homeDataAppData = self.homeDataAppData
             
             return cell
             
         case 3:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomePlaceSectionCollectionViewCell.identifier, for: indexPath) as? HomePlaceSectionCollectionViewCell else { return UICollectionViewCell() }
+            cell.homeDataAppData = self.homeDataAppData.brandList[indexPath.item]
             
             return cell
             

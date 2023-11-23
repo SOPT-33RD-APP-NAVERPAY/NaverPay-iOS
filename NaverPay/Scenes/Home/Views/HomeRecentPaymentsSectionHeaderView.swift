@@ -8,6 +8,7 @@
 import UIKit
 
 final class HomeRecentPaymentsSectionHeaderView: UICollectionReusableView {
+    
     static let identifier: String = "HomeRecentPaymentsSectionHeaderView"
     
     private let icArrow: UIImageView = {
