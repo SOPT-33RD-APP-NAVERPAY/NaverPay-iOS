@@ -36,11 +36,12 @@ enum ImageLiterals {
         static var btnCardPlus: UIImage { .load(named: "btn_card_plus") }
         static var icArrow: UIImage { .load(named: "ic_arrow") }
         static var imgCard_unseleced: UIImage { .load(named: "img_card_unseleced") }
-        static var imgCard2: UIImage { .load(named: "img_card2 ") }
+        static var imgCard2: UIImage { .load(named: "img_card2") }
         static var imgCard3: UIImage { .load(named: "img_card3") }
         static var imgNaverpayLogo: UIImage { .load(named: "img_naverpay_logo") }
         static var imgCardSeleced: UIImage { .load(named: "img_card_seleced") }
-        static var nLogo: UIImage { .load(named: "img_naverpay_logo") }
+        static var nLogo: UIImage { .load(named: "N_logo") }
+        static var icP: UIImage { .load(named: "home_ic_p") }
     }
     
     enum PlaceView {

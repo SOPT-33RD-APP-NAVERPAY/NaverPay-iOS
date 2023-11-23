@@ -20,15 +20,17 @@ final class HomeViewController: UIViewController {
     
     private let homeHeaderView = HomeHeaderView()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setLayout()
         setCollectionView()
+        setStyle()
     }
     
+    private func setStyle() {
+        view.backgroundColor = .bg_black
+    }
     
     
     private func setLayout() {
@@ -54,11 +56,13 @@ final class HomeViewController: UIViewController {
         HomeCollectionView.register(HomeRecentPaymentsSectionCollectionViewCell.self, forCellWithReuseIdentifier: HomeRecentPaymentsSectionCollectionViewCell.identifier)
         HomeCollectionView.register(HomePlaceSectionCollectionViewCell.self, forCellWithReuseIdentifier: HomePlaceSectionCollectionViewCell.identifier)
         HomeCollectionView.register(HomeEventSectionCollectionViewCell.self, forCellWithReuseIdentifier: HomeEventSectionCollectionViewCell.identifier)
+        HomeCollectionView.register(HomeSwitchSectionCollectionViewCell.self, forCellWithReuseIdentifier: HomeSwitchSectionCollectionViewCell.identifier)
         
         HomeCollectionView.register(HomePointSectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HomePointSectionHeaderView.identifier)
         HomeCollectionView.register(HomeRecentPaymentsSectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HomeRecentPaymentsSectionHeaderView.identifier)
         HomeCollectionView.register(HomePlaceSectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HomePlaceSectionHeaderView.identifier)
         HomeCollectionView.register(HomeEventSectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HomeEventSectionHeaderView.identifier)
+        HomeCollectionView.register(HomePointSectionFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: HomePointSectionFooterView.identifier)
         HomeCollectionView.register(HomePlaceSectionFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: HomePlaceSectionFooterView.identifier)
     }
     
@@ -67,29 +71,46 @@ final class HomeViewController: UIViewController {
         let layout = UICollectionViewCompositionalLayout { (sectionNumber, env) -> NSCollectionLayoutSection? in
             
             switch sectionNumber {
+                
             case 0:
-                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(400), heightDimension: .absolute(389)))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .estimated(1), heightDimension: .estimated(1)), subitems: [item])
+                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(60)))
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(60)), subitems: [item])
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .continuous
-                section.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 0, bottom: 20, trailing: 0)
-                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(66))
+                
+                return section
+                
+            case 1:
+                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(76), heightDimension: .absolute(56)))
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1.5), heightDimension: .absolute(91)), subitems: [item])
+                group.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 16, bottom: 24, trailing: 0)
+                group.interItemSpacing = .fixed(14)
+                
+                let section = NSCollectionLayoutSection(group: group)
+                section.orthogonalScrollingBehavior = .continuous
+                
+                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(178))
                 let header = NSCollectionLayoutBoundarySupplementaryItem(
                     layoutSize: headerSize,
                     elementKind: UICollectionView.elementKindSectionHeader,
                     alignment: .top
                 )
-                
-                header.pinToVisibleBounds = false
-                section.boundarySupplementaryItems = [header]
-                
                 let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(elementKind: HomePointSectionBackgroundView.identifier)
-                sectionBackgroundDecoration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0)
                 section.decorationItems = [sectionBackgroundDecoration]
+                
+                let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(52))
+                let footer = NSCollectionLayoutBoundarySupplementaryItem(
+                    layoutSize: footerSize,
+                    elementKind: UICollectionView.elementKindSectionFooter,
+                    alignment: .bottom
+                )
+                footer.pinToVisibleBounds = true
+                section.boundarySupplementaryItems = [footer, header]
                 
                 return section
                 
-            case 1:
+                
+            case 2:
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(55), heightDimension: .absolute(100)))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .estimated(1), heightDimension: .estimated(1)), subitems: [item])
                 let section = NSCollectionLayoutSection(group: group)
@@ -106,7 +127,7 @@ final class HomeViewController: UIViewController {
                 
                 return section
                 
-            case 2:
+            case 3:
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(55), heightDimension: .estimated(50)))
                 let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .estimated(1), heightDimension: .absolute(400)), subitems: [item])
                 let section = NSCollectionLayoutSection(group: group)
@@ -121,7 +142,7 @@ final class HomeViewController: UIViewController {
                 )
                 header.pinToVisibleBounds = true
                 section.boundarySupplementaryItems = [header]
-
+                
                 let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(66))
                 let footer = NSCollectionLayoutBoundarySupplementaryItem(
                     layoutSize: footerSize,
@@ -130,12 +151,12 @@ final class HomeViewController: UIViewController {
                 )
                 footer.pinToVisibleBounds = true
                 section.boundarySupplementaryItems = [footer]
-
-                return section
-
-
                 
-            case 3:
+                return section
+                
+                
+                
+            case 4:
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(55), heightDimension: .absolute(100)))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .estimated(1), heightDimension: .estimated(1)), subitems: [item])
                 let section = NSCollectionLayoutSection(group: group)
@@ -167,10 +188,12 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 4
-        case 1:
             return 1
+        case 1:
+            return 4
         case 2:
+            return 1
+        case 3:
             return 4
         default:
             return 3
@@ -178,7 +201,7 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 4
+        return 5
     }
     
     
@@ -186,19 +209,19 @@ extension HomeViewController: UICollectionViewDataSource {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             switch indexPath.section {
-            case 0:
+            case 1:
                 guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomePointSectionHeaderView.identifier, for: indexPath) as? HomePointSectionHeaderView else { return UICollectionReusableView() }
                 return header
                 
-            case 1:
+            case 2:
                 guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeRecentPaymentsSectionHeaderView.identifier, for: indexPath) as? HomeRecentPaymentsSectionHeaderView else { return UICollectionReusableView() }
                 return header
                 
-            case 2:
+            case 3:
                 guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomePlaceSectionHeaderView.identifier, for: indexPath) as? HomePlaceSectionHeaderView else { return UICollectionReusableView() }
                 return header
                 
-            case 3:
+            case 4:
                 guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeEventSectionHeaderView.identifier, for: indexPath) as? HomeEventSectionHeaderView else { return UICollectionReusableView() }
                 return header
                 
@@ -206,9 +229,12 @@ extension HomeViewController: UICollectionViewDataSource {
                 return UICollectionReusableView()
             }
             
-        case UICollectionView.elementKindSectionFooter: // Corrected element kind for footer
+        case UICollectionView.elementKindSectionFooter:
             switch indexPath.section {
-            case 2:
+            case 1:
+                guard let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomePointSectionFooterView.identifier, for: indexPath) as? HomePointSectionFooterView else { return UICollectionReusableView() }
+                return footer
+            case 3:
                 guard let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomePlaceSectionFooterView.identifier, for: indexPath) as? HomePlaceSectionFooterView else { return UICollectionReusableView() }
                 return footer
                 
@@ -226,21 +252,25 @@ extension HomeViewController: UICollectionViewDataSource {
         
         switch indexPath.section {
         case 0:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeSwitchSectionCollectionViewCell.identifier, for: indexPath) as? HomeSwitchSectionCollectionViewCell else { return UICollectionViewCell()}
+            
+            return cell
+        case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomePointSectionCollectionViewCell.identifier, for: indexPath) as? HomePointSectionCollectionViewCell else { return UICollectionViewCell()}
             
             return cell
             
-        case 1:
+        case 2:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeRecentPaymentsSectionCollectionViewCell.identifier, for: indexPath) as? HomeRecentPaymentsSectionCollectionViewCell else { return UICollectionViewCell() }
             
             return cell
             
-        case 2:
+        case 3:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomePlaceSectionCollectionViewCell.identifier, for: indexPath) as? HomePlaceSectionCollectionViewCell else { return UICollectionViewCell() }
             
             return cell
             
-        case 3:
+        case 4:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeEventSectionCollectionViewCell.identifier, for: indexPath) as? HomeEventSectionCollectionViewCell else { return UICollectionViewCell() }
             
             return cell

@@ -19,6 +19,8 @@
 		0B0DFB252B0D2102005F8618 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0DFB1D2B0D2102005F8618 /* HomeHeaderView.swift */; };
 		0B0DFB262B0D2102005F8618 /* HomePlaceSectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0DFB1E2B0D2102005F8618 /* HomePlaceSectionFooterView.swift */; };
 		0B0DFB272B0D2102005F8618 /* HomePointSectionInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0DFB1F2B0D2102005F8618 /* HomePointSectionInfoView.swift */; };
+		0B2278832B0DB07700732977 /* HomePointSectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2278822B0DB07700732977 /* HomePointSectionFooterView.swift */; };
+		0B2278852B0DB0D500732977 /* HomeSwitchSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2278842B0DB0D500732977 /* HomeSwitchSectionCollectionViewCell.swift */; };
 		0B6677A02B0CBF7500821105 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		0B6677A22B0CCEF400821105 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		0B6677A42B0CCF1300821105 /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -69,6 +71,8 @@
 		0B0DFB1D2B0D2102005F8618 /* HomeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeHeaderView.swift; path = Scenes/Home/Views/HomeHeaderView.swift; sourceTree = "<group>"; };
 		0B0DFB1E2B0D2102005F8618 /* HomePlaceSectionFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePlaceSectionFooterView.swift; path = Scenes/Home/Views/HomePlaceSectionFooterView.swift; sourceTree = "<group>"; };
 		0B0DFB1F2B0D2102005F8618 /* HomePointSectionInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePointSectionInfoView.swift; path = Scenes/Home/Views/HomePointSectionInfoView.swift; sourceTree = "<group>"; };
+		0B2278822B0DB07700732977 /* HomePointSectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomePointSectionFooterView.swift; path = Scenes/Home/Views/HomePointSectionFooterView.swift; sourceTree = "<group>"; };
+		0B2278842B0DB0D500732977 /* HomeSwitchSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeSwitchSectionCollectionViewCell.swift; path = Scenes/Home/Views/HomeSwitchSectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		0B76F39D2B0D024800FA2442 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Scenes/Home/ViewControllers/HomeViewController.swift; sourceTree = "<group>"; };
 		0B91C7A72B0B8A7A00ACDCE9 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageLiterals.swift; path = Global/Literals/ImageLiterals.swift; sourceTree = "<group>"; };
 		0B91C7A92B0B8B3000ACDCE9 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIImage+.swift"; path = "Global/Extensions/UIImage+.swift"; sourceTree = "<group>"; };
@@ -108,17 +112,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B2278812B0DAB0B00732977 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				0B0DFB182B0D2102005F8618 /* HomeRecentPaymentsSectionHeaderView.swift */,
+				0B0DFB1B2B0D2102005F8618 /* HomePointSectionHeaderView.swift */,
+				0B0DFB1A2B0D2102005F8618 /* HomePlaceSectionHeaderView.swift */,
+				0B0DFB1D2B0D2102005F8618 /* HomeHeaderView.swift */,
+				0B0DFB192B0D2102005F8618 /* HomeEventSectionHeaderView.swift */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
 		0B6677A92B0CD18F00821105 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0B0DFB192B0D2102005F8618 /* HomeEventSectionHeaderView.swift */,
-				0B0DFB1D2B0D2102005F8618 /* HomeHeaderView.swift */,
+				0B2278812B0DAB0B00732977 /* Headers */,
 				0B0DFB1E2B0D2102005F8618 /* HomePlaceSectionFooterView.swift */,
-				0B0DFB1A2B0D2102005F8618 /* HomePlaceSectionHeaderView.swift */,
 				0B0DFB1C2B0D2102005F8618 /* HomePointSectionBackgroundView.swift */,
-				0B0DFB1B2B0D2102005F8618 /* HomePointSectionHeaderView.swift */,
 				0B0DFB1F2B0D2102005F8618 /* HomePointSectionInfoView.swift */,
-				0B0DFB182B0D2102005F8618 /* HomeRecentPaymentsSectionHeaderView.swift */,
+				0B2278822B0DB07700732977 /* HomePointSectionFooterView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -317,6 +330,7 @@
 				0B0DFB122B0D20F3005F8618 /* HomePlaceSectionCollectionViewCell.swift */,
 				0B0DFB112B0D20F3005F8618 /* HomePointSectionCollectionViewCell.swift */,
 				0B0DFB132B0D20F3005F8618 /* HomeRecentPaymentsSectionCollectionViewCell.swift */,
+				0B2278842B0DB0D500732977 /* HomeSwitchSectionCollectionViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -501,6 +515,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B2278852B0DB0D500732977 /* HomeSwitchSectionCollectionViewCell.swift in Sources */,
 				0B76F39E2B0D024800FA2442 /* HomeViewController.swift in Sources */,
 				0B0DFB152B0D20F3005F8618 /* HomePointSectionCollectionViewCell.swift in Sources */,
 				0B0DFB212B0D2102005F8618 /* HomeEventSectionHeaderView.swift in Sources */,
@@ -540,6 +555,7 @@
 				0B0DFB232B0D2102005F8618 /* HomePointSectionHeaderView.swift in Sources */,
 				0B6677A82B0CCF7F00821105 /* (null) in Sources */,
 				0B6677AD2B0CD24300821105 /* (null) in Sources */,
+				0B2278832B0DB07700732977 /* HomePointSectionFooterView.swift in Sources */,
 				0B6677B12B0CD3DB00821105 /* (null) in Sources */,
 				0B6677B72B0CD50B00821105 /* (null) in Sources */,
 				0B6677A42B0CCF1300821105 /* (null) in Sources */,
