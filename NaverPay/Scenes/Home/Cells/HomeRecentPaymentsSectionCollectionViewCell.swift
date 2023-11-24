@@ -14,7 +14,7 @@ final class HomeRecentPaymentsSectionCollectionViewCell: UICollectionViewCell {
     var homeDataAppData: HomeDataAppData? {
         didSet {
             guard let data = homeDataAppData else { return }
-            paidAmountLabel.text = "\(data.onsitePayment.amount)원"
+            paidAmountLabel.text = "\(data.onsitePayment.amount.formattedString())원"
             storeNameLabel.text = data.onsitePayment.name
             logoImageView.image = ImageLiterals.MainView.logoGs25
         }

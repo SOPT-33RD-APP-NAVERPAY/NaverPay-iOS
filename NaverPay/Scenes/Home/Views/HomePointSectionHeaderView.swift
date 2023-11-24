@@ -14,7 +14,7 @@ final class HomePointSectionHeaderView: UICollectionReusableView {
     var homeDataAppData: HomeDataAppData? {
         didSet {
             guard let data = homeDataAppData else { return }
-            depositDetailLabel.text = "\(data.userPoint)"
+            depositDetailLabel.text = "\(data.userPoint.formattedString())"
         }
     }
     
