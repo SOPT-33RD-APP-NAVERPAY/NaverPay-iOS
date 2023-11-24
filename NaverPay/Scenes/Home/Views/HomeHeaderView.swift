@@ -8,7 +8,6 @@
 import UIKit
 
 final class HomeHeaderView: UIView {
-    
     static let identifier: String = "HomeHeaderView"
     
     private let logoImage: UIImageView = {
@@ -66,7 +65,5 @@ final class HomeHeaderView: UIView {
             $0.height.equalTo(14)
             $0.top.equalToSuperview().offset(22)
         }
-        
     }
-    
 }

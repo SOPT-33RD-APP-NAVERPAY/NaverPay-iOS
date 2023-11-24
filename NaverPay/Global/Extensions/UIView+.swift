@@ -51,6 +51,13 @@ extension UIView {
         layer.masksToBounds = true
     }
     
+    //원하는 코너만 둥글게
+    func roundCorners(cornerRadius: CGFloat, maskedCorners: CACornerMask) {
+            clipsToBounds = true
+            layer.cornerRadius = cornerRadius
+            layer.maskedCorners = CACornerMask(arrayLiteral: maskedCorners)
+        }
+    
     //border주기
     func makeBorder(width : CGFloat, color : UIColor) {
         layer.borderWidth = width
