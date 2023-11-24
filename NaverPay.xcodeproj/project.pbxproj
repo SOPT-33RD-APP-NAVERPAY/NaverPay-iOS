@@ -64,6 +64,8 @@
 		F4DDEB7F2B0F27CE00B7BCCE /* CategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB7E2B0F27CE00B7BCCE /* CategoryData.swift */; };
 		F4DDEB802B0F607700B7BCCE /* BenefitCollectionViewPointCheckSectionBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB662B0CE09800B7BCCE /* BenefitCollectionViewPointCheckSectionBackgroundView.swift */; };
 		F4DDEB822B0F654500B7BCCE /* BenefitCollectionCategorySectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB812B0F654500B7BCCE /* BenefitCollectionCategorySectionHeaderView.swift */; };
+		F4DDEB842B0F962700B7BCCE /* BenefitCollectionViewEntireBenefitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB832B0F962700B7BCCE /* BenefitCollectionViewEntireBenefitCell.swift */; };
+		F4DDEB862B0FD70100B7BCCE /* BenefitCollectionEntireBenefitSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB852B0FD70100B7BCCE /* BenefitCollectionEntireBenefitSectionHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +115,8 @@
 		F4DDEB7C2B0F264600B7BCCE /* BenefitCollectionViewPointCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionViewPointCategoryCell.swift; path = Scenes/Benefit/Cells/BenefitCollectionViewPointCategoryCell.swift; sourceTree = "<group>"; };
 		F4DDEB7E2B0F27CE00B7BCCE /* CategoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryData.swift; path = Scenes/Benefit/Models/CategoryData.swift; sourceTree = "<group>"; };
 		F4DDEB812B0F654500B7BCCE /* BenefitCollectionCategorySectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionCategorySectionHeaderView.swift; path = Scenes/Benefit/Views/BenefitCollectionCategorySectionHeaderView.swift; sourceTree = "<group>"; };
+		F4DDEB832B0F962700B7BCCE /* BenefitCollectionViewEntireBenefitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionViewEntireBenefitCell.swift; path = Scenes/Benefit/Cells/BenefitCollectionViewEntireBenefitCell.swift; sourceTree = "<group>"; };
+		F4DDEB852B0FD70100B7BCCE /* BenefitCollectionEntireBenefitSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionEntireBenefitSectionHeaderView.swift; path = Scenes/Benefit/Views/BenefitCollectionEntireBenefitSectionHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -410,6 +414,7 @@
 				F4DDEB782B0E838200B7BCCE /* BenefitCollectionViewFamousBenefitSectionBackgroundView.swift */,
 				F4DDEB7A2B0E8E6700B7BCCE /* BenefitCollectionFamousBenefitSectionFooterView.swift */,
 				F4DDEB812B0F654500B7BCCE /* BenefitCollectionCategorySectionHeaderView.swift */,
+				F4DDEB852B0FD70100B7BCCE /* BenefitCollectionEntireBenefitSectionHeaderView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -420,6 +425,7 @@
 				F4DDEB622B0CDC1600B7BCCE /* BenefitCollectionViewPointCheckCell.swift */,
 				F4DDEB6C2B0D1AE700B7BCCE /* BenefitCollectionViewFamousBenefitCell.swift */,
 				F4DDEB7C2B0F264600B7BCCE /* BenefitCollectionViewPointCategoryCell.swift */,
+				F4DDEB832B0F962700B7BCCE /* BenefitCollectionViewEntireBenefitCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -544,6 +550,7 @@
 				0B2278852B0DB0D500732977 /* HomeSwitchSectionCollectionViewCell.swift in Sources */,
 				F4DDEB7F2B0F27CE00B7BCCE /* CategoryData.swift in Sources */,
 				0B0DFB152B0D20F3005F8618 /* HomePointSectionCollectionViewCell.swift in Sources */,
+				F4DDEB862B0FD70100B7BCCE /* BenefitCollectionEntireBenefitSectionHeaderView.swift in Sources */,
 				0B0DFB212B0D2102005F8618 /* HomeEventSectionHeaderView.swift in Sources */,
 				0B6677B52B0CD4CF00821105 /* (null) in Sources */,
 				0B0DFB222B0D2102005F8618 /* HomePlaceSectionHeaderView.swift in Sources */,
@@ -588,6 +595,7 @@
 				0B6677A82B0CCF7F00821105 /* (null) in Sources */,
 				0B6677AD2B0CD24300821105 /* (null) in Sources */,
 				0B2278832B0DB07700732977 /* HomePointSectionFooterView.swift in Sources */,
+				F4DDEB842B0F962700B7BCCE /* BenefitCollectionViewEntireBenefitCell.swift in Sources */,
 				0B6677B12B0CD3DB00821105 /* (null) in Sources */,
 				F4DDEB7D2B0F264700B7BCCE /* BenefitCollectionViewPointCategoryCell.swift in Sources */,
 				0B6677B72B0CD50B00821105 /* (null) in Sources */,
