@@ -112,7 +112,7 @@ final class GraphCollectionViewCell: UICollectionViewCell {
     
     private let dateLabel = NPLabel(font: .font(.detail_smbold_12), color: .grayscale_gray6)
     
-    private let category1Button: UIButton = {
+    private let categoryFirstButton: UIButton = {
        let button = UIButton()
         button.setTitle("전체", for: .normal)
         button.titleLabel?.font = UIFont.font(.detail_semibold_14)
@@ -123,7 +123,7 @@ final class GraphCollectionViewCell: UICollectionViewCell {
         return button
     }()
     
-    private let category2Button: UIButton = {
+    private let categorySecondButton: UIButton = {
        let button = UIButton()
         button.setTitle("적립", for: .normal)
         button.titleLabel?.font = UIFont.font(.detail_semibold_14)
@@ -135,7 +135,7 @@ final class GraphCollectionViewCell: UICollectionViewCell {
         return button
     }()
     
-    private let category3Button: UIButton = {
+    private let categoryThirdButton: UIButton = {
        let button = UIButton()
         button.setTitle("사용", for: .normal)
         button.titleLabel?.font = UIFont.font(.detail_semibold_14)
@@ -155,15 +155,10 @@ final class GraphCollectionViewCell: UICollectionViewCell {
          return stackView
     }()
     
-    
-    
-    
-    
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        setStyle()
         setLayout()
     }
     
@@ -171,7 +166,7 @@ final class GraphCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setLayout() {
+    private func setStyle() {
         contentView.backgroundColor = .bg_white
         monthLabel.text = "11월"
         descLabel.text = "이달에는 결제수단 혜택을 많이 받았어요"
@@ -180,7 +175,9 @@ final class GraphCollectionViewCell: UICollectionViewCell {
         dateLabel.text = "2023.11.01. \n~ 11.30."
         dateLabel.numberOfLines = 2
         dateLabel.textAlignment = .center
-        
+    }
+    
+    private func setLayout() {
         contentView.addSubviews(monthStackView,leftArrowIcon, rightArrowIcon, descLabel, graphView, categoryStackView, alertBanner)
         
         monthStackView.snp.makeConstraints{

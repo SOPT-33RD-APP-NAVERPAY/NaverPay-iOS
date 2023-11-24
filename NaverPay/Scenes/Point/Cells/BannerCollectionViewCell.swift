@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BannerCollectionViewCell: UICollectionViewCell {
+final class BannerCollectionViewCell: UICollectionViewCell {
     static let identifier:String = "BannerCollectionViewCell"
     
     private let bannerImageView: UIImageView = {
