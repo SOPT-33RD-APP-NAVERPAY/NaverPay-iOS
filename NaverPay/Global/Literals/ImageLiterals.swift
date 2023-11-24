@@ -49,6 +49,7 @@ enum ImageLiterals {
         static var event_img_logo_cu: UIImage { .load(named: "event_img_logo_cu") }
         static var event_img_logo_pb: UIImage { .load(named: "event_img_logo_pb") }
         static var event_img_logo_touslesjours: UIImage { .load(named: "event_img_logo_touslesjours") }
+        static var icDown: UIImage { .load(named: "Polygon 4") }
     }
     
     enum PlaceView {

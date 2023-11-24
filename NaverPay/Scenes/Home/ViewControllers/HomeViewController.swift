@@ -12,6 +12,7 @@ final class HomeViewController: UIViewController {
     
     private let homeDataAppData = HomeDataAppData.dummy()
     private let homeEventData = HomeEventData.dummy()
+    private let homeCardData = HomeCardData.dummy()
     
     private let HomeCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: setCollectionViewLayout())
@@ -255,6 +256,7 @@ extension HomeViewController: UICollectionViewDataSource {
             return cell
         case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomePointSectionCollectionViewCell.identifier, for: indexPath) as? HomePointSectionCollectionViewCell else { return UICollectionViewCell()}
+            cell.homeCardData = self.homeCardData[indexPath.item]
             
             return cell
             
