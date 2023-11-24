@@ -120,6 +120,9 @@ extension UIColor {
     static var pb_bg: UIColor {
         return UIColor(hex: "#003985")
     }
+    static var sub_navy: UIColor {
+        return UIColor(hex: "#2E333A")
+    }
 }
 
 extension UIColor {
