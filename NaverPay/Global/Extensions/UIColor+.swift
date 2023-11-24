@@ -24,6 +24,9 @@ extension UIColor {
     static var sub_palegreen: UIColor {
         return UIColor(hex: "#EEF9F3")
     }
+    static var sub_palegreen2: UIColor {
+        return UIColor(hex: "#E2F6EC")
+    }
     static var sub_darkgreen: UIColor {
         return UIColor(hex: "#098866")
     }

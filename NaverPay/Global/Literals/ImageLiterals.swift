@@ -15,7 +15,7 @@ enum ImageLiterals {
         static var bnfIcPurchase: UIImage { .load(named: "bnf_ic_purchase") }
         static var iosBnfBtnLikeBlack: UIImage { .load(named: "ios_bnf_btn_like_default") }
         static var iosBnfBtnLikeRed: UIImage { .load(named: "ios_bnf_btn_like") }
-        static var percentageCircle: UIImage { .load(named: "percentage-circle") }
+        static var percentageCircle: UIImage { .load(named: "bnf_ic_thunder") }
         static var typeAd1: UIImage { .load(named: "type=ad1") }
         static var typeAd2: UIImage { .load(named: "type=ad2") }
         static var typeAd3: UIImage { .load(named: "type=ad3") }
@@ -26,6 +26,7 @@ enum ImageLiterals {
         static var pointArrowFirst: UIImage { .load(named: "bnf_pointarrow1")}
         static var pointArrowSecond: UIImage { .load(named: "bnf_arrowSecond")}
         static var locationImage: UIImage { .load(named: "bnf_ic_location")}
+        static var qnaArrow: UIImage { .load(named: "ios_bnf_ic_qnaarrow1")}
     }
     enum Global {
         static var mapIcon: UIImage { .load(named: "bxs_map") }
