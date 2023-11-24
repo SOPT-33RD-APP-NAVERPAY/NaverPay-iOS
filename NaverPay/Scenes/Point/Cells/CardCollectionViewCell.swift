@@ -8,7 +8,7 @@
 import UIKit
 
 final class CardCollectionViewCell: UICollectionViewCell {
-    static let identifier:String = "CardCollectionViewCell"
+    static let identifier: String = "CardCollectionViewCell"
     
     private let cardBackgroundImageView: UIImageView = {
         let imageView = UIImageView()

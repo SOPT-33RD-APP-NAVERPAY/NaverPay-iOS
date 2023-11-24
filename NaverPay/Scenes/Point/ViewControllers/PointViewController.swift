@@ -74,13 +74,11 @@ extension PointViewController: UICollectionViewDataSource {
         case 2:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GraphCollectionViewCell.identifier, for: indexPath) as? GraphCollectionViewCell
             else { return UICollectionViewCell()}
-            cell.backgroundColor = .adcard_orange
             return cell
             
         case 3:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UsageCollectionViewCell.identifier, for: indexPath) as? UsageCollectionViewCell
             else { return UICollectionViewCell()}
-            cell.backgroundColor = .adcard_blue
             return cell
             
         default:
@@ -117,7 +115,7 @@ extension PointViewController: UICollectionViewDelegateFlowLayout{
             return CGSize(width: UIScreen.main.bounds.width, height: 73)
             
         case 2:
-            return CGSize(width: UIScreen.main.bounds.width, height: 350)
+            return CGSize(width: UIScreen.main.bounds.width, height: 500)
             
         case 3:
             return CGSize(width: UIScreen.main.bounds.width, height: 70)
