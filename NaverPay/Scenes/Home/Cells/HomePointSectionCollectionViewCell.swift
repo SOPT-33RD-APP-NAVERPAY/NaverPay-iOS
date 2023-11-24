@@ -36,6 +36,7 @@ final class HomePointSectionCollectionViewCell: UICollectionViewCell {
     private let borderView: UIView = {
         let border = UIView()
         border.makeCornerRound(radius: 4)
+        border.backgroundColor = .bg_black
         return border
     }()
     
@@ -50,15 +51,14 @@ final class HomePointSectionCollectionViewCell: UICollectionViewCell {
     }
     
     private func setLayout() {
-        contentView.addSubviews(cardImageView,icDownView)
-        cardImageView.addSubviews(borderView)
+        contentView.addSubviews(borderView,icDownView,cardImageView)
         
         cardImageView.snp.makeConstraints {
-            $0.bottom.trailing.leading.equalToSuperview()
-            $0.top.equalToSuperview().offset(11)
+            $0.centerX.centerY.equalTo(borderView.snp.center)
         }
         borderView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.bottom.trailing.leading.equalToSuperview()
+            $0.top.equalToSuperview().offset(11)
         }
         icDownView.snp.makeConstraints {
             $0.height.equalTo(7)
