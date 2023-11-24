@@ -12,8 +12,6 @@
 //  Created by Seonwoo Kim on 2023/11/24.
 //
 
-import Foundation
-
 import UIKit
 
 struct HomeEventData {
