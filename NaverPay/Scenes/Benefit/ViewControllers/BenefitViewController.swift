@@ -71,6 +71,8 @@ final class BenefitViewController: UIViewController {
         benefitCollectionView.register(BenefitCollectionViewEntireBenefitCell.self, forCellWithReuseIdentifier: BenefitCollectionViewEntireBenefitCell.identifier)
         benefitCollectionView.register(BenefitCollectionEntireBenefitSectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: BenefitCollectionEntireBenefitSectionHeaderView.identifier)
         
+        benefitCollectionView.register(BenefitCollectionViewAdBannerCell.self, forCellWithReuseIdentifier: BenefitCollectionViewAdBannerCell.identifier)
+        
     }
     
     static func setCollectionViewLayout() -> UICollectionViewLayout {
@@ -81,9 +83,8 @@ final class BenefitViewController: UIViewController {
             case 0:
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(105), heightDimension: .estimated(108)))
                 item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: -10)
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1.2), heightDimension: .absolute(123)), subitems: [item])
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1.3), heightDimension: .absolute(123)), subitems: [item])
                 let section = NSCollectionLayoutSection(group: group)
-                
                 section.orthogonalScrollingBehavior = .continuous
                 
                 //섹션헤더 설정
@@ -170,8 +171,20 @@ final class BenefitViewController: UIViewController {
                 
                 return section
                 
-                //해야될 것 : 헤더뷰 위에만 cornerradius주기, 이미지 크기 조절, 디자인한테 저 버튼안에 Textfont 맞는지 확인
+            case 4:
+                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(343), heightDimension: .estimated(100)))
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(100)), subitems: [item])
+                let section = NSCollectionLayoutSection(group: group)
                 
+                section.orthogonalScrollingBehavior = .paging
+                return section
+                
+            case 5:
+                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(UIScreen.main.bounds.width), heightDimension: .estimated(103)))
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(103)), subitems: [item])
+                let section = NSCollectionLayoutSection(group: group)
+                
+                return section
             default:
                 return nil
             }
@@ -199,6 +212,8 @@ extension BenefitViewController: UICollectionViewDataSource {
             return 5
         case 3:
             return 4
+        case 4:
+            return 3
         default:
             return 0
         }
@@ -244,6 +259,12 @@ extension BenefitViewController: UICollectionViewDataSource {
             }
             return cell
             
+        case 4:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BenefitCollectionViewAdBannerCell.identifier, for: indexPath) as? BenefitCollectionViewAdBannerCell else { return UICollectionViewCell() }
+            cell.bannerImageView.image = cell.bannerImage[indexPath.item]
+           
+            return cell
+            
         default:
             return UICollectionViewCell()
             
@@ -251,7 +272,7 @@ extension BenefitViewController: UICollectionViewDataSource {
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 4
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
