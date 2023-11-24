@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Property 1=press.png",
+      "filename" : "Polygon 4.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Property 1=press@2x.png",
+      "filename" : "Polygon 4@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Property 1=press@3x.png",
+      "filename" : "Polygon 4@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

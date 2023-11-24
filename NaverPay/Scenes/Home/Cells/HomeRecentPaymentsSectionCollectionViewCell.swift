@@ -10,6 +10,15 @@ import UIKit
 final class HomeRecentPaymentsSectionCollectionViewCell: UICollectionViewCell {
     static let identifier: String = "HomeRecentPaymentsSectionCollectionViewCell"
     
+    var homeDataAppData: HomeDataAppData? {
+        didSet {
+            guard let data = homeDataAppData else { return }
+            paidAmountLabel.text = "\(data.onsitePayment.amount.formattedString())원"
+            storeNameLabel.text = data.onsitePayment.name
+            logoImageView.image = ImageLiterals.MainView.logoGs25
+        }
+    }
+    
     private let paidAmountLabel: NPLabel = {
         let label = NPLabel(font: .font(.head_bold_20), color: .bg_black)
         label.text = "-25,000원"

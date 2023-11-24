@@ -9,6 +9,9 @@ import UIKit
 import SnapKit
 
 final class HomeViewController: UIViewController {
+    private let homeDataAppData = HomeDataAppData.dummy()
+    private let homeEventData = HomeEventData.dummy()
+    private var homeCardData = HomeCardData.dummy()
     
     private let HomeCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: setCollectionViewLayout())
@@ -175,7 +178,17 @@ final class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController: UICollectionViewDelegate { }
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            for index in 0..<homeCardData.count {
+                homeCardData[index].isSelected = false
+            }
+            homeCardData[indexPath.item].isSelected = true
+            collectionView.reloadSections(IndexSet(integer: 1))
+        }
+    }
+}
 extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -204,6 +217,8 @@ extension HomeViewController: UICollectionViewDataSource {
             switch indexPath.section {
             case 1:
                 guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomePointSectionHeaderView.identifier, for: indexPath) as? HomePointSectionHeaderView else { return UICollectionReusableView() }
+                
+                header.homeDataAppData = self.homeDataAppData
                 return header
                 
             case 2:
@@ -250,21 +265,25 @@ extension HomeViewController: UICollectionViewDataSource {
             return cell
         case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomePointSectionCollectionViewCell.identifier, for: indexPath) as? HomePointSectionCollectionViewCell else { return UICollectionViewCell()}
+            cell.homeCardData = self.homeCardData[indexPath.item]
             
             return cell
             
         case 2:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeRecentPaymentsSectionCollectionViewCell.identifier, for: indexPath) as? HomeRecentPaymentsSectionCollectionViewCell else { return UICollectionViewCell() }
+            cell.homeDataAppData = self.homeDataAppData
             
             return cell
             
         case 3:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomePlaceSectionCollectionViewCell.identifier, for: indexPath) as? HomePlaceSectionCollectionViewCell else { return UICollectionViewCell() }
+            cell.homeDataAppData = self.homeDataAppData.brandList[indexPath.item]
             
             return cell
             
         case 4:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeEventSectionCollectionViewCell.identifier, for: indexPath) as? HomeEventSectionCollectionViewCell else { return UICollectionViewCell() }
+            cell.homeEventData = self.homeEventData[indexPath.item]
             
             return cell
             
@@ -273,3 +292,4 @@ extension HomeViewController: UICollectionViewDataSource {
         }
     }
 }
+

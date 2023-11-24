@@ -36,11 +36,9 @@ enum ImageLiterals {
     enum MainView {
         static var btnCardPlus: UIImage { .load(named: "btn_card_plus") }
         static var icArrow: UIImage { .load(named: "ic_arrow") }
-        static var imgCard_unseleced: UIImage { .load(named: "img_card_unseleced") }
         static var imgCard2: UIImage { .load(named: "img_card2") }
         static var imgCard3: UIImage { .load(named: "img_card3") }
         static var imgNaverpayLogo: UIImage { .load(named: "img_naverpay_logo") }
-        static var imgCardSeleced: UIImage { .load(named: "img_card_seleced") }
         static var nLogo: UIImage { .load(named: "N_logo") }
         static var icP: UIImage { .load(named: "home_ic_p") }
         static var icArrowGray: UIImage { .load(named: "ic_arrow_gray") }
@@ -49,6 +47,7 @@ enum ImageLiterals {
         static var event_img_logo_cu: UIImage { .load(named: "event_img_logo_cu") }
         static var event_img_logo_pb: UIImage { .load(named: "event_img_logo_pb") }
         static var event_img_logo_touslesjours: UIImage { .load(named: "event_img_logo_touslesjours") }
+        static var icDown: UIImage { .load(named: "Polygon 4") }
     }
     
     enum PlaceView {

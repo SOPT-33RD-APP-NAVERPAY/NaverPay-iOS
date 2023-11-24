@@ -10,6 +10,16 @@ import UIKit
 final class HomeEventSectionCollectionViewCell: UICollectionViewCell {
     static let identifier: String = "HomeEventSectionCollectionViewCell"
     
+    var homeEventData: HomeEventData? {
+        didSet {
+            guard let data = homeEventData else { return }
+            benefitLabel.text = data.description
+            benefitDetailLabel.text = data.detailDescription
+            logoImageView.image = data.logoImage
+            self.backgroundColor = data.color
+        }
+    }
+    
     private let benefitLabel: NPLabel = {
         let label = NPLabel(font: .font(.detail_regular_14), color: .bg_white.withAlphaComponent(0.8))
         label.text = "매일매일 더블혜택"

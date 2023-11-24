@@ -8,7 +8,17 @@
 import UIKit
 
 final class HomePlaceSectionCollectionViewCell: UICollectionViewCell {
+    
     static let identifier: String = "HomePlaceSectionCollectionViewCell"
+    
+    var homeDataAppData: BrandAppData? {
+        didSet {
+            guard let data = homeDataAppData else { return }
+            storeNameLabel.text = "\(data.name) \(data.place)"
+            logoImageView.image = ImageLiterals.MainView.logoCuDummy
+            descriptionLabel.text = data.discountContent
+        }
+    }
     
     private let storeNameLabel: NPLabel = {
         let label = NPLabel(font: .font(.detail_regular_14), color: .grayscale_gray5)
