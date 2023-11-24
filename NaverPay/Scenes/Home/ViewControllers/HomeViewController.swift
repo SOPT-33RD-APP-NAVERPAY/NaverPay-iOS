@@ -12,7 +12,7 @@ final class HomeViewController: UIViewController {
     
     private let homeDataAppData = HomeDataAppData.dummy()
     private let homeEventData = HomeEventData.dummy()
-    private let homeCardData = HomeCardData.dummy()
+    private var homeCardData = HomeCardData.dummy()
     
     private let HomeCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: setCollectionViewLayout())
@@ -179,7 +179,19 @@ final class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController: UICollectionViewDelegate { }
+extension HomeViewController: UICollectionViewDelegate { 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            for index in 0..<homeCardData.count {
+                homeCardData[index].isSelected = false
+            }
+            
+            homeCardData[indexPath.item].isSelected = true
+            
+            collectionView.reloadSections(IndexSet(integer: 1))
+        }
+    }
+}
 extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -283,3 +295,4 @@ extension HomeViewController: UICollectionViewDataSource {
         }
     }
 }
+

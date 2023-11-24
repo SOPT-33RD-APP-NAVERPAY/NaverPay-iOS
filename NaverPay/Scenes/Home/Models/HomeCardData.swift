@@ -11,14 +11,14 @@ import UIKit
 
 struct HomeCardData {
     let cardImage: UIImage
-    let isSelected: Bool
+    var isSelected: Bool
 }
 
 extension HomeCardData {
     static func dummy() -> [HomeCardData] {
         [
             HomeCardData(cardImage: ImageLiterals.MainView.imgNaverpayLogo, isSelected: true),
-            HomeCardData(cardImage: ImageLiterals.MainView.imgCard3, isSelected: true),
+            HomeCardData(cardImage: ImageLiterals.MainView.imgCard3, isSelected: false),
             HomeCardData(cardImage: ImageLiterals.MainView.imgCard2, isSelected: false),
             HomeCardData(cardImage: ImageLiterals.MainView.btnCardPlus, isSelected: false),
         ]

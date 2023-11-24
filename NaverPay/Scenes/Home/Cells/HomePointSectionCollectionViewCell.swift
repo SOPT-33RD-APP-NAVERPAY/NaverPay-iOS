@@ -9,11 +9,16 @@ import UIKit
 
 final class HomePointSectionCollectionViewCell: UICollectionViewCell {
     static let identifier: String = "HomePointSectionCollectionViewCell"
+    private var isChoosen: Bool = false
     
     var homeCardData: HomeCardData? {
         didSet {
             guard let data = homeCardData else { return }
             cardImageView.image = data.cardImage
+            isChoosen = data.isSelected
+            
+            icDownView.image = isChoosen ? ImageLiterals.MainView.icDown : nil
+            borderView.makeBorder(width: 1, color: isChoosen ? .main_lightgreen : .grayscale_gray4)
         }
     }
      
@@ -25,14 +30,12 @@ final class HomePointSectionCollectionViewCell: UICollectionViewCell {
     
     private let icDownView: UIImageView = {
         let icDownView = UIImageView()
-        icDownView.image = ImageLiterals.MainView.icDown
         return icDownView
     }()
     
     private let borderView: UIView = {
         let border = UIView()
         border.makeCornerRound(radius: 4)
-        border.makeBorder(width: 1, color: .main_lightgreen)
         return border
     }()
     
@@ -63,8 +66,5 @@ final class HomePointSectionCollectionViewCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func addBorder() {
     }
 }
