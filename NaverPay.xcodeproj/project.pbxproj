@@ -46,6 +46,11 @@
 		ED56A3002B0D1952005FE6AF /* TitleCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A2FF2B0D1952005FE6AF /* TitleCollectionReusableView.swift */; };
 		ED56A3022B0F6BD4005FE6AF /* TapPlaceCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A3012B0F6BD4005FE6AF /* TapPlaceCollectionReusableView.swift */; };
 		ED56A3062B0F75EE005FE6AF /* TapPlaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A3052B0F75EE005FE6AF /* TapPlaceCollectionViewCell.swift */; };
+		ED56A3082B0F7F0C005FE6AF /* PointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A3072B0F7F0C005FE6AF /* PointViewController.swift */; };
+		ED56A30A2B0F827B005FE6AF /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A3092B0F827B005FE6AF /* CardCollectionViewCell.swift */; };
+		ED56A30C2B0F82CD005FE6AF /* BannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A30B2B0F82CD005FE6AF /* BannerCollectionViewCell.swift */; };
+		ED56A30E2B0F8304005FE6AF /* GraphCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A30D2B0F8304005FE6AF /* GraphCollectionViewCell.swift */; };
+		ED56A3102B0F8325005FE6AF /* UsageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A30F2B0F8325005FE6AF /* UsageCollectionViewCell.swift */; };
 		F4DDEB0A2B0A52E600B7BCCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB092B0A52E600B7BCCE /* AppDelegate.swift */; };
 		F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB0B2B0A52E600B7BCCE /* SceneDelegate.swift */; };
 		F4DDEB112B0A52E600B7BCCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DDEB0F2B0A52E600B7BCCE /* Main.storyboard */; };
@@ -105,6 +110,11 @@
 		ED56A2FF2B0D1952005FE6AF /* TitleCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TitleCollectionReusableView.swift; path = Scenes/Place/Views/TitleCollectionReusableView.swift; sourceTree = "<group>"; };
 		ED56A3012B0F6BD4005FE6AF /* TapPlaceCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TapPlaceCollectionReusableView.swift; path = Scenes/Place/Views/TapPlaceCollectionReusableView.swift; sourceTree = "<group>"; };
 		ED56A3052B0F75EE005FE6AF /* TapPlaceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TapPlaceCollectionViewCell.swift; path = Scenes/Place/Cells/TapPlaceCollectionViewCell.swift; sourceTree = "<group>"; };
+		ED56A3072B0F7F0C005FE6AF /* PointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PointViewController.swift; path = Scenes/Point/ViewControllers/PointViewController.swift; sourceTree = "<group>"; };
+		ED56A3092B0F827B005FE6AF /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardCollectionViewCell.swift; path = Scenes/Point/Cells/CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		ED56A30B2B0F82CD005FE6AF /* BannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BannerCollectionViewCell.swift; path = Scenes/Point/Cells/BannerCollectionViewCell.swift; sourceTree = "<group>"; };
+		ED56A30D2B0F8304005FE6AF /* GraphCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GraphCollectionViewCell.swift; path = Scenes/Point/Cells/GraphCollectionViewCell.swift; sourceTree = "<group>"; };
+		ED56A30F2B0F8325005FE6AF /* UsageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UsageCollectionViewCell.swift; path = Scenes/Point/Cells/UsageCollectionViewCell.swift; sourceTree = "<group>"; };
 		F4DDEB062B0A52E600B7BCCE /* NaverPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaverPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4DDEB092B0A52E600B7BCCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4DDEB0B2B0A52E600B7BCCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -466,6 +476,7 @@
 		F4DDEB3D2B0B8CBF00B7BCCE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				ED56A3072B0F7F0C005FE6AF /* PointViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -480,6 +491,10 @@
 		F4DDEB3F2B0B8CCC00B7BCCE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				ED56A3092B0F827B005FE6AF /* CardCollectionViewCell.swift */,
+				ED56A30B2B0F82CD005FE6AF /* BannerCollectionViewCell.swift */,
+				ED56A30D2B0F8304005FE6AF /* GraphCollectionViewCell.swift */,
+				ED56A30F2B0F8325005FE6AF /* UsageCollectionViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -570,6 +585,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED56A3082B0F7F0C005FE6AF /* PointViewController.swift in Sources */,
+				ED56A30E2B0F8304005FE6AF /* GraphCollectionViewCell.swift in Sources */,
+				0B76F39E2B0D024800FA2442 /* HomeViewController.swift in Sources */,
 				F4DDEB802B0F607700B7BCCE /* BenefitCollectionViewPointCheckSectionBackgroundView.swift in Sources */,
 				0B2278852B0DB0D500732977 /* HomeSwitchSectionCollectionViewCell.swift in Sources */,
 				F4DDEB7F2B0F27CE00B7BCCE /* CategoryData.swift in Sources */,
@@ -594,8 +612,11 @@
 				0B1E55A42B0F627C00ADFC75 /* HomeViewController.swift in Sources */,
 				F4DDEB6D2B0D1AE700B7BCCE /* BenefitCollectionViewFamousBenefitCell.swift in Sources */,
 				ED56A3062B0F75EE005FE6AF /* TapPlaceCollectionViewCell.swift in Sources */,
+				ED56A30A2B0F827B005FE6AF /* CardCollectionViewCell.swift in Sources */,
 				F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */,
+				ED56A30C2B0F82CD005FE6AF /* BannerCollectionViewCell.swift in Sources */,
 				0B0DFB202B0D2102005F8618 /* HomeRecentPaymentsSectionHeaderView.swift in Sources */,
+				ED56A3102B0F8325005FE6AF /* UsageCollectionViewCell.swift in Sources */,
 				0B6677B92B0CD61C00821105 /* (null) in Sources */,
 				0B0DFB172B0D20F3005F8618 /* HomeRecentPaymentsSectionCollectionViewCell.swift in Sources */,
 				F4DDEB8C2B10B18800B7BCCE /* BenefitCollectionadBannerFooterView.swift in Sources */,
@@ -616,6 +637,7 @@
 				F4DDEB6F2B0D1FF500B7BCCE /* NPLabel.swift in Sources */,
 				F4DDEB752B0E670300B7BCCE /* UserBenefitAppData.swift in Sources */,
 				F4DDEB5A2B0BCBEB00B7BCCE /* UITextField+.swift in Sources */,
+				ED56A3022B0F6BD4005FE6AF /* TapPlaceCollectionReusableView.swift in Sources */,
 				0B0DFB252B0D2102005F8618 /* HomeHeaderView.swift in Sources */,
 				0B0DFB162B0D20F3005F8618 /* HomePlaceSectionCollectionViewCell.swift in Sources */,
 				0B6677A02B0CBF7500821105 /* (null) in Sources */,

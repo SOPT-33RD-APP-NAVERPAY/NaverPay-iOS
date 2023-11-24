@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "point_ic_montharrow.png",
+      "filename" : "ios_point_banner_alert.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "point_ic_montharrow@2x.png",
+      "filename" : "ios_point_banner_alert@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "point_ic_montharrow@3x.png",
+      "filename" : "ios_point_banner_alert@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
