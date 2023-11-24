@@ -7,8 +7,29 @@
 
 import UIKit
 
-class TitleCollectionReusableView: UICollectionReusableView {
-    static let identifier:String = "TitleCollectionReusableView"
+final class TitleCollectionReusableView: UICollectionReusableView {
+    static let identifier: String = "TitleCollectionReusableView"
+    
+    let headerLabel: UILabel = {
+       let label = UILabel()
+        label.text = "Header"
+        label.font = UIFont.font(.head_bold_20)
+        label.numberOfLines = 2
+        return label
+    }()
+
+    let headerButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("button", for: .normal)
+        button.titleLabel?.font = UIFont.font(.detail_semibold_14)
+        button.setTitleColor(.bg_white, for: .normal)
+        button.contentEdgeInsets = .init(top: 8, left: 10, bottom: 8, right: 10)
+        //var config = UIButton.Configuration.
+        //button.configuration?.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 10, bottom: 8, trailing: 10)
+        button.layer.cornerRadius = 16
+    
+        return button
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -21,19 +42,18 @@ class TitleCollectionReusableView: UICollectionReusableView {
     }
         
     private func setLayout() {
-        addSubviews(label)
         
-        label.snp.makeConstraints{
+        self.addSubviews(headerLabel, headerButton)
+        
+        headerLabel.snp.makeConstraints{
             $0.centerY.equalToSuperview()
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.leading.equalToSuperview().inset(20)
+        }
+        
+        headerButton.snp.makeConstraints{
+            $0.bottom.equalToSuperview()
+            $0.trailing.equalToSuperview().inset(20)
         }
     }
     
-    let label:UILabel = {
-       let label = UILabel()
-        label.text = "Header"
-        label.font = UIFont.font(.head_bold_20)
-        label.numberOfLines = 2
-        return label
-    }()
 }

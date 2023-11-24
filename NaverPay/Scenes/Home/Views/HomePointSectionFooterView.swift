@@ -10,17 +10,15 @@ import UIKit
 final class HomePointSectionFooterView: UICollectionReusableView {
     static let identifier: String = "HomePointSectionFooterView"
     
-    private lazy var paymentLabel: UILabel = {
-        let label = UILabel()
+    private let paymentLabel: NPLabel = {
+        let label = NPLabel(font: .font(.body_smbold_16), color: .bg_white)
         label.text = "결제하기"
-        label.font = .font(.body_smbold_16)
-        label.textColor = .bg_white
         return label
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
- 
+        
         self.backgroundColor = .sub_gd
         setLayout()
         addBorder()
@@ -45,8 +43,7 @@ final class HomePointSectionFooterView: UICollectionReusableView {
         layer.borderColor = UIColor.main_home_cardline.cgColor
         layer.cornerRadius = 10
         layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        layer.cornerRadius = 10
         self.clipsToBounds = true
     }
-        
+    
 }

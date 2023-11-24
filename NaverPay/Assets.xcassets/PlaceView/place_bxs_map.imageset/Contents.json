@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "img_card2.png",
+      "filename" : "bxs_map.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "img_card2@2x.png",
+      "filename" : "bxs_map 1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "img_card2@3x.png",
+      "filename" : "bxs_map 2.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }
