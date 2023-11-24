@@ -67,7 +67,7 @@
 		F4DDEB842B0F962700B7BCCE /* BenefitCollectionViewEntireBenefitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB832B0F962700B7BCCE /* BenefitCollectionViewEntireBenefitCell.swift */; };
 		F4DDEB862B0FD70100B7BCCE /* BenefitCollectionEntireBenefitSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB852B0FD70100B7BCCE /* BenefitCollectionEntireBenefitSectionHeaderView.swift */; };
 		F4DDEB882B10A48600B7BCCE /* BenefitCollectionViewAdBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB872B10A48500B7BCCE /* BenefitCollectionViewAdBannerCell.swift */; };
-		F4DDEB8A2B10A90B00B7BCCE /* BenefitCollectionViewCSCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB892B10A90B00B7BCCE /* BenefitCollectionViewCSCell.swift */; };
+		F4DDEB8C2B10B18800B7BCCE /* BenefitCollectionadBannerFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB8B2B10B18800B7BCCE /* BenefitCollectionadBannerFooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,7 +120,7 @@
 		F4DDEB832B0F962700B7BCCE /* BenefitCollectionViewEntireBenefitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionViewEntireBenefitCell.swift; path = Scenes/Benefit/Cells/BenefitCollectionViewEntireBenefitCell.swift; sourceTree = "<group>"; };
 		F4DDEB852B0FD70100B7BCCE /* BenefitCollectionEntireBenefitSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionEntireBenefitSectionHeaderView.swift; path = Scenes/Benefit/Views/BenefitCollectionEntireBenefitSectionHeaderView.swift; sourceTree = "<group>"; };
 		F4DDEB872B10A48500B7BCCE /* BenefitCollectionViewAdBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionViewAdBannerCell.swift; path = Scenes/Benefit/Cells/BenefitCollectionViewAdBannerCell.swift; sourceTree = "<group>"; };
-		F4DDEB892B10A90B00B7BCCE /* BenefitCollectionViewCSCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionViewCSCell.swift; path = Scenes/Benefit/Cells/BenefitCollectionViewCSCell.swift; sourceTree = "<group>"; };
+		F4DDEB8B2B10B18800B7BCCE /* BenefitCollectionadBannerFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionadBannerFooterView.swift; path = Scenes/Benefit/Views/BenefitCollectionadBannerFooterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -419,6 +419,7 @@
 				F4DDEB7A2B0E8E6700B7BCCE /* BenefitCollectionFamousBenefitSectionFooterView.swift */,
 				F4DDEB812B0F654500B7BCCE /* BenefitCollectionCategorySectionHeaderView.swift */,
 				F4DDEB852B0FD70100B7BCCE /* BenefitCollectionEntireBenefitSectionHeaderView.swift */,
+				F4DDEB8B2B10B18800B7BCCE /* BenefitCollectionadBannerFooterView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -431,7 +432,6 @@
 				F4DDEB7C2B0F264600B7BCCE /* BenefitCollectionViewPointCategoryCell.swift */,
 				F4DDEB832B0F962700B7BCCE /* BenefitCollectionViewEntireBenefitCell.swift */,
 				F4DDEB872B10A48500B7BCCE /* BenefitCollectionViewAdBannerCell.swift */,
-				F4DDEB892B10A90B00B7BCCE /* BenefitCollectionViewCSCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -570,7 +570,6 @@
 				F4DDEB5E2B0CB0A000B7BCCE /* BenefitViewController.swift in Sources */,
 				ED56A2FC2B0D1907005FE6AF /* BrandCollectionViewCell.swift in Sources */,
 				ED56A3002B0D1952005FE6AF /* TitleCollectionReusableView.swift in Sources */,
-				F4DDEB8A2B10A90B00B7BCCE /* BenefitCollectionViewCSCell.swift in Sources */,
 				0B91C7A82B0B8A7A00ACDCE9 /* ImageLiterals.swift in Sources */,
 				0B0DFB142B0D20F3005F8618 /* HomeEventSectionCollectionViewCell.swift in Sources */,
 				F4DDEB692B0CEB7B00B7BCCE /* BenefitCollectionPointCheckHeaderView.swift in Sources */,
@@ -579,6 +578,7 @@
 				0B0DFB202B0D2102005F8618 /* HomeRecentPaymentsSectionHeaderView.swift in Sources */,
 				0B6677B92B0CD61C00821105 /* (null) in Sources */,
 				0B0DFB172B0D20F3005F8618 /* HomeRecentPaymentsSectionCollectionViewCell.swift in Sources */,
+				F4DDEB8C2B10B18800B7BCCE /* BenefitCollectionadBannerFooterView.swift in Sources */,
 				0B6677BB2B0CD63200821105 /* (null) in Sources */,
 				0B0DFB242B0D2102005F8618 /* HomePointSectionBackgroundView.swift in Sources */,
 				ED56A2F82B0D18B5005FE6AF /* NearPlaceCollectionViewCell.swift in Sources */,

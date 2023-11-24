@@ -72,6 +72,8 @@ final class BenefitViewController: UIViewController {
         benefitCollectionView.register(BenefitCollectionEntireBenefitSectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: BenefitCollectionEntireBenefitSectionHeaderView.identifier)
         
         benefitCollectionView.register(BenefitCollectionViewAdBannerCell.self, forCellWithReuseIdentifier: BenefitCollectionViewAdBannerCell.identifier)
+        benefitCollectionView.register(BenefitCollectionadBannerFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: BenefitCollectionadBannerFooterView.identifier)
+        
         
     }
     
@@ -177,14 +179,19 @@ final class BenefitViewController: UIViewController {
                 let section = NSCollectionLayoutSection(group: group)
                 
                 section.orthogonalScrollingBehavior = .paging
+                
+                //섹션푸터 설정
+                let footerSize = NSCollectionLayoutSize(widthDimension: .absolute(UIScreen.main.bounds.width), heightDimension: .absolute(103))
+                let footer = NSCollectionLayoutBoundarySupplementaryItem(
+                    layoutSize: footerSize,
+                    elementKind: UICollectionView.elementKindSectionFooter,
+                    alignment: .bottom
+                )
+                footer.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 0, bottom: 0, trailing: 0)
+               
+                section.boundarySupplementaryItems = [footer]
                 return section
                 
-            case 5:
-                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(UIScreen.main.bounds.width), heightDimension: .estimated(103)))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(103)), subitems: [item])
-                let section = NSCollectionLayoutSection(group: group)
-                
-                return section
             default:
                 return nil
             }
@@ -309,8 +316,12 @@ extension BenefitViewController: UICollectionViewDataSource {
                 guard let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: BenefitCollectionFamousBenefitSectionFooterView.identifier, for: indexPath) as? BenefitCollectionFamousBenefitSectionFooterView else { return UICollectionReusableView() }
                 footer.layer.cornerRadius = 14
                 footer.backgroundColor = .bg_white
-                
                 return footer
+                
+            case 4:
+                guard let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: BenefitCollectionadBannerFooterView.identifier, for: indexPath) as? BenefitCollectionadBannerFooterView else { return UICollectionReusableView() }
+                return footer
+                
             default:
                 return UICollectionReusableView()
             }

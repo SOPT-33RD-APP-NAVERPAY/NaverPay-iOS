@@ -26,6 +26,7 @@ enum ImageLiterals {
         static var pointArrowFirst: UIImage { .load(named: "bnf_pointarrow1")}
         static var pointArrowSecond: UIImage { .load(named: "bnf_arrowSecond")}
         static var locationImage: UIImage { .load(named: "bnf_ic_location")}
+        static var qnaArrow: UIImage { .load(named: "ios_bnf_ic_qnaarrow1")}
     }
     enum Global {
         static var mapIcon: UIImage { .load(named: "bxs_map") }
