@@ -185,9 +185,7 @@ extension HomeViewController: UICollectionViewDelegate {
             for index in 0..<homeCardData.count {
                 homeCardData[index].isSelected = false
             }
-            
             homeCardData[indexPath.item].isSelected = true
-            
             collectionView.reloadSections(IndexSet(integer: 1))
         }
     }
