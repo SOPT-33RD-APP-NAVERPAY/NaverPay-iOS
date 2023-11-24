@@ -11,6 +11,7 @@ import SnapKit
 final class HomeViewController: UIViewController {
     
     private let homeDataAppData = HomeDataAppData.dummy()
+    private let homeEventData = HomeEventData.dummy()
     
     private let HomeCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: setCollectionViewLayout())
@@ -271,6 +272,7 @@ extension HomeViewController: UICollectionViewDataSource {
             
         case 4:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeEventSectionCollectionViewCell.identifier, for: indexPath) as? HomeEventSectionCollectionViewCell else { return UICollectionViewCell() }
+            cell.homeEventData = self.homeEventData[indexPath.item]
             
             return cell
             
