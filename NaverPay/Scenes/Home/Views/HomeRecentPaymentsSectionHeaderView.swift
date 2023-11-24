@@ -8,7 +8,6 @@
 import UIKit
 
 final class HomeRecentPaymentsSectionHeaderView: UICollectionReusableView {
-    
     static let identifier: String = "HomeRecentPaymentsSectionHeaderView"
     
     private let icArrow: UIImageView = {
@@ -38,9 +37,12 @@ final class HomeRecentPaymentsSectionHeaderView: UICollectionReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setLayout()
         setStyle()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     private func setStyle() {
@@ -78,9 +80,5 @@ final class HomeRecentPaymentsSectionHeaderView: UICollectionReusableView {
             $0.height.equalTo(8)
         }
         
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

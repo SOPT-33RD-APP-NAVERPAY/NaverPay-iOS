@@ -21,7 +21,7 @@ final class HomePointSectionCollectionViewCell: UICollectionViewCell {
             borderView.makeBorder(width: 1, color: isChoosen ? .main_lightgreen : .grayscale_gray4)
         }
     }
-     
+    
     private let cardImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = ImageLiterals.MainView.imgCard2
@@ -45,6 +45,10 @@ final class HomePointSectionCollectionViewCell: UICollectionViewCell {
         setLayout()
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private func setLayout() {
         contentView.addSubviews(cardImageView,icDownView)
         cardImageView.addSubviews(borderView)
@@ -62,9 +66,5 @@ final class HomePointSectionCollectionViewCell: UICollectionViewCell {
             $0.top.equalToSuperview()
             $0.leading.equalToSuperview().inset(34)
         }
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

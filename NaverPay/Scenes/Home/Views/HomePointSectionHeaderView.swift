@@ -8,7 +8,6 @@
 import UIKit
 
 final class HomePointSectionHeaderView: UICollectionReusableView {
-    
     static let identifier: String = "HomePointSectionHeaderView"
     
     var homeDataAppData: HomeDataAppData? {

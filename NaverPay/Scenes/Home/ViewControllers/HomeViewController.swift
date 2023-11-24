@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 final class HomeViewController: UIViewController {
-    
     private let homeDataAppData = HomeDataAppData.dummy()
     private let homeEventData = HomeEventData.dummy()
     private var homeCardData = HomeCardData.dummy()
@@ -179,7 +178,7 @@ final class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController: UICollectionViewDelegate { 
+extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 1 {
             for index in 0..<homeCardData.count {

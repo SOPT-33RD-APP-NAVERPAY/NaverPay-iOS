@@ -8,7 +8,6 @@
 import UIKit
 
 final class HomeRecentPaymentsSectionCollectionViewCell: UICollectionViewCell {
-    
     static let identifier: String = "HomeRecentPaymentsSectionCollectionViewCell"
     
     var homeDataAppData: HomeDataAppData? {
