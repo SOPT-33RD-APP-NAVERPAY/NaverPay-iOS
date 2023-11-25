@@ -18,11 +18,12 @@ final class BenefitCollectionViewEntireBenefitCell: UICollectionViewCell {
             brandImageView.image = data.logoImgURL
             brandNameLabel.text = data.name
             benefitDescriptionLabel.text = data.discountContent
-            benefitRateButton.setAttributedTitle( NSAttributedString(string: data.discountType,
-                                                                     attributes: [
-                                                                        NSAttributedString.Key.font : UIFont.font(.detail_smbold_12),
-                                                                       NSAttributedString.Key.foregroundColor : UIColor.main_green
-                                                                       ]), for: .normal)
+//            benefitRateButton.setAttributedTitle( NSAttributedString(string: data.discountType,
+//                                                                     attributes: [
+//                                                                        NSAttributedString.Key.font : UIFont.font(.detail_bold_14),
+//                                                                       NSAttributedString.Key.foregroundColor : UIColor.main_green
+//                                                                       ]), for: .normal)
+            rateLabel.text = data.discountType
         }
     }
      
@@ -35,14 +36,16 @@ final class BenefitCollectionViewEntireBenefitCell: UICollectionViewCell {
     private let brandNameLabel = NPLabel(font: .font(.body_bold_15), color: .sub_black)
     private let benefitDescriptionLabel = NPLabel(font: .font(.body_medium_15), color: .sub_black)
 
+    private let rateLabel = NPLabel(font: .font(.detail_bold_14), color: .main_green)
+    
+    
     private lazy var benefitRateButton: UIButton = {
         let button = UIButton()
         var config = UIButton.Configuration.plain()
-        config.titleAlignment = .center
         config.background.backgroundColor = .sub_palegreen2
         config.background.cornerRadius = 100
         button.configuration = config
-
+        button.setTitle(rateLabel.text, for: .normal)
         return button
     }()
     
@@ -60,6 +63,13 @@ final class BenefitCollectionViewEntireBenefitCell: UICollectionViewCell {
     
     private func setLayout() {
         contentView.addSubviews(divideView, brandImageView, brandNameLabel,benefitDescriptionLabel, benefitRateButton)
+        
+        benefitRateButton.addSubview(rateLabel)
+        
+        rateLabel.snp.makeConstraints {
+            $0.top.bottom.equalToSuperview().inset(8)
+            $0.centerX.equalToSuperview()
+        }
         
         divideView.snp.makeConstraints {
             $0.top.equalToSuperview().inset(1)
