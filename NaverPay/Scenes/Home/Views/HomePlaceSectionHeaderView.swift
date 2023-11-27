@@ -7,9 +7,16 @@
 
 import UIKit
 
+protocol HomeViewPushDelegate: AnyObject {
+    func didTapButton()
+}
 
-final class HomePlaceSectionHeaderView: UICollectionReusableView {
+final class HomePlaceSectionHeaderView: UICollectionReusableView,UIGestureRecognizerDelegate {
+    
+    weak var delegate: HomeViewPushDelegate?
+    
     static let identifier: String = "HomePlaceSectionHeaderView"
+    let homeViewController = HomeViewController()
     
     private let icArrow: UIImageView = {
         let imageView = UIImageView()
@@ -32,16 +39,19 @@ final class HomePlaceSectionHeaderView: UICollectionReusableView {
         attributedText.addAttribute(.font, value: UIFont.font(.head_bold_20), range: NSRange(location: newlineRange.location + 1, length: fullText.count - (newlineRange.location + 1)))
         
         label.attributedText = attributedText
-        
         label.numberOfLines = 0
         
         return label
     }()
     
-    private let viewAllLabel: NPLabel = {
-        let label = NPLabel(font: .font(.body_regular_15), color: .grayscale_gray6)
-        label.text = "전체보기"
-        return label
+    private lazy var viewAllButton: UIButton = {
+        var button = UIButton()
+        button.setTitle("전체보기", for: .normal)
+        button.setTitleColor(.grayscale_gray6, for: .normal)
+        button.titleLabel?.font = UIFont.font(.body_regular_15)
+        button.addTarget(self, action: #selector(onTapButton), for: .touchUpInside)
+                
+        return button
     }()
     
     override init(frame: CGRect) {
@@ -59,7 +69,10 @@ final class HomePlaceSectionHeaderView: UICollectionReusableView {
     }
     
     private func setLayout() {
-        self.addSubviews(icArrow,titleLabel,viewAllLabel)
+        
+        self.addSubviews(titleLabel,viewAllButton)
+        
+        viewAllButton.addSubview(icArrow)
         
         titleLabel.snp.makeConstraints {
             $0.leading.equalToSuperview()
@@ -68,18 +81,38 @@ final class HomePlaceSectionHeaderView: UICollectionReusableView {
             $0.top.equalToSuperview().offset(48)
         }
         
-        viewAllLabel.snp.makeConstraints {
+        
+        viewAllButton.snp.makeConstraints {
             $0.bottom.equalToSuperview().offset(-38)
             $0.top.equalToSuperview().offset(77)
-            $0.leading.equalTo(titleLabel.snp.trailing).inset(-111)
-            $0.width.equalTo(53)
+            $0.leading.equalTo(titleLabel.snp.trailing).inset(-102)
+            $0.width.equalTo(80)
+            $0.height.equalTo(32)
+        }
+        
+        
+        viewAllButton.titleLabel?.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.leading.equalToSuperview().inset(3)
+            
         }
         
         icArrow.snp.makeConstraints {
-            $0.bottom.equalToSuperview().offset(-43)
-            $0.leading.equalTo(viewAllLabel.snp.trailing).inset(-3)
-            $0.width.equalTo(4)
-            $0.height.equalTo(8)
+            $0.centerY.equalToSuperview()
+            $0.trailing.equalToSuperview().inset(17)
         }
+        
+            
+    
+       
     }
-}
+    
+    @objc
+    func onTapButton() {
+        print("tap")
+        self.delegate?.didTapButton()
+       }
+    }
+
+
+

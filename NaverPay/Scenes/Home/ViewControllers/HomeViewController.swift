@@ -50,7 +50,6 @@ final class HomeViewController: UIViewController {
             $0.leading.equalToSuperview().inset(20)
             $0.trailing.equalToSuperview().inset(21)
         }
-        
     }
     
     private func setCollectionView() {
@@ -227,6 +226,7 @@ extension HomeViewController: UICollectionViewDataSource {
                 
             case 3:
                 guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomePlaceSectionHeaderView.identifier, for: indexPath) as? HomePlaceSectionHeaderView else { return UICollectionReusableView() }
+                header.delegate = self
                 return header
                 
             case 4:
@@ -254,7 +254,6 @@ extension HomeViewController: UICollectionViewDataSource {
             return UICollectionReusableView()
         }
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -293,3 +292,11 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 }
 
+extension HomeViewController: HomeViewPushDelegate {
+
+    func didTapButton() {
+        print("didTapButton")
+        let placeViewController = PlaceViewController()
+        self.navigationController?.pushViewController(placeViewController, animated: true)
+    }
+}
