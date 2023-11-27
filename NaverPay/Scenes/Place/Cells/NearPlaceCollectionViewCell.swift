@@ -11,6 +11,16 @@ import SnapKit
 final class NearPlaceCollectionViewCell: UICollectionViewCell {
     static let identifier: String = "NearPlaceCollectionViewCell"
     
+    var userNearPlace: PlaceList? {
+        didSet {
+            guard let data = userNearPlace else {return}
+            nearPlaceCardImageView.image = data.logoImgURL
+            nearPlaceNameLabel.text = data.name
+            guard let distance = data.distance else { return }
+            nearPlaceMeterLabel.text = "\(distance)m"
+        }
+    }
+    
     private let nearPlaceCardImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = ImageLiterals.PlaceView.placeCardCU
@@ -55,15 +65,18 @@ final class NearPlaceCollectionViewCell: UICollectionViewCell {
     
     private func setLayout() {
         self.contentView.backgroundColor = .bg_white
-        self.layer.cornerRadius = 10
-        self.layer.masksToBounds = false
-        //그림자
+        
+        self.layer.shadowOffset = .init(width: 0, height: 1)
         self.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
-        self.layer.shadowOpacity = 1
         self.layer.shadowRadius = 5
-        self.layer.shadowOffset = CGSize(width: 0, height: 1)
+        self.layer.shadowOpacity = 1
+        
+//        섀도우 익스텐션으로 빼서 써봐..!
         
         contentView.addSubviews(nearPlaceCardImageView, nearPlaceNameLabel, nearPlaceMeterLabel)
+        contentView.layer.cornerRadius = 10
+        contentView.layer.masksToBounds = false
+        contentView.clipsToBounds = true
         
         nearPlaceCardImageView.snp.makeConstraints{
             $0.top.equalToSuperview().inset(12)
@@ -80,9 +93,6 @@ final class NearPlaceCollectionViewCell: UICollectionViewCell {
             $0.centerX.equalToSuperview()
         }
     }
-    
-    
-    
     
 }
 
