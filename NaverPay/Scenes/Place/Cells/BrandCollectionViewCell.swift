@@ -10,6 +10,15 @@ import UIKit
 final class BrandCollectionViewCell: UICollectionViewCell {
     static let identifier: String = "BrandCollectionViewCell"
     
+    var userBrandPlace: PlaceList? {
+        didSet {
+            guard let data = userBrandPlace else {return}
+            brandCardImageView.image = data.logoImgURL
+            brandNameLabel.text = data.name
+        }
+    }
+    
+    
     private let brandCardImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = ImageLiterals.PlaceView.placeCardDomino
@@ -36,10 +45,14 @@ final class BrandCollectionViewCell: UICollectionViewCell {
     }
     
     private func setLayout() {
-        
+        self.contentView.backgroundColor = .bg_white
         self.layer.cornerRadius = 10
-        self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.gray.cgColor
+        self.layer.masksToBounds = false
+        //그림자
+        self.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
+        self.layer.shadowOpacity = 1
+        self.layer.shadowRadius = 5
+        self.layer.shadowOffset = CGSize(width: 0, height: 1)
         
 
         contentView.addSubviews(brandCardImageView, brandNameLabel)

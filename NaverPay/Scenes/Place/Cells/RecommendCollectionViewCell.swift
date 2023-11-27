@@ -11,6 +11,13 @@ import SnapKit
 final class RecommendCollectionViewCell: UICollectionViewCell {
     static let identifier: String = "RecommendCollectionViewCell"
     
+    var userRecommendPlace: PlaceBrandList? {
+        didSet {
+            guard let data = userRecommendPlace else {return}
+            recommendCardImageView.image = data.logoImgURL
+        }
+    }
+    
     private let recommendCardImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = ImageLiterals.PlaceView.placeCardRecommendDummy

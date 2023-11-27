@@ -9,6 +9,18 @@ import UIKit
 import SnapKit
 
 final class UsageCollectionViewCell: UICollectionViewCell {
+    
+    var userPointData: PointBrandList? {
+        didSet {
+            guard let data = userPointData else {return}
+            listDateLabel.text = data.paymentDate
+            lisTitleLabel.text = data.name
+            usageAmountLabel.text = "+\(data.saving)원"
+            usageTimeLabel.text = data.paymentDate
+            
+        }
+    }
+    
     static let identifier: String = "UsageCollectionViewCell"
     
     private let listDateLabel = NPLabel(font: .font(.detail_semibold_14), color: .grayscale_gray5)
@@ -46,6 +58,13 @@ final class UsageCollectionViewCell: UICollectionViewCell {
         
     }()
     
+    private let spacingLineView:UIView = {
+       let view = UIView()
+        view.backgroundColor = .grayscale_gray2
+        
+        return view
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -59,22 +78,17 @@ final class UsageCollectionViewCell: UICollectionViewCell {
     private func setLayout() {
         
         contentView.backgroundColor = .bg_white
-        
-        listDateLabel.text = "11.15"
-        lisTitleLabel.text = "무신사"
-        usageAmountLabel.text = "+2,900원"
-        usageTimeLabel.text = "14:01"
         usageDescLabel.text = "구매적립"
         
-        contentView.addSubviews(listDateLabel, lisTitleLabel, smRightArrowIcon , usageAmountLabel, usageTimeLabel, lineView, usageDescLabel, circleDownArrowIcon)
+        contentView.addSubviews(listDateLabel, lisTitleLabel, smRightArrowIcon , usageAmountLabel, usageTimeLabel, lineView, usageDescLabel, circleDownArrowIcon, spacingLineView)
         
         listDateLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(2)
-            $0.leading.equalToSuperview()
+            $0.top.equalToSuperview().inset(20)
+            $0.leading.equalToSuperview().inset(22)
         }
         
         lisTitleLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(1)
+            $0.top.equalToSuperview().inset(21)
             $0.leading.equalTo(listDateLabel.snp.trailing).offset(25)
         }
         
@@ -84,12 +98,18 @@ final class UsageCollectionViewCell: UICollectionViewCell {
         }
         
         usageAmountLabel.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.trailing.equalToSuperview()
+            $0.top.trailing.equalToSuperview().inset(20)
+        }
+        
+        spacingLineView.snp.makeConstraints {
+            $0.leading.equalTo(listDateLabel.snp.leading)
+            $0.trailing.equalTo(usageAmountLabel.snp.trailing)
+            $0.bottom.equalToSuperview()
+            $0.height.equalTo(1)
         }
         
         usageTimeLabel.snp.makeConstraints {
-            $0.bottom.equalToSuperview()
+            $0.top.equalTo(lisTitleLabel.snp.bottom)
             $0.leading.equalTo(lisTitleLabel.snp.leading)
         }
         
@@ -101,7 +121,7 @@ final class UsageCollectionViewCell: UICollectionViewCell {
         }
         
         usageDescLabel.snp.makeConstraints {
-            $0.bottom.equalToSuperview()
+            $0.top.equalTo(lisTitleLabel.snp.bottom)
             $0.leading.equalTo(lineView.snp.trailing).offset(7)
         }
         
@@ -109,12 +129,7 @@ final class UsageCollectionViewCell: UICollectionViewCell {
             $0.centerY.equalTo(usageDescLabel)
             $0.leading.equalTo(usageDescLabel.snp.trailing).offset(3)
         }
-        
-        
-        
-        
-        
-        
     }
     
 }
+

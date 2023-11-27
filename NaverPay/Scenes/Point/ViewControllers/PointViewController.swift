@@ -11,6 +11,8 @@ import SnapKit
 final class PointViewController: UIViewController {
     static let identifier: String = "PointViewController"
     
+    private let userPointData = UserPointAppDataClass.dummy()
+    
     private let pointCollectionView: UICollectionView = {
        let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -79,6 +81,7 @@ extension PointViewController: UICollectionViewDataSource {
         case 3:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UsageCollectionViewCell.identifier, for: indexPath) as? UsageCollectionViewCell
             else { return UICollectionViewCell()}
+            cell.userPointData = self.userPointData.brandList[indexPath.item]
             return cell
             
         default:
@@ -95,7 +98,7 @@ extension PointViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 3:
-            return 4
+            return userPointData.brandList.count
         default:
             return 1
         }
@@ -118,7 +121,7 @@ extension PointViewController: UICollectionViewDelegateFlowLayout{
             return CGSize(width: UIScreen.main.bounds.width, height: 500)
             
         case 3:
-            return CGSize(width: UIScreen.main.bounds.width, height: 70)
+            return CGSize(width: UIScreen.main.bounds.width, height: 77)
             
         default:
             return CGSize(width: UIScreen.main.bounds.width, height: 32)
@@ -137,4 +140,9 @@ extension PointViewController: UICollectionViewDelegateFlowLayout{
             return CGSize(width: UIScreen.main.bounds.width, height: 0)
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
 }

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 final class CardCollectionViewCell: UICollectionViewCell {
     static let identifier: String = "CardCollectionViewCell"
     
@@ -31,6 +30,14 @@ final class CardCollectionViewCell: UICollectionViewCell {
        
         return button
     }()
+    
+    private let lineView: UIView = {
+       let view = UIView()
+        view.backgroundColor = .grayscale_gray3
+        
+        return view
+    }()
+    
     
     private let horizonButtonStackView: UIStackView = {
        let stackView = UIStackView()
@@ -82,8 +89,8 @@ final class CardCollectionViewCell: UICollectionViewCell {
     private let horizonLabelStackView: UIStackView = {
        let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.spacing = 100
         stackView.alignment = .center
+        stackView.distribution = .fillProportionally
         return stackView
     }()
     
@@ -94,6 +101,7 @@ final class CardCollectionViewCell: UICollectionViewCell {
      override init(frame: CGRect) {
          super.init(frame: frame)
          
+         setStyle()
          setLayout()
      }
      
@@ -101,12 +109,15 @@ final class CardCollectionViewCell: UICollectionViewCell {
          fatalError("init(coder:) has not been implemented")
      }
      
+    private func setStyle(){
+        pointCardLabel.text = "11,500원"
+        moneyLabel.text = "머니 내역"
+        moneyLabel.textAlignment = .center
+        pointMoneyLabel.text = "포인트+머니 내역"
+        pointMoneyLabel.textAlignment = .center
+    }
      private func setLayout() {
-         
-         pointCardLabel.text = "11,500원"
-         moneyLabel.text = "머니 내역"
-         pointMoneyLabel.text = "포인트+머니 내역"
-         
+        
          contentView.addSubviews(cardBackgroundImageView, pointCardLabel, pointScheduledButton, horizonButtonStackView, moneyView)
          
          cardBackgroundImageView.snp.makeConstraints{
@@ -136,12 +147,32 @@ final class CardCollectionViewCell: UICollectionViewCell {
          }
          
          moneyView.addSubviews(horizonLabelStackView)
+
+         horizonLabelStackView.addArrangedSubviews(moneyLabel, lineView, pointMoneyLabel)
          
-         horizonLabelStackView.snp.makeConstraints{
-             $0.centerX.centerY.equalToSuperview()
+         horizonLabelStackView.snp.makeConstraints {
+             $0.edges.equalToSuperview()
          }
          
-         horizonLabelStackView.addArrangedSubviews(moneyLabel, pointMoneyLabel)
+         moneyLabel.snp.makeConstraints {
+             $0.width.equalTo((contentView.bounds.width-1)/2)
+         }
+         
+         pointMoneyLabel.snp.makeConstraints {
+             $0.width.equalTo((contentView.bounds.width-1)/2)
+         }
+         
+         lineView.snp.makeConstraints {
+             $0.width.equalTo(1)
+             $0.height.equalTo(moneyLabel.snp.height)
+             $0.centerY.equalToSuperview()
+         }
+         
+//         pointMoneyLabel.snp.makeConstraints {
+//             $0.centerX.equalTo(lineView.snp.trailing)
+//             $0.centerY.equalToSuperview()
+//         }
+         
          
      }
 }

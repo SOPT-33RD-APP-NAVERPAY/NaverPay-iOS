@@ -23,7 +23,7 @@ final class GraphCollectionViewCell: UICollectionViewCell {
     
     private let downArrowIcon: UIImageView = {
        let imageView = UIImageView()
-        imageView.image = ImageLiterals.PointView.arrowDownIco
+        imageView.image = ImageLiterals.PointView.downArrow
         imageView.contentMode = .scaleAspectFit
         
         return imageView
@@ -239,7 +239,7 @@ final class GraphCollectionViewCell: UICollectionViewCell {
             $0.leading.equalToSuperview().inset(22)
         }
         
-        categoryStackView.addArrangedSubviews(category1Button, category2Button, category3Button)
+        categoryStackView.addArrangedSubviews(categoryFirstButton, categorySecondButton, categoryThirdButton)
         
         alertBanner.snp.makeConstraints{
             $0.bottom.leading.trailing.equalToSuperview()
