@@ -110,6 +110,17 @@ final class GraphCollectionViewCell: UICollectionViewCell {
         
     }()
     
+//    private let pieChartView: PieChartView = {
+//       let view = PieChartView()
+//        view.backgroundColor = .adcard_orange
+//        return view
+//    }()
+    
+    
+    let pieChartView = PieChartView(frame: .init(origin: .zero, size: .init(width: 100,
+                                                                            height: 100)))
+
+    
     private let dateLabel = NPLabel(font: .font(.detail_smbold_12), color: .grayscale_gray6)
     
     private let categoryFirstButton: UIButton = {
@@ -175,6 +186,14 @@ final class GraphCollectionViewCell: UICollectionViewCell {
         dateLabel.text = "2023.11.01. \n~ 11.30."
         dateLabel.numberOfLines = 2
         dateLabel.textAlignment = .center
+        
+        self.contentView.addSubview(pieChartView)
+        pieChartView.snp.makeConstraints {
+            $0.centerX.centerY.equalToSuperview()
+            $0.width.height.equalTo(100)
+        }
+
+        pieChartView.progressAnimation(duration: 0.5, value: 1)
     }
     
     private func setLayout() {
@@ -213,7 +232,7 @@ final class GraphCollectionViewCell: UICollectionViewCell {
             
         }
         
-        graphView.addSubviews(totalStackView, amountStackView, graphImageView)
+        graphView.addSubviews(totalStackView, amountStackView, pieChartView)
         
         totalStackView.snp.makeConstraints{
             $0.top.equalToSuperview().inset(23)
@@ -229,8 +248,10 @@ final class GraphCollectionViewCell: UICollectionViewCell {
         
         amountStackView.addArrangedSubviews(amountLabel, upArrowIcon)
         
-        graphImageView.snp.makeConstraints{
+        pieChartView.snp.makeConstraints{
             $0.top.equalTo(amountStackView.snp.bottom).offset(8)
+            $0.height.equalTo(100)
+            $0.width.equalTo(100)
             $0.centerX.equalToSuperview()
         }
         
