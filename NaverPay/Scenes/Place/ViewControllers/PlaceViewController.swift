@@ -12,6 +12,8 @@ final class PlaceViewController: UIViewController {
     static let identifier: String = "PlaceViewController"
     private var userName: String = "남희주"
     
+    lazy var placeHeaderView = PlaceHeaderView(self)
+    
     private let collectionView: UICollectionView = {
         
         let layout = UICollectionViewFlowLayout()
@@ -46,16 +48,24 @@ final class PlaceViewController: UIViewController {
     
     
     private func setLayout(){
-        self.view.addSubview(placeCollectionView)
+        self.view.addSubviews(placeCollectionView,placeHeaderView)
+        placeHeaderView.snp.makeConstraints {
+            $0.top.trailing.leading.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(54)
+        }
+        
         
         placeCollectionView.snp.makeConstraints{
-            $0.edges.equalToSuperview()
+            $0.leading.trailing.bottom.equalToSuperview()
+            $0.top.equalTo(placeHeaderView.snp.bottom)
         }
+        
     }
     
     private func setCollectionViewLayout(){
         let flowLayout = UICollectionViewFlowLayout()
         self.placeCollectionView.setCollectionViewLayout(flowLayout, animated: false)
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     private func setCollectionViewConfig() {
@@ -214,4 +224,5 @@ extension PlaceViewController: UICollectionViewDelegateFlowLayout{
         }
     }
 }
+
 

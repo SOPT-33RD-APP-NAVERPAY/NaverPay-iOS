@@ -36,8 +36,11 @@
 		0B6677B92B0CD61C00821105 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		0B6677BB2B0CD63200821105 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		0B7837C42B0FB84200494079 /* HomeEventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7837C32B0FB84200494079 /* HomeEventData.swift */; };
+		0B86E3992B14E47000DB2930 /* PlaceHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B86E3982B14E47000DB2930 /* PlaceHeaderView.swift */; };
+		0B86E39B2B14F0B800DB2930 /* BenefitHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B86E39A2B14F0B800DB2930 /* BenefitHeaderView.swift */; };
 		0B91C7A82B0B8A7A00ACDCE9 /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B91C7A72B0B8A7A00ACDCE9 /* ImageLiterals.swift */; };
 		0B91C7AA2B0B8B3000ACDCE9 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B91C7A92B0B8B3000ACDCE9 /* UIImage+.swift */; };
+		0BFA79A52B14BC7200548A1E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA79A42B14BC7200548A1E /* TabBarController.swift */; };
 		ED56A2EA2B0B7790005FE6AF /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A2E92B0B7790005FE6AF /* UIFont+.swift */; };
 		ED56A2F82B0D18B5005FE6AF /* NearPlaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A2F72B0D18B5005FE6AF /* NearPlaceCollectionViewCell.swift */; };
 		ED56A2FA2B0D18F1005FE6AF /* RecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A2F92B0D18F1005FE6AF /* RecommendCollectionViewCell.swift */; };
@@ -88,8 +91,11 @@
 		0B2278822B0DB07700732977 /* HomePointSectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomePointSectionFooterView.swift; path = Scenes/Home/Views/HomePointSectionFooterView.swift; sourceTree = "<group>"; };
 		0B2278842B0DB0D500732977 /* HomeSwitchSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeSwitchSectionCollectionViewCell.swift; path = Scenes/Home/Views/HomeSwitchSectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		0B7837C32B0FB84200494079 /* HomeEventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeEventData.swift; path = Scenes/Home/Models/HomeEventData.swift; sourceTree = "<group>"; };
+		0B86E3982B14E47000DB2930 /* PlaceHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlaceHeaderView.swift; path = Scenes/Place/Views/PlaceHeaderView.swift; sourceTree = "<group>"; };
+		0B86E39A2B14F0B800DB2930 /* BenefitHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitHeaderView.swift; path = Scenes/Benefit/Views/BenefitHeaderView.swift; sourceTree = "<group>"; };
 		0B91C7A72B0B8A7A00ACDCE9 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageLiterals.swift; path = Global/Literals/ImageLiterals.swift; sourceTree = "<group>"; };
 		0B91C7A92B0B8B3000ACDCE9 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIImage+.swift"; path = "Global/Extensions/UIImage+.swift"; sourceTree = "<group>"; };
+		0BFA79A42B14BC7200548A1E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = Global/UIComponents/TabBarController.swift; sourceTree = "<group>"; };
 		ED56A2E92B0B7790005FE6AF /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIFont+.swift"; path = "Global/Extensions/UIFont+.swift"; sourceTree = "<group>"; };
 		ED56A2F72B0D18B5005FE6AF /* NearPlaceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NearPlaceCollectionViewCell.swift; path = Scenes/Place/Cells/NearPlaceCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED56A2F92B0D18F1005FE6AF /* RecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecommendCollectionViewCell.swift; path = Scenes/Place/Cells/RecommendCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -255,6 +261,7 @@
 			children = (
 				F4DDEB6E2B0D1FF500B7BCCE /* NPLabel.swift */,
 				0B125CDD2B105DD20051DDEF /* FormattedString.swift */,
+				0BFA79A42B14BC7200548A1E /* TabBarController.swift */,
 			);
 			name = UIComponents;
 			sourceTree = "<group>";
@@ -339,13 +346,6 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		F4DDEB322B0B8C0D00B7BCCE /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
 		F4DDEB332B0B8C6C00B7BCCE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,7 +381,7 @@
 			children = (
 				ED56A2FF2B0D1952005FE6AF /* TitleCollectionReusableView.swift */,
 				ED56A3012B0F6BD4005FE6AF /* TapPlaceCollectionReusableView.swift */,
-				F4DDEB322B0B8C0D00B7BCCE /* Views */,
+				0B86E3982B14E47000DB2930 /* PlaceHeaderView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -420,6 +420,7 @@
 				F4DDEB762B0E783D00B7BCCE /* BenefitCollectionFamousBenefitSectionHeaderView.swift */,
 				F4DDEB782B0E838200B7BCCE /* BenefitCollectionViewFamousBenefitSectionBackgroundView.swift */,
 				F4DDEB7A2B0E8E6700B7BCCE /* BenefitCollectionFamousBenefitSectionFooterView.swift */,
+				0B86E39A2B14F0B800DB2930 /* BenefitHeaderView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -573,6 +574,7 @@
 				ED56A3062B0F75EE005FE6AF /* TapPlaceCollectionViewCell.swift in Sources */,
 				F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */,
 				0B0DFB202B0D2102005F8618 /* HomeRecentPaymentsSectionHeaderView.swift in Sources */,
+				0B86E3992B14E47000DB2930 /* PlaceHeaderView.swift in Sources */,
 				0B6677B92B0CD61C00821105 /* (null) in Sources */,
 				0B0DFB172B0D20F3005F8618 /* HomeRecentPaymentsSectionCollectionViewCell.swift in Sources */,
 				0B6677BB2B0CD63200821105 /* (null) in Sources */,
@@ -581,6 +583,7 @@
 				ED56A2FA2B0D18F1005FE6AF /* RecommendCollectionViewCell.swift in Sources */,
 				F4DDEB2A2B0B720600B7BCCE /* UIColor+.swift in Sources */,
 				F4DDEB5C2B0BCCA900B7BCCE /* UIStackView+.swift in Sources */,
+				0B86E39B2B14F0B800DB2930 /* BenefitHeaderView.swift in Sources */,
 				F4DDEB7B2B0E8E6700B7BCCE /* BenefitCollectionFamousBenefitSectionFooterView.swift in Sources */,
 				0B6677A22B0CCEF400821105 /* (null) in Sources */,
 				0B125CE02B105F950051DDEF /* HomeCardData.swift in Sources */,
@@ -596,6 +599,7 @@
 				0B0DFB162B0D20F3005F8618 /* HomePlaceSectionCollectionViewCell.swift in Sources */,
 				0B6677A02B0CBF7500821105 /* (null) in Sources */,
 				0B0DFB232B0D2102005F8618 /* HomePointSectionHeaderView.swift in Sources */,
+				0BFA79A52B14BC7200548A1E /* TabBarController.swift in Sources */,
 				0B6677A82B0CCF7F00821105 /* (null) in Sources */,
 				0B6677AD2B0CD24300821105 /* (null) in Sources */,
 				0B7837C42B0FB84200494079 /* HomeEventData.swift in Sources */,

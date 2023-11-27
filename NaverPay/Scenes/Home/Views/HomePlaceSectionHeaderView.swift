@@ -101,10 +101,6 @@ final class HomePlaceSectionHeaderView: UICollectionReusableView,UIGestureRecogn
             $0.centerY.equalToSuperview()
             $0.trailing.equalToSuperview().inset(17)
         }
-        
-            
-    
-       
     }
     
     @objc

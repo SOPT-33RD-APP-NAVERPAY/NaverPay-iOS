@@ -33,8 +33,8 @@ final class HomeViewController: UIViewController {
     
     private func setStyle() {
         view.backgroundColor = .bg_black
+        self.navigationController?.navigationBar.isHidden = true
     }
-    
     
     private func setLayout() {
         view.addSubviews(HomeCollectionView, homeHeaderView)
@@ -293,7 +293,6 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 
 extension HomeViewController: HomeViewPushDelegate {
-
     func didTapButton() {
         print("didTapButton")
         let placeViewController = PlaceViewController()

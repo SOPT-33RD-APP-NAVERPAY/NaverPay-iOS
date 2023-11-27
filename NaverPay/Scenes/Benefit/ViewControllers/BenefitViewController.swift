@@ -12,6 +12,8 @@ final class BenefitViewController: UIViewController {
     
     private let userBenefitData = UserBenefitDataAppData.dummy()
     
+    private let benefitHeaderview = BenefitHeaderView()
+    
     private let pointCellBackgroundViewList: [UIImage] = [ImageLiterals.BenefitView.bnfFirst, ImageLiterals.BenefitView.bnfSecond, ImageLiterals.BenefitView.bnfThird, ImageLiterals.BenefitView.bnfFourth]
     
     
@@ -35,19 +37,26 @@ final class BenefitViewController: UIViewController {
     }
     
     private func setLayout() {
-        self.view.addSubviews(benefitCollectionView)
+        self.view.addSubviews(benefitCollectionView,benefitHeaderview)
+        
+        benefitHeaderview.snp.makeConstraints {
+            $0.top.trailing.leading.equalToSuperview()
+            $0.height.equalTo(96)
+        }
         
         benefitCollectionView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.top.equalTo(benefitHeaderview.snp.bottom).offset(20)
+            $0.bottom.equalToSuperview()
             $0.leading.equalToSuperview().inset(16)
             $0.trailing.equalToSuperview().inset(16)
-            $0.bottom.equalToSuperview()
         }
         
     }
     
     private func setStyle() {
         self.view.backgroundColor = .bg_gray
+        
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     
