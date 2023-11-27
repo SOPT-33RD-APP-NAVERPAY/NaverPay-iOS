@@ -38,6 +38,7 @@
 		0B7837C42B0FB84200494079 /* HomeEventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7837C32B0FB84200494079 /* HomeEventData.swift */; };
 		0B91C7A82B0B8A7A00ACDCE9 /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B91C7A72B0B8A7A00ACDCE9 /* ImageLiterals.swift */; };
 		0B91C7AA2B0B8B3000ACDCE9 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B91C7A92B0B8B3000ACDCE9 /* UIImage+.swift */; };
+		ED405D6D2B14B8CF006CF4C6 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED405D6C2B14B8CF006CF4C6 /* PieChartView.swift */; };
 		ED56A2EA2B0B7790005FE6AF /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A2E92B0B7790005FE6AF /* UIFont+.swift */; };
 		ED56A2F82B0D18B5005FE6AF /* NearPlaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A2F72B0D18B5005FE6AF /* NearPlaceCollectionViewCell.swift */; };
 		ED56A2FA2B0D18F1005FE6AF /* RecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A2F92B0D18F1005FE6AF /* RecommendCollectionViewCell.swift */; };
@@ -104,6 +105,7 @@
 		0B7837C32B0FB84200494079 /* HomeEventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeEventData.swift; path = Scenes/Home/Models/HomeEventData.swift; sourceTree = "<group>"; };
 		0B91C7A72B0B8A7A00ACDCE9 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageLiterals.swift; path = Global/Literals/ImageLiterals.swift; sourceTree = "<group>"; };
 		0B91C7A92B0B8B3000ACDCE9 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIImage+.swift"; path = "Global/Extensions/UIImage+.swift"; sourceTree = "<group>"; };
+		ED405D6C2B14B8CF006CF4C6 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PieChartView.swift; path = Scenes/Point/Views/PieChartView.swift; sourceTree = "<group>"; };
 		ED56A2E92B0B7790005FE6AF /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIFont+.swift"; path = "Global/Extensions/UIFont+.swift"; sourceTree = "<group>"; };
 		ED56A2F72B0D18B5005FE6AF /* NearPlaceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NearPlaceCollectionViewCell.swift; path = Scenes/Place/Cells/NearPlaceCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED56A2F92B0D18F1005FE6AF /* RecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecommendCollectionViewCell.swift; path = Scenes/Place/Cells/RecommendCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -489,6 +491,7 @@
 		F4DDEB3E2B0B8CC700B7BCCE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ED405D6C2B14B8CF006CF4C6 /* PieChartView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 				ED56A30E2B0F8304005FE6AF /* GraphCollectionViewCell.swift in Sources */,
 				F4DDEB802B0F607700B7BCCE /* BenefitCollectionViewPointCheckSectionBackgroundView.swift in Sources */,
 				0B2278852B0DB0D500732977 /* HomeSwitchSectionCollectionViewCell.swift in Sources */,
+				ED405D6D2B14B8CF006CF4C6 /* PieChartView.swift in Sources */,
 				F4DDEB7F2B0F27CE00B7BCCE /* CategoryData.swift in Sources */,
 				0B0DFB152B0D20F3005F8618 /* HomePointSectionCollectionViewCell.swift in Sources */,
 				F4DDEB862B0FD70100B7BCCE /* BenefitCollectionEntireBenefitSectionHeaderView.swift in Sources */,
