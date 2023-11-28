@@ -84,6 +84,8 @@
 		F4DDEB862B0FD70100B7BCCE /* BenefitCollectionEntireBenefitSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB852B0FD70100B7BCCE /* BenefitCollectionEntireBenefitSectionHeaderView.swift */; };
 		F4DDEB882B10A48600B7BCCE /* BenefitCollectionViewAdBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB872B10A48500B7BCCE /* BenefitCollectionViewAdBannerCell.swift */; };
 		F4DDEB8C2B10B18800B7BCCE /* BenefitCollectionadBannerFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB8B2B10B18800B7BCCE /* BenefitCollectionadBannerFooterView.swift */; };
+		F4FF7FF92B1604DE00681C0D /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF7FF82B1604DE00681C0D /* Config.swift */; };
+		F4FF7FFB2B1626B600681C0D /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F4FF7FFA2B1626B600681C0D /* Development.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -153,6 +155,8 @@
 		F4DDEB852B0FD70100B7BCCE /* BenefitCollectionEntireBenefitSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionEntireBenefitSectionHeaderView.swift; path = Scenes/Benefit/Views/BenefitCollectionEntireBenefitSectionHeaderView.swift; sourceTree = "<group>"; };
 		F4DDEB872B10A48500B7BCCE /* BenefitCollectionViewAdBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionViewAdBannerCell.swift; path = Scenes/Benefit/Cells/BenefitCollectionViewAdBannerCell.swift; sourceTree = "<group>"; };
 		F4DDEB8B2B10B18800B7BCCE /* BenefitCollectionadBannerFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitCollectionadBannerFooterView.swift; path = Scenes/Benefit/Views/BenefitCollectionadBannerFooterView.swift; sourceTree = "<group>"; };
+		F4FF7FF82B1604DE00681C0D /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		F4FF7FFA2B1626B600681C0D /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +284,7 @@
 		F4DDEB242B0A58E900B7BCCE /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				F4FF7FF72B16047A00681C0D /* Configuration */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -521,6 +526,16 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		F4FF7FF72B16047A00681C0D /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				F4FF7FF82B1604DE00681C0D /* Config.swift */,
+				F4FF7FFA2B1626B600681C0D /* Development.xcconfig */,
+			);
+			name = Configuration;
+			path = Network/Base/Configuration;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -589,6 +604,7 @@
 			files = (
 				F4DDEB162B0A52EB00B7BCCE /* LaunchScreen.storyboard in Resources */,
 				F4DDEB132B0A52EB00B7BCCE /* Assets.xcassets in Resources */,
+				F4FF7FFB2B1626B600681C0D /* Development.xcconfig in Resources */,
 				F4DDEB112B0A52E600B7BCCE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -669,6 +685,7 @@
 				F4DDEB842B0F962700B7BCCE /* BenefitCollectionViewEntireBenefitCell.swift in Sources */,
 				0B6677B12B0CD3DB00821105 /* (null) in Sources */,
 				F4DDEB7D2B0F264700B7BCCE /* BenefitCollectionViewPointCategoryCell.swift in Sources */,
+				F4FF7FF92B1604DE00681C0D /* Config.swift in Sources */,
 				0B6677B72B0CD50B00821105 /* (null) in Sources */,
 				0B6677A42B0CCF1300821105 /* (null) in Sources */,
 				ED56A3022B0F6BD4005FE6AF /* TapPlaceCollectionReusableView.swift in Sources */,
@@ -700,6 +717,7 @@
 /* Begin XCBuildConfiguration section */
 		F4DDEB182B0A52EB00B7BCCE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4FF7FFA2B1626B600681C0D /* Development.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -763,6 +781,7 @@
 		};
 		F4DDEB192B0A52EB00B7BCCE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4FF7FFA2B1626B600681C0D /* Development.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
