@@ -55,7 +55,6 @@
 		ED56A30E2B0F8304005FE6AF /* GraphCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A30D2B0F8304005FE6AF /* GraphCollectionViewCell.swift */; };
 		ED56A3102B0F8325005FE6AF /* UsageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A30F2B0F8325005FE6AF /* UsageCollectionViewCell.swift */; };
 		ED56A3122B1103F2005FE6AF /* UserPlaceAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A3112B1103F2005FE6AF /* UserPlaceAppData.swift */; };
-		ED56A3142B110478005FE6AF /* UserPointAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A3132B110478005FE6AF /* UserPointAppData.swift */; };
 		F4DDEB0A2B0A52E600B7BCCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB092B0A52E600B7BCCE /* AppDelegate.swift */; };
 		F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB0B2B0A52E600B7BCCE /* SceneDelegate.swift */; };
 		F4DDEB112B0A52E600B7BCCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DDEB0F2B0A52E600B7BCCE /* Main.storyboard */; };
@@ -124,7 +123,6 @@
 		ED56A30D2B0F8304005FE6AF /* GraphCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GraphCollectionViewCell.swift; path = Scenes/Point/Cells/GraphCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED56A30F2B0F8325005FE6AF /* UsageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UsageCollectionViewCell.swift; path = Scenes/Point/Cells/UsageCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED56A3112B1103F2005FE6AF /* UserPlaceAppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserPlaceAppData.swift; path = Scenes/Place/Models/UserPlaceAppData.swift; sourceTree = "<group>"; };
-		ED56A3132B110478005FE6AF /* UserPointAppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserPointAppData.swift; path = Scenes/Point/Models/UserPointAppData.swift; sourceTree = "<group>"; };
 		F4DDEB062B0A52E600B7BCCE /* NaverPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaverPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4DDEB092B0A52E600B7BCCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4DDEB0B2B0A52E600B7BCCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -508,7 +506,6 @@
 		F4DDEB402B0B8CD100B7BCCE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				ED56A3132B110478005FE6AF /* UserPointAppData.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -613,7 +610,6 @@
 				ED56A3002B0D1952005FE6AF /* TitleCollectionReusableView.swift in Sources */,
 				0B1E55A62B0F80F500ADFC75 /* HomeDataAppData.swift in Sources */,
 				0B91C7A82B0B8A7A00ACDCE9 /* ImageLiterals.swift in Sources */,
-				ED56A3142B110478005FE6AF /* UserPointAppData.swift in Sources */,
 				0B0DFB142B0D20F3005F8618 /* HomeEventSectionCollectionViewCell.swift in Sources */,
 				F4DDEB692B0CEB7B00B7BCCE /* BenefitCollectionPointCheckHeaderView.swift in Sources */,
 				0B663D492B156EB3001BAC91 /* NaverNavigationBar.swift in Sources */,
