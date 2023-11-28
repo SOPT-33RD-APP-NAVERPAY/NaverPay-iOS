@@ -7,6 +7,10 @@
 
 import SwiftUI
 import Charts
+import UIKit
+
+private let userPointData = UserPointAppData.dummy()
+
 
 struct ChartData: Identifiable, Plottable {
     
@@ -33,14 +37,15 @@ struct ChartData: Identifiable, Plottable {
 }
 
 let data: [ChartData] = [
-    .init(primitivePlottableL: 45, color: .graph_payment, name: "결제수단", amount: "5,020원"),
-    .init(primitivePlottableL: 25, color: .graph_review, name: "리뷰", amount: "2,300원"),
-    .init(primitivePlottableL: 15, color: .graph_membership, name: "멤버십", amount: "2,920원"),
-    .init(primitivePlottableL: 10, color: .graph_main, name: "기본", amount: "1,260원")
+    .init(primitivePlottableL: 45, color: .graph_payment, name: "결제수단", amount: "\(userPointData.paymentMethodPoint)원"),
+    .init(primitivePlottableL: 25, color: .graph_review, name: "리뷰", amount: "\(userPointData.reviewPoint)원"),
+    .init(primitivePlottableL: 15, color: .graph_membership, name: "멤버십", amount: "\(userPointData.membershipPoint)원"),
+    .init(primitivePlottableL: 10, color: .graph_main, name: "기본", amount: "\(userPointData.basicPoint)원")
 ].compactMap({$0})
 
 struct PieChartView: View {
     let totalRange: ClosedRange<Int> = 0...100
+    
     
     var body: some View{
         ZStack{
