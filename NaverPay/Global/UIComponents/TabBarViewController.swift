@@ -20,30 +20,31 @@ final class TabBarViewController: UITabBarController {
 
         let paymentController = UINavigationController(rootViewController: HomeViewController())
         paymentController.tabBarItem = UITabBarItem(title: "결제", image: .paymentIco, tag: 2)
+        
         let orderController = UINavigationController(rootViewController: HomeViewController())
         orderController.tabBarItem = UITabBarItem(title: "주문", image: .orderIco, tag: 3)
 
-        let benefitViewController = UINavigationController(rootViewController: PointViewController())
+        let benefitViewController = UINavigationController(rootViewController: BenefitViewController())
         benefitViewController.tabBarItem = UITabBarItem(title: "혜택", image: .benefitIco, tag: 3)
 
         self.viewControllers = [assetController, sendController, paymentController, orderController, benefitViewController]
-
+        self.selectedIndex = 2
         let tabBarAppearance = UITabBarAppearance()
         tabBarAppearance.backgroundColor = .bg_white
         tabBarAppearance.stackedItemSpacing = 8
         let tabBarItemAppearance = UITabBarItemAppearance()
         tabBarItemAppearance.normal.iconColor = .grayscale_gray3
+        tabBarItemAppearance.disabled.iconColor = .grayscale_gray6
         tabBarItemAppearance.selected.iconColor = .main_green
         tabBarItemAppearance.normal.titleTextAttributes = [ .foregroundColor : UIColor.grayscale_gray4, .font : UIFont.font(.normal_12)]
         tabBarItemAppearance.selected.titleTextAttributes = [ .foregroundColor : UIColor.main_green, .font : UIFont.font(.normal_12)]
+        tabBarItemAppearance.disabled.titleTextAttributes = [ .foregroundColor : UIColor.grayscale_gray6, .font : UIFont.font(.normal_12)]
         tabBarAppearance.inlineLayoutAppearance = tabBarItemAppearance
         tabBarAppearance.stackedLayoutAppearance = tabBarItemAppearance
         tabBarAppearance.compactInlineLayoutAppearance = tabBarItemAppearance
-        tabBarItemAppearance.disabled.titleTextAttributes = [ .foregroundColor : UIColor.grayscale_gray6, .font : UIFont.font(.normal_12)]
 
         self.tabBar.standardAppearance = tabBarAppearance
         self.tabBar.scrollEdgeAppearance = tabBarAppearance
-        self.tabBar.unselectedItemTintColor = .adcard_yellow
         self.tabBar.items?[0].isEnabled = false
         self.tabBar.items?[1].isEnabled = false
         self.tabBar.items?[3].isEnabled = false
