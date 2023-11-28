@@ -18,6 +18,8 @@ struct UserPointAppData {
     let userPoint: Int
     let brandList: [PointBrandList]
     
+    
+    
     var formattedPaymentPoint: String {
         return formatNumber(paymentMethodPoint)
     }
@@ -37,6 +39,32 @@ struct UserPointAppData {
     var formattedReviewPoint: String {
         return formatNumber(reviewPoint)
     }
+    
+    var formattedPaymentPercentage: Int {
+            return formatPercentage(paymentMethodPoint)
+        }
+
+        var formattedBasicPercentage: Int {
+            return formatPercentage(basicPoint)
+        }
+
+        var formattedMembershipPercentage: Int {
+            return formatPercentage(membershipPoint)
+        }
+
+        var formattedReviewPercentage: Int {
+            return formatPercentage(reviewPoint)
+        }
+
+        private func formatPercentage(_ number: Int) -> Int {
+            let totalPoints = paymentMethodPoint + basicPoint + membershipPoint + reviewPoint
+            guard totalPoints > 0 else {
+                return 0
+            }
+
+            let percentage = Int(Double(number) / Double(totalPoints) * 100)
+            return percentage
+        }
     
     private func formatNumber(_ number: Int) -> String {
         let numberFormatter = NumberFormatter()
@@ -104,7 +132,7 @@ struct PointBrandList {
 extension UserPointAppData {
     static func dummy() -> UserPointAppData {
         
-        UserPointAppData(paymentMethodPoint: 1000, basicPoint: 2000, membershipPoint: 3000, reviewPoint: 4000, userPoint: 5000, brandList: [
+        UserPointAppData(paymentMethodPoint: 5000, basicPoint: 2000, membershipPoint: 3000, reviewPoint: 4000, userPoint: 20000, brandList: [
             PointBrandList(id: 1, name: "가게 이름1", saving: 1000, paymentDate: "2023-11-27T13:18:59"),
             PointBrandList(id: 2, name: "가게 이름2", saving: 2000, paymentDate: "2023-11-27T13:18:59"),
             PointBrandList(id: 3, name: "가게 이름3", saving: 3000, paymentDate: "2023-11-27T13:18:59"),
