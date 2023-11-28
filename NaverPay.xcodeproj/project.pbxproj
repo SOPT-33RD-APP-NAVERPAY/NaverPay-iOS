@@ -95,6 +95,7 @@
 		F4FF800A2B165BC000681C0D /* Codable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF80092B165BC000681C0D /* Codable+.swift */; };
 		F4FF800C2B1660C900681C0D /* BenefitMainDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF800B2B1660C900681C0D /* BenefitMainDTO.swift */; };
 		F4FF800E2B16612000681C0D /* BenefitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF800D2B16612000681C0D /* BenefitService.swift */; };
+		F4FF80102B16695F00681C0D /* KingfisherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF800F2B16695F00681C0D /* KingfisherService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -175,6 +176,7 @@
 		F4FF80092B165BC000681C0D /* Codable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+.swift"; sourceTree = "<group>"; };
 		F4FF800B2B1660C900681C0D /* BenefitMainDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitMainDTO.swift; sourceTree = "<group>"; };
 		F4FF800D2B16612000681C0D /* BenefitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitService.swift; sourceTree = "<group>"; };
+		F4FF800F2B16695F00681C0D /* KingfisherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				F4FF800D2B16612000681C0D /* BenefitService.swift */,
+				F4FF800F2B16695F00681C0D /* KingfisherService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -691,6 +694,7 @@
 				ED56A2FA2B0D18F1005FE6AF /* RecommendCollectionViewCell.swift in Sources */,
 				F4FF7FFF2B162BC400681C0D /* BaseResponse.swift in Sources */,
 				F4DDEB2A2B0B720600B7BCCE /* UIColor+.swift in Sources */,
+				F4FF80102B16695F00681C0D /* KingfisherService.swift in Sources */,
 				F4DDEB5C2B0BCCA900B7BCCE /* UIStackView+.swift in Sources */,
 				F4DDEB7B2B0E8E6700B7BCCE /* BenefitCollectionFamousBenefitSectionFooterView.swift in Sources */,
 				0B6677A22B0CCEF400821105 /* (null) in Sources */,

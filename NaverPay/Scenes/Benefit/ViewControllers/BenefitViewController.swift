@@ -31,11 +31,10 @@ final class BenefitViewController: UIViewController {
         return collectionView
     }()
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        getBenefitMainData()
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +42,8 @@ final class BenefitViewController: UIViewController {
         setLayout()
         setCollectionView()
         setStyle()
-        
+        getBenefitMainData()
+
     }
     
     private func setLayout() {
@@ -55,7 +55,7 @@ final class BenefitViewController: UIViewController {
         }
         
         benefitCollectionView.snp.makeConstraints {
-            $0.top.equalTo(benefitHeaderview.snp.bottom).offset(20)
+            $0.top.equalTo(benefitHeaderview.snp.bottom)
             $0.bottom.equalToSuperview()
             $0.leading.equalToSuperview().inset(16)
             $0.trailing.equalToSuperview().inset(16)
@@ -232,7 +232,7 @@ extension BenefitViewController: UICollectionViewDataSource {
         case 0:
             return 4
         case 1:
-            return userBenefitData.brandList.count - 1
+            return userBenefitData.brandList.count
         case 2:
             return 5
         case 3:

@@ -17,8 +17,8 @@ final class BenefitService: Serviceable {
         
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
         
-        let urlResponse = response as? HTTPURLResponse
-        let status = urlResponse?.statusCode
+//        let urlResponse = response as? HTTPURLResponse
+//        let status = urlResponse?.statusCode
         
         guard let model = try dataDecodeAndhandleErrorCode(data: data, decodeType: BenefitMainDTO.self) else { return UserBenefitDataAppData.emptyData }
         
