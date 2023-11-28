@@ -12,7 +12,7 @@ final class PlaceViewController: UIViewController {
     static let identifier: String = "PlaceViewController"
     private var userName: String = "남희주"
     
-    lazy var placeHeaderView = PlaceHeaderView(self)
+    lazy var placeHeaderView = NaverNavigationBar(self, leftItem: .place)
     
     private let collectionView: UICollectionView = {
         

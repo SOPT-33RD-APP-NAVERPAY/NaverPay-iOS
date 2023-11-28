@@ -13,15 +13,15 @@ final class TabBarViewController: UITabBarController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        let assetController = UINavigationController(rootViewController: PlaceViewController())
+        let assetController = UINavigationController(rootViewController: HomeViewController())
         assetController.tabBarItem = UITabBarItem(title: "자산", image: .assetIco, tag: 0)
         
         let sendController = UINavigationController(rootViewController: PlaceViewController())
         sendController.tabBarItem = UITabBarItem(title: "송금", image: .sendIco, tag: 1)
         
-        let paymentController = UINavigationController(rootViewController: HomeViewController())
+        let paymentController = UINavigationController(rootViewController: PlaceViewController())
         paymentController.tabBarItem = UITabBarItem(title: "결제", image: .paymentIco, tag: 2)
-        let orderController = UINavigationController(rootViewController: PlaceViewController())
+        let orderController = UINavigationController(rootViewController: HomeViewController())
         orderController.tabBarItem = UITabBarItem(title: "주문", image: .orderIco, tag: 3)
         
         let benefitViewController = UINavigationController(rootViewController: BenefitViewController())
@@ -56,3 +56,5 @@ final class TabBarViewController: UITabBarController {
         tabBar.frame.origin.y = view.frame.height - 95
     }
 }
+
+
