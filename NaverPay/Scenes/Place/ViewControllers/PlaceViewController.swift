@@ -12,6 +12,8 @@ final class PlaceViewController: UIViewController {
     static let identifier: String = "PlaceViewController"
     private var userName: String = "남희주"
     
+    private let userPlaceData = UserPlaceDataClass.dummy()
+
     lazy var placeHeaderView = NaverNavigationBar(self, leftItem: .place)
     
     private let collectionView: UICollectionView = {
@@ -95,7 +97,7 @@ extension PlaceViewController: UICollectionViewDataSource {
         case 0:
             return 1
         default:
-            return 6
+            return userPlaceData.brandList.count
         }
     }
     
@@ -115,7 +117,7 @@ extension PlaceViewController: UICollectionViewDataSource {
                 else {
                     return TitleCollectionReusableView()
                 }
-                header.headerLabel.text = "\(userName)님과 가까운 장소"
+                header.headerLabel.text = "\(self.userPlaceData.userName)님과 가까운 장소"
                 header.headerButton.setImage(ImageLiterals.PlaceView.placeButtonmapIcon, for: .normal)
                 header.headerButton.backgroundColor = .main_green
                 header.headerButton.setTitle("지도로 보기", for: .normal)
@@ -126,7 +128,7 @@ extension PlaceViewController: UICollectionViewDataSource {
                 else {
                     return UICollectionReusableView()
                 }
-                header.headerLabel.text = "패션에 관심있는\n\(userName)님을 위한 추천"
+                header.headerLabel.text = "패션에 관심있는\n\(self.userPlaceData.userName)님을 위한 추천"
                 header.headerButton.backgroundColor = .bg_black
                 header.headerButton.setTitle("추천 더보기 >", for: .normal)
                 return header
@@ -169,10 +171,12 @@ extension PlaceViewController: UICollectionViewDataSource {
         case 0:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TapPlaceCollectionViewCell.identifier, for: indexPath) as? TapPlaceCollectionViewCell
             else { return UICollectionViewCell()}
+            
             return cell
         case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NearPlaceCollectionViewCell.identifier, for: indexPath) as? NearPlaceCollectionViewCell
             else { return UICollectionViewCell()}
+            cell.userNearPlace = self.userPlaceData.nearbyplaceList[indexPath.item]
             return cell
             
         case 2:
@@ -180,6 +184,7 @@ extension PlaceViewController: UICollectionViewDataSource {
             else {
                 return UICollectionViewCell()
             }
+            cell.userRecommendPlace = self.userPlaceData.brandList[indexPath.item]
             return cell
             
         case 3:
@@ -187,6 +192,7 @@ extension PlaceViewController: UICollectionViewDataSource {
             else{
                 return UICollectionViewCell()
             }
+            cell.userBrandPlace = self.userPlaceData.onsitepaymentList[indexPath.item]
             return cell
             
         default:
@@ -198,7 +204,7 @@ extension PlaceViewController: UICollectionViewDataSource {
 
 extension PlaceViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        switch indexPath.section{
+        switch indexPath.section {
         case 0:
             return CGSize(width: UIScreen.main.bounds.width, height: 32)
         case 1:
