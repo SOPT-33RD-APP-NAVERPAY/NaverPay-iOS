@@ -23,7 +23,7 @@ final class TabBarViewController: UITabBarController {
         let orderController = UINavigationController(rootViewController: HomeViewController())
         orderController.tabBarItem = UITabBarItem(title: "주문", image: .orderIco, tag: 3)
 
-        let benefitViewController = UINavigationController(rootViewController: BenefitViewController())
+        let benefitViewController = UINavigationController(rootViewController: PointViewController())
         benefitViewController.tabBarItem = UITabBarItem(title: "혜택", image: .benefitIco, tag: 3)
 
         self.viewControllers = [assetController, sendController, paymentController, orderController, benefitViewController]

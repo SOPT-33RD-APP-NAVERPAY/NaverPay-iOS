@@ -13,6 +13,8 @@ final class PointViewController: UIViewController {
     
     private let userPointData = UserPointAppDataClass.dummy()
     
+    lazy var pointHeaderView = NaverNavigationBar(self, leftItem: .point)
+    
     private let pointCollectionView: UICollectionView = {
        let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -31,12 +33,22 @@ final class PointViewController: UIViewController {
     }
 
     private func setLayout(){
-        self.view.addSubview(pointCollectionView)
+        self.view.addSubviews(pointCollectionView,pointHeaderView)
         pointCollectionView.backgroundColor = .bg_gray
+        self.navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.backgroundColor = .bg_white
+        
+        
+        pointHeaderView.snp.makeConstraints {
+            $0.top.trailing.leading.equalToSuperview()
+            $0.height.equalTo(96)
+        }
         
         pointCollectionView.snp.makeConstraints{
-            $0.edges.equalToSuperview()
+            $0.leading.trailing.bottom.equalToSuperview()
+            $0.top.equalTo(pointHeaderView.snp.bottom)
         }
+        
     }
     
     private func setCollectionViewLayout(){

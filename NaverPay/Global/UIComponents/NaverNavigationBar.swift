@@ -86,32 +86,32 @@ private extension NaverNavigationBar {
 
         case .point:
             self.addSubviews(arrowButton, nLogoImage, pointLabel, benefitImgae)
-
+        
             arrowButton.snp.makeConstraints {
                 $0.leading.equalToSuperview().inset(20)
                 $0.size.equalTo(24)
-                $0.top.equalToSuperview().offset(15)
+                $0.top.equalToSuperview().offset(57)
             }
 
             nLogoImage.snp.makeConstraints {
                 $0.leading.equalTo(arrowButton.snp.trailing).inset(-89)
                 $0.height.equalTo(18)
                 $0.width.equalTo(54)
-                $0.top.equalToSuperview().offset(24)
+                $0.top.equalToSuperview().offset(66)
             }
 
             pointLabel.snp.makeConstraints {
                 $0.leading.equalTo(nLogoImage.snp.trailing).inset(-8)
                 $0.height.equalTo(20)
                 $0.width.equalTo(45)
-                $0.top.equalToSuperview().offset(23)
+                $0.top.equalToSuperview().offset(65)
             }
 
             benefitImgae.snp.makeConstraints {
                 $0.leading.equalTo(pointLabel.snp.trailing).inset(-61)
                 $0.height.equalTo(25)
                 $0.width.equalTo(56)
-                $0.top.equalToSuperview().offset(20)
+                $0.top.equalToSuperview().offset(62)
             }
         }
     }

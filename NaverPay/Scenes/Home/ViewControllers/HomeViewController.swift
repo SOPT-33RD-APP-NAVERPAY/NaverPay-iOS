@@ -154,7 +154,7 @@ final class HomeViewController: UIViewController {
                 
             case 4:
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(248), heightDimension: .absolute(84)))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .absolute(256*3), heightDimension: .absolute(84)), subitems: [item])
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .absolute(256*3), heightDimension: .absolute(155)), subitems: [item])
                 group.interItemSpacing = .fixed(8)
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .continuous

@@ -61,7 +61,6 @@ final class PlaceViewController: UIViewController {
             $0.leading.trailing.bottom.equalToSuperview()
             $0.top.equalTo(placeHeaderView.snp.bottom)
         }
-        
     }
     
     private func setCollectionViewLayout(){
