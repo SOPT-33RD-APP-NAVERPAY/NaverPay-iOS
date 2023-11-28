@@ -11,7 +11,7 @@ import UIKit
 struct UserBenefitDataAppData {
     let userName: String
     let userPoint: Int
-    let brandList: [BrandListAppData]
+    var brandList: [BrandListAppData]
 
     enum CodingKeys: String, CodingKey {
         case userName = "user_name"
@@ -25,7 +25,7 @@ struct BrandListAppData {
     let id: Int
     let logoImgURL: UIImage
     let name, discountContent, discountType: String
-    let isBrandLike: Bool
+    var isBrandLike: Bool
 
     enum CodingKeys: String, CodingKey {
         case id, name

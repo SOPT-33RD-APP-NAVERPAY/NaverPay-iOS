@@ -10,7 +10,7 @@ import SnapKit
 
 final class BenefitViewController: UIViewController {
     
-    private let userBenefitData = UserBenefitDataAppData.dummy()
+    private var userBenefitData = UserBenefitDataAppData.dummy()
     
     private let categoryData = CategoryData.dummy()
 
@@ -237,6 +237,8 @@ extension BenefitViewController: UICollectionViewDataSource {
         case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BenefitCollectionViewFamousBenefitCell.identifier, for: indexPath) as? BenefitCollectionViewFamousBenefitCell else { return UICollectionViewCell() }
             cell.userBenefitData = self.userBenefitData.brandList[indexPath.item]   
+            cell.itemRow = indexPath.item
+            cell.delegate = self
             return cell
             
         case 2:
@@ -330,4 +332,10 @@ extension BenefitViewController: UICollectionViewDataSource {
         }
         
     }
+}
+
+extension BenefitViewController: ItemSelectedProtocol {
+        func getButtonState(state: Bool, row: Int) {
+            userBenefitData.brandList[row].isBrandLike = state
+        }
 }
