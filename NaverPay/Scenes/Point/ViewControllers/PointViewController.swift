@@ -76,6 +76,7 @@ extension PointViewController: UICollectionViewDataSource {
         case 2:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GraphCollectionViewCell.identifier, for: indexPath) as? GraphCollectionViewCell
             else { return UICollectionViewCell()}
+            cell.userPointData = self.userPointData
             return cell
             
         case 3:

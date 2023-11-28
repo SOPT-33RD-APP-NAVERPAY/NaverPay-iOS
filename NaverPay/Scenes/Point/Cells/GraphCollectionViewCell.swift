@@ -12,6 +12,14 @@ import SnapKit
 final class GraphCollectionViewCell: UICollectionViewCell {
     static let identifier: String = "GraphCollectionViewCell"
     
+    var userPointData: UserPointAppData? {
+        didSet {
+            guard let data = userPointData else {return}
+            amountLabel.text = "\(data.formattedUserPoint)원"
+            
+        }
+    }
+    
     private let monthStackView: UIStackView = {
        let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -187,7 +195,6 @@ final class GraphCollectionViewCell: UICollectionViewCell {
         monthLabel.text = "11월"
         descLabel.text = "이달에는 결제수단 혜택을 많이 받았어요"
         totalLabel.text = "총 적립 혜택"
-        amountLabel.text = "11,500원"
         dateLabel.text = "2023.11.01. \n~ 11.30."
         dateLabel.numberOfLines = 2
         dateLabel.textAlignment = .center
