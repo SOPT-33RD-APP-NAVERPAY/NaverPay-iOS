@@ -8,9 +8,17 @@
 import UIKit
 import SnapKit
 
+protocol ItemSelectedProtocol: AnyObject {
+    func getButtonState(state: Bool, row: Int)
+}
+
 final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
     
     static let identifier = "BenefitCollectionViewFamousBenefitCell"
+    
+    weak var delegate: ItemSelectedProtocol?
+    
+    var itemRow: Int?
     
     var userBenefitData: BrandListAppData? {
         didSet {
@@ -20,14 +28,15 @@ final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
             brandNameLabel.text = data.name
             benefitDescriptionLabel.text = data.discountContent
             benefitRate.text = data.discountType
+            heartButton.isSelected = data.isBrandLike
         }
     }
     
     private let brandIDLabel = NPLabel(font: .font(.subtitle_bold_17), color: .main_green)
- 
+    
     private let brandImageView: UIImageView = {
         let imageView = UIImageView()
-//        imageView.contentMode = .scaleAspectFill
+        //        imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .red
         return imageView
     }()
@@ -52,7 +61,7 @@ final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
         button.addTarget(self, action: #selector(heartButtonTapped), for: .touchUpInside)
         return button
     }()
-
+    
     
     
     override init(frame: CGRect) {
@@ -89,16 +98,22 @@ final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
             $0.centerY.equalTo(brandAndBenefitInfoStackView)
             $0.trailing.equalToSuperview().inset(20)
         }
-        
     }
     
-    @objc 
-    private func heartButtonTapped() {
-        heartButton.isSelected = !heartButton.isSelected
+    
+    @objc
+    func heartButtonTapped() {
+        self.heartButton.isSelected.toggle()
+        if let itemRow {
+            self.delegate?.getButtonState(state: self.heartButton.isSelected,
+                                          row: itemRow)
+        }
     }
     
-    required init?(coder: NSCoder) {
+    
+    required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
 }
