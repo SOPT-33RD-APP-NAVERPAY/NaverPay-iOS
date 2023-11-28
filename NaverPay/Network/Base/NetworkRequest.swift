@@ -42,13 +42,6 @@ struct NetworkRequest {
             urlComponents?.queryItems = queryItemArray
         }
       
-//        let queryItemArray = [URLQueryItem(name: "q", value: cityName),
-//                              URLQueryItem(name: "cnt", value: "14"),
-//                              URLQueryItem(name: "lang", value: "kr"),
-//                              URLQueryItem(name: "units", value: "metric")]
-//        
-//        urlComponents?.queryItems = queryItemArray
-        
         guard let urlRequestURL = urlComponents?.url?.appendingPathComponent(self.path) else {
             throw NetworkError.urlEncodingError
         }
@@ -56,6 +49,7 @@ struct NetworkRequest {
         var urlRequest = URLRequest(url: urlRequestURL)
         urlRequest.httpMethod = self.httpMethod.rawValue
         urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
+        //헤더에 유저 id 넣는것, 우리는 1 or 2 고정
         urlRequest.setValue("1", forHTTPHeaderField: HTTPHeaderField.xAuthID.rawValue)
         urlRequest.httpBody = self.body
         return urlRequest
