@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SwiftUI
+import SnapKit
 
 final class GraphCollectionViewCell: UICollectionViewCell {
     static let identifier: String = "GraphCollectionViewCell"
@@ -77,6 +79,7 @@ final class GraphCollectionViewCell: UICollectionViewCell {
        let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.spacing = 4
+        stackView.alignment = .center
         
         return stackView
     }()
@@ -97,6 +100,7 @@ final class GraphCollectionViewCell: UICollectionViewCell {
        let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.spacing = 4
+        stackView.alignment = .center
         
         return stackView
     }()
@@ -115,11 +119,12 @@ final class GraphCollectionViewCell: UICollectionViewCell {
 //        view.backgroundColor = .adcard_orange
 //        return view
 //    }()
-    
-    
-    let pieChartView = PieChartView(frame: .init(origin: .zero, size: .init(width: 100,
-                                                                            height: 100)))
 
+    let pieChartView = UIHostingController(rootView: PieChartView())
+
+
+    
+    
     
     private let dateLabel = NPLabel(font: .font(.detail_smbold_12), color: .grayscale_gray6)
     
@@ -187,13 +192,6 @@ final class GraphCollectionViewCell: UICollectionViewCell {
         dateLabel.numberOfLines = 2
         dateLabel.textAlignment = .center
         
-        self.contentView.addSubview(pieChartView)
-        pieChartView.snp.makeConstraints {
-            $0.centerX.centerY.equalToSuperview()
-            $0.width.height.equalTo(100)
-        }
-
-        pieChartView.progressAnimation(duration: 0.5, value: 1)
     }
     
     private func setLayout() {
@@ -232,7 +230,7 @@ final class GraphCollectionViewCell: UICollectionViewCell {
             
         }
         
-        graphView.addSubviews(totalStackView, amountStackView, pieChartView)
+        graphView.addSubviews(totalStackView, amountStackView, pieChartView.view)
         
         totalStackView.snp.makeConstraints{
             $0.top.equalToSuperview().inset(23)
@@ -248,11 +246,18 @@ final class GraphCollectionViewCell: UICollectionViewCell {
         
         amountStackView.addArrangedSubviews(amountLabel, upArrowIcon)
         
-        pieChartView.snp.makeConstraints{
-            $0.top.equalTo(amountStackView.snp.bottom).offset(8)
-            $0.height.equalTo(100)
-            $0.width.equalTo(100)
-            $0.centerX.equalToSuperview()
+//        graphImageView.snp.makeConstraints{
+//            $0.top.equalTo(amountStackView.snp.bottom).offset(8)
+//            $0.centerX.equalToSuperview()
+//        }
+        
+        pieChartView.view.snp.makeConstraints {
+//            $0.top.equalTo(amountStackView.snp.bottom).offset(8)
+//            $0.leading.equalToSuperview().inset(24)
+//            $0.height.bottom.equalTo(100)
+            $0.top.equalToSuperview().inset(56)
+            $0.bottom.equalToSuperview().inset(13)
+            $0.horizontalEdges.equalToSuperview().inset(50)
         }
         
         categoryStackView.snp.makeConstraints{
