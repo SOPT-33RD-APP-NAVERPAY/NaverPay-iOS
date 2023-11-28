@@ -13,7 +13,7 @@
 import Foundation
 
 // MARK: - DataClass
-struct UserPointAppDataClass {
+struct UserPointAppData {
     let userPoint, basicPoint, membershipPoint, reviewPoint: Int
     let paymentMethodPoint: Int
     let brandList: [PointBrandList]
@@ -28,10 +28,10 @@ struct PointBrandList {
 }
 
 
-extension UserPointAppDataClass {
-    static func dummy() -> UserPointAppDataClass {
+extension UserPointAppData {
+    static func dummy() -> UserPointAppData {
         
-        UserPointAppDataClass(userPoint: 1000, basicPoint: 2000, membershipPoint: 3000, reviewPoint: 4000, paymentMethodPoint: 5000, brandList: [
+        UserPointAppData(userPoint: 1000, basicPoint: 2000, membershipPoint: 3000, reviewPoint: 4000, paymentMethodPoint: 5000, brandList: [
             PointBrandList(id: 1, name: "가게 이름1", saving: 1000, paymentDate: "11:15"),
             PointBrandList(id: 2, name: "가게 이름2", saving: 2000, paymentDate: "12:15"),
             PointBrandList(id: 3, name: "가게 이름3", saving: 3000, paymentDate: "13:15"),

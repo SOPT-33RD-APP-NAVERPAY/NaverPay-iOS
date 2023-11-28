@@ -11,7 +11,7 @@ import SnapKit
 final class PointViewController: UIViewController {
     static let identifier: String = "PointViewController"
     
-    private let userPointData = UserPointAppDataClass.dummy()
+    private let userPointData = UserPointAppData.dummy()
     
     private let pointCollectionView: UICollectionView = {
        let layout = UICollectionViewFlowLayout()
