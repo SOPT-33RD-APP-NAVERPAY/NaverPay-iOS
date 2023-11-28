@@ -37,10 +37,10 @@ struct ChartData: Identifiable, Plottable {
 }
 
 let data: [ChartData] = [
-    .init(primitivePlottableL: 45, color: .graph_payment, name: "결제수단", amount: "\(userPointData.formattedPaymentPoint)원"),
-    .init(primitivePlottableL: 25, color: .graph_review, name: "리뷰", amount: "\(userPointData.formattedReviewPoint)원"),
-    .init(primitivePlottableL: 15, color: .graph_membership, name: "멤버십", amount: "\(userPointData.formattedMembershipPoint)원"),
-    .init(primitivePlottableL: 10, color: .graph_main, name: "기본", amount: "\(userPointData.formattedBasicPoint)원")
+    .init(primitivePlottableL: userPointData.formattedPaymentPercentage, color: .graph_payment, name: "결제수단", amount: "\(userPointData.formattedPaymentPoint)원"),
+    .init(primitivePlottableL: userPointData.formattedReviewPercentage, color: .graph_review, name: "리뷰", amount: "\(userPointData.formattedReviewPoint)원"),
+    .init(primitivePlottableL: userPointData.formattedMembershipPercentage, color: .graph_membership, name: "멤버십", amount: "\(userPointData.formattedMembershipPoint)원"),
+    .init(primitivePlottableL: userPointData.formattedBasicPercentage, color: .graph_main, name: "기본", amount: "\(userPointData.formattedBasicPoint)원")
 ].compactMap({$0})
 
 struct PieChartView: View {
