@@ -27,11 +27,18 @@ enum ImageLiterals {
         static var pointArrowSecond: UIImage { .load(named: "bnf_arrowSecond")}
         static var locationImage: UIImage { .load(named: "bnf_ic_location")}
         static var qnaArrow: UIImage { .load(named: "ios_bnf_ic_qnaarrow1")}
+        static var bnfIcNoti: UIImage { .load(named: "bnf_ic_noti")}
     }
     enum Global {
         static var mapIcon: UIImage { .load(named: "bxs_map") }
         static var homeIcMenu: UIImage { .load(named: "home_ic_menu") }
         static var homeIcNoti: UIImage { .load(named: "home_ic_noti") }
+        static var assetIco: UIImage { .load(named: "asset_ico") }
+        static var sendIco: UIImage { .load(named: "send_ico") }
+        static var paymentIco: UIImage { .load(named: "payment_ico") }
+        static var benefitIco: UIImage { .load(named: "benefit_ico") }
+        static var orderIco: UIImage { .load(named: "order_ico") }
+        static var placeBtnBack: UIImage { .load(named: "place_btn_back") }
     }
     
     enum MainView {

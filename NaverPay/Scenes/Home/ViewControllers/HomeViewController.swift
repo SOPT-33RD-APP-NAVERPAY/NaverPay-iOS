@@ -33,8 +33,8 @@ final class HomeViewController: UIViewController {
     
     private func setStyle() {
         view.backgroundColor = .bg_black
+        self.navigationController?.navigationBar.isHidden = true
     }
-    
     
     private func setLayout() {
         view.addSubviews(HomeCollectionView, homeHeaderView)
@@ -50,7 +50,6 @@ final class HomeViewController: UIViewController {
             $0.leading.equalToSuperview().inset(20)
             $0.trailing.equalToSuperview().inset(21)
         }
-        
     }
     
     private func setCollectionView() {
@@ -155,7 +154,7 @@ final class HomeViewController: UIViewController {
                 
             case 4:
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(248), heightDimension: .absolute(84)))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .absolute(256*3), heightDimension: .absolute(84)), subitems: [item])
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .absolute(256*3), heightDimension: .absolute(155)), subitems: [item])
                 group.interItemSpacing = .fixed(8)
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .continuous
@@ -227,6 +226,7 @@ extension HomeViewController: UICollectionViewDataSource {
                 
             case 3:
                 guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomePlaceSectionHeaderView.identifier, for: indexPath) as? HomePlaceSectionHeaderView else { return UICollectionReusableView() }
+                header.delegate = self
                 return header
                 
             case 4:
@@ -254,7 +254,6 @@ extension HomeViewController: UICollectionViewDataSource {
             return UICollectionReusableView()
         }
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -293,3 +292,10 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 }
 
+extension HomeViewController: HomeViewPushDelegate {
+    func didTapButton() {
+        print("didTapButton")
+        let placeViewController = PlaceViewController()
+        self.navigationController?.pushViewController(placeViewController, animated: true)
+    }
+}

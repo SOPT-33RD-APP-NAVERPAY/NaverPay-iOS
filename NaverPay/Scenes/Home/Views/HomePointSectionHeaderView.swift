@@ -132,8 +132,8 @@ final class HomePointSectionHeaderView: UICollectionReusableView {
         }
         
         depositDetailLabel.snp.makeConstraints {
-            $0.trailing.equalToSuperview().inset(53)
-            $0.leading.equalTo(depositLabel.snp.trailing).inset(12)
+            $0.trailing.equalTo(pIconImage.snp.leading).inset(-4)
+            $0.leading.equalTo(depositLabel.snp.trailing).inset(-12)
             $0.bottom.equalToSuperview().offset(-15)
             $0.top.equalToSuperview().offset(131)
         }
