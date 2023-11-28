@@ -14,6 +14,18 @@ final class PlaceViewController: UIViewController {
     
     private let userPlaceData = UserPlaceDataClass.dummy()
 
+    lazy var placeHeaderView = NaverNavigationBar(self, leftItem: .place)
+    
+    private let collectionView: UICollectionView = {
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        let collectionView = UICollectionView(frame: .zero
+                                              , collectionViewLayout: UICollectionViewFlowLayout())
+    
+        return collectionView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,16 +50,24 @@ final class PlaceViewController: UIViewController {
     
     
     private func setLayout(){
-        self.view.addSubview(placeCollectionView)
+        self.view.addSubviews(placeCollectionView,placeHeaderView)
+        placeHeaderView.snp.makeConstraints {
+            $0.top.trailing.leading.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(54)
+        }
+        
         
         placeCollectionView.snp.makeConstraints{
-            $0.edges.equalToSuperview()
+            $0.leading.trailing.bottom.equalToSuperview()
+            $0.top.equalTo(placeHeaderView.snp.bottom)
         }
+        
     }
     
     private func setCollectionViewLayout(){
         let flowLayout = UICollectionViewFlowLayout()
         self.placeCollectionView.setCollectionViewLayout(flowLayout, animated: false)
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     private func setCollectionViewConfig() {
@@ -210,4 +230,5 @@ extension PlaceViewController: UICollectionViewDelegateFlowLayout{
         }
     }
 }
+
 

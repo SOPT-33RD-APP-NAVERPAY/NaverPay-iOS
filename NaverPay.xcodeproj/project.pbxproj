@@ -24,6 +24,9 @@
 		0B1E55A62B0F80F500ADFC75 /* HomeDataAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1E55A52B0F80F500ADFC75 /* HomeDataAppData.swift */; };
 		0B2278832B0DB07700732977 /* HomePointSectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2278822B0DB07700732977 /* HomePointSectionFooterView.swift */; };
 		0B2278852B0DB0D500732977 /* HomeSwitchSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2278842B0DB0D500732977 /* HomeSwitchSectionCollectionViewCell.swift */; };
+		0B663D4B2B1596FC001BAC91 /* NaverNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B663D4A2B1596FC001BAC91 /* NaverNavigationBar.swift */; };
+		0B663D4D2B159730001BAC91 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B663D4C2B159730001BAC91 /* TabBarViewController.swift */; };
+		0B663D4F2B15976E001BAC91 /* BenefitHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B663D4E2B15976E001BAC91 /* BenefitHeaderView.swift */; };
 		0B6677A02B0CBF7500821105 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		0B6677A22B0CCEF400821105 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		0B6677A42B0CCF1300821105 /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -101,6 +104,9 @@
 		0B1E55A52B0F80F500ADFC75 /* HomeDataAppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeDataAppData.swift; path = Scenes/Home/Models/HomeDataAppData.swift; sourceTree = "<group>"; };
 		0B2278822B0DB07700732977 /* HomePointSectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomePointSectionFooterView.swift; path = Scenes/Home/Views/HomePointSectionFooterView.swift; sourceTree = "<group>"; };
 		0B2278842B0DB0D500732977 /* HomeSwitchSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeSwitchSectionCollectionViewCell.swift; path = Scenes/Home/Views/HomeSwitchSectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		0B663D4A2B1596FC001BAC91 /* NaverNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NaverNavigationBar.swift; path = Global/UIComponents/NaverNavigationBar.swift; sourceTree = "<group>"; };
+		0B663D4C2B159730001BAC91 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = Global/UIComponents/TabBarViewController.swift; sourceTree = "<group>"; };
+		0B663D4E2B15976E001BAC91 /* BenefitHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitHeaderView.swift; path = Scenes/Benefit/Views/BenefitHeaderView.swift; sourceTree = "<group>"; };
 		0B7837C32B0FB84200494079 /* HomeEventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeEventData.swift; path = Scenes/Home/Models/HomeEventData.swift; sourceTree = "<group>"; };
 		0B91C7A72B0B8A7A00ACDCE9 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageLiterals.swift; path = Global/Literals/ImageLiterals.swift; sourceTree = "<group>"; };
 		0B91C7A92B0B8B3000ACDCE9 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIImage+.swift"; path = "Global/Extensions/UIImage+.swift"; sourceTree = "<group>"; };
@@ -283,6 +289,8 @@
 			children = (
 				F4DDEB6E2B0D1FF500B7BCCE /* NPLabel.swift */,
 				0B125CDD2B105DD20051DDEF /* FormattedString.swift */,
+				0B663D4A2B1596FC001BAC91 /* NaverNavigationBar.swift */,
+				0B663D4C2B159730001BAC91 /* TabBarViewController.swift */,
 			);
 			name = UIComponents;
 			sourceTree = "<group>";
@@ -453,6 +461,7 @@
 				F4DDEB812B0F654500B7BCCE /* BenefitCollectionCategorySectionHeaderView.swift */,
 				F4DDEB852B0FD70100B7BCCE /* BenefitCollectionEntireBenefitSectionHeaderView.swift */,
 				F4DDEB8B2B10B18800B7BCCE /* BenefitCollectionadBannerFooterView.swift */,
+				0B663D4E2B15976E001BAC91 /* BenefitHeaderView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -614,12 +623,14 @@
 				0B91C7A82B0B8A7A00ACDCE9 /* ImageLiterals.swift in Sources */,
 				ED56A3142B110478005FE6AF /* UserPointAppData.swift in Sources */,
 				0B0DFB142B0D20F3005F8618 /* HomeEventSectionCollectionViewCell.swift in Sources */,
+				0B663D4B2B1596FC001BAC91 /* NaverNavigationBar.swift in Sources */,
 				F4DDEB692B0CEB7B00B7BCCE /* BenefitCollectionPointCheckHeaderView.swift in Sources */,
 				0B1E55A42B0F627C00ADFC75 /* HomeViewController.swift in Sources */,
 				F4DDEB6D2B0D1AE700B7BCCE /* BenefitCollectionViewFamousBenefitCell.swift in Sources */,
 				ED56A3062B0F75EE005FE6AF /* TapPlaceCollectionViewCell.swift in Sources */,
 				ED56A30A2B0F827B005FE6AF /* CardCollectionViewCell.swift in Sources */,
 				F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */,
+				0B663D4F2B15976E001BAC91 /* BenefitHeaderView.swift in Sources */,
 				ED56A30C2B0F82CD005FE6AF /* BannerCollectionViewCell.swift in Sources */,
 				ED56A3122B1103F2005FE6AF /* UserPlaceAppData.swift in Sources */,
 				0B0DFB202B0D2102005F8618 /* HomeRecentPaymentsSectionHeaderView.swift in Sources */,
@@ -630,6 +641,7 @@
 				0B6677BB2B0CD63200821105 /* (null) in Sources */,
 				0B0DFB242B0D2102005F8618 /* HomePointSectionBackgroundView.swift in Sources */,
 				ED56A2F82B0D18B5005FE6AF /* NearPlaceCollectionViewCell.swift in Sources */,
+				0B663D4D2B159730001BAC91 /* TabBarViewController.swift in Sources */,
 				ED56A2FA2B0D18F1005FE6AF /* RecommendCollectionViewCell.swift in Sources */,
 				F4DDEB2A2B0B720600B7BCCE /* UIColor+.swift in Sources */,
 				F4DDEB5C2B0BCCA900B7BCCE /* UIStackView+.swift in Sources */,
