@@ -10,7 +10,11 @@ import SnapKit
 
 final class BenefitViewController: UIViewController {
     
-    private let userBenefitData = UserBenefitDataAppData.dummy()
+    private var userBenefitData: UserBenefitDataAppData? {
+        didSet {
+            benefitCollectionView.reloadData()
+        }
+    }
     
     private let categoryData = CategoryData.dummy()
 
@@ -27,7 +31,10 @@ final class BenefitViewController: UIViewController {
         return collectionView
     }()
     
-    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +42,8 @@ final class BenefitViewController: UIViewController {
         setLayout()
         setCollectionView()
         setStyle()
-        
+        getBenefitMainData()
+
     }
     
     private func setLayout() {
@@ -47,7 +55,7 @@ final class BenefitViewController: UIViewController {
         }
         
         benefitCollectionView.snp.makeConstraints {
-            $0.top.equalTo(benefitHeaderview.snp.bottom).offset(20)
+            $0.top.equalTo(benefitHeaderview.snp.bottom)
             $0.bottom.equalToSuperview()
             $0.leading.equalToSuperview().inset(16)
             $0.trailing.equalToSuperview().inset(16)
@@ -219,15 +227,16 @@ extension BenefitViewController: UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let userBenefitData else { return 0}
         switch section {
         case 0:
             return 4
         case 1:
-            return 3
+            return userBenefitData.brandList.count
         case 2:
             return 5
         case 3:
-            return 4
+            return userBenefitData.brandList.count
         case 4:
             return 3
         default:
@@ -245,7 +254,12 @@ extension BenefitViewController: UICollectionViewDataSource {
             
         case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BenefitCollectionViewFamousBenefitCell.identifier, for: indexPath) as? BenefitCollectionViewFamousBenefitCell else { return UICollectionViewCell() }
-            cell.userBenefitData = self.userBenefitData.brandList[indexPath.item]
+            
+            guard let userBenefitData else { return UICollectionViewCell() }
+            
+            cell.userBenefitData = userBenefitData.brandList[indexPath.item]
+            cell.itemRow = indexPath.item
+//            cell.delegate = self
             return cell
             
         case 2:
@@ -269,6 +283,9 @@ extension BenefitViewController: UICollectionViewDataSource {
             
         case 3:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BenefitCollectionViewEntireBenefitCell.identifier, for: indexPath) as? BenefitCollectionViewEntireBenefitCell else { return UICollectionViewCell() }
+            
+            guard let userBenefitData else { return UICollectionViewCell() }
+
             cell.userBenefitData = userBenefitData.brandList[indexPath.item]
             if indexPath.item == 0 {
                 cell.divideView.isHidden = true
@@ -338,5 +355,26 @@ extension BenefitViewController: UICollectionViewDataSource {
             return UICollectionReusableView()
         }
         
+    }
+}
+
+//extension BenefitViewController: ItemSelectedProtocol {
+//        func getButtonState(state: Bool, row: Int) {
+//            userBenefitData.brandList[row].isBrandLike = state
+//        }
+//}
+
+extension BenefitViewController {
+    func getBenefitMainData() {
+        Task {
+            do {
+                let benefitMainData = try await BenefitService.shared.getBenefitMainInfo()
+                print(benefitMainData)
+                userBenefitData = benefitMainData
+            }
+            catch {
+                guard let error = error as? NetworkError else { return }
+            }
+        }
     }
 }

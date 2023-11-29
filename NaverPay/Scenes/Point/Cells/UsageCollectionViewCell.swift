@@ -13,10 +13,10 @@ final class UsageCollectionViewCell: UICollectionViewCell {
     var userPointData: PointBrandList? {
         didSet {
             guard let data = userPointData else {return}
-            listDateLabel.text = data.paymentDate
+            listDateLabel.text = data.formattedPaymentDate
             lisTitleLabel.text = data.name
-            usageAmountLabel.text = "+\(data.saving)원"
-            usageTimeLabel.text = data.paymentDate
+            usageAmountLabel.text = "+\(data.formattedSaving)원"
+            usageTimeLabel.text = data.formattedPaymentTime
             
         }
     }

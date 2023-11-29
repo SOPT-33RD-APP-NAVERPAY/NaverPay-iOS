@@ -11,7 +11,7 @@ import SnapKit
 final class PointViewController: UIViewController {
     static let identifier: String = "PointViewController"
     
-    private let userPointData = UserPointAppDataClass.dummy()
+    private let userPointData = UserPointAppData.dummy()
     
     lazy var pointHeaderView = NaverNavigationBar(self, leftItem: .point)
     
@@ -88,6 +88,7 @@ extension PointViewController: UICollectionViewDataSource {
         case 2:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GraphCollectionViewCell.identifier, for: indexPath) as? GraphCollectionViewCell
             else { return UICollectionViewCell()}
+            cell.userPointData = self.userPointData
             return cell
             
         case 3:

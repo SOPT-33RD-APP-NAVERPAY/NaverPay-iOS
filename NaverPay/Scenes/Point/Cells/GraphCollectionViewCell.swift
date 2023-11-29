@@ -6,9 +6,19 @@
 //
 
 import UIKit
+import SwiftUI
+import SnapKit
 
 final class GraphCollectionViewCell: UICollectionViewCell {
     static let identifier: String = "GraphCollectionViewCell"
+    
+    var userPointData: UserPointAppData? {
+        didSet {
+            guard let data = userPointData else {return}
+            amountLabel.text = "\(data.formattedUserPoint)원"
+            
+        }
+    }
     
     private let monthStackView: UIStackView = {
        let stackView = UIStackView()
@@ -77,6 +87,7 @@ final class GraphCollectionViewCell: UICollectionViewCell {
        let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.spacing = 4
+        stackView.alignment = .center
         
         return stackView
     }()
@@ -97,6 +108,7 @@ final class GraphCollectionViewCell: UICollectionViewCell {
        let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.spacing = 4
+        stackView.alignment = .center
         
         return stackView
     }()
@@ -109,6 +121,18 @@ final class GraphCollectionViewCell: UICollectionViewCell {
         return imageView
         
     }()
+    
+//    private let pieChartView: PieChartView = {
+//       let view = PieChartView()
+//        view.backgroundColor = .adcard_orange
+//        return view
+//    }()
+
+    let pieChartView = UIHostingController(rootView: PieChartView())
+
+
+    
+    
     
     private let dateLabel = NPLabel(font: .font(.detail_smbold_12), color: .grayscale_gray6)
     
@@ -171,10 +195,10 @@ final class GraphCollectionViewCell: UICollectionViewCell {
         monthLabel.text = "11월"
         descLabel.text = "이달에는 결제수단 혜택을 많이 받았어요"
         totalLabel.text = "총 적립 혜택"
-        amountLabel.text = "11,500원"
         dateLabel.text = "2023.11.01. \n~ 11.30."
         dateLabel.numberOfLines = 2
         dateLabel.textAlignment = .center
+        
     }
     
     private func setLayout() {
@@ -213,7 +237,7 @@ final class GraphCollectionViewCell: UICollectionViewCell {
             
         }
         
-        graphView.addSubviews(totalStackView, amountStackView, graphImageView)
+        graphView.addSubviews(totalStackView, amountStackView, pieChartView.view)
         
         totalStackView.snp.makeConstraints{
             $0.top.equalToSuperview().inset(23)
@@ -229,9 +253,18 @@ final class GraphCollectionViewCell: UICollectionViewCell {
         
         amountStackView.addArrangedSubviews(amountLabel, upArrowIcon)
         
-        graphImageView.snp.makeConstraints{
-            $0.top.equalTo(amountStackView.snp.bottom).offset(8)
-            $0.centerX.equalToSuperview()
+//        graphImageView.snp.makeConstraints{
+//            $0.top.equalTo(amountStackView.snp.bottom).offset(8)
+//            $0.centerX.equalToSuperview()
+//        }
+        
+        pieChartView.view.snp.makeConstraints {
+//            $0.top.equalTo(amountStackView.snp.bottom).offset(8)
+//            $0.leading.equalToSuperview().inset(24)
+//            $0.height.bottom.equalTo(100)
+            $0.top.equalToSuperview().inset(56)
+            $0.bottom.equalToSuperview().inset(13)
+            $0.horizontalEdges.equalToSuperview().inset(50)
         }
         
         categoryStackView.snp.makeConstraints{
