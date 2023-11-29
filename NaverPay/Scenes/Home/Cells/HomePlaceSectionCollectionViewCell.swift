@@ -11,11 +11,14 @@ final class HomePlaceSectionCollectionViewCell: UICollectionViewCell {
     
     static let identifier: String = "HomePlaceSectionCollectionViewCell"
     
-    var homeDataAppData: BrandAppData? {
+    var homeDataAppData: HomeBrandAppData? {
         didSet {
             guard let data = homeDataAppData else { return }
             storeNameLabel.text = "\(data.name) \(data.place)"
-            logoImageView.image = ImageLiterals.MainView.logoCuDummy
+            Task {
+                let image = try await NPKingFisherService.fetchImage(with: data.logoImgURL)
+                logoImageView.image = image
+            }
             descriptionLabel.text = data.discountContent
         }
     }

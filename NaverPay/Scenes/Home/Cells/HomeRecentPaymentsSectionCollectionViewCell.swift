@@ -10,12 +10,15 @@ import UIKit
 final class HomeRecentPaymentsSectionCollectionViewCell: UICollectionViewCell {
     static let identifier: String = "HomeRecentPaymentsSectionCollectionViewCell"
     
-    var homeDataAppData: HomeDataAppData? {
+    var homeDataAppData: HomeOnsitePaymentData? {
         didSet {
             guard let data = homeDataAppData else { return }
-            paidAmountLabel.text = "\(data.onsitePayment.amount.formattedString())원"
-            storeNameLabel.text = data.onsitePayment.name
-            logoImageView.image = ImageLiterals.MainView.logoGs25
+            paidAmountLabel.text = "\(data.amount.formattedString())원"
+            storeNameLabel.text = data.name
+            Task {
+                let image = try await NPKingFisherService.fetchImage(with: data.logoImgURL)
+                logoImageView.image = image
+            }
         }
     }
     

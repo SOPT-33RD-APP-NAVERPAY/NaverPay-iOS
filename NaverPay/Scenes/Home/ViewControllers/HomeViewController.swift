@@ -9,7 +9,11 @@ import UIKit
 import SnapKit
 
 final class HomeViewController: UIViewController {
-    private let homeDataAppData = HomeDataAppData.dummy()
+    private var homeDataAppData: HomeDataAppData? {
+        didSet {
+            HomeCollectionView.reloadData()
+        }
+    }
     private let homeEventData = HomeEventData.dummy()
     private var homeCardData = HomeCardData.dummy()
     
@@ -297,5 +301,20 @@ extension HomeViewController: HomeViewPushDelegate {
         print("didTapButton")
         let placeViewController = PlaceViewController()
         self.navigationController?.pushViewController(placeViewController, animated: true)
+    }
+}
+
+extension HomeViewController {
+    func getHomeData() {
+        Task {
+            do {
+                let homeData = try await HomeService.shared.getHomeInfo()
+                print(homeData)
+                homeDataAppData = homeData
+            }
+            catch {
+                guard let error = error as? NetworkError else { return }
+            }
+        }
     }
 }
