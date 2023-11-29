@@ -34,11 +34,9 @@ final class TabBarViewController: UITabBarController {
         tabBarAppearance.stackedItemSpacing = 8
         let tabBarItemAppearance = UITabBarItemAppearance()
         tabBarItemAppearance.normal.iconColor = .grayscale_gray3
-        tabBarItemAppearance.disabled.iconColor = .grayscale_gray6
         tabBarItemAppearance.selected.iconColor = .main_green
         tabBarItemAppearance.normal.titleTextAttributes = [ .foregroundColor : UIColor.grayscale_gray4, .font : UIFont.font(.normal_12)]
         tabBarItemAppearance.selected.titleTextAttributes = [ .foregroundColor : UIColor.main_green, .font : UIFont.font(.normal_12)]
-        tabBarItemAppearance.disabled.titleTextAttributes = [ .foregroundColor : UIColor.grayscale_gray6, .font : UIFont.font(.normal_12)]
         tabBarAppearance.inlineLayoutAppearance = tabBarItemAppearance
         tabBarAppearance.stackedLayoutAppearance = tabBarItemAppearance
         tabBarAppearance.compactInlineLayoutAppearance = tabBarItemAppearance
