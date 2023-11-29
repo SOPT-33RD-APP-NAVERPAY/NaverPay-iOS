@@ -33,6 +33,7 @@ final class HomeViewController: UIViewController {
         setLayout()
         setCollectionView()
         setStyle()
+        getHomeData()
     }
     
     private func setStyle() {
@@ -274,13 +275,13 @@ extension HomeViewController: UICollectionViewDataSource {
             
         case 2:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeRecentPaymentsSectionCollectionViewCell.identifier, for: indexPath) as? HomeRecentPaymentsSectionCollectionViewCell else { return UICollectionViewCell() }
-            cell.homeDataAppData = self.homeDataAppData
+            cell.homeDataAppData = self.homeDataAppData?.onsitePayment
             
             return cell
             
         case 3:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomePlaceSectionCollectionViewCell.identifier, for: indexPath) as? HomePlaceSectionCollectionViewCell else { return UICollectionViewCell() }
-            cell.homeDataAppData = self.homeDataAppData.brandList[indexPath.item]
+            cell.homeDataAppData = self.homeDataAppData?.brandList[indexPath.item]
             
             return cell
             
@@ -309,11 +310,11 @@ extension HomeViewController {
         Task {
             do {
                 let homeData = try await HomeService.shared.getHomeInfo()
-                print(homeData)
+                print(";o__________")
                 homeDataAppData = homeData
             }
             catch {
-                guard let error = error as? NetworkError else { return }
+                guard error is NetworkError else { return }
             }
         }
     }

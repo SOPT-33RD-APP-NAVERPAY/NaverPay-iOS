@@ -13,7 +13,7 @@ final class HomeRecentPaymentsSectionCollectionViewCell: UICollectionViewCell {
     var homeDataAppData: HomeOnsitePaymentData? {
         didSet {
             guard let data = homeDataAppData else { return }
-            paidAmountLabel.text = "\(data.amount.formattedString())원"
+            paidAmountLabel.text = "-\(data.amount.formattedString())원"
             storeNameLabel.text = data.name
             Task {
                 let image = try await NPKingFisherService.fetchImage(with: data.logoImgURL)
@@ -55,10 +55,10 @@ final class HomeRecentPaymentsSectionCollectionViewCell: UICollectionViewCell {
         contentView.addSubviews(paidAmountLabel,storeNameLabel,logoImageView)
         
         logoImageView.snp.makeConstraints {
-            $0.bottom.equalToSuperview().offset(-35)
             $0.top.equalToSuperview().offset(34)
             $0.leading.equalToSuperview().offset(21)
             $0.width.equalTo(60)
+            $0.height.equalTo(19)
         }
         storeNameLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(32)

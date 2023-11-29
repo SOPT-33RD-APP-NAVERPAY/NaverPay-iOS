@@ -29,7 +29,8 @@ struct OnsitePayment: Codable {
     enum CodingKeys: String, CodingKey {
         case id, name, place
         case logoImgURL = "logo_img_url"
-        case amount, paymentDate
+        case amount
+        case paymentDate = "payment_date"
     }
 }
 
@@ -49,8 +50,16 @@ extension HomeDTO {
         let homeData = self.brandList.map { brandData in
             HomeBrandAppData(id: brandData.id, name: brandData.name, place: brandData.place, logoImgURL: brandData.logoImgURL, discountContent: brandData.discountContent)
         }
-
-        return HomeDataAppData(userPoint: self.userPoint, onsitePayment: self.onsitePayment, brandList: homeData)
+        
+        let homeOnsitePaymentData = HomeOnsitePaymentData(
+            id: self.onsitePayment.id,
+            name: self.onsitePayment.name,
+            place: self.onsitePayment.place,
+            logoImgURL: self.onsitePayment.logoImgURL,
+            amount: self.onsitePayment.amount,
+            paymentDate: self.onsitePayment.paymentDate
+        )
+        return HomeDataAppData(userPoint: self.userPoint, onsitePayment: homeOnsitePaymentData, brandList: homeData)
     }
 }
 

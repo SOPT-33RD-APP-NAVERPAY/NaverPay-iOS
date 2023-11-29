@@ -1,16 +1,8 @@
-//
-//  HomeDataAppData.swift
-//  NaverPay
-//
-//  Created by Seonwoo Kim on 2023/11/23.
-//
-
 import UIKit
-
 
 struct HomeDataAppData: Codable {
     let userPoint: Int
-    let onsitePayment: OnsitePayment
+    let onsitePayment: HomeOnsitePaymentData
     let brandList: [HomeBrandAppData]
     
     enum CodingKeys: String, CodingKey {
@@ -29,7 +21,8 @@ struct HomeOnsitePaymentData: Codable {
     enum CodingKeys: String, CodingKey {
         case id, name, place
         case logoImgURL = "logo_img_url"
-        case amount, paymentDate
+        case amount
+        case paymentDate = "payment_date"
     }
 }
 
@@ -44,3 +37,6 @@ struct HomeBrandAppData: Codable {
     }
 }
 
+extension HomeDataAppData {
+    static var emptyData = HomeDataAppData(userPoint: 0, onsitePayment: HomeOnsitePaymentData(id: 0, name: "", place: "", logoImgURL: "", amount: 0, paymentDate: ""), brandList: [])
+}
