@@ -24,7 +24,11 @@ final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
         didSet {
             guard let data = userBenefitData else { return }
             brandIDLabel.text = "\(data.id)"
-            brandImageView.image = data.logoImgURL
+            
+            Task {
+                let image = try await NPKingFisherService.fetchImage(with: data.logoImgURL)
+                brandImageView.image = image
+            }
             brandNameLabel.text = data.name
             benefitDescriptionLabel.text = data.discountContent
             benefitRate.text = data.discountType

@@ -15,7 +15,10 @@ final class BenefitCollectionViewEntireBenefitCell: UICollectionViewCell {
     var userBenefitData: BrandListAppData? {
         didSet {
             guard let data = userBenefitData else { return }
-            brandImageView.image = data.logoImgURL
+            Task {
+                let image = try await NPKingFisherService.fetchImage(with: data.logoImgURL)
+                brandImageView.image = image
+            }
             brandNameLabel.text = data.name
             benefitDescriptionLabel.text = data.discountContent
 //            benefitRateButton.setAttributedTitle( NSAttributedString(string: data.discountType,
@@ -29,7 +32,7 @@ final class BenefitCollectionViewEntireBenefitCell: UICollectionViewCell {
      
     private let brandImageView: UIImageView = {
         let imageView = UIImageView()
-//        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
