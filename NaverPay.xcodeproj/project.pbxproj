@@ -121,10 +121,10 @@
 		0B663D4C2B159730001BAC91 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		0B663D4E2B15976E001BAC91 /* BenefitHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitHeaderView.swift; path = Scenes/Benefit/Views/BenefitHeaderView.swift; sourceTree = "<group>"; };
 		0B7837C32B0FB84200494079 /* HomeEventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeEventData.swift; path = Scenes/Home/Models/HomeEventData.swift; sourceTree = "<group>"; };
-		0B91C7A72B0B8A7A00ACDCE9 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageLiterals.swift; path = Global/Literals/ImageLiterals.swift; sourceTree = "<group>"; };
-		0B91C7A92B0B8B3000ACDCE9 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIImage+.swift"; path = "Global/Extensions/UIImage+.swift"; sourceTree = "<group>"; };
+		0B91C7A72B0B8A7A00ACDCE9 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
+		0B91C7A92B0B8B3000ACDCE9 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		ED405D6C2B14B8CF006CF4C6 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PieChartView.swift; path = Scenes/Point/Views/PieChartView.swift; sourceTree = "<group>"; };
-		ED56A2E92B0B7790005FE6AF /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIFont+.swift"; path = "Global/Extensions/UIFont+.swift"; sourceTree = "<group>"; };
+		ED56A2E92B0B7790005FE6AF /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		ED56A2F72B0D18B5005FE6AF /* NearPlaceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NearPlaceCollectionViewCell.swift; path = Scenes/Place/Cells/NearPlaceCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED56A2F92B0D18F1005FE6AF /* RecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecommendCollectionViewCell.swift; path = Scenes/Place/Cells/RecommendCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED56A2FB2B0D1907005FE6AF /* BrandCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BrandCollectionViewCell.swift; path = Scenes/Place/Cells/BrandCollectionViewCell.swift; sourceTree = "<group>"; };
