@@ -31,17 +31,13 @@ final class BenefitViewController: UIViewController {
         return collectionView
     }()
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setLayout()
         setCollectionView()
         setStyle()
+        
         getBenefitMainData()
 
     }
@@ -258,7 +254,13 @@ extension BenefitViewController: UICollectionViewDataSource {
             guard let userBenefitData else { return UICollectionViewCell() }
             
             cell.userBenefitData = userBenefitData.brandList[indexPath.item]
-            cell.itemRow = indexPath.item
+            cell.brandIDLabel.text = "\(indexPath.item + 1)"
+            if indexPath.item == 0 {
+                cell.brandIDLabel.textColor = .main_green
+            } else {
+                cell.brandIDLabel.textColor = .bg_black
+            }
+//            cell.itemRow = indexPath.item
 //            cell.delegate = self
             return cell
             

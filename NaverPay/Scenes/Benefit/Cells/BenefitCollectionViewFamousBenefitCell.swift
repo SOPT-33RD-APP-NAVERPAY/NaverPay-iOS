@@ -29,6 +29,7 @@ final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
                 let image = try await NPKingFisherService.fetchImage(with: data.logoImgURL)
                 brandImageView.image = image
             }
+            
             brandNameLabel.text = data.name
             benefitDescriptionLabel.text = data.discountContent
             benefitRate.text = data.discountType
@@ -36,7 +37,7 @@ final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
         }
     }
     
-    private let brandIDLabel = NPLabel(font: .font(.subtitle_bold_17), color: .main_green)
+    let brandIDLabel = NPLabel(font: .font(.subtitle_bold_17), color: .bg_black)
     
     private let brandImageView: UIImageView = {
         let imageView = UIImageView()
