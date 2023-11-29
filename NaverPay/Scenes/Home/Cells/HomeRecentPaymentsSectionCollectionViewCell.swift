@@ -37,6 +37,7 @@ final class HomeRecentPaymentsSectionCollectionViewCell: UICollectionViewCell {
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = ImageLiterals.MainView.logoGs25
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
