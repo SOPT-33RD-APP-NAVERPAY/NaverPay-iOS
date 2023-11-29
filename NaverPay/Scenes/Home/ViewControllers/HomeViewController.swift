@@ -227,6 +227,8 @@ extension HomeViewController: UICollectionViewDataSource {
                 
             case 2:
                 guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeRecentPaymentsSectionHeaderView.identifier, for: indexPath) as? HomeRecentPaymentsSectionHeaderView else { return UICollectionReusableView() }
+                
+                header.homeDataAppData = self.homeDataAppData
                 return header
                 
             case 3:

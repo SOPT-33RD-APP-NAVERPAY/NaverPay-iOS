@@ -10,6 +10,13 @@ import UIKit
 final class HomeRecentPaymentsSectionHeaderView: UICollectionReusableView {
     static let identifier: String = "HomeRecentPaymentsSectionHeaderView"
     
+    var homeDataAppData: HomeDataAppData? {
+        didSet {
+            guard let data = homeDataAppData else { return }
+            dateLabel.text = formateDate(data.onsitePayment.paymentDate)
+        }
+    }
+    
     private let icArrow: UIImageView = {
         let imageView = UIImageView()
         imageView.image = ImageLiterals.MainView.icArrowGray
@@ -63,7 +70,7 @@ final class HomeRecentPaymentsSectionHeaderView: UICollectionReusableView {
             $0.bottom.equalToSuperview().offset(-18)
             $0.top.equalToSuperview().offset(55)
             $0.leading.equalTo(recentPaymentLabel.snp.trailing).inset(-7)
-            $0.width.equalTo(32)
+            $0.width.equalTo(39)
         }
         
         viewAllLabel.snp.makeConstraints {
@@ -78,6 +85,19 @@ final class HomeRecentPaymentsSectionHeaderView: UICollectionReusableView {
             $0.leading.equalTo(viewAllLabel.snp.trailing).inset(-3)
             $0.width.equalTo(4)
             $0.height.equalTo(8)
+        }
+    }
+    
+    private func formateDate(_ string: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        
+        if let date = formatter.date(from: string) {
+            formatter.dateFormat = "MM.dd"
+            return formatter.string(from: date)
+        }
+        else {
+            return "Invalid Date"
         }
         
     }
