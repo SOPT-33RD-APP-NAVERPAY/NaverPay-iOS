@@ -57,6 +57,8 @@
 		ED56A3102B0F8325005FE6AF /* UsageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A30F2B0F8325005FE6AF /* UsageCollectionViewCell.swift */; };
 		ED56A3122B1103F2005FE6AF /* UserPlaceAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A3112B1103F2005FE6AF /* UserPlaceAppData.swift */; };
 		ED56A3142B110478005FE6AF /* UserPointAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A3132B110478005FE6AF /* UserPointAppData.swift */; };
+		EDDE96AB2B18A45C002F4925 /* PlaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE96AA2B18A45C002F4925 /* PlaceService.swift */; };
+		EDDE96AD2B18A828002F4925 /* PlaceMainDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE96AC2B18A828002F4925 /* PlaceMainDTO.swift */; };
 		F4DDEB0A2B0A52E600B7BCCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB092B0A52E600B7BCCE /* AppDelegate.swift */; };
 		F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB0B2B0A52E600B7BCCE /* SceneDelegate.swift */; };
 		F4DDEB112B0A52E600B7BCCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DDEB0F2B0A52E600B7BCCE /* Main.storyboard */; };
@@ -139,6 +141,8 @@
 		ED56A30F2B0F8325005FE6AF /* UsageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UsageCollectionViewCell.swift; path = Scenes/Point/Cells/UsageCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED56A3112B1103F2005FE6AF /* UserPlaceAppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserPlaceAppData.swift; path = Scenes/Place/Models/UserPlaceAppData.swift; sourceTree = "<group>"; };
 		ED56A3132B110478005FE6AF /* UserPointAppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserPointAppData.swift; path = Scenes/Point/Models/UserPointAppData.swift; sourceTree = "<group>"; };
+		EDDE96AA2B18A45C002F4925 /* PlaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceService.swift; sourceTree = "<group>"; };
+		EDDE96AC2B18A828002F4925 /* PlaceMainDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceMainDTO.swift; sourceTree = "<group>"; };
 		F4DDEB062B0A52E600B7BCCE /* NaverPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaverPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4DDEB092B0A52E600B7BCCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4DDEB0B2B0A52E600B7BCCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -293,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				F4FF800B2B1660C900681C0D /* BenefitMainDTO.swift */,
+				EDDE96AC2B18A828002F4925 /* PlaceMainDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 			children = (
 				F4FF800D2B16612000681C0D /* BenefitService.swift */,
 				F4FF800F2B16695F00681C0D /* KingfisherService.swift */,
+				EDDE96AA2B18A45C002F4925 /* PlaceService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -658,6 +664,7 @@
 				F4DDEB7F2B0F27CE00B7BCCE /* CategoryData.swift in Sources */,
 				0B0DFB152B0D20F3005F8618 /* HomePointSectionCollectionViewCell.swift in Sources */,
 				F4DDEB862B0FD70100B7BCCE /* BenefitCollectionEntireBenefitSectionHeaderView.swift in Sources */,
+				EDDE96AD2B18A828002F4925 /* PlaceMainDTO.swift in Sources */,
 				0B0DFB212B0D2102005F8618 /* HomeEventSectionHeaderView.swift in Sources */,
 				0B6677B52B0CD4CF00821105 /* (null) in Sources */,
 				0B0DFB222B0D2102005F8618 /* HomePlaceSectionHeaderView.swift in Sources */,
@@ -701,6 +708,7 @@
 				F4FF80102B16695F00681C0D /* KingfisherService.swift in Sources */,
 				F4DDEB5C2B0BCCA900B7BCCE /* UIStackView+.swift in Sources */,
 				F4DDEB7B2B0E8E6700B7BCCE /* BenefitCollectionFamousBenefitSectionFooterView.swift in Sources */,
+				EDDE96AB2B18A45C002F4925 /* PlaceService.swift in Sources */,
 				0B6677A22B0CCEF400821105 /* (null) in Sources */,
 				0B125CE02B105F950051DDEF /* HomeCardData.swift in Sources */,
 				0B0DFB262B0D2102005F8618 /* HomePlaceSectionFooterView.swift in Sources */,

@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - DataClass
-struct UserPlaceDataClass {
+struct UserPlaceAppData: Codable {
     let userName: String
     let nearbyplaceList: [PlaceList]
     let brandList: [PlaceBrandList]
@@ -23,10 +23,13 @@ struct UserPlaceDataClass {
     }
 }
 
+extension UserPlaceAppData {
+    static var emptyData = UserPlaceAppData(userName: "", nearbyplaceList: [], brandList: [], onsitepaymentList: [])
+}
 // MARK: - BrandList
-struct PlaceBrandList {
+struct PlaceBrandListAppData: Codable {
     let id: Int
-    let logoImgURL: UIImage
+    let logoImgURL: String
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -34,14 +37,10 @@ struct PlaceBrandList {
     }
 }
 
-enum LogoImgURL: String {
-    case empty = "..."
-}
-
 // MARK: - List
-struct PlaceList {
+struct PlaceListAppData: Codable {
     let id: Int
-    let logoImgURL: UIImage
+    let logoImgURL: String
     let name: String
     let distance: Int?
 
@@ -53,32 +52,32 @@ struct PlaceList {
 }
 
 
-extension UserPlaceDataClass {
-    static func dummy() -> UserPlaceDataClass {
-        UserPlaceDataClass(userName: "합세조",
+extension UserPlaceAppData {
+    static func dummy() -> UserPlaceAppData {
+        UserPlaceAppData(userName: "합세조",
                            nearbyplaceList: [
-                            PlaceList(id: 1, logoImgURL: ImageLiterals.PlaceView.placeCardCU, name: "Place1", distance: 25),
-                            PlaceList(id: 2, logoImgURL: ImageLiterals.PlaceView.placeCardCU, name: "Place2", distance: 25),
-                            PlaceList(id: 3, logoImgURL: ImageLiterals.PlaceView.placeCardCU, name: "Place3", distance: 25),
-                            PlaceList(id: 4, logoImgURL: ImageLiterals.PlaceView.placeCardCU, name: "Place4", distance: 25),
-                            PlaceList(id: 5, logoImgURL: ImageLiterals.PlaceView.placeCardCU, name: "Place5", distance: 25),
-                            PlaceList(id: 6, logoImgURL: ImageLiterals.PlaceView.placeCardCU, name: "Place6", distance: 25)
+                            PlaceList(id: 1, logoImgURL: "logoGs25", name: "Place1", distance: 25),
+                            PlaceList(id: 2, logoImgURL: "logoGs25", name: "Place2", distance: 25),
+                            PlaceList(id: 3, logoImgURL: "logoGs25", name: "Place3", distance: 25),
+                            PlaceList(id: 4, logoImgURL: "logoGs25", name: "Place4", distance: 25),
+                            PlaceList(id: 5, logoImgURL: "logoGs25", name: "Place5", distance: 25),
+                            PlaceList(id: 6, logoImgURL: "logoGs25", name: "Place6", distance: 25)
                            ],
                            brandList: [
-                            PlaceBrandList(id: 1, logoImgURL: ImageLiterals.PlaceView.placeCardRecommendDummy),
-                            PlaceBrandList(id: 2, logoImgURL: ImageLiterals.PlaceView.placeCardRecommendDummy),
-                            PlaceBrandList(id: 3, logoImgURL: ImageLiterals.PlaceView.placeCardRecommendDummy),
-                            PlaceBrandList(id: 4, logoImgURL: ImageLiterals.PlaceView.placeCardRecommendDummy),
-                            PlaceBrandList(id: 5, logoImgURL: ImageLiterals.PlaceView.placeCardRecommendDummy),
-                            PlaceBrandList(id: 6, logoImgURL: ImageLiterals.PlaceView.placeCardRecommendDummy)
+                            PlaceBrandList(id: 1, logoImgURL:  "logoGs25"),
+                            PlaceBrandList(id: 2, logoImgURL: "logoGs25"),
+                            PlaceBrandList(id: 3, logoImgURL: "logoGs25"),
+                            PlaceBrandList(id: 4, logoImgURL: "logoGs25"),
+                            PlaceBrandList(id: 5, logoImgURL: "logoGs25"),
+                            PlaceBrandList(id: 6, logoImgURL: "logoGs25")
         ],
                            onsitepaymentList: [
-                            PlaceList(id: 1, logoImgURL: ImageLiterals.PlaceView.placeCardDomino, name: "Place1", distance: 30),
-                            PlaceList(id: 2, logoImgURL: ImageLiterals.PlaceView.placeCardDomino, name: "Place2", distance: 30),
-                            PlaceList(id: 3, logoImgURL: ImageLiterals.PlaceView.placeCardDomino, name: "Place3", distance: 30),
-                            PlaceList(id: 4, logoImgURL: ImageLiterals.PlaceView.placeCardDomino, name: "Place4", distance: 30),
-                            PlaceList(id: 5, logoImgURL: ImageLiterals.PlaceView.placeCardDomino, name: "Place5", distance: 30),
-                            PlaceList(id: 6, logoImgURL: ImageLiterals.PlaceView.placeCardDomino, name: "Place6", distance: 30)
+                            PlaceList(id: 1, logoImgURL: "logoGs25", name: "Place1", distance: 30),
+                            PlaceList(id: 2, logoImgURL: "logoGs25", name: "Place2", distance: 30),
+                            PlaceList(id: 3, logoImgURL: "logoGs25", name: "Place3", distance: 30),
+                            PlaceList(id: 4, logoImgURL: "logoGs25", name: "Place4", distance: 30),
+                            PlaceList(id: 5, logoImgURL: "logoGs25", name: "Place5", distance: 30),
+                            PlaceList(id: 6, logoImgURL: "logoGs25", name: "Place6", distance: 30)
                            ])
     }
 }
