@@ -379,10 +379,8 @@ extension BenefitViewController: ItemSelectedProtocol {
     func getButtonState(isLiked: Bool, brandId: Int) {
         if isLiked {
             postLikedBrand(brandIdNum: brandId, post: .post)
-            print(brandId)
         } else {
             postLikedBrand(brandIdNum: brandId, post: .delete)
-            print(brandId)
         }
     }
 }

@@ -117,7 +117,6 @@ final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
                likeTapCompletion(heartButton.isSelected)
 
         self.delegate?.getButtonState(isLiked: heartButton.isSelected, brandId: brandId)
-        print(brandId)
                                       
         
     }
