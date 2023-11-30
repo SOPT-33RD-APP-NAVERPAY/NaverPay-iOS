@@ -312,7 +312,7 @@ extension HomeViewController {
         Task {
             do {
                 let homeData = try await HomeService.shared.getHomeInfo()
-                print(";o__________")
+                print(";o__________😭")
                 homeDataAppData = homeData
             }
             catch {
