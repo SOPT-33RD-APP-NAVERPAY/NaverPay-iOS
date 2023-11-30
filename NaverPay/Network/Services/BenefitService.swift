@@ -12,7 +12,7 @@ final class BenefitService: Serviceable {
     
     private init() {}
     
-    func getBenefitMainInfo() async throws -> UserBenefitDataAppData {
+    func getBenefitMainData() async throws -> UserBenefitDataAppData {
         let urlRequest = try NetworkRequest(path: "/benefit", httpMethod: .get).makeURLRequest()
         
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
@@ -24,6 +24,16 @@ final class BenefitService: Serviceable {
         
         return model.toAppData()
         
+    }
+    
+    func getBenefitEntireData() async throws -> BenefitEntireAppData {
+        let urlRequest = try NetworkRequest(path: "/benefit/recommend", httpMethod: .get).makeURLRequest()
+        
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        
+        guard let model = try dataDecodeAndhandleErrorCode(data: data, decodeType: BenefitEntireDTO.self) else { return BenefitEntireAppData.emptyData }
+        
+        return model.toAppData()
     }
     
     

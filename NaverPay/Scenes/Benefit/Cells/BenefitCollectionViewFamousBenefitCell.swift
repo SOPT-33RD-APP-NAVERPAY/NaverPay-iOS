@@ -41,7 +41,7 @@ final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
     
     private let brandImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     

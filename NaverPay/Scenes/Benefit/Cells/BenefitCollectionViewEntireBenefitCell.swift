@@ -12,7 +12,7 @@ final class BenefitCollectionViewEntireBenefitCell: UICollectionViewCell {
     
     static let identifier = "BenefitCollectionViewEntireBenefitCell"
     
-    var userBenefitData: BrandListAppData? {
+    var userBenefitData: BrandEntireAppData? {
         didSet {
             guard let data = userBenefitData else { return }
             Task {
@@ -89,12 +89,13 @@ final class BenefitCollectionViewEntireBenefitCell: UICollectionViewCell {
         
         brandNameLabel.snp.makeConstraints {
             $0.top.equalTo(brandImageView.snp.top).offset(10)
-            $0.leading.equalTo(brandImageView.snp.trailing).offset(23)
+            $0.leading.equalTo(brandImageView.snp.trailing).offset(18)
         }
         
         benefitDescriptionLabel.snp.makeConstraints {
             $0.top.equalTo(brandNameLabel.snp.bottom)
             $0.leading.equalTo(brandNameLabel.snp.leading)
+            $0.trailing.equalTo(benefitRateButton.snp.leading)
         }
         
         benefitRateButton.snp.makeConstraints {

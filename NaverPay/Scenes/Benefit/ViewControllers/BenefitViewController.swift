@@ -16,6 +16,12 @@ final class BenefitViewController: UIViewController {
         }
     }
     
+    private var benefitEntireData: BenefitEntireAppData? {
+        didSet {
+            benefitCollectionView.reloadData()
+        }
+    }
+    
     private let categoryData = CategoryData.dummy()
 
     private let benefitHeaderview = BenefitHeaderView()
@@ -31,6 +37,14 @@ final class BenefitViewController: UIViewController {
         return collectionView
     }()
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        getBenefitMainData()
+        getBenefitEntireData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,7 +52,6 @@ final class BenefitViewController: UIViewController {
         setCollectionView()
         setStyle()
         
-        getBenefitMainData()
 
     }
     
@@ -288,7 +301,8 @@ extension BenefitViewController: UICollectionViewDataSource {
             
             guard let userBenefitData else { return UICollectionViewCell() }
 
-            cell.userBenefitData = userBenefitData.brandList[indexPath.item]
+            cell.userBenefitData = benefitEntireData?.brandList[indexPath.item]
+            
             if indexPath.item == 0 {
                 cell.divideView.isHidden = true
             }
@@ -370,12 +384,25 @@ extension BenefitViewController {
     func getBenefitMainData() {
         Task {
             do {
-                let benefitMainData = try await BenefitService.shared.getBenefitMainInfo()
+                let benefitMainData = try await BenefitService.shared.getBenefitMainData()
                 print(benefitMainData)
                 userBenefitData = benefitMainData
             }
             catch {
                 guard let error = error as? NetworkError else { return }
+            }
+        }
+    }
+    
+    func getBenefitEntireData() {
+        Task {
+            do {
+                let data = try await BenefitService.shared.getBenefitEntireData()
+                print(data)
+                benefitEntireData = data
+            }
+            catch {
+                guard let error = error as? NetworkError else{ return }
             }
         }
     }

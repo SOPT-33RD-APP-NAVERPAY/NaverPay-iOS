@@ -13,11 +13,6 @@ struct UserBenefitDataAppData {
     let userPoint: Int
     var brandList: [BrandListAppData]
 
-    enum CodingKeys: String, CodingKey {
-        case userName = "user_name"
-        case userPoint = "user_point"
-        case brandList = "brand_list"
-    }
 }
 
 extension UserBenefitDataAppData {
@@ -31,13 +26,6 @@ struct BrandListAppData {
     let name, discountContent, discountType: String
     var isBrandLike: Bool
 
-    enum CodingKeys: String, CodingKey {
-        case id, name
-        case logoImgURL = "logo_img_url"
-        case discountContent = "discount_content"
-        case discountType = "discount_type"
-        case isBrandLike = "is_brand_like"
-    }
 }
 
 //extension UserBenefitDataAppData {
