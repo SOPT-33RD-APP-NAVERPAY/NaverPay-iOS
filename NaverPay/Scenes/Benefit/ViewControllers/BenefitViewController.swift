@@ -102,8 +102,8 @@ final class BenefitViewController: UIViewController {
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .continuous
                 
-                //섹션헤더 설정
-                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(53))
+                //섹션헤더 설정 //백그라운드 회색 20 더함 50 + 20
+                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(73))
                 let header = NSCollectionLayoutBoundarySupplementaryItem(
                     layoutSize: headerSize,
                     elementKind: UICollectionView.elementKindSectionHeader,
@@ -260,8 +260,8 @@ extension BenefitViewController: UICollectionViewDataSource {
             } else {
                 cell.brandIDLabel.textColor = .bg_black
             }
-//            cell.itemRow = indexPath.item
-//            cell.delegate = self
+            cell.itemRow = indexPath.item
+            cell.delegate = self
             return cell
             
         case 2:
@@ -317,8 +317,7 @@ extension BenefitViewController: UICollectionViewDataSource {
             case 0:
                 guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: BenefitCollectionPointCheckHeaderView.identifier, for: indexPath) as? BenefitCollectionPointCheckHeaderView else { return UICollectionReusableView()}
                 header.userData = userBenefitData
-                header.layer.cornerRadius = 14
-                header.backgroundColor = .bg_white
+
                 return header
                 
             case 1:
@@ -360,11 +359,12 @@ extension BenefitViewController: UICollectionViewDataSource {
     }
 }
 
-//extension BenefitViewController: ItemSelectedProtocol {
-//        func getButtonState(state: Bool, row: Int) {
-//            userBenefitData.brandList[row].isBrandLike = state
-//        }
-//}
+extension BenefitViewController: ItemSelectedProtocol {
+        func getButtonState(state: Bool, row: Int) {
+            guard var userBenefitData else { return }
+            userBenefitData.brandList[row].isBrandLike = state
+        }
+}
 
 extension BenefitViewController {
     func getBenefitMainData() {

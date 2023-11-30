@@ -30,15 +30,30 @@ final class BenefitCollectionPointCheckHeaderView: UICollectionReusableView {
         return imageView
     }()
     
+    private let containView = UIView()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setLayout()
-        
+        setStyle()
+    }
+    
+    private func setStyle() {
+        self.layer.cornerRadius = 14
+        self.backgroundColor = .bg_gray
+        containView.backgroundColor = .bg_white
+        containView.layer.cornerRadius = 14
     }
     
     private func setLayout() {
-        self.addSubviews(userNameLabel, userPointLabel, pointArrowImageView)
+        self.addSubviews(containView)
+        containView.addSubviews(userNameLabel, userPointLabel, pointArrowImageView)
+        
+        containView.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(20)
+            $0.leading.trailing.bottom.equalToSuperview()
+        }
         
         userNameLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(19)
