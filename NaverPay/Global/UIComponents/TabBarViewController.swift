@@ -12,7 +12,7 @@ final class TabBarViewController: UITabBarController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        let assetController = UINavigationController(rootViewController: HomeViewController())
+        let assetController = UINavigationController(rootViewController: PointViewController())
         assetController.tabBarItem = UITabBarItem(title: "자산", image: .assetIco, tag: 0)
 
         let sendController = UINavigationController(rootViewController: PlaceViewController())

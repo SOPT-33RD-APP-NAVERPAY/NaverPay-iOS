@@ -88,7 +88,7 @@ extension PlaceViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let userPlaceData else { return 0}
+        guard let userPlaceData else { return 0 }
         switch section {
         case 0:
             return 1
@@ -248,7 +248,7 @@ extension PlaceViewController {
                 userPlaceData = placeMainData
                 print(placeMainData)
             }
-            catch{
+            catch {
                 guard let error = error as? NetworkError else { return }
             }
         }

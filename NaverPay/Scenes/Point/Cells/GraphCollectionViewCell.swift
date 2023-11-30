@@ -14,9 +14,8 @@ final class GraphCollectionViewCell: UICollectionViewCell {
     
     var userPointData: UserPointAppData? {
         didSet {
-            guard let data = userPointData else {return}
+            guard let data = userPointData else { return }
             amountLabel.text = "\(data.formattedUserPoint)원"
-            
         }
     }
     
@@ -259,9 +258,6 @@ final class GraphCollectionViewCell: UICollectionViewCell {
 //        }
         
         pieChartView.view.snp.makeConstraints {
-//            $0.top.equalTo(amountStackView.snp.bottom).offset(8)
-//            $0.leading.equalToSuperview().inset(24)
-//            $0.height.bottom.equalTo(100)
             $0.top.equalToSuperview().inset(56)
             $0.bottom.equalToSuperview().inset(13)
             $0.horizontalEdges.equalToSuperview().inset(50)

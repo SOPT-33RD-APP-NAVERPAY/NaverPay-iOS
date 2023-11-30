@@ -54,13 +54,13 @@ extension PlaceMainDTO {
                     PlaceList(id: placeData.id, logoImgURL: placeData.logoImgURL, name: placeData.name, distance: placeData.distance)
                 }
 
-                let brandListData = self.brandList.map { brandData in
-                    PlaceBrandList(id: brandData.id, logoImgURL: brandData.logoImgURL)
-                }
+        let brandListData = self.brandList.map { brandData in
+            PlaceBrandList(id: brandData.id, logoImgURL: brandData.logoImgURL)
+        }
 
-                let onsitePaymentData = self.onsitepaymentList.map { placeData in
-                    PlaceList(id: placeData.id, logoImgURL: placeData.logoImgURL, name: placeData.name, distance: placeData.distance)
-                }
+        let onsitePaymentData = self.onsitepaymentList.map { placeData in
+            PlaceList(id: placeData.id, logoImgURL: placeData.logoImgURL, name: placeData.name, distance: placeData.distance)
+        }
 
         return UserPlaceAppData(userName: self.userName, nearbyplaceList: nearbyPlaceData, brandList: brandListData, onsitepaymentList: onsitePaymentData)
     }

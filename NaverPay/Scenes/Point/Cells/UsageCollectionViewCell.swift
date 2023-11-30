@@ -10,9 +10,9 @@ import SnapKit
 
 final class UsageCollectionViewCell: UICollectionViewCell {
     
-    var userPointData: PointBrandList? {
+    var userPointData: PointBrandListAppData? {
         didSet {
-            guard let data = userPointData else {return}
+            guard let data = userPointData else { return }
             listDateLabel.text = data.formattedPaymentDate
             lisTitleLabel.text = data.name
             usageAmountLabel.text = "+\(data.formattedSaving)원"
