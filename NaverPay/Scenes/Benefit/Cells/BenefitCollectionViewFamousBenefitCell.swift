@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 protocol ItemSelectedProtocol: AnyObject {
-    func getButtonState(state: Bool, row: Int)
+    func getButtonState(isLiked: Bool, brandId: Int)
 }
 
 final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
@@ -17,8 +17,10 @@ final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
     static let identifier = "BenefitCollectionViewFamousBenefitCell"
     
     weak var delegate: ItemSelectedProtocol?
-    
-    var itemRow: Int?
+        
+    var likeTapCompletion: ((Bool) -> Void)?
+
+    var brandId: Int = 0
     
     var userBenefitData: BrandListAppData? {
         didSet {
@@ -34,6 +36,7 @@ final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
             benefitDescriptionLabel.text = data.discountContent
             benefitRate.text = data.discountType
             heartButton.isSelected = data.isBrandLike
+            brandId = data.id
         }
     }
     
@@ -44,6 +47,7 @@ final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
+    
     
     private let brandAndBenefitInfoStackView: UIStackView = {
         let stackView = UIStackView()
@@ -109,10 +113,13 @@ final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
         
         self.heartButton.isSelected.toggle()
         
-        if let itemRow {
-            self.delegate?.getButtonState(state: self.heartButton.isSelected,
-                                          row: itemRow)
-        }
+        guard let likeTapCompletion else {return}
+               likeTapCompletion(heartButton.isSelected)
+
+        self.delegate?.getButtonState(isLiked: heartButton.isSelected, brandId: brandId)
+        print(brandId)
+                                      
+        
     }
     
     

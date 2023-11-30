@@ -30,6 +30,8 @@ final class BenefitCollectionViewEntireBenefitCell: UICollectionViewCell {
         }
     }
      
+
+    
     private let brandImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -107,6 +109,8 @@ final class BenefitCollectionViewEntireBenefitCell: UICollectionViewCell {
         
         
     }
+                                            
+
     
     
     required init?(coder: NSCoder) {
