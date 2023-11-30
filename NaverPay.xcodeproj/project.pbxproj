@@ -99,6 +99,7 @@
 		F4FF80102B16695F00681C0D /* KingfisherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF800F2B16695F00681C0D /* KingfisherService.swift */; };
 		F4FF80122B18D46300681C0D /* BenefitEntireSectionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF80112B18D46300681C0D /* BenefitEntireSectionDTO.swift */; };
 		F4FF80182B18DA2700681C0D /* BenefitEntireAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF80172B18DA2700681C0D /* BenefitEntireAppData.swift */; };
+		F4FF801A2B1909C100681C0D /* BenefitLikeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF80192B1909C100681C0D /* BenefitLikeDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -183,6 +184,7 @@
 		F4FF800F2B16695F00681C0D /* KingfisherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherService.swift; sourceTree = "<group>"; };
 		F4FF80112B18D46300681C0D /* BenefitEntireSectionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitEntireSectionDTO.swift; sourceTree = "<group>"; };
 		F4FF80172B18DA2700681C0D /* BenefitEntireAppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitEntireAppData.swift; path = Scenes/Benefit/Models/BenefitEntireAppData.swift; sourceTree = "<group>"; };
+		F4FF80192B1909C100681C0D /* BenefitLikeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitLikeDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,6 +300,7 @@
 			children = (
 				F4FF800B2B1660C900681C0D /* BenefitMainDTO.swift */,
 				F4FF80112B18D46300681C0D /* BenefitEntireSectionDTO.swift */,
+				F4FF80192B1909C100681C0D /* BenefitLikeDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -662,6 +665,7 @@
 				ED405D6D2B14B8CF006CF4C6 /* PieChartView.swift in Sources */,
 				F4FF800E2B16612000681C0D /* BenefitService.swift in Sources */,
 				F4DDEB7F2B0F27CE00B7BCCE /* CategoryData.swift in Sources */,
+				F4FF801A2B1909C100681C0D /* BenefitLikeDTO.swift in Sources */,
 				0B0DFB152B0D20F3005F8618 /* HomePointSectionCollectionViewCell.swift in Sources */,
 				F4DDEB862B0FD70100B7BCCE /* BenefitCollectionEntireBenefitSectionHeaderView.swift in Sources */,
 				0B0DFB212B0D2102005F8618 /* HomeEventSectionHeaderView.swift in Sources */,

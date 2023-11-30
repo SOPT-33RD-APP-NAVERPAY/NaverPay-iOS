@@ -8,6 +8,7 @@
 import Foundation
 
 final class BenefitService: Serviceable {
+    
     static let shared = BenefitService()
     
     private init() {}
@@ -17,8 +18,8 @@ final class BenefitService: Serviceable {
         
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
         
-//        let urlResponse = response as? HTTPURLResponse
-//        let status = urlResponse?.statusCode
+        guard let urlResponse = response as? HTTPURLResponse else { return UserBenefitDataAppData.emptyData }
+        let statusCode = urlResponse.statusCode
         
         guard let model = try dataDecodeAndhandleErrorCode(data: data, decodeType: BenefitMainDTO.self) else { return UserBenefitDataAppData.emptyData }
         
@@ -29,12 +30,24 @@ final class BenefitService: Serviceable {
     func getBenefitEntireData() async throws -> BenefitEntireAppData {
         let urlRequest = try NetworkRequest(path: "/benefit/recommend", httpMethod: .get).makeURLRequest()
         
-        let (data, response) = try await URLSession.shared.data(for: urlRequest)
-        
+        let (data, _) = try await URLSession.shared.data(for: urlRequest)
+    
         guard let model = try dataDecodeAndhandleErrorCode(data: data, decodeType: BenefitEntireDTO.self) else { return BenefitEntireAppData.emptyData }
         
         return model.toAppData()
     }
+    
+    func sendBenefitLiked(brandId: Int, post: HttpMethod) async throws {
+        let urlRequest = try NetworkRequest(path: "/benefit/like/\(brandId)", httpMethod: post).makeURLRequest()
+        
+        let (data, _) = try await URLSession.shared.data(for: urlRequest)
+        
+        guard let model = try dataDecodeAndhandleErrorCode(data: data, decodeType: BenefitLikeDTO.self) else { return }
+        
+        print(model)
+    }
+    
+    
     
     
 }

@@ -104,10 +104,11 @@ final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
         }
     }
     
-    
     @objc
     func heartButtonTapped() {
+        
         self.heartButton.isSelected.toggle()
+        
         if let itemRow {
             self.delegate?.getButtonState(state: self.heartButton.isSelected,
                                           row: itemRow)

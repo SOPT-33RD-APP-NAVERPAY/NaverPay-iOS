@@ -239,11 +239,11 @@ extension BenefitViewController: UICollectionViewDataSource {
         guard let userBenefitData else { return 0}
         switch section {
         case 0:
-            return 4
+            return pointCellBackgroundViewList.count
         case 1:
             return userBenefitData.brandList.count
         case 2:
-            return 5
+            return categoryData.count
         case 3:
             return userBenefitData.brandList.count
         case 4:
@@ -298,9 +298,7 @@ extension BenefitViewController: UICollectionViewDataSource {
             
         case 3:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BenefitCollectionViewEntireBenefitCell.identifier, for: indexPath) as? BenefitCollectionViewEntireBenefitCell else { return UICollectionViewCell() }
-            
-            guard let userBenefitData else { return UICollectionViewCell() }
-
+        
             cell.userBenefitData = benefitEntireData?.brandList[indexPath.item]
             
             if indexPath.item == 0 {
@@ -377,6 +375,8 @@ extension BenefitViewController: ItemSelectedProtocol {
         func getButtonState(state: Bool, row: Int) {
             guard var userBenefitData else { return }
             userBenefitData.brandList[row].isBrandLike = state
+            postLikedBrand()
+            
         }
 }
 
@@ -385,11 +385,10 @@ extension BenefitViewController {
         Task {
             do {
                 let benefitMainData = try await BenefitService.shared.getBenefitMainData()
-                print(benefitMainData)
                 userBenefitData = benefitMainData
             }
             catch {
-                guard let error = error as? NetworkError else { return }
+                guard error is NetworkError else { return }
             }
         }
     }
@@ -398,11 +397,21 @@ extension BenefitViewController {
         Task {
             do {
                 let data = try await BenefitService.shared.getBenefitEntireData()
-                print(data)
                 benefitEntireData = data
             }
             catch {
-                guard let error = error as? NetworkError else{ return }
+                guard error is NetworkError else { return }
+            }
+        }
+    }
+    
+    func postLikedBrand() {
+        Task {
+            do {
+                try await BenefitService.shared.sendBenefitLiked(brandId: 1, post: .get)
+            }
+            catch {
+                guard error is NetworkError else { return }
             }
         }
     }
