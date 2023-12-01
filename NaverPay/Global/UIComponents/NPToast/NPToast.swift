@@ -9,12 +9,12 @@ import UIKit
 
 import SnapKit
 
-final class LHToast {
+final class NPToast {
     static func show (message: String, duration: TimeInterval = 1, isTabBar: Bool = true, completion: (() -> Void)? = nil) {
-        let toastView = LHToastView(message: message)
+        let toastView = NPToastView(message: message)
         guard let window = UIWindow.current else { return }
         window.subviews
-            .filter { $0 is LHToastView }
+            .filter { $0 is NPToastView }
             .forEach { $0.removeFromSuperview() }
         window.addSubview(toastView)
         

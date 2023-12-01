@@ -25,6 +25,12 @@ extension Serviceable {
             throw NetworkError.jsonDecodingError
         }
 
+        
+        
+        if model.status == 400 || model.status == 401 {
+            throw NetworkError.clientError(message: model.message)
+        }
+            
         print("""
         -------------------------------------------------------------
         statusCode : \(model.status)

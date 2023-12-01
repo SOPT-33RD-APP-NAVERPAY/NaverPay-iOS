@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class LHToastView: UIView {
+final class NPToastView: UIView {
     
     private let messageLabel = UILabel()
     
@@ -24,7 +24,7 @@ final class LHToastView: UIView {
     }
 }
 
-extension LHToastView {
+extension NPToastView {
     private func setUI() {
         self.layer.cornerRadius = 10
         self.clipsToBounds = true

@@ -374,15 +374,28 @@ extension BenefitViewController: ItemSelectedProtocol {
     func getButtonState(isLiked: Bool, brandId: Int) {
         if isLiked {
             postLikedBrand(brandIdNum: brandId, post: .post)
-            LHToast.show(message: "'나의 혜택'에 보관했어요")
+            NPToast.show(message: "'나의 혜택'에 보관했어요")
         } else {
             postLikedBrand(brandIdNum: brandId, post: .delete)
-            LHToast.show(message: "보관을 취소했어요")
-
+            NPToast.show(message: "보관을 취소했어요")
+            
         }
     }
 }
 
+
+extension BenefitViewController {
+    func handlingError(_ error: NetworkError) {
+        switch error {
+        case .clientError(let message):
+            NPToast.show(message: "\(message)")
+        default:
+            NPToast.show(message: error.description)
+            
+        }
+    }
+    
+}
 
 extension BenefitViewController {
     func getBenefitMainData() {
@@ -392,11 +405,12 @@ extension BenefitViewController {
                 userBenefitData = benefitMainData
             }
             catch {
-                guard error is NetworkError else { return }
+                guard let error = error as? NetworkError else { return }
+                handlingError(error)
+
             }
         }
     }
-    
     func getBenefitEntireData() {
         Task {
             do {
@@ -404,7 +418,8 @@ extension BenefitViewController {
                 benefitEntireData = data
             }
             catch {
-                guard error is NetworkError else { return }
+                guard let error = error as? NetworkError else { return }
+                handlingError(error)
             }
         }
     }
@@ -416,7 +431,9 @@ extension BenefitViewController {
                 print(brandIdNum)
             }
             catch {
-                guard error is NetworkError else { return }
+                guard let error = error as? NetworkError else { return }
+                handlingError(error)
+
             }
         }
     }
@@ -430,3 +447,4 @@ extension BenefitViewController: NextButtonTapProtocol {
     
     
 }
+
