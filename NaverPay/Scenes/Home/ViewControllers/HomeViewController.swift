@@ -193,6 +193,7 @@ extension HomeViewController: UICollectionViewDelegate {
         }
     }
 }
+
 extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -200,13 +201,13 @@ extension HomeViewController: UICollectionViewDataSource {
         case 0:
             return 1
         case 1:
-            return 4
+            return homeCardData.count
         case 2:
             return 1
         case 3:
-            return 4
+            return homeDataAppData?.brandList.count ?? 4
         default:
-            return 3
+            return homeEventData.count
         }
     }
     
@@ -301,7 +302,6 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController: HomeViewPushDelegate {
     func didTapButton() {
-        print("didTapButton")
         let placeViewController = PlaceViewController()
         self.navigationController?.pushViewController(placeViewController, animated: true)
     }
@@ -312,7 +312,6 @@ extension HomeViewController {
         Task {
             do {
                 let homeData = try await HomeService.shared.getHomeInfo()
-                print(";o__________😭")
                 homeDataAppData = homeData
             }
             catch {
