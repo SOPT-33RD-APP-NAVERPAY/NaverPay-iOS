@@ -22,19 +22,18 @@ final class HomeEventSectionCollectionViewCell: UICollectionViewCell {
     
     private let benefitLabel: NPLabel = {
         let label = NPLabel(font: .font(.detail_regular_14), color: .bg_white.withAlphaComponent(0.8))
-        label.text = "매일매일 더블혜택"
+        label.text = ""
         return label
     }()
     
     private let benefitDetailLabel: NPLabel = {
         let label = NPLabel(font: .font(.subtitle_bold_17), color: .bg_white)
-        label.text = "최대 10%"
+        label.text = ""
         return label
     }()
     
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = ImageLiterals.MainView.event_img_logo_touslesjours
         return imageView
     }()
     

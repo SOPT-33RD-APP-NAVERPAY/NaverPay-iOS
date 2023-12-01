@@ -69,7 +69,7 @@ final class HomePointSectionHeaderView: UICollectionReusableView {
     
     private let depositDetailLabel: NPLabel = {
         let label = NPLabel(font: .font(.number_bold_27), color: .bg_white)
-        label.text = "15,000"
+        label.text = ""
         return label
     }()
     

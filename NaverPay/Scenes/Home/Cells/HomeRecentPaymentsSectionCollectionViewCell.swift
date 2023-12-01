@@ -24,19 +24,18 @@ final class HomeRecentPaymentsSectionCollectionViewCell: UICollectionViewCell {
     
     private let paidAmountLabel: NPLabel = {
         let label = NPLabel(font: .font(.head_bold_20), color: .bg_black)
-        label.text = "-25,000원"
+        label.text = ""
         return label
     }()
     
     private let storeNameLabel: NPLabel = {
         let label = NPLabel(font: .font(.body_smbold_16), color: .bg_black)
-        label.text = "GS25 건대점"
+        label.text = ""
         return label
     }()
     
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = ImageLiterals.MainView.logoGs25
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
