@@ -16,11 +16,8 @@ final class BenefitService: Serviceable {
     func getBenefitMainData() async throws -> UserBenefitDataAppData {
         let urlRequest = try NetworkRequest(path: "/benefit", httpMethod: .get).makeURLRequest()
         
-        let (data, response) = try await URLSession.shared.data(for: urlRequest)
-        
-        guard let urlResponse = response as? HTTPURLResponse else { return UserBenefitDataAppData.emptyData }
-        let statusCode = urlResponse.statusCode
-        
+        let (data, _) = try await URLSession.shared.data(for: urlRequest)
+
         guard let model = try dataDecodeAndhandleErrorCode(data: data, decodeType: BenefitMainDTO.self) else { return UserBenefitDataAppData.emptyData }
         
         return model.toAppData()
