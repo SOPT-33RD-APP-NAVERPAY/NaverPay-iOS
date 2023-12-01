@@ -69,39 +69,39 @@ final class HomePlaceSectionHeaderView: UICollectionReusableView,UIGestureRecogn
     }
     
     private func setLayout() {
-        
-        self.addSubviews(titleLabel,viewAllButton)
-        
-        viewAllButton.addSubview(icArrow)
-        
-        titleLabel.snp.makeConstraints {
-            $0.leading.equalToSuperview()
-            $0.width.equalTo(161)
-            $0.height.equalTo(52)
-            $0.top.equalToSuperview().offset(48)
-        }
-        
-        
-        viewAllButton.snp.makeConstraints {
-            $0.bottom.equalToSuperview().offset(-38)
-            $0.top.equalToSuperview().offset(77)
-            $0.leading.equalTo(titleLabel.snp.trailing).inset(-102)
-            $0.width.equalTo(80)
-            $0.height.equalTo(32)
-        }
-        
-        
-        viewAllButton.titleLabel?.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
-            $0.leading.equalToSuperview().inset(3)
             
+            self.addSubviews(titleLabel,viewAllButton)
+            
+            viewAllButton.addSubview(icArrow)
+            
+            titleLabel.snp.makeConstraints {
+                $0.leading.equalToSuperview()
+                $0.width.equalTo(161)
+                $0.height.equalTo(52)
+                $0.top.equalToSuperview().offset(48)
+            }
+            
+            
+            viewAllButton.snp.makeConstraints {
+                $0.bottom.equalToSuperview().offset(-38)
+                $0.top.equalToSuperview().offset(77)
+                $0.trailing.equalToSuperview()
+                $0.width.equalTo(61)
+                $0.height.equalTo(18)
+            }
+            
+            
+            viewAllButton.titleLabel?.snp.makeConstraints {
+                $0.centerY.equalToSuperview()
+                $0.leading.equalToSuperview()
+            }
+            
+            icArrow.snp.makeConstraints {
+                $0.centerY.equalToSuperview()
+                $0.trailing.equalToSuperview()
+            }
         }
         
-        icArrow.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
-            $0.trailing.equalToSuperview().inset(17)
-        }
-    }
     
     @objc
     func onTapButton() {

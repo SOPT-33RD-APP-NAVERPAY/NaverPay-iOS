@@ -44,7 +44,6 @@ final class HomePointSectionHeaderView: UICollectionReusableView {
     private let titleLabel: NPLabel = {
         let label = NPLabel(font: .font(.head_bold_20), color: .bg_white)
         label.text = "네이버 포인트"
-        label.layer.opacity = 0.6
         return label
     }()
     
@@ -70,7 +69,7 @@ final class HomePointSectionHeaderView: UICollectionReusableView {
     
     private let depositDetailLabel: NPLabel = {
         let label = NPLabel(font: .font(.number_bold_27), color: .bg_white)
-        label.text = "15,000"
+        label.text = ""
         return label
     }()
     
@@ -153,23 +152,23 @@ final class HomePointSectionHeaderView: UICollectionReusableView {
         }
     }
     
-    //그라데이션 컬러 설정 main_home_cardline 색상
     private func setGradientBackground() {
         let gradientLayer = CAGradientLayer()
-        
+
         gradientLayer.colors = [
-            UIColor(red: 0.02, green: 0.67, blue: 0.40, alpha: 1.0).cgColor, // #06AA65
-            UIColor(red: 0.03, green: 0.67, blue: 0.55, alpha: 1.0).cgColor  // #07AA8C
+            UIColor(red: 0.03, green: 0.67, blue: 0.55, alpha: 1.00).cgColor,  // #07AA8C
+            UIColor(red: 0.02, green: 0.67, blue: 0.40, alpha: 1.00).cgColor  // #06AA65
         ]
-        
+
         let angle = 113.0 * .pi / 180.0
         let x = cos(angle)
         let y = sin(angle)
-        
-        gradientLayer.startPoint = CGPoint(x: CGFloat(x), y: CGFloat(y))
+
+        gradientLayer.startPoint = CGPoint(x: 1.0, y: 0.0)
         gradientLayer.endPoint = CGPoint(x: 0.0, y: 1.0)
         gradientLayer.frame = bounds
-        
+        gradientLayer.locations = [0.0232, 0.9345]
+
         layer.insertSublayer(gradientLayer, at: 0)
     }
     

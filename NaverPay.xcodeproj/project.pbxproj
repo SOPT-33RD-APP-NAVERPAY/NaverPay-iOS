@@ -24,8 +24,10 @@
 		0B1E55A62B0F80F500ADFC75 /* HomeDataAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1E55A52B0F80F500ADFC75 /* HomeDataAppData.swift */; };
 		0B2278832B0DB07700732977 /* HomePointSectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2278822B0DB07700732977 /* HomePointSectionFooterView.swift */; };
 		0B2278852B0DB0D500732977 /* HomeSwitchSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2278842B0DB0D500732977 /* HomeSwitchSectionCollectionViewCell.swift */; };
-		0B663D4B2B1596FC001BAC91 /* NaverNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B663D4A2B1596FC001BAC91 /* NaverNavigationBar.swift */; };
-		0B663D4D2B159730001BAC91 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B663D4C2B159730001BAC91 /* TabBarViewController.swift */; };
+		0B5407232B16D08600806E5C /* HomeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5407222B16D08600806E5C /* HomeDTO.swift */; };
+		0B5407252B16D0AA00806E5C /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5407242B16D0AA00806E5C /* HomeService.swift */; };
+		0B663D4B2B1596FC001BAC91 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B663D4A2B1596FC001BAC91 /* TabBarViewController.swift */; };
+		0B663D4D2B159730001BAC91 /* NaverNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B663D4C2B159730001BAC91 /* NaverNavigationBar.swift */; };
 		0B663D4F2B15976E001BAC91 /* BenefitHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B663D4E2B15976E001BAC91 /* BenefitHeaderView.swift */; };
 		0B6677A02B0CBF7500821105 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		0B6677A22B0CCEF400821105 /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -101,6 +103,12 @@
 		F4FF800C2B1660C900681C0D /* BenefitMainDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF800B2B1660C900681C0D /* BenefitMainDTO.swift */; };
 		F4FF800E2B16612000681C0D /* BenefitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF800D2B16612000681C0D /* BenefitService.swift */; };
 		F4FF80102B16695F00681C0D /* KingfisherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF800F2B16695F00681C0D /* KingfisherService.swift */; };
+		F4FF80122B18D46300681C0D /* BenefitEntireSectionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF80112B18D46300681C0D /* BenefitEntireSectionDTO.swift */; };
+		F4FF80182B18DA2700681C0D /* BenefitEntireAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF80172B18DA2700681C0D /* BenefitEntireAppData.swift */; };
+		F4FF801A2B1909C100681C0D /* BenefitLikeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF80192B1909C100681C0D /* BenefitLikeDTO.swift */; };
+		F4FF801D2B19A65400681C0D /* NPToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF801C2B19A65400681C0D /* NPToastView.swift */; };
+		F4FF801F2B19A67300681C0D /* NPToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF801E2B19A67300681C0D /* NPToast.swift */; };
+		F4FF80212B19A7F000681C0D /* UIWindow+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF80202B19A7F000681C0D /* UIWindow+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,8 +129,10 @@
 		0B1E55A52B0F80F500ADFC75 /* HomeDataAppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeDataAppData.swift; path = Scenes/Home/Models/HomeDataAppData.swift; sourceTree = "<group>"; };
 		0B2278822B0DB07700732977 /* HomePointSectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomePointSectionFooterView.swift; path = Scenes/Home/Views/HomePointSectionFooterView.swift; sourceTree = "<group>"; };
 		0B2278842B0DB0D500732977 /* HomeSwitchSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeSwitchSectionCollectionViewCell.swift; path = Scenes/Home/Views/HomeSwitchSectionCollectionViewCell.swift; sourceTree = "<group>"; };
-		0B663D4A2B1596FC001BAC91 /* NaverNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverNavigationBar.swift; sourceTree = "<group>"; };
-		0B663D4C2B159730001BAC91 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		0B5407222B16D08600806E5C /* HomeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDTO.swift; sourceTree = "<group>"; };
+		0B5407242B16D0AA00806E5C /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		0B663D4A2B1596FC001BAC91 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		0B663D4C2B159730001BAC91 /* NaverNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverNavigationBar.swift; sourceTree = "<group>"; };
 		0B663D4E2B15976E001BAC91 /* BenefitHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitHeaderView.swift; path = Scenes/Benefit/Views/BenefitHeaderView.swift; sourceTree = "<group>"; };
 		0B7837C32B0FB84200494079 /* HomeEventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeEventData.swift; path = Scenes/Home/Models/HomeEventData.swift; sourceTree = "<group>"; };
 		0B91C7A72B0B8A7A00ACDCE9 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
@@ -187,6 +197,12 @@
 		F4FF800B2B1660C900681C0D /* BenefitMainDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitMainDTO.swift; sourceTree = "<group>"; };
 		F4FF800D2B16612000681C0D /* BenefitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitService.swift; sourceTree = "<group>"; };
 		F4FF800F2B16695F00681C0D /* KingfisherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherService.swift; sourceTree = "<group>"; };
+		F4FF80112B18D46300681C0D /* BenefitEntireSectionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitEntireSectionDTO.swift; sourceTree = "<group>"; };
+		F4FF80172B18DA2700681C0D /* BenefitEntireAppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitEntireAppData.swift; path = Scenes/Benefit/Models/BenefitEntireAppData.swift; sourceTree = "<group>"; };
+		F4FF80192B1909C100681C0D /* BenefitLikeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitLikeDTO.swift; sourceTree = "<group>"; };
+		F4FF801C2B19A65400681C0D /* NPToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPToastView.swift; sourceTree = "<group>"; };
+		F4FF801E2B19A67300681C0D /* NPToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPToast.swift; sourceTree = "<group>"; };
+		F4FF80202B19A7F000681C0D /* UIWindow+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +319,9 @@
 				F4FF800B2B1660C900681C0D /* BenefitMainDTO.swift */,
 				EDDE96AC2B18A828002F4925 /* PlaceMainDTO.swift */,
 				EDDE96B02B18C310002F4925 /* PointMainDTO.swift */,
+				0B5407222B16D08600806E5C /* HomeDTO.swift */,
+				F4FF80112B18D46300681C0D /* BenefitEntireSectionDTO.swift */,
+				F4FF80192B1909C100681C0D /* BenefitLikeDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -314,6 +333,7 @@
 				F4FF800F2B16695F00681C0D /* KingfisherService.swift */,
 				EDDE96AA2B18A45C002F4925 /* PlaceService.swift */,
 				EDDE96B22B18C5D1002F4925 /* PointService.swift */,
+				0B5407242B16D0AA00806E5C /* HomeService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -335,10 +355,11 @@
 		F4DDEB252B0A597100B7BCCE /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				F4FF801B2B19A62300681C0D /* NPToast */,
 				F4DDEB6E2B0D1FF500B7BCCE /* NPLabel.swift */,
 				0B125CDD2B105DD20051DDEF /* FormattedString.swift */,
-				0B663D4A2B1596FC001BAC91 /* NaverNavigationBar.swift */,
-				0B663D4C2B159730001BAC91 /* TabBarViewController.swift */,
+				0B663D4A2B1596FC001BAC91 /* TabBarViewController.swift */,
+				0B663D4C2B159730001BAC91 /* NaverNavigationBar.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -353,6 +374,7 @@
 				F4DDEB592B0BCBEB00B7BCCE /* UITextField+.swift */,
 				F4DDEB5B2B0BCCA900B7BCCE /* UIStackView+.swift */,
 				F4FF80092B165BC000681C0D /* Codable+.swift */,
+				F4FF80202B19A7F000681C0D /* UIWindow+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -532,6 +554,7 @@
 			children = (
 				F4DDEB742B0E670300B7BCCE /* UserBenefitAppData.swift */,
 				F4DDEB7E2B0F27CE00B7BCCE /* CategoryData.swift */,
+				F4FF80172B18DA2700681C0D /* BenefitEntireAppData.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -578,6 +601,15 @@
 				F4FF7FFA2B1626B600681C0D /* Development.xcconfig */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		F4FF801B2B19A62300681C0D /* NPToast */ = {
+			isa = PBXGroup;
+			children = (
+				F4FF801C2B19A65400681C0D /* NPToastView.swift */,
+				F4FF801E2B19A67300681C0D /* NPToast.swift */,
+			);
+			path = NPToast;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -668,11 +700,13 @@
 				ED405D6D2B14B8CF006CF4C6 /* PieChartView.swift in Sources */,
 				F4FF800E2B16612000681C0D /* BenefitService.swift in Sources */,
 				F4DDEB7F2B0F27CE00B7BCCE /* CategoryData.swift in Sources */,
+				F4FF801A2B1909C100681C0D /* BenefitLikeDTO.swift in Sources */,
 				0B0DFB152B0D20F3005F8618 /* HomePointSectionCollectionViewCell.swift in Sources */,
 				F4DDEB862B0FD70100B7BCCE /* BenefitCollectionEntireBenefitSectionHeaderView.swift in Sources */,
 				EDDE96AD2B18A828002F4925 /* PlaceMainDTO.swift in Sources */,
 				0B0DFB212B0D2102005F8618 /* HomeEventSectionHeaderView.swift in Sources */,
 				0B6677B52B0CD4CF00821105 /* (null) in Sources */,
+				F4FF801F2B19A67300681C0D /* NPToast.swift in Sources */,
 				0B0DFB222B0D2102005F8618 /* HomePlaceSectionHeaderView.swift in Sources */,
 				F4DDEB0A2B0A52E600B7BCCE /* AppDelegate.swift in Sources */,
 				F4DDEB632B0CDC1600B7BCCE /* BenefitCollectionViewPointCheckCell.swift in Sources */,
@@ -689,7 +723,8 @@
 				F4FF80052B162C3600681C0D /* HTTPHeaderField.swift in Sources */,
 				ED56A3142B110478005FE6AF /* UserPointAppData.swift in Sources */,
 				0B0DFB142B0D20F3005F8618 /* HomeEventSectionCollectionViewCell.swift in Sources */,
-				0B663D4B2B1596FC001BAC91 /* NaverNavigationBar.swift in Sources */,
+				0B663D4B2B1596FC001BAC91 /* TabBarViewController.swift in Sources */,
+				0B5407232B16D08600806E5C /* HomeDTO.swift in Sources */,
 				F4DDEB692B0CEB7B00B7BCCE /* BenefitCollectionPointCheckHeaderView.swift in Sources */,
 				0B1E55A42B0F627C00ADFC75 /* HomeViewController.swift in Sources */,
 				F4DDEB6D2B0D1AE700B7BCCE /* BenefitCollectionViewFamousBenefitCell.swift in Sources */,
@@ -699,6 +734,7 @@
 				ED56A30A2B0F827B005FE6AF /* CardCollectionViewCell.swift in Sources */,
 				F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */,
 				0B663D4F2B15976E001BAC91 /* BenefitHeaderView.swift in Sources */,
+				F4FF801D2B19A65400681C0D /* NPToastView.swift in Sources */,
 				ED56A30C2B0F82CD005FE6AF /* BannerCollectionViewCell.swift in Sources */,
 				ED56A3122B1103F2005FE6AF /* UserPlaceAppData.swift in Sources */,
 				0B0DFB202B0D2102005F8618 /* HomeRecentPaymentsSectionHeaderView.swift in Sources */,
@@ -706,10 +742,13 @@
 				0B6677B92B0CD61C00821105 /* (null) in Sources */,
 				0B0DFB172B0D20F3005F8618 /* HomeRecentPaymentsSectionCollectionViewCell.swift in Sources */,
 				F4DDEB8C2B10B18800B7BCCE /* BenefitCollectionadBannerFooterView.swift in Sources */,
+				F4FF80212B19A7F000681C0D /* UIWindow+.swift in Sources */,
+				0B5407252B16D0AA00806E5C /* HomeService.swift in Sources */,
+				F4FF80182B18DA2700681C0D /* BenefitEntireAppData.swift in Sources */,
 				0B6677BB2B0CD63200821105 /* (null) in Sources */,
 				0B0DFB242B0D2102005F8618 /* HomePointSectionBackgroundView.swift in Sources */,
 				ED56A2F82B0D18B5005FE6AF /* NearPlaceCollectionViewCell.swift in Sources */,
-				0B663D4D2B159730001BAC91 /* TabBarViewController.swift in Sources */,
+				0B663D4D2B159730001BAC91 /* NaverNavigationBar.swift in Sources */,
 				ED56A2FA2B0D18F1005FE6AF /* RecommendCollectionViewCell.swift in Sources */,
 				F4FF7FFF2B162BC400681C0D /* BaseResponse.swift in Sources */,
 				F4DDEB2A2B0B720600B7BCCE /* UIColor+.swift in Sources */,
@@ -734,6 +773,7 @@
 				F4DDEB822B0F654500B7BCCE /* BenefitCollectionCategorySectionHeaderView.swift in Sources */,
 				0B0DFB232B0D2102005F8618 /* HomePointSectionHeaderView.swift in Sources */,
 				F4FF80082B165ACE00681C0D /* Serviceable.swift in Sources */,
+				F4FF80122B18D46300681C0D /* BenefitEntireSectionDTO.swift in Sources */,
 				F4FF80012B162C0500681C0D /* NetworkRequest.swift in Sources */,
 				0B6677A82B0CCF7F00821105 /* (null) in Sources */,
 				0B6677AD2B0CD24300821105 /* (null) in Sources */,

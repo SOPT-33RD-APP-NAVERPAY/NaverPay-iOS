@@ -8,9 +8,16 @@
 import UIKit
 import SnapKit
 
-final class BenefitCollectionPointCheckHeaderView: UICollectionReusableView {
+protocol NextButtonTapProtocol: AnyObject {
+    func nextVC()
         
+}
+
+final class BenefitCollectionPointCheckHeaderView: UICollectionReusableView {
+    
     static let identifier = "BenefitCollectionPointCheckHeaderView"
+    
+    weak var delegate: NextButtonTapProtocol?
     
     var userData: UserBenefitDataAppData? {
         didSet {
@@ -30,15 +37,48 @@ final class BenefitCollectionPointCheckHeaderView: UICollectionReusableView {
         return imageView
     }()
     
+    private let nextButtonView = UIView()
+    
+    private let containView = UIView()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setLayout()
+        setStyle()
+        let goToNextVC = UITapGestureRecognizer(target: self, action: #selector(nextButtonTapped))
+        
+        nextButtonView.isUserInteractionEnabled = true
+        nextButtonView.addGestureRecognizer(goToNextVC)
+
         
     }
     
+    private func setStyle() {
+        self.layer.cornerRadius = 14
+        self.backgroundColor = .bg_gray
+        containView.backgroundColor = .bg_white
+        containView.layer.cornerRadius = 14
+    }
+    
     private func setLayout() {
-        self.addSubviews(userNameLabel, userPointLabel, pointArrowImageView)
+        self.addSubviews(containView)
+        containView.addSubviews(userNameLabel,nextButtonView)
+        nextButtonView.addSubviews( userPointLabel, pointArrowImageView)
+        
+       
+        
+        containView.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(20)
+            $0.leading.trailing.bottom.equalToSuperview()
+        }
+        
+        nextButtonView.snp.makeConstraints {
+            $0.top.equalTo(containView.snp.top).offset(15)
+            $0.trailing.equalToSuperview().inset(5)
+            $0.width.equalTo(90)
+            $0.height.equalTo(35)
+        }
         
         userNameLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(19)
@@ -46,9 +86,8 @@ final class BenefitCollectionPointCheckHeaderView: UICollectionReusableView {
         }
         
         userPointLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(15)
-//            $0.leading.equalTo(userNameLabel.snp.trailing).offset(97)
-            $0.trailing.equalToSuperview().inset(29)
+            $0.top.equalToSuperview()
+            $0.leading.equalToSuperview()
         }
         
         pointArrowImageView.snp.makeConstraints {
@@ -56,6 +95,11 @@ final class BenefitCollectionPointCheckHeaderView: UICollectionReusableView {
             $0.leading.equalTo(userPointLabel.snp.trailing)
         }
         
+    }
+    
+    @objc
+    private func nextButtonTapped() {
+        self.delegate?.nextVC()
     }
     
     required init?(coder: NSCoder) {

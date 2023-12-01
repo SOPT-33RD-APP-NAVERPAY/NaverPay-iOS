@@ -10,6 +10,13 @@ import UIKit
 final class HomeRecentPaymentsSectionHeaderView: UICollectionReusableView {
     static let identifier: String = "HomeRecentPaymentsSectionHeaderView"
     
+    var homeDataAppData: HomeDataAppData? {
+        didSet {
+            guard let data = homeDataAppData else { return }
+            dateLabel.text = formateDate(data.onsitePayment.paymentDate)
+        }
+    }
+    
     private let icArrow: UIImageView = {
         let imageView = UIImageView()
         imageView.image = ImageLiterals.MainView.icArrowGray
@@ -24,7 +31,7 @@ final class HomeRecentPaymentsSectionHeaderView: UICollectionReusableView {
     
     private let dateLabel: NPLabel = {
         let label = NPLabel(font: .font(.body_smbold_16), color: .main_lightgreen)
-        label.text = "11.16"
+        label.text = ""
         return label
     }()
     
@@ -50,34 +57,48 @@ final class HomeRecentPaymentsSectionHeaderView: UICollectionReusableView {
     }
     
     private func setLayout() {
-        self.addSubviews(icArrow, recentPaymentLabel, dateLabel, viewAllLabel )
-        
-        recentPaymentLabel.snp.makeConstraints {
-            $0.bottom.equalToSuperview().offset(-20)
-            $0.top.equalToSuperview().offset(51)
-            $0.leading.equalToSuperview()
-            $0.width.equalTo(110)
+            self.addSubviews(icArrow, recentPaymentLabel, dateLabel, viewAllLabel )
+            
+            recentPaymentLabel.snp.makeConstraints {
+                $0.bottom.equalToSuperview().offset(-20)
+                $0.top.equalToSuperview().offset(51)
+                $0.leading.equalToSuperview()
+                $0.width.equalTo(110)
+            }
+            
+            dateLabel.snp.makeConstraints {
+                $0.bottom.equalToSuperview().offset(-18)
+                $0.top.equalToSuperview().offset(55)
+                $0.leading.equalTo(recentPaymentLabel.snp.trailing).inset(-7)
+                $0.width.greaterThanOrEqualTo(32)
+            }
+            
+            viewAllLabel.snp.makeConstraints {
+                $0.bottom.equalToSuperview().offset(-24)
+                $0.top.equalToSuperview().offset(55)
+                $0.trailing.equalTo(icArrow.snp.leading).inset(-3)
+                $0.width.equalTo(53)
+            }
+            
+            icArrow.snp.makeConstraints {
+                $0.bottom.equalToSuperview().offset(-29)
+                $0.trailing.equalToSuperview()
+                $0.width.equalTo(4)
+                $0.height.equalTo(8)
+            }
+            
         }
+    
+    private func formateDate(_ string: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         
-        dateLabel.snp.makeConstraints {
-            $0.bottom.equalToSuperview().offset(-18)
-            $0.top.equalToSuperview().offset(55)
-            $0.leading.equalTo(recentPaymentLabel.snp.trailing).inset(-7)
-            $0.width.equalTo(32)
+        if let date = formatter.date(from: string) {
+            formatter.dateFormat = "MM.dd"
+            return formatter.string(from: date)
         }
-        
-        viewAllLabel.snp.makeConstraints {
-            $0.bottom.equalToSuperview().offset(-24)
-            $0.top.equalToSuperview().offset(60)
-            $0.leading.equalTo(dateLabel.snp.trailing).inset(-124)
-            $0.width.equalTo(53)
-        }
-        
-        icArrow.snp.makeConstraints {
-            $0.bottom.equalToSuperview().offset(-29)
-            $0.leading.equalTo(viewAllLabel.snp.trailing).inset(-3)
-            $0.width.equalTo(4)
-            $0.height.equalTo(8)
+        else {
+            return "Invalid Date"
         }
         
     }

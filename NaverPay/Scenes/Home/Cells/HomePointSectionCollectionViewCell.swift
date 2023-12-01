@@ -24,7 +24,6 @@ final class HomePointSectionCollectionViewCell: UICollectionViewCell {
     
     private let cardImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = ImageLiterals.MainView.imgCard2
         return imageView
     }()
     
