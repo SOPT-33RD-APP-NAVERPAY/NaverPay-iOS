@@ -11,11 +11,14 @@ final class HomePlaceSectionCollectionViewCell: UICollectionViewCell {
     
     static let identifier: String = "HomePlaceSectionCollectionViewCell"
     
-    var homeDataAppData: BrandAppData? {
+    var homeDataAppData: HomeBrandAppData? {
         didSet {
             guard let data = homeDataAppData else { return }
             storeNameLabel.text = "\(data.name) \(data.place)"
-            logoImageView.image = ImageLiterals.MainView.logoCuDummy
+            Task {
+                let image = try await NPKingFisherService.fetchImage(with: data.logoImgURL)
+                logoImageView.image = image
+            }
             descriptionLabel.text = data.discountContent
         }
     }
@@ -83,7 +86,7 @@ final class HomePlaceSectionCollectionViewCell: UICollectionViewCell {
             $0.height.equalTo(24)
         }
         icArrowImageView.snp.makeConstraints {
-            $0.leading.equalTo(descriptionLabel.snp.trailing).inset(-20)
+            $0.trailing.equalToSuperview()
             $0.centerY.equalToSuperview()
             $0.width.equalTo(4)
             $0.height.equalTo(8)
