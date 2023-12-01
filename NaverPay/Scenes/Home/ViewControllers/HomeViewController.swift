@@ -9,7 +9,11 @@ import UIKit
 import SnapKit
 
 final class HomeViewController: UIViewController {
-    private let homeDataAppData = HomeDataAppData.dummy()
+    private var homeDataAppData: HomeDataAppData? {
+        didSet {
+            HomeCollectionView.reloadData()
+        }
+    }
     private let homeEventData = HomeEventData.dummy()
     private var homeCardData = HomeCardData.dummy()
     
@@ -29,6 +33,7 @@ final class HomeViewController: UIViewController {
         setLayout()
         setCollectionView()
         setStyle()
+        getHomeData()
     }
     
     private func setStyle() {
@@ -188,6 +193,7 @@ extension HomeViewController: UICollectionViewDelegate {
         }
     }
 }
+
 extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -195,13 +201,13 @@ extension HomeViewController: UICollectionViewDataSource {
         case 0:
             return 1
         case 1:
-            return 4
+            return homeCardData.count
         case 2:
             return 1
         case 3:
-            return 4
+            return homeDataAppData?.brandList.count ?? 4
         default:
-            return 3
+            return homeEventData.count
         }
     }
     
@@ -222,6 +228,8 @@ extension HomeViewController: UICollectionViewDataSource {
                 
             case 2:
                 guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeRecentPaymentsSectionHeaderView.identifier, for: indexPath) as? HomeRecentPaymentsSectionHeaderView else { return UICollectionReusableView() }
+                
+                header.homeDataAppData = self.homeDataAppData
                 return header
                 
             case 3:
@@ -270,13 +278,13 @@ extension HomeViewController: UICollectionViewDataSource {
             
         case 2:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeRecentPaymentsSectionCollectionViewCell.identifier, for: indexPath) as? HomeRecentPaymentsSectionCollectionViewCell else { return UICollectionViewCell() }
-            cell.homeDataAppData = self.homeDataAppData
+            cell.homeDataAppData = self.homeDataAppData?.onsitePayment
             
             return cell
             
         case 3:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomePlaceSectionCollectionViewCell.identifier, for: indexPath) as? HomePlaceSectionCollectionViewCell else { return UICollectionViewCell() }
-            cell.homeDataAppData = self.homeDataAppData.brandList[indexPath.item]
+            cell.homeDataAppData = self.homeDataAppData?.brandList[indexPath.item]
             
             return cell
             
@@ -294,8 +302,21 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController: HomeViewPushDelegate {
     func didTapButton() {
-        print("didTapButton")
         let placeViewController = PlaceViewController()
         self.navigationController?.pushViewController(placeViewController, animated: true)
+    }
+}
+
+extension HomeViewController {
+    func getHomeData() {
+        Task {
+            do {
+                let homeData = try await HomeService.shared.getHomeInfo()
+                homeDataAppData = homeData
+            }
+            catch {
+                guard error is NetworkError else { return }
+            }
+        }
     }
 }
