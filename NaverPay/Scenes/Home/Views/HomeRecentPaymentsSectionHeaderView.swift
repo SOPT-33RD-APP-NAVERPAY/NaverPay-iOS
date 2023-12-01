@@ -31,7 +31,7 @@ final class HomeRecentPaymentsSectionHeaderView: UICollectionReusableView {
     
     private let dateLabel: NPLabel = {
         let label = NPLabel(font: .font(.body_smbold_16), color: .main_lightgreen)
-        label.text = "11.16"
+        label.text = ""
         return label
     }()
     
