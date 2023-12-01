@@ -11,24 +11,27 @@ final class HomePlaceSectionCollectionViewCell: UICollectionViewCell {
     
     static let identifier: String = "HomePlaceSectionCollectionViewCell"
     
-    var homeDataAppData: BrandAppData? {
+    var homeDataAppData: HomeBrandAppData? {
         didSet {
             guard let data = homeDataAppData else { return }
             storeNameLabel.text = "\(data.name) \(data.place)"
-            logoImageView.image = ImageLiterals.MainView.logoCuDummy
+            Task {
+                let image = try await NPKingFisherService.fetchImage(with: data.logoImgURL)
+                logoImageView.image = image
+            }
             descriptionLabel.text = data.discountContent
         }
     }
     
     private let storeNameLabel: NPLabel = {
         let label = NPLabel(font: .font(.detail_regular_14), color: .grayscale_gray5)
-        label.text = "CU 건대점"
+        label.text = ""
         return label
     }()
     
     private let descriptionLabel: NPLabel = {
         let label = NPLabel(font: .font(.body_smbold_16), color: .bg_white)
-        label.text = "네플멤 회원은 최대 10%"
+        label.text = ""
         return label
     }()
     
@@ -40,7 +43,6 @@ final class HomePlaceSectionCollectionViewCell: UICollectionViewCell {
     
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = ImageLiterals.MainView.logoCuDummy
         return imageView
     }()
     
@@ -83,7 +85,7 @@ final class HomePlaceSectionCollectionViewCell: UICollectionViewCell {
             $0.height.equalTo(24)
         }
         icArrowImageView.snp.makeConstraints {
-            $0.leading.equalTo(descriptionLabel.snp.trailing).inset(-20)
+            $0.trailing.equalToSuperview()
             $0.centerY.equalToSuperview()
             $0.width.equalTo(4)
             $0.height.equalTo(8)

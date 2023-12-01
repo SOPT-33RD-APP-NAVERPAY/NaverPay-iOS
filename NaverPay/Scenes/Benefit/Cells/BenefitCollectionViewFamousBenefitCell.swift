@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 protocol ItemSelectedProtocol: AnyObject {
-    func getButtonState(state: Bool, row: Int)
+    func getButtonState(isLiked: Bool, brandId: Int)
 }
 
 final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
@@ -17,8 +17,10 @@ final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
     static let identifier = "BenefitCollectionViewFamousBenefitCell"
     
     weak var delegate: ItemSelectedProtocol?
-    
-    var itemRow: Int?
+        
+    var likeTapCompletion: ((Bool) -> Void)?
+
+    var brandId: Int = 0
     
     var userBenefitData: BrandListAppData? {
         didSet {
@@ -29,21 +31,23 @@ final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
                 let image = try await NPKingFisherService.fetchImage(with: data.logoImgURL)
                 brandImageView.image = image
             }
+            
             brandNameLabel.text = data.name
             benefitDescriptionLabel.text = data.discountContent
             benefitRate.text = data.discountType
             heartButton.isSelected = data.isBrandLike
+            brandId = data.id
         }
     }
     
-    private let brandIDLabel = NPLabel(font: .font(.subtitle_bold_17), color: .main_green)
+    let brandIDLabel = NPLabel(font: .font(.subtitle_bold_17), color: .bg_black)
     
     private let brandImageView: UIImageView = {
         let imageView = UIImageView()
-        //        imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = .red
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
+    
     
     private let brandAndBenefitInfoStackView: UIStackView = {
         let stackView = UIStackView()
@@ -104,14 +108,17 @@ final class BenefitCollectionViewFamousBenefitCell: UICollectionViewCell {
         }
     }
     
-    
     @objc
     func heartButtonTapped() {
+        
         self.heartButton.isSelected.toggle()
-        if let itemRow {
-            self.delegate?.getButtonState(state: self.heartButton.isSelected,
-                                          row: itemRow)
-        }
+        
+        guard let likeTapCompletion else {return}
+               likeTapCompletion(heartButton.isSelected)
+
+        self.delegate?.getButtonState(isLiked: heartButton.isSelected, brandId: brandId)
+                                      
+        
     }
     
     
