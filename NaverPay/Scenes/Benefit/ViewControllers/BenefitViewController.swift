@@ -16,8 +16,14 @@ final class BenefitViewController: UIViewController {
         }
     }
     
+    private var benefitEntireData: BenefitEntireAppData? {
+        didSet {
+            benefitCollectionView.reloadData()
+        }
+    }
+    
     private let categoryData = CategoryData.dummy()
-
+    
     private let benefitHeaderview = BenefitHeaderView()
     
     private let pointCellBackgroundViewList: [UIImage] = [ImageLiterals.BenefitView.bnfFirst, ImageLiterals.BenefitView.bnfSecond, ImageLiterals.BenefitView.bnfThird, ImageLiterals.BenefitView.bnfFourth]
@@ -31,10 +37,13 @@ final class BenefitViewController: UIViewController {
         return collectionView
     }()
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        
-//    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        getBenefitMainData()
+        getBenefitEntireData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +51,8 @@ final class BenefitViewController: UIViewController {
         setLayout()
         setCollectionView()
         setStyle()
-        getBenefitMainData()
-
+        
+        
     }
     
     private func setLayout() {
@@ -106,8 +115,8 @@ final class BenefitViewController: UIViewController {
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .continuous
                 
-                //섹션헤더 설정
-                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(53))
+                //섹션헤더 설정 //백그라운드 회색 20 더함 50 + 20
+                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(73))
                 let header = NSCollectionLayoutBoundarySupplementaryItem(
                     layoutSize: headerSize,
                     elementKind: UICollectionView.elementKindSectionHeader,
@@ -134,7 +143,7 @@ final class BenefitViewController: UIViewController {
                     elementKind: UICollectionView.elementKindSectionHeader,
                     alignment: .top
                 )
-
+                
                 //섹션푸터 설정
                 let footerSize = NSCollectionLayoutSize(widthDimension: .absolute(UIScreen.main.bounds.width - 32), heightDimension: .absolute(69))
                 let footer = NSCollectionLayoutBoundarySupplementaryItem(
@@ -153,7 +162,7 @@ final class BenefitViewController: UIViewController {
                 
             case 2:
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(64), heightDimension: .absolute(77)))
-
+                
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(77)), subitems: [item])
                 group.interItemSpacing = NSCollectionLayoutSpacing.fixed(5)
                 let section = NSCollectionLayoutSection(group: group)
@@ -181,7 +190,7 @@ final class BenefitViewController: UIViewController {
                     elementKind: UICollectionView.elementKindSectionHeader,
                     alignment: .top
                 )
-
+                
                 section.boundarySupplementaryItems = [header]
                 
                 //백그라운드뷰 지정
@@ -205,7 +214,7 @@ final class BenefitViewController: UIViewController {
                     alignment: .bottom
                 )
                 footer.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 0, bottom: 0, trailing: 0)
-               
+                
                 section.boundarySupplementaryItems = [footer]
                 return section
                 
@@ -230,11 +239,11 @@ extension BenefitViewController: UICollectionViewDataSource {
         guard let userBenefitData else { return 0}
         switch section {
         case 0:
-            return 4
+            return pointCellBackgroundViewList.count
         case 1:
             return userBenefitData.brandList.count
         case 2:
-            return 5
+            return categoryData.count
         case 3:
             return userBenefitData.brandList.count
         case 4:
@@ -255,11 +264,21 @@ extension BenefitViewController: UICollectionViewDataSource {
         case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BenefitCollectionViewFamousBenefitCell.identifier, for: indexPath) as? BenefitCollectionViewFamousBenefitCell else { return UICollectionViewCell() }
             
+            cell.likeTapCompletion = { [weak self] state in
+                guard let self else { return }
+                userBenefitData?.brandList[indexPath.row].isBrandLike = state
+            }
+            
             guard let userBenefitData else { return UICollectionViewCell() }
             
             cell.userBenefitData = userBenefitData.brandList[indexPath.item]
-            cell.itemRow = indexPath.item
-//            cell.delegate = self
+            cell.brandIDLabel.text = "\(indexPath.item + 1)"
+            if indexPath.item == 0 {
+                cell.brandIDLabel.textColor = .main_green
+            } else {
+                cell.brandIDLabel.textColor = .bg_black
+            }
+            cell.delegate = self
             return cell
             
         case 2:
@@ -277,16 +296,15 @@ extension BenefitViewController: UICollectionViewDataSource {
             cell.backgroundColor = .bg_white
             cell.layer.borderWidth = 1
             cell.layer.borderColor = UIColor.grayscale_gray3.cgColor
-
+            
             cell.layer.cornerRadius = 14
             return cell
             
         case 3:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BenefitCollectionViewEntireBenefitCell.identifier, for: indexPath) as? BenefitCollectionViewEntireBenefitCell else { return UICollectionViewCell() }
             
-            guard let userBenefitData else { return UICollectionViewCell() }
-
-            cell.userBenefitData = userBenefitData.brandList[indexPath.item]
+            cell.userBenefitData = benefitEntireData?.brandList[indexPath.item]
+            
             if indexPath.item == 0 {
                 cell.divideView.isHidden = true
             }
@@ -295,7 +313,7 @@ extension BenefitViewController: UICollectionViewDataSource {
         case 4:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BenefitCollectionViewAdBannerCell.identifier, for: indexPath) as? BenefitCollectionViewAdBannerCell else { return UICollectionViewCell() }
             cell.bannerImageView.image = cell.bannerImage[indexPath.item]
-           
+            
             return cell
             
         default:
@@ -315,8 +333,7 @@ extension BenefitViewController: UICollectionViewDataSource {
             case 0:
                 guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: BenefitCollectionPointCheckHeaderView.identifier, for: indexPath) as? BenefitCollectionPointCheckHeaderView else { return UICollectionReusableView()}
                 header.userData = userBenefitData
-                header.layer.cornerRadius = 14
-                header.backgroundColor = .bg_white
+                header.delegate = self
                 return header
                 
             case 1:
@@ -358,23 +375,60 @@ extension BenefitViewController: UICollectionViewDataSource {
     }
 }
 
-//extension BenefitViewController: ItemSelectedProtocol {
-//        func getButtonState(state: Bool, row: Int) {
-//            userBenefitData.brandList[row].isBrandLike = state
-//        }
-//}
+extension BenefitViewController: ItemSelectedProtocol {
+    func getButtonState(isLiked: Bool, brandId: Int) {
+        if isLiked {
+            postLikedBrand(brandIdNum: brandId, post: .post)
+        } else {
+            postLikedBrand(brandIdNum: brandId, post: .delete)
+        }
+    }
+}
+
 
 extension BenefitViewController {
     func getBenefitMainData() {
         Task {
             do {
-                let benefitMainData = try await BenefitService.shared.getBenefitMainInfo()
-                print(benefitMainData)
+                let benefitMainData = try await BenefitService.shared.getBenefitMainData()
                 userBenefitData = benefitMainData
             }
             catch {
-                guard let error = error as? NetworkError else { return }
+                guard error is NetworkError else { return }
             }
         }
     }
+    
+    func getBenefitEntireData() {
+        Task {
+            do {
+                let data = try await BenefitService.shared.getBenefitEntireData()
+                benefitEntireData = data
+            }
+            catch {
+                guard error is NetworkError else { return }
+            }
+        }
+    }
+    
+    func postLikedBrand(brandIdNum: Int, post: HttpMethod) {
+        Task {
+            do {
+                try await BenefitService.shared.sendBenefitLiked(brandId: brandIdNum, post: post)
+                print(brandIdNum)
+            }
+            catch {
+                guard error is NetworkError else { return }
+            }
+        }
+    }
+}
+
+extension BenefitViewController: NextButtonTapProtocol {
+    func nextVC() {
+        let nextVC = PointViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    
 }

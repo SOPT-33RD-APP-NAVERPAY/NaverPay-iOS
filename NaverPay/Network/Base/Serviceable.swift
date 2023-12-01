@@ -25,14 +25,13 @@ extension Serviceable {
             throw NetworkError.jsonDecodingError
         }
 
-        print("✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨")
-        dump(model)
-
-        //status 숫자 나중에 사용(에러핸들링)
-        let statusCode = model.status
+        print("""
+        -------------------------------------------------------------
+        statusCode : \(model.status)
+        message : \(model.message)
+        -------------------------------------------------------------
+        """)
         
-        print("✅✅✅✅✅✅✅✅✅✅✅✅✅원래 API호출성공✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅")
-        print(model.data)
         return model.data
     }
 }
