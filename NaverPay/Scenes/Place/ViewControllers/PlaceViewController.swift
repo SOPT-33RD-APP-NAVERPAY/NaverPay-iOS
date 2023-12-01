@@ -238,6 +238,17 @@ extension PlaceViewController: UICollectionViewDelegateFlowLayout{
     }
 }
 
+extension PlaceViewController {
+    func handlingError(_ error: NetworkError) {
+        switch error {
+        case .clientError(let message):
+            NPToast.show(message: "\(message)")
+        default:
+            NPToast.show(message: error.description)
+            
+        }
+    }
+}
 
 extension PlaceViewController {
     func getPlaceMainData() {
@@ -250,6 +261,8 @@ extension PlaceViewController {
             }
             catch {
                 guard let error = error as? NetworkError else { return }
+                handlingError(error)
+
             }
         }
     }

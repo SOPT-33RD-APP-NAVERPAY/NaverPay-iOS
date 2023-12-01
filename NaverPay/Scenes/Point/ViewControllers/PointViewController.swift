@@ -173,6 +173,18 @@ extension PointViewController: UICollectionViewDelegateFlowLayout{
     
 }
 
+extension PointViewController {
+    func handlingError(_ error: NetworkError) {
+        switch error {
+        case .clientError(let message):
+            NPToast.show(message: "\(message)")
+        default:
+            NPToast.show(message: error.description)
+            
+        }
+    }
+}
+
 
 extension PointViewController {
     func getPointMainData() {
@@ -185,6 +197,7 @@ extension PointViewController {
             }
             catch {
                 guard let error = error as? NetworkError else { return }
+                handlingError(error)
             }
         }
     }

@@ -308,6 +308,19 @@ extension HomeViewController: HomeViewPushDelegate {
 }
 
 extension HomeViewController {
+    func handlingError(_ error: NetworkError) {
+        switch error {
+        case .clientError(let message):
+            NPToast.show(message: "\(message)")
+        default:
+            NPToast.show(message: error.description)
+            
+        }
+    }
+}
+
+
+extension HomeViewController {
     func getHomeData() {
         Task {
             do {
@@ -315,7 +328,8 @@ extension HomeViewController {
                 homeDataAppData = homeData
             }
             catch {
-                guard error is NetworkError else { return }
+                guard let error = error as? NetworkError else { return }
+                handlingError(error)
             }
         }
     }
