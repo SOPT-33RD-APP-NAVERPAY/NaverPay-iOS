@@ -70,7 +70,6 @@ final class HomeRecentPaymentsSectionCollectionViewCell: UICollectionViewCell {
         paidAmountLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(31)
             $0.bottom.equalToSuperview().offset(-31)
-            $0.leading.equalTo(storeNameLabel.snp.trailing).inset(-19)
             $0.trailing.equalToSuperview().inset(18)
         }
     }
