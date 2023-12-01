@@ -70,7 +70,7 @@ final class HomeRecentPaymentsSectionHeaderView: UICollectionReusableView {
                 $0.bottom.equalToSuperview().offset(-18)
                 $0.top.equalToSuperview().offset(55)
                 $0.leading.equalTo(recentPaymentLabel.snp.trailing).inset(-7)
-                $0.width.equalTo(40)
+                $0.width.greaterThanOrEqualTo(32)
             }
             
             viewAllLabel.snp.makeConstraints {
