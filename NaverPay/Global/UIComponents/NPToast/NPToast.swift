@@ -21,7 +21,7 @@ final class LHToast {
         toastView.snp.makeConstraints {
             $0.bottom.equalToSuperview().inset(120)
             
-            $0.leading.trailing.equalToSuperview().inset(40)
+            $0.leading.trailing.equalToSuperview().inset(25)
         }
         
         window.layoutSubviews()

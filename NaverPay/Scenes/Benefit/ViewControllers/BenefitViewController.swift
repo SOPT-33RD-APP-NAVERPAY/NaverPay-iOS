@@ -37,20 +37,15 @@ final class BenefitViewController: UIViewController {
         return collectionView
     }()
     
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        getBenefitMainData()
-        getBenefitEntireData()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setLayout()
         setCollectionView()
         setStyle()
+        
+        getBenefitMainData()
+        getBenefitEntireData()
         
         
     }
@@ -379,10 +374,10 @@ extension BenefitViewController: ItemSelectedProtocol {
     func getButtonState(isLiked: Bool, brandId: Int) {
         if isLiked {
             postLikedBrand(brandIdNum: brandId, post: .post)
-            LHToast.show(message: "좋아요")
+            LHToast.show(message: "'나의 혜택'에 보관했어요")
         } else {
             postLikedBrand(brandIdNum: brandId, post: .delete)
-            LHToast.show(message: "싫어요")
+            LHToast.show(message: "보관을 취소했어요")
 
         }
     }
