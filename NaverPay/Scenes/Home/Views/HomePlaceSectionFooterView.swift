@@ -50,14 +50,13 @@ final class HomePlaceSectionFooterView: UICollectionReusableView {
         }
         icMapImageView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(18.5)
-            $0.bottom.equalToSuperview().offset(-16.5)
-            $0.trailing.equalTo(mapLabel.snp.leading).inset(-5)
-            $0.width.equalTo(17)
+            $0.leading.equalToSuperview().inset(120)
+            $0.size.equalTo(17)
         }
         mapLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(15)
             $0.bottom.equalToSuperview().offset(-13)
-            $0.trailing.equalToSuperview().inset(118)
+            $0.leading.equalTo(icMapImageView.snp.trailing).inset(-5)
             $0.width.equalTo(74)
         }
     }
