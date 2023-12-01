@@ -11,15 +11,22 @@ import SnapKit
 final class PointViewController: UIViewController {
     static let identifier: String = "PointViewController"
     
-    private let userPointData = UserPointAppData.dummy()
-    
     lazy var pointHeaderView = NaverNavigationBar(self, leftItem: .point)
+    
+    private var userPointData: UserPointAppData? {
+        didSet {
+            pointCollectionView.reloadData()
+        }
+    }
     
     private let pointCollectionView: UICollectionView = {
        let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        
         
         return collectionView
     }()
@@ -29,6 +36,7 @@ final class PointViewController: UIViewController {
         setLayout()
         setCollectionViewConfig()
         setCollectionViewLayout()
+        getPointMainData()
         
     }
 
@@ -88,13 +96,15 @@ extension PointViewController: UICollectionViewDataSource {
         case 2:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GraphCollectionViewCell.identifier, for: indexPath) as? GraphCollectionViewCell
             else { return UICollectionViewCell()}
-            cell.userPointData = self.userPointData
+            guard let userPointData else { return UICollectionViewCell() }
+            cell.userPointData = userPointData
             return cell
             
         case 3:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UsageCollectionViewCell.identifier, for: indexPath) as? UsageCollectionViewCell
-            else { return UICollectionViewCell()}
-            cell.userPointData = self.userPointData.brandList[indexPath.item]
+            else { return UICollectionViewCell() }
+            guard let userPointData else { return UICollectionViewCell() }
+            cell.userPointData = userPointData.brandList[indexPath.item]
             return cell
             
         default:
@@ -109,6 +119,9 @@ extension PointViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let userPointData else { 
+            print("ㅠㅠㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜ")
+            return 0 }
         switch section {
         case 3:
             return userPointData.brandList.count
@@ -158,4 +171,21 @@ extension PointViewController: UICollectionViewDelegateFlowLayout{
         return 0
     }
     
+}
+
+
+extension PointViewController {
+    func getPointMainData() {
+        Task {
+            do {
+                let pointMainData = try await
+                PointService.shared.getPointMainInfo()
+                userPointData = pointMainData
+                print(pointMainData)
+            }
+            catch {
+                guard let error = error as? NetworkError else { return }
+            }
+        }
+    }
 }

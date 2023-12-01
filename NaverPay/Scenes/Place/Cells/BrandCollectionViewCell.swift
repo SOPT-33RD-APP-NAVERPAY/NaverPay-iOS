@@ -13,7 +13,10 @@ final class BrandCollectionViewCell: UICollectionViewCell {
     var userBrandPlace: PlaceList? {
         didSet {
             guard let data = userBrandPlace else {return}
-            brandCardImageView.image = data.logoImgURL
+            Task {
+                let image = try await NPKingFisherService.fetchImage(with: data.logoImgURL)
+                brandCardImageView.image = image
+            }
             brandNameLabel.text = data.name
         }
     }
@@ -44,15 +47,26 @@ final class BrandCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        updateShadowPath()
+    }
+
+    private func updateShadowPath() {
+        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: 10).cgPath
+    }
+    
     private func setLayout() {
         self.contentView.backgroundColor = .bg_white
-        self.layer.cornerRadius = 10
-        self.layer.masksToBounds = false
         //그림자
         self.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
         self.layer.shadowOpacity = 1
         self.layer.shadowRadius = 5
         self.layer.shadowOffset = CGSize(width: 0, height: 1)
+        contentView.layer.cornerRadius = 10
+        contentView.layer.masksToBounds = false
+        contentView.clipsToBounds = true
+
         
 
         contentView.addSubviews(brandCardImageView, brandNameLabel)
@@ -60,6 +74,7 @@ final class BrandCollectionViewCell: UICollectionViewCell {
         brandCardImageView.snp.makeConstraints{
             $0.top.equalToSuperview().inset(9)
             $0.centerX.equalToSuperview()
+            $0.height.equalTo(54)
         }
         
         brandNameLabel.snp.makeConstraints{

@@ -14,7 +14,10 @@ final class NearPlaceCollectionViewCell: UICollectionViewCell {
     var userNearPlace: PlaceList? {
         didSet {
             guard let data = userNearPlace else {return}
-            nearPlaceCardImageView.image = data.logoImgURL
+            Task {
+                let image = try await NPKingFisherService.fetchImage(with: data.logoImgURL)
+                nearPlaceCardImageView.image = image
+            }
             nearPlaceNameLabel.text = data.name
             guard let distance = data.distance else { return }
             nearPlaceMeterLabel.text = "\(distance)m"
@@ -71,8 +74,6 @@ final class NearPlaceCollectionViewCell: UICollectionViewCell {
         self.layer.shadowRadius = 5
         self.layer.shadowOpacity = 1
         
-//        섀도우 익스텐션으로 빼서 써봐..!
-        
         contentView.addSubviews(nearPlaceCardImageView, nearPlaceNameLabel, nearPlaceMeterLabel)
         contentView.layer.cornerRadius = 10
         contentView.layer.masksToBounds = false
@@ -81,6 +82,7 @@ final class NearPlaceCollectionViewCell: UICollectionViewCell {
         nearPlaceCardImageView.snp.makeConstraints{
             $0.top.equalToSuperview().inset(12)
             $0.centerX.equalToSuperview().inset(13)
+            $0.height.equalTo(63)
         }
         
         nearPlaceNameLabel.snp.makeConstraints{

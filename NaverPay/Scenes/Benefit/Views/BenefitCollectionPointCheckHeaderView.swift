@@ -23,7 +23,7 @@ final class BenefitCollectionPointCheckHeaderView: UICollectionReusableView {
         didSet {
             guard let data = userData else { return }
             userNameLabel.text = data.userName
-            userPointLabel.text = "\(data.userPoint)원"
+            userPointLabel.text = "\(data.userPoint.formattedString())원"
         }
     }
     
