@@ -379,8 +379,11 @@ extension BenefitViewController: ItemSelectedProtocol {
     func getButtonState(isLiked: Bool, brandId: Int) {
         if isLiked {
             postLikedBrand(brandIdNum: brandId, post: .post)
+            LHToast.show(message: "좋아요")
         } else {
             postLikedBrand(brandIdNum: brandId, post: .delete)
+            LHToast.show(message: "싫어요")
+
         }
     }
 }
