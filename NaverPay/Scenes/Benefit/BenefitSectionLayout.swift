@@ -76,9 +76,5 @@ final class BenefitSectionLayout {
        
         return section
     }
-    
-//    func fetchNormalHeaderModel() -> WeatherDetailSectionHeaderModel? {
-//        return delegate.headerNormalModel
-//    }
 }
 
