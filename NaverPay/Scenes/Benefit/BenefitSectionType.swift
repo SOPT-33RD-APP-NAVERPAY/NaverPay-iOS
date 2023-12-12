@@ -12,6 +12,7 @@ enum Section {
     case pointCheck
     case famousBenefit
     case pointCategory
+    case entireBenefit
 }
 
 struct WeatherDetailSectionHeaderModel {
@@ -58,6 +59,13 @@ struct PointCategorySectionType: BenefitSectionTypeProtocol {
     var headerSize: NSCollectionLayoutSize? = .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(73))
     var footerSize: NSCollectionLayoutSize?
     var backgroundViewIdentifier: String?
-    
-    
+}
+
+struct EntireBenefitSectionType: BenefitSectionTypeProtocol {
+    var section: Section = .entireBenefit
+    var itemSize: NSCollectionLayoutSize = .init(widthDimension: .absolute(343), heightDimension: .estimated(103))
+    var groupSize: NSCollectionLayoutSize = .init(widthDimension: .absolute(343), heightDimension: .absolute(421))
+    var headerSize: NSCollectionLayoutSize? = .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(63))
+    var footerSize: NSCollectionLayoutSize?
+    var backgroundViewIdentifier: String? = BenefitCollectionViewPointCheckSectionBackgroundView.identifier
 }
