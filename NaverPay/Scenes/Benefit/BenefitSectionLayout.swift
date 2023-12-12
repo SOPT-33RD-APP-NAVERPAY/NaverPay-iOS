@@ -35,6 +35,12 @@ final class WeatherDetailSection {
         case .famousBenefit:
             let group = NSCollectionLayoutGroup.vertical(layoutSize: delegate.groupSize, subitems: [item])
             section = NSCollectionLayoutSection(group: group)
+            
+        case .pointCategory:
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: delegate.groupSize, subitems: [item])
+            group.interItemSpacing = NSCollectionLayoutSpacing.fixed(5)
+            section = NSCollectionLayoutSection(group: group)
+
         }
 
         if let headerSize = delegate.headerSize {
