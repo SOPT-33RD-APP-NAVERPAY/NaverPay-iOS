@@ -7,7 +7,6 @@
 
 import UIKit
 
-/// compositional layout의 cell 방향을 결정하기 위한 enum
 enum Section {
     case pointCheck
     case famousBenefit
@@ -16,12 +15,6 @@ enum Section {
     case adBanner
 }
 
-struct WeatherDetailSectionHeaderModel {
-    let image: UIImage?
-    let title: String
-}
-
-/// compositional layout을 만들기 위한 protocol
 protocol BenefitSectionTypeProtocol {
     var section: Section { get }
     var itemSize: NSCollectionLayoutSize { get }
@@ -29,7 +22,6 @@ protocol BenefitSectionTypeProtocol {
     var headerSize: NSCollectionLayoutSize? { get }
     var footerSize: NSCollectionLayoutSize? { get }
     var backgroundViewIdentifier: String? { get }
-//    var headerNormalModel: WeatherDetailSectionHeaderModel? { get }
 }
 
 
@@ -42,7 +34,6 @@ struct PointCheckSectionType: BenefitSectionTypeProtocol {
     var footerSize: NSCollectionLayoutSize?
     var backgroundViewIdentifier: String? = BenefitCollectionViewPointCheckSectionBackgroundView.identifier
 
-//    var headerNormalModel: WeatherDetailSectionHeaderModel? =  WeatherDetailSectionHeaderModel(image: UIImage(systemName: "clock"), title: "시간별 일기예보")
 }
 
 struct FamousBenefitSectionType: BenefitSectionTypeProtocol {
