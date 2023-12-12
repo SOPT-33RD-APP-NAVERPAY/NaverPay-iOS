@@ -22,15 +22,11 @@ final class BenefitViewController: UIViewController {
         }
     }
     
-    private var BenefitSection: [BenefitSectionLayout] = [BenefitSectionLayout(delegate: PointCheckSectionType()),
-                                                                          BenefitSectionLayout(delegate:
-                                                                                                FamousBenefitSectionType()),
-                                                                          BenefitSectionLayout(delegate:
-                                                                                                PointCategorySectionType()),
-                                                                          BenefitSectionLayout(delegate:
-                                                                                                EntireBenefitSectionType()),
-                                                                          BenefitSectionLayout(delegate:
-                                                                                                AdBannerSectionType())]
+    private let BenefitSection: [BenefitSectionLayout] = [ BenefitSectionLayout(delegate: PointCheckSectionType()),
+                                                          BenefitSectionLayout(delegate: FamousBenefitSectionType()),
+                                                          BenefitSectionLayout(delegate: PointCategorySectionType()),
+                                                          BenefitSectionLayout(delegate: EntireBenefitSectionType()),
+                                                          BenefitSectionLayout(delegate: AdBannerSectionType()) ]
     
     private let categoryData = CategoryData.dummy()
     
