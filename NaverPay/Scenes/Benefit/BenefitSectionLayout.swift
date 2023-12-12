@@ -8,11 +8,7 @@
 
 import UIKit
 
-/// compositional 의 section class
-/// class 생성 시 WeatherDetailSectionTypeProtocol을 준수하는 SectionType을 지정해줘야 함
-/// fetchLayoutSection을 통해 section을 반환할 수 있으며, fetchNormalHeaderModel을 통해 section의 headerModel을반환할 수 있음
-///
-final class WeatherDetailSection {
+final class BenefitSectionLayout {
         
     var delegate: BenefitSectionTypeProtocol
     
@@ -29,7 +25,6 @@ final class WeatherDetailSection {
             item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: -10)
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: delegate.groupSize, subitems: [item])
             section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = .init(top: 0, leading: 0, bottom: 36, trailing: 0)
             section.orthogonalScrollingBehavior = .continuous
 
         case .famousBenefit:
@@ -44,11 +39,16 @@ final class WeatherDetailSection {
         case .entireBenefit:
             let group = NSCollectionLayoutGroup.vertical(layoutSize: delegate.groupSize, subitems: [item])
             section = NSCollectionLayoutSection(group: group)
+            
+        case .adBanner:
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: delegate.groupSize, subitems: [item])
+            section = NSCollectionLayoutSection(group: group)
+            section.orthogonalScrollingBehavior = .paging
+
         }
 
         if let headerSize = delegate.headerSize {
             let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
-            //여기서 헤더를 추가하고 아래에서 푸터를 저런 식으로 추가해도 되는 지 모르겠음
             section.boundarySupplementaryItems = [header]
         }
         
@@ -58,7 +58,15 @@ final class WeatherDetailSection {
                 elementKind: UICollectionView.elementKindSectionFooter,
                 alignment: .bottom
             )
-            section.boundarySupplementaryItems.append(footer)
+            
+            if delegate.section == .adBanner {
+                footer.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 0, bottom: 0, trailing: 0)
+                section.boundarySupplementaryItems = [footer]
+            } else {
+                section.boundarySupplementaryItems.append(footer)
+
+            }
+            
         }
         
         if let identifier = delegate.backgroundViewIdentifier {

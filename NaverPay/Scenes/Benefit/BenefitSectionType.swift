@@ -13,6 +13,7 @@ enum Section {
     case famousBenefit
     case pointCategory
     case entireBenefit
+    case adBanner
 }
 
 struct WeatherDetailSectionHeaderModel {
@@ -30,6 +31,8 @@ protocol BenefitSectionTypeProtocol {
     var backgroundViewIdentifier: String? { get }
 //    var headerNormalModel: WeatherDetailSectionHeaderModel? { get }
 }
+
+
 
 struct PointCheckSectionType: BenefitSectionTypeProtocol {
     var section: Section = .pointCheck
@@ -69,3 +72,15 @@ struct EntireBenefitSectionType: BenefitSectionTypeProtocol {
     var footerSize: NSCollectionLayoutSize?
     var backgroundViewIdentifier: String? = BenefitCollectionViewPointCheckSectionBackgroundView.identifier
 }
+
+struct AdBannerSectionType: BenefitSectionTypeProtocol {
+    var section: Section = .adBanner
+    var itemSize: NSCollectionLayoutSize = .init(widthDimension: .absolute(343), heightDimension: .estimated(100))
+    var groupSize: NSCollectionLayoutSize = .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(100))
+    var headerSize: NSCollectionLayoutSize?
+    var footerSize: NSCollectionLayoutSize? = .init(widthDimension: .absolute(UIScreen.main.bounds.width), heightDimension: .absolute(103))
+    var backgroundViewIdentifier: String?
+    
+}
+
+
