@@ -65,6 +65,7 @@
 		EDDE96B32B18C5D1002F4925 /* PointService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDE96B22B18C5D1002F4925 /* PointService.swift */; };
 		F43465752B27752400E84965 /* BenefitSectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43465742B27752400E84965 /* BenefitSectionLayout.swift */; };
 		F43465772B27759500E84965 /* BenefitSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43465762B27759500E84965 /* BenefitSectionType.swift */; };
+		F4D1A35D2B2AE1A900ACD83B /* BenefitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D1A35C2B2AE1A900ACD83B /* BenefitViewModel.swift */; };
 		F4DDEB0A2B0A52E600B7BCCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB092B0A52E600B7BCCE /* AppDelegate.swift */; };
 		F4DDEB0C2B0A52E600B7BCCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DDEB0B2B0A52E600B7BCCE /* SceneDelegate.swift */; };
 		F4DDEB112B0A52E600B7BCCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DDEB0F2B0A52E600B7BCCE /* Main.storyboard */; };
@@ -161,6 +162,7 @@
 		EDDE96B22B18C5D1002F4925 /* PointService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointService.swift; sourceTree = "<group>"; };
 		F43465742B27752400E84965 /* BenefitSectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitSectionLayout.swift; path = Scenes/Benefit/BenefitSectionLayout.swift; sourceTree = "<group>"; };
 		F43465762B27759500E84965 /* BenefitSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitSectionType.swift; path = Scenes/Benefit/BenefitSectionType.swift; sourceTree = "<group>"; };
+		F4D1A35C2B2AE1A900ACD83B /* BenefitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BenefitViewModel.swift; path = Scenes/Benefit/Models/BenefitViewModel.swift; sourceTree = "<group>"; };
 		F4DDEB062B0A52E600B7BCCE /* NaverPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaverPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4DDEB092B0A52E600B7BCCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4DDEB0B2B0A52E600B7BCCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -569,6 +571,7 @@
 				F4DDEB742B0E670300B7BCCE /* UserBenefitAppData.swift */,
 				F4DDEB7E2B0F27CE00B7BCCE /* CategoryData.swift */,
 				F4FF80172B18DA2700681C0D /* BenefitEntireAppData.swift */,
+				F4D1A35C2B2AE1A900ACD83B /* BenefitViewModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -772,6 +775,7 @@
 				F43465772B27759500E84965 /* BenefitSectionType.swift in Sources */,
 				F4DDEB7B2B0E8E6700B7BCCE /* BenefitCollectionFamousBenefitSectionFooterView.swift in Sources */,
 				EDDE96AB2B18A45C002F4925 /* PlaceService.swift in Sources */,
+				F4D1A35D2B2AE1A900ACD83B /* BenefitViewModel.swift in Sources */,
 				0B6677A22B0CCEF400821105 /* (null) in Sources */,
 				0B125CE02B105F950051DDEF /* HomeCardData.swift in Sources */,
 				0B0DFB262B0D2102005F8618 /* HomePlaceSectionFooterView.swift in Sources */,
